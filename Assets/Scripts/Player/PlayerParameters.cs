@@ -11,8 +11,10 @@ public class PlayerParameters : MonoBehaviour
     public float movementSpeed { get; private set; }
 
     public int maxHealth { get; private set; }
+    public int maxSanity { get; private set; }
 
-    private void Start()
+
+    private void Awake()
     {
         InitPlayerEvent?.Invoke();
     }
@@ -25,5 +27,10 @@ public class PlayerParameters : MonoBehaviour
     public void SetMaxHealth(int _maxHealth)
     {
         maxHealth = _maxHealth;
+    }
+
+    public void SetMaxSanity(int _maxSanity)
+    {
+        maxSanity = _maxSanity;
     }
 }
