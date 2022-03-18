@@ -18,10 +18,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (Input.anyKey)
+        if (parameters.isAlive)
         {
-            Vector2 dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            Move(dir);
+            if (Input.anyKey)
+            {
+                Vector2 dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+                Move(dir);
+            }
         }
     }
 

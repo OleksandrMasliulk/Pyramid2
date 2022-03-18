@@ -5,36 +5,43 @@ using UnityEngine.UI;
 
 public class PlayerInterractionController : MonoBehaviour
 {
-    public Text interractTooltip;
+    private PlayerHUDController hud;
+    private PlayerParameters parameters;
 
     private List<Interractible> objectsToInterract;
 
     private void Start()
     {
+        parameters = GetComponent<PlayerParameters>();
+        hud = GetComponent<PlayerHUDController>();
+
         objectsToInterract = new List<Interractible>();
     }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (parameters.isAlive)
         {
-            Interract();
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Interract();
+            }
         }
     }
 
     public void SetTooltipText(string newText)
     {
-        interractTooltip.text = newText;
+        hud.SetTooltipText(newText);
     }
 
     public void ShowTooltip()
     {
-        interractTooltip.gameObject.SetActive(true);
+        hud.ShowTooltip();
     }
 
     public void HideTooltip()
     {
-        interractTooltip.gameObject.SetActive(false);
+        hud.HideTooltip();
     }
 
     public void AddToList(Interractible objectToInterract)

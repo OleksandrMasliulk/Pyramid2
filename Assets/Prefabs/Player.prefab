@@ -177,6 +177,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 9143180252275882769}
+        m_TargetAssemblyTypeName: PlayerParameters, Assembly-CSharp
+        m_MethodName: SetMaxSanity
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 100
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 9143180252275882769}
+        m_TargetAssemblyTypeName: PlayerParameters, Assembly-CSharp
+        m_MethodName: SetIsAlive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &9143180252275882783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3962d8a77f27cd24baa87a2da9a09cbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interractTooltip: {fileID: 0}
 --- !u!114 &7860134812960214604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,6 +253,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24653e8fd8cf1854d9617ff255e3d328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hud: {fileID: 0}
+  interractTooltip: {fileID: 0}
   sanitySlider: {fileID: 0}
   sanitySliderFill: {fileID: 0}
   sanity100: {r: 0.09546989, g: 0.745283, b: 0, a: 1}

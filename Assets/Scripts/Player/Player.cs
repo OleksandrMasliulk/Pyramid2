@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     private PlayerParameters parameters;
     private PlayerHUDController hud;
@@ -36,5 +36,20 @@ public class Player : MonoBehaviour
         }
 
         hud.UpdateSanitySlider(sanity);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        Die();
+    }
+
+    private void Die()
+    {
+        Debug.LogWarning("!!! PLAYER DIED !!!");
+
+        parameters.SetIsAlive(false);
+        hud.HideHUD();
+
+        GameController.Instance.Lose();
     }
 }

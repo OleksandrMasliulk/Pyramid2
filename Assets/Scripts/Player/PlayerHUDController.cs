@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class PlayerHUDController : MonoBehaviour
 {
+    public GameObject hud;
+
+    public Text interractTooltip;
+
     public Slider sanitySlider;
     public Image sanitySliderFill;
 
@@ -33,5 +37,30 @@ public class PlayerHUDController : MonoBehaviour
         {
             sanitySliderFill.color = sanity25;
         }
+    }
+
+    public void SetTooltipText(string newText)
+    {
+        interractTooltip.text = newText;
+    }
+
+    public void ShowTooltip()
+    {
+        interractTooltip.gameObject.SetActive(true);
+    }
+
+    public void HideTooltip()
+    {
+        interractTooltip.gameObject.SetActive(false);
+    }
+
+    public void ShowHUD()
+    {
+        hud.SetActive(true);
+    }
+
+    public void HideHUD()
+    {
+        hud.SetActive(false);
     }
 }

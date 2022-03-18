@@ -13,6 +13,7 @@ public class PlayerParameters : MonoBehaviour
     public int maxHealth { get; private set; }
     public int maxSanity { get; private set; }
 
+    public bool isAlive { get; private set; }
 
     private void Awake()
     {
@@ -32,5 +33,10 @@ public class PlayerParameters : MonoBehaviour
     public void SetMaxSanity(int _maxSanity)
     {
         maxSanity = _maxSanity;
+    }
+
+    public void SetIsAlive(bool _isAlive)
+    {
+        isAlive = _isAlive;
     }
 }
