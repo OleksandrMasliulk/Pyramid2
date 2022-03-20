@@ -29,27 +29,12 @@ public class PlayerInterractionController : MonoBehaviour
         }
     }
 
-    public void SetTooltipText(string newText)
-    {
-        hud.SetTooltipText(newText);
-    }
-
-    public void ShowTooltip()
-    {
-        hud.ShowTooltip();
-    }
-
-    public void HideTooltip()
-    {
-        hud.HideTooltip();
-    }
-
     public void AddToList(Interractible objectToInterract)
     {
         objectsToInterract.Add(objectToInterract);
 
-        SetTooltipText(objectToInterract.tooltip);
-        ShowTooltip();
+        hud.SetTooltipText(objectToInterract.tooltip);
+        hud.ShowTooltip();
     }
     
     public void RemoveFromList(Interractible objectToInterract)
@@ -58,11 +43,11 @@ public class PlayerInterractionController : MonoBehaviour
 
         if (objectsToInterract.Count == 0) 
         {
-            HideTooltip();
+            hud.HideTooltip();
         }
         else
         {
-            SetTooltipText(objectsToInterract[^1].tooltip);
+            hud.SetTooltipText(objectsToInterract[^1].tooltip);
         }
     } 
 
