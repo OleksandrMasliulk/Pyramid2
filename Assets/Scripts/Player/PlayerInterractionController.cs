@@ -55,7 +55,7 @@ public class PlayerInterractionController : MonoBehaviour
     {
         if (objectsToInterract.Count > 0)
         {
-            if (!objectsToInterract[^1].Interract())
+            if (!objectsToInterract[^1].Interract(this))
             {
                 RemoveFromList(objectsToInterract[^1]);
             }

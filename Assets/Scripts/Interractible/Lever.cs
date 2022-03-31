@@ -6,7 +6,7 @@ public class Lever : Interractible
 {
     private bool position;
 
-    protected override void Action()
+    protected override void Action(PlayerInterractionController user)
     {
         if (!position)
         {

@@ -9,7 +9,7 @@ public class ArrowTrap : TrapMaster
         base.Trigger(target);
 
         Debug.LogWarning("ARROW TRAP TRIGGERED");
-        DoDamage(target);
+        //DoDamage(target);
     }
 
     private void DoDamage(Player target)

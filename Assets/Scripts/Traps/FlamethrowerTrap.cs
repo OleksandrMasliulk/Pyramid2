@@ -11,7 +11,7 @@ public class FlamethrowerTrap : TrapMaster
         base.Trigger(target);
 
         Debug.LogWarning("FLAMETHROWER TRAP TRIGGERED");
-        StartCoroutine(DoDamageCoroutine(target));
+        //StartCoroutine(DoDamageCoroutine(target));
     }
 
     IEnumerator DoDamageCoroutine(Player target)

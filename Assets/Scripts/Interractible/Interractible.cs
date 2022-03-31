@@ -18,17 +18,17 @@ public class Interractible : MonoBehaviour
         isActive = true;
     }
 
-    public bool Interract()
+    public bool Interract(PlayerInterractionController user)
     {
         if (isActive)
         {
-            Action();
+            Action(user);
         }
 
         return isActive;
     }
 
-    protected virtual void Action()
+    protected virtual void Action(PlayerInterractionController user)
     {
 
     }

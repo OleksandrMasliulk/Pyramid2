@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static PlayerInventoryController;
 
 public class PlayerHUDController : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class PlayerHUDController : MonoBehaviour
     public Color sanity75;
     public Color sanity50;
     public Color sanity25;
+
+    public GameObject[] inventorySlots;
+    private int highlightedSlot;
 
     public void UpdateSanitySlider(int newValue)
     {
@@ -54,6 +58,33 @@ public class PlayerHUDController : MonoBehaviour
         interractTooltip.gameObject.SetActive(false);
     }
 
+    public void HighlightInventorySlot(int index) 
+    {
+        inventorySlots[highlightedSlot].GetComponent<Image>().color = Color.black;
+
+        inventorySlots[index].GetComponent<Image>().color = Color.green;
+        highlightedSlot = index;
+    }
+
+    public void UpdateInventorySlot(int index, InventorySlot data)
+    {
+        if (data.item != null)
+        {
+            inventorySlots[index].transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load(data.item.inventoryImagePath) as Sprite;
+        }
+
+        string countText;
+        if (data.count == 0)
+        {
+            countText = "";
+        }
+        else
+        {
+            countText = data.count.ToString();
+        }
+        inventorySlots[index].transform.GetChild(2).GetComponent<Text>().text = countText;
+    }
+
     public void ShowHUD()
     {
         hud.SetActive(true);
@@ -63,4 +94,6 @@ public class PlayerHUDController : MonoBehaviour
     {
         hud.SetActive(false);
     }
+
+
 }

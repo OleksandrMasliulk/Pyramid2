@@ -11,7 +11,7 @@ public class SpikeTrap : TrapMaster
         base.Trigger(target);
 
         Debug.LogWarning("SPIKE TRAP TRIGGERED");
-        StartCoroutine(DoDamageCoroutine(target));
+        //StartCoroutine(DoDamageCoroutine(target));
     }
 
     IEnumerator DoDamageCoroutine(Player target)
