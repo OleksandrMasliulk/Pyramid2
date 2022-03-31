@@ -80,9 +80,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: 206cdc09edbc4224fad6472d10604644, type: 3}
-  m_Color: {r: 0.22077249, g: 0.745283, b: 0.26562503, a: 1}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -1329040353, guid: 9b5aaae10721d16409f0c4d1ea3385ec, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -264,3 +264,4 @@ MonoBehaviour:
   sanity75: {r: 1, g: 0.8854167, b: 0, a: 1}
   sanity50: {r: 1, g: 0.4895962, b: 0, a: 1}
   sanity25: {r: 1, g: 0, b: 0, a: 1}
+  inventorySlots: []
