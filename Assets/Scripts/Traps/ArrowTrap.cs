@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class ArrowTrap : TrapMaster
 {
-    protected override void Trigger(Player target)
-    {
-        base.Trigger(target);
+    public ParticleSystem ps;
 
-        Debug.LogWarning("ARROW TRAP TRIGGERED");
-        //DoDamage(target);
+    protected override void Activate(Player target)
+    {
+        Debug.Log("ARROW TRAP ACTIVATED");
+
+        base.Activate(target);
+
+        Shoot();
     }
 
-    private void DoDamage(Player target)
+    protected override void AffectSanity(Player target)
     {
-        target.TakeDamage(1);
+        base.AffectSanity(target);
+
+        target.UpdateSanity(-sanityLoss);
+    }
+
+    private void Shoot()
+    {
+        ps.Play();
     }
 }

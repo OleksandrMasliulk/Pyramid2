@@ -4,25 +4,45 @@ using UnityEngine;
 
 public class SpikeTrap : TrapMaster
 {
-    public float triggerDelay;
-
-    protected override void Trigger(Player target)
+    public override void Trigger(Player target)
     {
+        Debug.Log("SPIKE TRAP ACTIVATED");
+        AffectSanity(target);
+
         base.Trigger(target);
-
-        Debug.LogWarning("SPIKE TRAP TRIGGERED");
-        //StartCoroutine(DoDamageCoroutine(target));
     }
 
-    IEnumerator DoDamageCoroutine(Player target)
+    protected override void AffectSanity(Player target)
     {
-        yield return new WaitForSeconds(triggerDelay);
+        base.AffectSanity(target);
 
-        DoDamage(target);
+        target.UpdateSanity(-sanityLoss);
     }
 
-    private void DoDamage(Player target)
+    protected override void Activate(Player target)
     {
+        base.Activate(target);
+
         target.TakeDamage(1);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Player player = collision.GetComponent<Player>();
+
+        if (player != null)
+        {
+            Trigger(player);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Player player = collision.GetComponent<Player>();
+
+        if (player != null)
+        {
+            StopCountdown();
+        }
     }
 }

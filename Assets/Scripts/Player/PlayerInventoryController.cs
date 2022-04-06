@@ -27,15 +27,6 @@ public class PlayerInventoryController : MonoBehaviour
 
     private void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Q))
-        {
-            ScrollLeft();
-        }
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            ScrollRight();
-        }*/
-        
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             SwitchSlot(0);
@@ -113,40 +104,6 @@ public class PlayerInventoryController : MonoBehaviour
         }
 
         return false;
-        /*if (CheckIfIsFull())
-        {
-            Debug.Log("Inventory is FULL");
-
-            return;
-        }
-
-        for (int i = 0; i < inventorySlots; i++)
-        {
-            //Stack items
-            if (item == inventory[i].item)
-            {
-                if (item.isStackable)
-                {
-                    inventory[i] = new InventorySlot(item, inventory[i].count + count);
-                    Debug.Log("Stacked");
-
-                    return;
-                }
-                else
-                {
-                    continue;
-                }
-            }
-
-            //Add new item
-            if (inventory[i].item == null)
-            {
-                inventory[i] = new InventorySlot(item, count);
-                Debug.Log("Item added");
-
-                return;
-            }
-        }*/
     }
 
     private bool CheckIfIsFull()
@@ -229,34 +186,6 @@ public class PlayerInventoryController : MonoBehaviour
             hud.UpdateInventorySlot(slotToUse, inventory[slotToUse]);
         }
     }
-
-    /*private void ScrollLeft()
-    {
-        if (slotToUse == 0)
-        {
-            slotToUse = 3;
-        }
-        else
-        {
-            slotToUse--;
-        }
-
-        Debug.Log("Slot to use: " + slotToUse);
-    }
-
-    private void ScrollRight()
-    {
-        if (slotToUse == 3)
-        {
-            slotToUse = 0;
-        }
-        else
-        {
-            slotToUse++;
-        }
-
-        Debug.Log("Slot to use: " + slotToUse);
-    }*/
 
     public struct InventorySlot
     {

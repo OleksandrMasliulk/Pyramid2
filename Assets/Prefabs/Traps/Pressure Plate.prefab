@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4312758970903793212}
   - component: {fileID: 8715992441127672210}
   - component: {fileID: 1110222818917158585}
-  - component: {fileID: 346878414662322414}
+  - component: {fileID: 2534920808273612815}
   m_Layer: 0
-  m_Name: Spike trap
+  m_Name: Pressure Plate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 0.23584908, g: 0.23584908, b: 0.23584908, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &346878414662322414
+--- !u!114 &2534920808273612815
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,9 +143,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2023947339436968763}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ffc354776b9b6e438a4455f22c7d3ef, type: 3}
+  m_Script: {fileID: 11500000, guid: 064f5585df66d954581e63afe4085332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sanityLoss: 5
-  triggerDelay: 1.5
-  rearmTime: 4
+  trapToActivate: {fileID: 0}
