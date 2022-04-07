@@ -18,9 +18,7 @@ public class FlamethrowerTrap : TrapMaster
     {
         base.Init();
 
-        damageBox = fireGraphics.GetComponent<BoxCollider2D>();
         StopThrowingFire();
-
         StartCoroutine(FlameThrowerCoroutine()); 
     }
 
@@ -59,7 +57,7 @@ public class FlamethrowerTrap : TrapMaster
         fireGraphics.SetActive(true);
         isThrowingFire = true;
 
-        AffectSanity(null);
+        ReduceSanity(null);
     }
 
     private void StopThrowingFire()
@@ -68,10 +66,8 @@ public class FlamethrowerTrap : TrapMaster
         isThrowingFire = false;
     }
 
-    protected override void AffectSanity(Player target)
+    protected override void ReduceSanity(Player target)
     {
-        base.AffectSanity(target);
-
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, sanityLossRadius);
 
         Player player;

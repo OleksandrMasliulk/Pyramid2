@@ -2,21 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpikeTrap : TrapMaster
+public class FakeFloorTrap : TrapMaster
 {
     public override void Trigger(Player target)
     {
-        Debug.Log("SPIKE TRAP ACTIVATED");
-        AffectSanity(target);
+        Debug.Log("FAKE FLOOR TRAP ACTIVATED");
+        ReduceSanity(target);
 
         base.Trigger(target);
-    }
-
-    protected override void AffectSanity(Player target)
-    {
-        base.AffectSanity(target);
-
-        target.UpdateSanity(-sanityLoss);
     }
 
     protected override void Activate(Player target)
@@ -24,6 +17,7 @@ public class SpikeTrap : TrapMaster
         base.Activate(target);
 
         target.TakeDamage(1);
+        isActive = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

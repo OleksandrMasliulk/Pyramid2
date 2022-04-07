@@ -124,7 +124,7 @@ MonoBehaviour:
   sanityLoss: 10
   triggerDelay: 0
   rearmTime: 3
-  ps: {fileID: 1741391158043211792}
+  arrows: {fileID: 1741391158043211792}
 --- !u!199 &4587457723380486517
 ParticleSystemRenderer:
   serializedVersion: 6

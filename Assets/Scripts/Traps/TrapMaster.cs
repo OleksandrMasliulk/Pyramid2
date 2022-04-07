@@ -31,7 +31,7 @@ public class TrapMaster : MonoBehaviour
 
     protected virtual void UpdateSeq()
     {
-        if (timeToRearm > 0f)
+        if (isActive && timeToRearm > 0f)
         {
             timeToRearm -= Time.deltaTime;
         }
@@ -43,7 +43,7 @@ public class TrapMaster : MonoBehaviour
 
     public virtual void Trigger(Player target)
     {
-        if (isArmed)
+        if (isActive && isArmed)
         {
             StartCoroutine(ActivateCoroutine(target));
         }
@@ -63,13 +63,12 @@ public class TrapMaster : MonoBehaviour
 
     protected virtual void Activate(Player target)
     {
-        AffectSanity(target);
-
         isArmed = false;
         timeToRearm = rearmTime;
     }
 
-    protected virtual void AffectSanity(Player target)
+    protected virtual void ReduceSanity(Player target)
     {
+        target.UpdateSanity(-sanityLoss);
     }
 }

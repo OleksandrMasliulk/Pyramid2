@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArrowTrap : TrapMaster
 {
-    public ParticleSystem ps;
+    public ParticleSystem arrows;
 
     protected override void Activate(Player target)
     {
@@ -13,18 +13,12 @@ public class ArrowTrap : TrapMaster
         base.Activate(target);
 
         Shoot();
-    }
-
-    protected override void AffectSanity(Player target)
-    {
-        base.AffectSanity(target);
-
-        target.UpdateSanity(-sanityLoss);
+        ReduceSanity(target);
     }
 
     private void Shoot()
     {
-        ps.Play();
+        arrows.Play();
     }
 
     private void OnParticleCollision(GameObject other)
