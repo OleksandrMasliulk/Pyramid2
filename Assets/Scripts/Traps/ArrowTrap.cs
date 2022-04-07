@@ -26,4 +26,16 @@ public class ArrowTrap : TrapMaster
     {
         ps.Play();
     }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Arrow hit");
+
+        Player player = other.GetComponent<Player>();
+
+        if (player != null)
+        {
+            player.TakeDamage(1);
+        }
+    }
 }
