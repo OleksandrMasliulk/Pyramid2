@@ -7,12 +7,14 @@ public class PlayerInterractionController : MonoBehaviour
 {
     private PlayerHUDController hud;
     private PlayerParameters parameters;
+    private PlayerGraphicsController graphics;
 
     private List<Interractible> objectsToInterract;
 
     private void Start()
     {
         parameters = GetComponent<PlayerParameters>();
+        graphics = GetComponent<PlayerGraphicsController>();
         hud = GetComponent<PlayerHUDController>();
 
         objectsToInterract = new List<Interractible>();
@@ -59,6 +61,7 @@ public class PlayerInterractionController : MonoBehaviour
             {
                 RemoveFromList(objectsToInterract[^1]);
             }
+            graphics.SetInterract();
         }
         else
         {
