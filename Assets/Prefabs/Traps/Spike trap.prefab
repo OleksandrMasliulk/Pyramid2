@@ -147,4 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sanityLoss: 5
-  triggerDelay: 1
+  triggerDelay: 1.5
+  rearmTime: 4

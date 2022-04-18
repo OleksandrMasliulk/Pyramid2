@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private PlayerParameters parameters;
+    private PlayerGraphicsController graphics;
     private Rigidbody2D rb;
 
     [SerializeField] private float wallCheckRadius;
@@ -13,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         parameters = GetComponent<PlayerParameters>();
+        graphics = GetComponent<PlayerGraphicsController>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -20,10 +22,15 @@ public class PlayerMovement : MonoBehaviour
     {
         if (parameters.isAlive)
         {
-            if (Input.anyKey)
+            Vector2 dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            if (dir.magnitude > 0f)
             {
-                Vector2 dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
                 Move(dir);
+                graphics.SetMovementState(dir);
+            }
+            else
+            {
+                graphics.SetIdle();
             }
         }
     }

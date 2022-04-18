@@ -4,12 +4,34 @@ using UnityEngine;
 
 public class Pickable : Interractible
 {
+    public enum ItemType
+    {
+        Flare,
+        Medkit,
+        Flashlight
+    }
+
+    public ItemType type;
+
     public int count;
     protected Item item;
 
     protected override void Init()
     {
         base.Init();
+
+        switch (type)
+        {
+            case ItemType.Flare:
+                item = new Flare();
+                break;
+            case ItemType.Flashlight:
+                item = new Flashlight();
+                break;
+            case ItemType.Medkit:
+                item = new Medicine();
+                break;
+        }
 
         if (!item.isStackable)
         {
