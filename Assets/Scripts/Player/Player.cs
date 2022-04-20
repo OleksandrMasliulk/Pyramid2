@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class Player : MonoBehaviour, IDamageable
 {
     private PlayerParameters parameters;
+    private PlayerGraphicsController graphics;
     private PlayerHUDController hud;
 
     private int health;
@@ -14,6 +15,7 @@ public class Player : MonoBehaviour, IDamageable
     private void Start()
     {
         parameters = GetComponent<PlayerParameters>();
+        graphics = GetComponent<PlayerGraphicsController>();
         hud = GetComponent<PlayerHUDController>();
 
         health = parameters.maxHealth;
@@ -48,6 +50,8 @@ public class Player : MonoBehaviour, IDamageable
         Debug.LogWarning("!!! PLAYER DIED !!!");
 
         parameters.SetIsAlive(false);
+        graphics.SetDie();
+
         hud.HideHUD();
 
         GameController.Instance.Lose();

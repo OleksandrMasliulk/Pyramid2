@@ -4,16 +4,32 @@ using UnityEngine;
 
 public class ArrowTrap : TrapMaster
 {
-    protected override void Trigger(Player target)
-    {
-        base.Trigger(target);
+    public ParticleSystem arrows;
 
-        Debug.LogWarning("ARROW TRAP TRIGGERED");
-        //DoDamage(target);
+    protected override void Activate(Player target)
+    {
+        Debug.Log("ARROW TRAP ACTIVATED");
+
+        base.Activate(target);
+
+        Shoot();
+        ReduceSanity(target);
     }
 
-    private void DoDamage(Player target)
+    private void Shoot()
     {
-        target.TakeDamage(1);
+        arrows.Play();
+    }
+
+    private void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Arrow hit");
+
+        Player player = other.GetComponent<Player>();
+
+        if (player != null)
+        {
+            player.TakeDamage(1);
+        }
     }
 }

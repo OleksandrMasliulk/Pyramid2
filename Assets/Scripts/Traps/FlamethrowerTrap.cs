@@ -4,25 +4,87 @@ using UnityEngine;
 
 public class FlamethrowerTrap : TrapMaster
 {
-    public float triggerDelay;
+    public GameObject fireGraphics;
+    public BoxCollider2D damageBox;
 
-    protected override void Trigger(Player target)
+    public float sanityLossRadius;
+
+    public float timeBtwShots;
+    public float flameThrowingDuration;
+
+    private bool isThrowingFire;
+
+    protected override void Init()
     {
-        base.Trigger(target);
+        base.Init();
 
-        Debug.LogWarning("FLAMETHROWER TRAP TRIGGERED");
-        //StartCoroutine(DoDamageCoroutine(target));
+        StopThrowingFire();
+        StartCoroutine(FlameThrowerCoroutine()); 
     }
 
-    IEnumerator DoDamageCoroutine(Player target)
+    protected override void UpdateSeq()
     {
-        yield return new WaitForSeconds(triggerDelay);
+        if (isThrowingFire)
+        {
+            Collider2D[] cols = Physics2D.OverlapBoxAll(fireGraphics.transform.position, damageBox.bounds.size, 0f);
 
-        DoDamage(target);
+            Player target;
+            foreach (Collider2D col in cols)
+            {
+                target = col.GetComponent<Player>();
+                if (target != null)
+                {
+                    target.TakeDamage(1);
+                    return;
+                }
+            }
+        }
     }
 
-    private void DoDamage(Player target)
+    IEnumerator FlameThrowerCoroutine()
     {
-        target.TakeDamage(1);
+        while(isActive)
+        {
+            yield return new WaitForSeconds(timeBtwShots);
+
+            ThrowFire();
+            Invoke("StopThrowingFire", flameThrowingDuration);
+        }
+    }
+
+    private void ThrowFire()
+    {
+        fireGraphics.SetActive(true);
+        isThrowingFire = true;
+
+        ReduceSanity(null);
+    }
+
+    private void StopThrowingFire()
+    {
+        fireGraphics.SetActive(false);
+        isThrowingFire = false;
+    }
+
+    protected override void ReduceSanity(Player target)
+    {
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, sanityLossRadius);
+
+        Player player;
+        foreach (Collider2D col in cols)
+        {
+            player = col.GetComponent<Player>();
+            if (player != null)
+            {
+                player.UpdateSanity(-sanityLoss);
+                return;
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(fireGraphics.transform.position, damageBox.bounds.size);
+        Gizmos.DrawWireSphere(transform.position, sanityLossRadius);
     }
 }

@@ -5,18 +5,69 @@ using UnityEngine;
 public class TrapMaster : MonoBehaviour
 {
     public int sanityLoss;
+    public float triggerDelay;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    protected bool isActive;
+
+    public float rearmTime;
+    private bool isArmed;
+    private float timeToRearm;
+
+    private void Start()
     {
-        Player player = collision.GetComponent<Player>();
+        Init();
+    }
 
-        if (player != null)
+    protected virtual void Init()
+    {
+        isActive = true;
+        isArmed = true;
+    }
+
+    private void Update()
+    {
+        UpdateSeq();
+    }
+
+    protected virtual void UpdateSeq()
+    {
+        if (isActive && timeToRearm > 0f)
         {
-            Trigger(player);
+            timeToRearm -= Time.deltaTime;
+        }
+        else
+        {
+            isArmed = true;
         }
     }
 
-    protected virtual void Trigger(Player target)
+    public virtual void Trigger(Player target)
+    {
+        if (isActive && isArmed)
+        {
+            StartCoroutine(ActivateCoroutine(target));
+        }
+    }
+
+    IEnumerator ActivateCoroutine(Player target)
+    {
+        yield return new WaitForSeconds(triggerDelay);
+
+        Activate(target);
+    }
+
+    public void StopCountdown()
+    {
+        StopAllCoroutines();
+    }
+
+    protected virtual void Activate(Player target)
+    {
+        isArmed = false;
+        timeToRearm = rearmTime;
+    }
+
+    protected virtual void ReduceSanity(Player target)
     {
         target.UpdateSanity(-sanityLoss);
     }
