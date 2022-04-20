@@ -1,0 +1,1300 @@
+fileFormatVersion: 2
+guid: af201a56441ca574295c744309a2bf3c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Interactable_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6522c04d3a2c37e49b6f504684f9fd5b
+      internalID: 1995217192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_1
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a43a6e374ded784ca64d5d9128a63c1
+      internalID: -1650873922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d496635635eef2b4581d9975ce53c1e5
+      internalID: 397616999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 80.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1707bae61cbed5d4ca6b6566f82ea611
+      internalID: -70720913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 80.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924e111b8193ae34bb89dbcdad777b30
+      internalID: 26646576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6fa397b6f677644810382797067932
+      internalID: -662569523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2691bcf6b25bb438dab1703f21284c
+      internalID: 1156426217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_7
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af2c05586be14e499639d3d682f3cd4
+      internalID: 67113233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed45d1d6a6b8aac4fb1fbfff9e477450
+      internalID: -1784273458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_9
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 80.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5c9eb690809c504e91218ca407b9c6e
+      internalID: 1109363387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4907a1eaab498941b5194910f102609
+      internalID: -274430940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_11
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e980455bc01902f4493d8109eeda838d
+      internalID: -877471760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1e0fa23735a8ed4b9db846265c90576
+      internalID: -780280363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c126fa3a8c13c3e4c9971aeb3314d9d0
+      internalID: 1586279451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 643e2e370f908f5419408f75ac4deebc
+      internalID: 903145665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_15
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64161539899158845ae029744665067d
+      internalID: -2097132645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_16
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f9951597689bad4dbb1989d50ced1fa
+      internalID: -593543352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_17
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5433703399fddd7479bf74a650f18121
+      internalID: 81855718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_18
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b5f76105c7fbfc4db4855ac3838d805
+      internalID: 1918478242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_19
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7618f49b774c445b1342bbfae0f5f3
+      internalID: 1488228846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 853e7422e45e0f748acc839efe6211b1
+      internalID: 2010898929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_21
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9aa07cf73a26144987e9d1bec42726
+      internalID: 402259798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_22
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d3c5844cdbdf22428f96c05da4a1e49
+      internalID: 1801953813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_23
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee75fe15e67ce74abbff2dcb6c831db
+      internalID: -1365063579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c0a65c40ff748a4ab56b05ba9b0ded3
+      internalID: 1324433344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_25
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 48.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12844badbb0ecf54c9db2072ff6e9109
+      internalID: -1775045659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_26
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 48.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52424d83691d74448a5ad91094be4ba4
+      internalID: -1098229362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_27
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45d94888bdeddff4ea2eb938927f0748
+      internalID: -1435174736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_28
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a559780f9f2aa87449b5198b235b62c3
+      internalID: -696009843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_29
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4719955ae32522447aa37ffb8670137f
+      internalID: -1908067879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fdbd432a4124844b858b9e68e1d3178
+      internalID: 1248901829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_31
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01c3a58ea6207864bb8ebe97050ae601
+      internalID: -320453147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb135e79553294438b4e7f2bf048aee
+      internalID: -490593357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_33
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aed90d221d179a499d4f55b017b1983
+      internalID: 340683981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_34
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3bc0404f61aeb94fa31b0b2c08bff1f
+      internalID: 8667179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_35
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d97ebbd9e5cb643b07df482a23d171
+      internalID: -1302470028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_36
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13caabf48bc1e3e44bbab3d672685481
+      internalID: -1513782378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_37
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44b752a9bedafac42989372dbbcf7623
+      internalID: -1952737226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_38
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04d0155cd8ea52a47b893cfb056f86fd
+      internalID: 615924374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_39
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32.833336
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07a18b1ce2a59447b2804629ed20f46
+      internalID: -971499239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_40
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16.833334
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e90fe87db9ba4048a22ad076601515a
+      internalID: 2021301576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_41
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16.833334
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abda5324d628f5740a06dc14cab840c9
+      internalID: 1687421755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_42
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16.833334
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d34b99b21a6a8141ac902d263351869
+      internalID: 1842705910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_43
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16.833334
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54c3ea9db2a70440b6643019e6a0721
+      internalID: 1788384477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.83333397
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c0e3a9ff7ceed44ad3d6099ab22010
+      internalID: 1142612881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_45
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0.83333397
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51bc2e81a0790ef4e9d1fc975fc33abc
+      internalID: 976388280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_46
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0.83333397
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c77c832b0d4164a95c6e98187a4a0e
+      internalID: -1046467436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_47
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0.83333397
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28c214bf548e3794da8ba3199cf210dd
+      internalID: 1053194927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_48
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0.83333397
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af554f454f7e7de4a9f84acb0b153919
+      internalID: 604138164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_49
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0.83333397
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9741e3785e85645b695855ed8fad9d
+      internalID: -316848199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_50
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0.83333397
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78cb82d15f7bd7c479c2a3db3e4df7d3
+      internalID: -1446568146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_51
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0.83333397
+        width: 16
+        height: 16.166666
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd526386c5a03124da18a20f6c952f88
+      internalID: -1292837569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Interactable_52
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 17
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0e01dabdc9533a4fb21d553fe30fb83
+      internalID: -1113722385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Interactable_30: 1248901829
+      Interactable_14: 903145665
+      Interactable_38: 615924374
+      Interactable_0: 1995217192
+      Interactable_21: 402259798
+      Interactable_27: -1435174736
+      Interactable_11: -877471760
+      Interactable_25: -1775045659
+      Interactable_12: -780280363
+      Interactable_23: -1365063579
+      Interactable_32: -490593357
+      Interactable_34: 8667179
+      Interactable_52: -1113722385
+      Interactable_4: 26646576
+      Interactable_6: 1156426217
+      Interactable_18: 1918478242
+      Interactable_24: 1324433344
+      Interactable_28: -696009843
+      Interactable_39: -971499239
+      Interactable_20: 2010898929
+      Interactable_48: 604138164
+      Interactable_35: -1302470028
+      Interactable_10: -274430940
+      Interactable_51: -1292837569
+      Interactable_19: 1488228846
+      Interactable_49: -316848199
+      Interactable_26: -1098229362
+      Interactable_43: 1788384477
+      Interactable_37: -1952737226
+      Interactable_50: -1446568146
+      Interactable_3: -70720913
+      Interactable_17: 81855718
+      Interactable_42: 1842705910
+      Interactable_7: 67113233
+      Interactable_9: 1109363387
+      Interactable_46: -1046467436
+      Interactable_45: 976388280
+      Interactable_33: 340683981
+      Interactable_47: 1053194927
+      Interactable_5: -662569523
+      Interactable_29: -1908067879
+      Interactable_36: -1513782378
+      Interactable_1: -1650873922
+      Interactable_2: 397616999
+      Interactable_8: -1784273458
+      Interactable_13: 1586279451
+      Interactable_16: -593543352
+      Interactable_31: -320453147
+      Interactable_40: 2021301576
+      Interactable_22: 1801953813
+      Interactable_44: 1142612881
+      Interactable_15: -2097132645
+      Interactable_41: 1687421755
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
