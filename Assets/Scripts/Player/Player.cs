@@ -5,12 +5,29 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour, IDamageable
 {
+    public static Player Instance { get; private set; }
+
     private PlayerParameters parameters;
     private PlayerGraphicsController graphics;
     private PlayerHUDController hud;
 
     private int health;
     private int sanity;
+
+    public delegate void OnLowSanityDelegate();
+    public event OnLowSanityDelegate OnLowSanity;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
     private void Start()
     {
@@ -36,6 +53,10 @@ public class Player : MonoBehaviour, IDamageable
         {
             sanity = 0;
         }
+        else if (sanity <= 25)
+        {
+            OnLowSanity?.Invoke();
+        }
 
         hud.UpdateSanitySlider(sanity);
     }
@@ -55,5 +76,10 @@ public class Player : MonoBehaviour, IDamageable
         hud.HideHUD();
 
         GameController.Instance.Lose();
+    }
+
+    public int GetSanity()
+    {
+        return sanity;
     }
 }
