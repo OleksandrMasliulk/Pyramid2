@@ -4,17 +4,7 @@ using UnityEngine;
 
 public abstract class MummyState
 {
-    protected Mummy mummy;
-
-    public void SetMummy(Mummy _mummy)
-    {
-        mummy = _mummy;
-    }
-
-    public abstract void ChaseState();
-
-    public abstract void PatrolState();
-
-    public abstract void SenseState();
-
+    public abstract void EnterState(Mummy mummy);
+    public abstract void ExitState(Mummy mummy);
+    public abstract void StateTick(Mummy mummy);
 }
