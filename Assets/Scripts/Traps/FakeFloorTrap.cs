@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FakeFloorTrap : TrapMaster
 {
-    public override void Trigger(Player target)
+    public override void Trigger(PlayerController target)
     {
         Debug.Log("FAKE FLOOR TRAP ACTIVATED");
         ReduceSanity(target);
@@ -12,7 +12,7 @@ public class FakeFloorTrap : TrapMaster
         base.Trigger(target);
     }
 
-    protected override void Activate(Player target)
+    protected override void Activate(PlayerController target)
     {
         base.Activate(target);
 
@@ -22,7 +22,7 @@ public class FakeFloorTrap : TrapMaster
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Player player = collision.GetComponent<Player>();
+        PlayerController player = collision.GetComponent<PlayerController>();
 
         if (player != null)
         {
@@ -32,7 +32,7 @@ public class FakeFloorTrap : TrapMaster
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Player player = collision.GetComponent<Player>();
+        PlayerController player = collision.GetComponent<PlayerController>();
 
         if (player != null)
         {

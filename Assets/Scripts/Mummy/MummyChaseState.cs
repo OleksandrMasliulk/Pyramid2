@@ -4,21 +4,14 @@ using UnityEngine;
 
 public class MummyChaseState : MummyState
 {
-    private Player player;
+    private Transform player;
 
-    private List<PathfindingNode> path;
-    private int currentPathNode;
-    private float reachNodeDistance = .5f;
-
-    private float recalculatePathTickTimer = 1f;
-    private float timeToRecalculatePath;
     public override void EnterState(Mummy mummy)
     {
         Debug.LogWarning("Mummy entered Chase State");
-        player = Player.Instance;
-
-        CalculatePathToTarget(mummy);
-        timeToRecalculatePath = recalculatePathTickTimer;
+        player = PlayerController.Instance.transform;
+        mummy.GetMovementController().SetSpeed(mummy.GetParameters().chaseMoveSpeed);
+        mummy.GetMovementController().SetTarget(player);
     }
 
     public override void ExitState(Mummy mummy)
@@ -28,54 +21,17 @@ public class MummyChaseState : MummyState
 
     public override void StateTick(Mummy mummy)
     {
-        if (timeToRecalculatePath <= 0f)
-        {
-            CalculatePathToTarget(mummy);
-            timeToRecalculatePath = recalculatePathTickTimer;
-        }
-        else
-        {
-            timeToRecalculatePath -= Time.deltaTime;
-        }
-
-        if (currentPathNode != -1)
-        {
-            Vector3 nextPathNode = path[currentPathNode].GetWorldPos();
-            mummy.movement.MoveTo(nextPathNode, mummy.parameters.chaseMoveSpeed);
-
-            if (Vector3.Distance(mummy.transform.position, nextPathNode) < reachNodeDistance)
-            {
-                currentPathNode++;
-                if (currentPathNode >= path.Count)
-                {
-                    currentPathNode = -1;
-                }
-            }
-        }
-        else
-        {
-            CalculatePathToTarget(mummy);
-        }
-
         float distance = Vector3.Distance(mummy.transform.position, player.transform.position);
 
-        if (distance <= mummy.parameters.attackDistance)
+        if (distance <= mummy.GetParameters().attackDistance)
         {
             mummy.SetState(mummy.attackState);
-            ExitState(mummy);
             return;
         }
-        else if (distance > mummy.parameters.losRadius)
+        else if (distance > mummy.GetParameters().losRadius)
         {
             mummy.SetState(mummy.patrolState);
-            ExitState(mummy);
             return;
         }
-    }
-
-    private void CalculatePathToTarget(Mummy mummy)
-    {
-        path = Pathfinding.Instance.FindPath(mummy.transform.position.x, mummy.transform.position.y, player.transform.position.x, player.transform.position.y);
-        currentPathNode = 0;
     }
 }

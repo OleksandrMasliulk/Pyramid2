@@ -7,7 +7,7 @@ public class MummyAttackState : MummyState
     public override void EnterState(Mummy mummy)
     {
         Debug.LogWarning("Mummy entered Attack state");
-        Player.Instance.TakeDamage(1);
+        PlayerController.Instance.TakeDamage(1);
         mummy.SetState(mummy.patrolState);
     }
 

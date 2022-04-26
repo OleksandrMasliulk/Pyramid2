@@ -6,7 +6,7 @@ public class ArrowTrap : TrapMaster
 {
     public ParticleSystem arrows;
 
-    protected override void Activate(Player target)
+    protected override void Activate(PlayerController target)
     {
         Debug.Log("ARROW TRAP ACTIVATED");
 
@@ -25,7 +25,7 @@ public class ArrowTrap : TrapMaster
     {
         Debug.Log("Arrow hit");
 
-        Player player = other.GetComponent<Player>();
+        PlayerController player = other.GetComponent<PlayerController>();
 
         if (player != null)
         {

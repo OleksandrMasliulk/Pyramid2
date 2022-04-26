@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Mummy : MonoBehaviour
 {
-    public MummyParameters parameters;
-    public MummyMovement movement;
+    private MummyParameters parameters;
+    private MummyPathfindingMovement movement;
 
     private MummyState state;
 
@@ -17,9 +17,9 @@ public class Mummy : MonoBehaviour
     private void Awake()
     {
         parameters = GetComponent<MummyParameters>();
-        movement = GetComponent<MummyMovement>();
+        movement = GetComponent<MummyPathfindingMovement>();
 
-        Player.Instance.OnLowSanity += SensePlayer;
+        PlayerController.Instance.OnLowSanity += SensePlayer;
     }
 
     private void Start()
@@ -29,6 +29,10 @@ public class Mummy : MonoBehaviour
 
     public void SetState(MummyState _state)
     {
+        if (state != null)
+        {
+            state.ExitState(this);
+        }
         state = _state;
         state.EnterState(this);
     }
@@ -45,6 +49,16 @@ public class Mummy : MonoBehaviour
 
     private void OnDisable()
     {
-        Player.Instance.OnLowSanity -= SensePlayer;
+        PlayerController.Instance.OnLowSanity -= SensePlayer;
+    }
+
+    public MummyPathfindingMovement GetMovementController()
+    {
+        return movement;
+    }
+
+    public MummyParameters GetParameters()
+    {
+        return parameters;
     }
 }

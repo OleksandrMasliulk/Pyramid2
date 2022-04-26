@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1746095774106846601}
   - component: {fileID: 5339026552842488741}
   - component: {fileID: 8137129383538938291}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,9 +116,13 @@ GameObject:
   - component: {fileID: 9143180252275882782}
   - component: {fileID: 7436931511462268197}
   - component: {fileID: 9143180252275882780}
+  - component: {fileID: 4792095765757081601}
+  - component: {fileID: 194065729192759853}
+  - component: {fileID: 5915695406194743718}
   - component: {fileID: 4375982250974133244}
   - component: {fileID: 2329132316155752111}
-  m_Layer: 0
+  - component: {fileID: 4736691669275228271}
+  m_Layer: 9
   m_Name: Mummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -178,6 +182,90 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &4792095765757081601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143180252275882768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  drawGizmos: 1
+  detailedGizmos: 0
+  startEndModifier:
+    addPoints: 0
+    exactStartPoint: 3
+    exactEndPoint: 3
+    useRaycasting: 0
+    mask:
+      serializedVersion: 2
+      m_Bits: 4294967295
+    useGraphRaycasting: 0
+  traversableTags: -1
+  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  graphMask:
+    value: -1
+--- !u!114 &194065729192759853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143180252275882768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6eb1402c17e84a9282a7f0f62eb584f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 5
+  radius: 0.35
+  height: 2
+  canMove: 1
+  maxSpeed: 1
+  gravity: {x: NaN, y: NaN, z: NaN}
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  centerOffsetCompatibility: NaN
+  repathRateCompatibility: NaN
+  canSearchCompability: 0
+  orientation: 1
+  enableRotation: 0
+  autoRepath:
+    mode: 2
+    interval: 0.5
+    sensitivity: 10
+    maximumInterval: 2
+    visualizeSensitivity: 0
+  targetCompatibility: {fileID: 0}
+  maxAcceleration: -2.5
+  rotationSpeed: 360
+  slowdownDistance: 0
+  pickNextWaypointDist: 0.35
+  endReachedDistance: 0.2
+  alwaysDrawGizmos: 0
+  slowWhenNotFacingTarget: 1
+  whenCloseToDestination: 0
+  constrainInsideGraph: 0
+--- !u!114 &5915695406194743718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143180252275882768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9679e68a0f1144e79c664d9a11ca121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 1
+  target: {fileID: 0}
 --- !u!114 &4375982250974133244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,8 +278,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a536213cd00da4ab5fc25dceb92dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parameters: {fileID: 0}
-  movement: {fileID: 0}
 --- !u!114 &2329132316155752111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,8 +290,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbfb64f73c4991940921f43d995e2702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roamRadius: 3
+  roamRadius: 2
   roamMoveSpeed: 2
-  chaseMoveSpeed: 0
-  losRadius: 0
-  attackDistance: 0
+  chaseMoveSpeed: 2.5
+  senseMoveSpeed: 3.5
+  losRadius: 3
+  attackDistance: 0.4
+--- !u!114 &4736691669275228271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143180252275882768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6ba04af0927c44d98972cfdb7880d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aiPath: {fileID: 194065729192759853}
+  destSetter: {fileID: 5915695406194743718}
+  seeker: {fileID: 4792095765757081601}

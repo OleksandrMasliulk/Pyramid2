@@ -41,7 +41,7 @@ public class TrapMaster : MonoBehaviour
         }
     }
 
-    public virtual void Trigger(Player target)
+    public virtual void Trigger(PlayerController target)
     {
         if (isActive && isArmed)
         {
@@ -49,7 +49,7 @@ public class TrapMaster : MonoBehaviour
         }
     }
 
-    IEnumerator ActivateCoroutine(Player target)
+    IEnumerator ActivateCoroutine(PlayerController target)
     {
         yield return new WaitForSeconds(triggerDelay);
 
@@ -61,13 +61,13 @@ public class TrapMaster : MonoBehaviour
         StopAllCoroutines();
     }
 
-    protected virtual void Activate(Player target)
+    protected virtual void Activate(PlayerController target)
     {
         isArmed = false;
         timeToRearm = rearmTime;
     }
 
-    protected virtual void ReduceSanity(Player target)
+    protected virtual void ReduceSanity(PlayerController target)
     {
         target.UpdateSanity(-sanityLoss);
     }

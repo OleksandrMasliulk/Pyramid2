@@ -26,6 +26,6 @@ public class Medicine : Item
 
     private void Heal(PlayerInventoryController user)
     {
-        user.GetComponent<Player>().UpdateSanity(30);
+        user.GetComponent<PlayerController>().UpdateSanity(30);
     }
 }

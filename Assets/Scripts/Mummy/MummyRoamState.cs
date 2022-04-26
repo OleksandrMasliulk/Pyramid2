@@ -1,77 +1,76 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Pathfinding;
 public class MummyRoamState : MummyState
 {
-    private Player player;
+    private Transform destinationPoint;
 
-    private int currentPathNode;
-    private List<PathfindingNode> path;
-    private float reachNodeDistance = 1f;
-
+    private Transform target;
     public override void EnterState(Mummy mummy)
     {
         Debug.LogWarning("Mummy entered Roam state");
-        currentPathNode = -1;
 
-        player = Player.Instance;
+        mummy.GetMovementController().SetSpeed(mummy.GetParameters().roamMoveSpeed);
+
+        if (PlayerController.Instance.GetIsAlive())
+        {
+            target = PlayerController.Instance.transform;
+        }
+        else
+        {
+            target = mummy.transform;
+        }
+        GetRoamPosition(mummy);
     }
 
     public override void ExitState(Mummy mummy)
     {
-        player = null;
+        target = null;
     }
 
     public override void StateTick(Mummy mummy)
     {
-        if (currentPathNode != -1)
+        if (mummy.GetMovementController().isAtDestination())
         {
-            Vector3 nextPathNode = path[currentPathNode].GetWorldPos();
-            mummy.movement.MoveTo(nextPathNode, mummy.parameters.roamMoveSpeed);
-
-            if (Vector3.Distance(mummy.transform.position, nextPathNode) < reachNodeDistance)
-            {
-                currentPathNode++;
-                if (currentPathNode >= path.Count)
-                {
-                    currentPathNode = -1; 
-                }
-            }
-        }
-        else
-        {
-            path = GetRoamPosition(mummy.transform.position, mummy.parameters.roamRadius, mummy);
-            currentPathNode = 0;
+            DestroyDestinationPoint(mummy, destinationPoint);
+            GetRoamPosition(mummy);
         }
 
-        float distance = Vector3.Distance(mummy.transform.position, player.transform.position);
+        float distance = Vector3.Distance(mummy.transform.position, target.transform.position);
 
-        if (distance <= mummy.parameters.losRadius)
+        if (distance <= mummy.GetParameters().losRadius)
         {
+            Debug.Log("Player seeked");
             mummy.SetState(mummy.chaseState);
-            ExitState(mummy);
             return;
         }
     }
 
-    private List<PathfindingNode> GetRoamPosition(Vector3 target, float range, Mummy mummy)
+    public void GetRoamPosition(Mummy mummy) 
     {
-        Vector3 randPos = GetRandomPosition(target, range);
-        List<PathfindingNode> path = Pathfinding.Instance.FindPath(mummy.transform.position.x, mummy.transform.position.y, randPos.x, randPos.y);
+        GameObject destPoint = new GameObject("Mummy Dest Point");
+        Vector3 pos = GetRandomPosition(target.transform.position, mummy.GetParameters().roamRadius);
 
-        while (path == null)
+        while (!Map.Instance.IsPointWalkable(pos))
         {
-            randPos = GetRandomPosition(target, range);
-            path = Pathfinding.Instance.FindPath(mummy.transform.position.x, mummy.transform.position.y, randPos.x, randPos.y);
+            pos = GetRandomPosition(target.transform.position, mummy.GetParameters().roamRadius);
         }
 
-        return path;
+        destPoint.transform.position = pos;
+        destinationPoint = destPoint.transform;
+        mummy.GetMovementController().SetTarget(destPoint.transform); 
     }
 
     private Vector3 GetRandomPosition(Vector3 target, float range)
     {
         Vector3 randomDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f).normalized;
         return target + randomDirection * range;
+    }
+
+    private void DestroyDestinationPoint(Mummy mummy, Transform destPoint)
+    {
+        MonoBehaviour.Destroy(destPoint.gameObject);
+        destinationPoint = null;
     }
 }
