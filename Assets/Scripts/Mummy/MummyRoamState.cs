@@ -13,7 +13,7 @@ public class MummyRoamState : MummyState
 
         mummy.GetMovementController().SetSpeed(mummy.GetParameters().roamMoveSpeed);
 
-        if (PlayerController.Instance.GetIsAlive())
+        if (PlayerController.Instance.GetPlayerParameters().isAlive)
         {
             target = PlayerController.Instance.transform;
         }

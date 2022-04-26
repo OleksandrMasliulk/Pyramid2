@@ -20,7 +20,7 @@ public class Flashlight : Item
         isActive = false;
     }
 
-    public override void Use(PlayerInventoryController user)
+    public override void Use(PlayerController user)
     {
         Debug.Log("Flashlight USED");
         base.Use(user);

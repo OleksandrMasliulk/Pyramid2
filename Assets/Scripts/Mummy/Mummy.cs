@@ -19,7 +19,7 @@ public class Mummy : MonoBehaviour
         parameters = GetComponent<MummyParameters>();
         movement = GetComponent<MummyPathfindingMovement>();
 
-        PlayerController.Instance.OnLowSanity += SensePlayer;
+        PlayerController.Instance.GetPlayerSanityController().OnLowSanity += SensePlayer;
     }
 
     private void Start()
@@ -49,7 +49,7 @@ public class Mummy : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerController.Instance.OnLowSanity -= SensePlayer;
+        PlayerController.Instance.GetPlayerSanityController().OnLowSanity -= SensePlayer;
     }
 
     public MummyPathfindingMovement GetMovementController()

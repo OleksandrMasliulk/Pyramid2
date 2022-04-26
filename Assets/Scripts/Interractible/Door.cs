@@ -16,7 +16,7 @@ public class Door : Interractible
         door.enabled = true;
     }
 
-    protected override void Action(PlayerInterractionController user)
+    protected override void Action(PlayerController user)
     {
         if (isClosed)
         {

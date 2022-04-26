@@ -29,7 +29,7 @@ public class MummySenseState : MummyState
             return;
         }
 
-        if (player.GetSanity() > 25)
+        if (player.GetPlayerSanityController().GetSanity() > 25)
         {
             mummy.SetState(mummy.patrolState);
             return;

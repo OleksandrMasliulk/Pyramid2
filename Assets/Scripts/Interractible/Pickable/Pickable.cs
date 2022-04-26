@@ -39,7 +39,7 @@ public class Pickable : Interractible
         }
     }
 
-    protected override void Action(PlayerInterractionController user)
+    protected override void Action(PlayerController user)
     {
         base.Action(user);
 
@@ -50,9 +50,9 @@ public class Pickable : Interractible
         }
     }
 
-    private bool PickUp(PlayerInterractionController user)
+    private bool PickUp(PlayerController user)
     {
-        PlayerInventoryController inventory = user.GetComponent<PlayerInventoryController>();
+        PlayerInventoryController inventory = user.GetPlayerInventoryController();
 
         if (inventory == null)
         {

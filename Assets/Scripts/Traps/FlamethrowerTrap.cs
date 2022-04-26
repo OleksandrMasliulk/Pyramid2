@@ -34,7 +34,7 @@ public class FlamethrowerTrap : TrapMaster
                 target = col.GetComponent<PlayerController>();
                 if (target != null)
                 {
-                    target.TakeDamage(1);
+                    target.GetComponent<IDamageable>().TakeDamage(1);
                     return;
                 }
             }
@@ -76,7 +76,7 @@ public class FlamethrowerTrap : TrapMaster
             player = col.GetComponent<PlayerController>();
             if (player != null)
             {
-                player.UpdateSanity(-sanityLoss);
+                player.GetPlayerSanityController().UpdateSanity(-sanityLoss);
                 return;
             }
         }

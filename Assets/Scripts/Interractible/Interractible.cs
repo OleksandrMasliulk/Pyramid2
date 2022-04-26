@@ -18,7 +18,7 @@ public class Interractible : MonoBehaviour
         isActive = true;
     }
 
-    public bool Interract(PlayerInterractionController user)
+    public bool Interract(PlayerController user)
     {
         if (isActive)
         {
@@ -28,7 +28,7 @@ public class Interractible : MonoBehaviour
         return isActive;
     }
 
-    protected virtual void Action(PlayerInterractionController user)
+    protected virtual void Action(PlayerController user)
     {
 
     }
@@ -37,11 +37,11 @@ public class Interractible : MonoBehaviour
     {
         if (isActive)
         {
-            PlayerInterractionController pic = collision.GetComponent<PlayerInterractionController>();
+            PlayerController pc = collision.GetComponent<PlayerController>();
 
-            if (pic != null)
+            if (pc != null)
             {
-                pic.AddToList(this);
+                pc.GetPlayerInterractionController().AddToList(this);
             }
         }
     }

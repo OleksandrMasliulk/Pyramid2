@@ -2,26 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerController))]
 public class PlayerInventoryController : MonoBehaviour
 {
-    private PlayerHUDController hud;
+    private PlayerController playerController;
 
     private InventorySlot[] inventory;
     private const int inventorySlots = 4;
 
     private int slotToUse;
 
+    private void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
+    }
+
     private void Start()
     {
-        hud = GetComponent<PlayerHUDController>();
-
         inventory = new InventorySlot[inventorySlots];
         slotToUse = 0;
         SwitchSlot(slotToUse);
 
         for (int i = 0; i < inventorySlots; i++)
         {
-            hud.UpdateInventorySlot(i, inventory[i]);
+            playerController.GetPlayerHUDContorller().UpdateInventorySlot(i, inventory[i]);
         }
     }
 
@@ -74,7 +78,7 @@ public class PlayerInventoryController : MonoBehaviour
                     inventory[i] = new InventorySlot(item, inventory[i].count + count);
                     Debug.Log("Stacked");
 
-                    hud.UpdateInventorySlot(i, inventory[i]);
+                    playerController.GetPlayerHUDContorller().UpdateInventorySlot(i, inventory[i]);
 
                     return true;
                 }
@@ -96,7 +100,7 @@ public class PlayerInventoryController : MonoBehaviour
                     inventory[i] = new InventorySlot(item, count);
                     Debug.Log("Item added");
 
-                    hud.UpdateInventorySlot(i, inventory[i]);
+                    playerController.GetPlayerHUDContorller().UpdateInventorySlot(i, inventory[i]);
 
                     return true;
                 }
@@ -128,7 +132,7 @@ public class PlayerInventoryController : MonoBehaviour
             return;
         }
 
-        inventory[slotToUse].item.Use(this);
+        inventory[slotToUse].item.Use(playerController);
 
         if (inventory[slotToUse].item.isConsumable)
         {
@@ -143,7 +147,7 @@ public class PlayerInventoryController : MonoBehaviour
                 inventory[slotToUse] = new InventorySlot(inventory[slotToUse].item, inventory[slotToUse].count - 1);
             }
 
-            hud.UpdateInventorySlot(slotToUse, inventory[slotToUse]);
+            playerController.GetPlayerHUDContorller().UpdateInventorySlot(slotToUse, inventory[slotToUse]);
         }
     }
 
@@ -152,9 +156,9 @@ public class PlayerInventoryController : MonoBehaviour
         slotToUse = num;
         Debug.Log("Slot to use: " + num);
 
-        if (hud != null)
+        if (playerController.GetPlayerHUDContorller() != null)
         {
-            hud.HighlightInventorySlot(num);
+            playerController.GetPlayerHUDContorller().HighlightInventorySlot(num);
         }
     }
 
@@ -183,7 +187,7 @@ public class PlayerInventoryController : MonoBehaviour
                 inventory[slotToUse] = new InventorySlot(inventory[slotToUse].item, inventory[slotToUse].count - 1);
             }
 
-            hud.UpdateInventorySlot(slotToUse, inventory[slotToUse]);
+            playerController.GetPlayerHUDContorller().UpdateInventorySlot(slotToUse, inventory[slotToUse]);
         }
     }
 

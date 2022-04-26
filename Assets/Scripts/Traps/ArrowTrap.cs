@@ -25,11 +25,11 @@ public class ArrowTrap : TrapMaster
     {
         Debug.Log("Arrow hit");
 
-        PlayerController player = other.GetComponent<PlayerController>();
+        IDamageable target = other.GetComponent<IDamageable>();
 
-        if (player != null)
+        if (target != null)
         {
-            player.TakeDamage(1);
+            target.TakeDamage(1);
         }
     }
 }

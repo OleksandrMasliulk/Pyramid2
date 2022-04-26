@@ -16,7 +16,7 @@ public class Medicine : Item
         pickableMirrorPath = "Pickable Items/Pickable Medicine";
     }
 
-    public override void Use(PlayerInventoryController user)
+    public override void Use(PlayerController user)
     {
         Debug.Log("MEDKIT USED");
         base.Use(user);
@@ -24,8 +24,8 @@ public class Medicine : Item
         Heal(user);
     }
 
-    private void Heal(PlayerInventoryController user)
+    private void Heal(PlayerController user)
     {
-        user.GetComponent<PlayerController>().UpdateSanity(30);
+        user.GetPlayerSanityController().UpdateSanity(30);
     }
 }

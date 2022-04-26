@@ -69,6 +69,6 @@ public class TrapMaster : MonoBehaviour
 
     protected virtual void ReduceSanity(PlayerController target)
     {
-        target.UpdateSanity(-sanityLoss);
+        target.GetPlayerSanityController().UpdateSanity(-sanityLoss);
     }
 }

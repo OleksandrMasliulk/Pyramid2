@@ -21,7 +21,7 @@ public class Item
         inventoryImagePath = null;
     }
 
-    public virtual void Use(PlayerInventoryController user)
+    public virtual void Use(PlayerController user)
     {
     }
 }

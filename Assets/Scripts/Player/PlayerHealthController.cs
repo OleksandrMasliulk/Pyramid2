@@ -2,17 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealthController : MonoBehaviour
+[RequireComponent(typeof(PlayerController))]
+public class PlayerHealthController : MonoBehaviour, IDamageable
 {
-    // Start is called before the first frame update
-    void Start()
+    private PlayerController playerController;
+
+    private void Awake()
     {
-        
+        playerController = GetComponent<PlayerController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int damage)
     {
-        
+        Die();
+    }
+
+    private void Die()
+    {
+        playerController.GetPlayerParameters().SetIsAlive(false);
+
+        GameController.Instance.Lose();
     }
 }

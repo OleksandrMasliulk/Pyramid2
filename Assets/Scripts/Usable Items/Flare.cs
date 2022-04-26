@@ -16,7 +16,7 @@ public class Flare : Item
         pickableMirrorPath = "Pickable Items/Pickable Flare";
     }
 
-    public override void Use(PlayerInventoryController user)
+    public override void Use(PlayerController user)
     {
         Debug.Log("FLARE USED");
         base.Use(user);
@@ -24,7 +24,7 @@ public class Flare : Item
         Throw(user);
     }
 
-    private void Throw(PlayerInventoryController user)
+    private void Throw(PlayerController user)
     {
         var prefab = Resources.Load("Usable Items/Flare");
         if (prefab == null)

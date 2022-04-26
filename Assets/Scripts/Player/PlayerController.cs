@@ -3,19 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour, IDamageable
+public class PlayerController : MonoBehaviour
 {
     public static PlayerController Instance { get; private set; }
 
-    private PlayerParameters parameters;
-    private PlayerGraphicsController graphics;
-    private PlayerHUDController hud;
-
-    private int health;
-    private int sanity;
-
-    public delegate void OnLowSanityDelegate();
-    public event OnLowSanityDelegate OnLowSanity;
+    [SerializeField] private PlayerParameters parameters;
+    [SerializeField] private PlayerGraphicsController graphicsController;
+    [SerializeField] private PlayerHUDController hudController;
+    [SerializeField] private PlayerMovementController movementController;
+    [SerializeField] private PlayerInterractionController interractionController;
+    [SerializeField] private PlayerInventoryController inventoryController;
+    [SerializeField] private PlayerSanityController sanityController;
+    [SerializeField] private PlayerHealthController healthController;
 
     private void Awake()
     {
@@ -29,62 +28,43 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
-    private void Start()
+    public PlayerParameters GetPlayerParameters()
     {
-        parameters = GetComponent<PlayerParameters>();
-        graphics = GetComponent<PlayerGraphicsController>();
-        hud = GetComponent<PlayerHUDController>();
-
-        health = parameters.maxHealth;
-        sanity = parameters.maxSanity;
-
-        hud.UpdateSanitySlider(sanity);
+        return parameters;
     }
 
-    public void UpdateSanity(int value)
+    public PlayerGraphicsController GetPlayerGraphicsController()
     {
-        sanity += value;
-        if (sanity > parameters.maxSanity)
-        {
-            sanity = parameters.maxSanity;
-        }
-        
-        if (sanity < 0)
-        {
-            sanity = 0;
-        }
-        else if (sanity <= 25)
-        {
-            OnLowSanity?.Invoke();
-        }
-
-        hud.UpdateSanitySlider(sanity);
+        return graphicsController;
     }
 
-    public void TakeDamage(int damage)
+    public PlayerHUDController GetPlayerHUDContorller()
     {
-        Die();
+        return hudController;
     }
 
-    private void Die()
+    public PlayerMovementController GetPlayerMovementController()
     {
-        Debug.LogWarning("!!! PLAYER DIED !!!");
-
-        parameters.SetIsAlive(false);
-        graphics.SetDie();
-
-        hud.HideHUD();
-
-        GameController.Instance.Lose();
+        return movementController;
     }
 
-    public int GetSanity()
+    public PlayerInterractionController GetPlayerInterractionController()
     {
-        return sanity;
+        return interractionController;
     }
 
-    public bool GetIsAlive()
+    public PlayerInventoryController GetPlayerInventoryController()
     {
-        return parameters.isAlive;
+        return inventoryController;
+    }
+
+    public PlayerSanityController GetPlayerSanityController()
+    {
+        return sanityController;
+    }
+
+    public PlayerHealthController GetPlayerHealthController()
+    {
+        return healthController;
     }
 }

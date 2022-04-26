@@ -2,17 +2,55 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(PlayerController))]
 public class PlayerSanityController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private PlayerController playerController;
+
+    public delegate void OnLowSanityDelegate();
+    public event OnLowSanityDelegate OnLowSanity;
+
+    private int currentSanity;
+
+    private void Awake()
     {
-        
+        playerController = GetComponent<PlayerController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        Init();
+    }
+
+    private void Init()
+    {
+        currentSanity = playerController.GetPlayerParameters().maxSanity;
+        UpdateSanity(currentSanity);
+    }
+
+    public void UpdateSanity(int value)
+    {
+        currentSanity += value;
+
+        if (currentSanity < 0)
+        {
+            currentSanity = 0;
+        }
+        if (currentSanity > 100)
+        {
+            currentSanity = 100;
+        }
+
+        if (currentSanity <= 25)
+        {
+            OnLowSanity?.Invoke();
+        }
+
+        playerController.GetPlayerHUDContorller().UpdateSanitySlider(currentSanity);
+    }
+
+    public int GetSanity()
+    {
+        return currentSanity;
     }
 }

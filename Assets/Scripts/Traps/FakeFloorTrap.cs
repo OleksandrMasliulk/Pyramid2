@@ -16,7 +16,7 @@ public class FakeFloorTrap : TrapMaster
     {
         base.Activate(target);
 
-        target.TakeDamage(1);
+        target.GetComponent<IDamageable>().TakeDamage(1);
         isActive = false;
     }
 
