@@ -7,7 +7,7 @@ public class PlayerSanityController : MonoBehaviour
 {
     private PlayerController playerController;
 
-    public delegate void OnLowSanityDelegate();
+    public delegate void OnLowSanityDelegate(PlayerController player);
     public event OnLowSanityDelegate OnLowSanity;
 
     private int currentSanity;
@@ -43,7 +43,7 @@ public class PlayerSanityController : MonoBehaviour
 
         if (currentSanity <= 25)
         {
-            OnLowSanity?.Invoke();
+            OnLowSanity?.Invoke(this.playerController);
         }
 
         playerController.GetPlayerHUDContorller().UpdateSanitySlider(currentSanity);

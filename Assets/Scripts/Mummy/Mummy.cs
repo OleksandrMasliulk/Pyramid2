@@ -13,6 +13,7 @@ public class Mummy : MonoBehaviour
     public MummyChaseState chaseState = new MummyChaseState();
     public MummyRoamState patrolState = new MummyRoamState();
     public MummySenseState senseState = new MummySenseState();
+    public MummyBreakLOSState breakLOSState = new MummyBreakLOSState();
 
     private void Awake()
     {
@@ -24,17 +25,17 @@ public class Mummy : MonoBehaviour
 
     private void Start()
     {
-        SetState(patrolState);
+        SetState(patrolState, null);
     }
 
-    public void SetState(MummyState _state)
+    public void SetState(MummyState _state, MummyExitStateArgs args)
     {
         if (state != null)
         {
             state.ExitState(this);
         }
         state = _state;
-        state.EnterState(this);
+        state.EnterState(this, args);
     }
 
     private void Update()
@@ -42,9 +43,9 @@ public class Mummy : MonoBehaviour
         state.StateTick(this);
     }
 
-    private void SensePlayer()
+    private void SensePlayer(PlayerController targetPlayer)
     {
-        SetState(senseState);
+        SetState(senseState, new MummyExitStateArgs(targetPlayer, targetPlayer.transform.position));
     }
 
     private void OnDisable()
@@ -60,5 +61,17 @@ public class Mummy : MonoBehaviour
     public MummyParameters GetParameters()
     {
         return parameters;
+    }
+}
+
+public class MummyExitStateArgs
+{
+    public PlayerController playerSeeked;
+    public Vector3 lastSeenPosition;
+
+    public MummyExitStateArgs(PlayerController playerSeeked, Vector3 lastSeenPosition)
+    {
+        this.playerSeeked = playerSeeked;
+        this.lastSeenPosition = lastSeenPosition;
     }
 }

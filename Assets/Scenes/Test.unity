@@ -20161,21 +20161,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2329132316155752111, guid: d0e3a87b5f4c92642b85a3669397b2a2, type: 3}
+      propertyPath: losRadius
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 9143180252275882768, guid: d0e3a87b5f4c92642b85a3669397b2a2, type: 3}
       propertyPath: m_Name
       value: Mummy
-      objectReference: {fileID: 0}
-    - target: {fileID: 9143180252275882768, guid: d0e3a87b5f4c92642b85a3669397b2a2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9143180252275882780, guid: d0e3a87b5f4c92642b85a3669397b2a2, type: 3}
-      propertyPath: m_BodyType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9143180252275882780, guid: d0e3a87b5f4c92642b85a3669397b2a2, type: 3}
-      propertyPath: m_Simulated
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9143180252275882782, guid: d0e3a87b5f4c92642b85a3669397b2a2, type: 3}
       propertyPath: m_RootOrder

@@ -28,6 +28,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void SetPlayerLayer(LayerMask layer)
+    {
+        this.gameObject.layer = layer;
+    }
+
     public PlayerParameters GetPlayerParameters()
     {
         return parameters;

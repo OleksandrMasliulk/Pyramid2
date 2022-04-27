@@ -5,10 +5,10 @@ using UnityEngine;
 public class MummySenseState : MummyState
 {
     private PlayerController player;
-    public override void EnterState(Mummy mummy)
+    public override void EnterState(Mummy mummy, MummyExitStateArgs args)
     {
         Debug.LogWarning("Mummy entered Sense State");
-        player = PlayerController.Instance;
+        player = args.playerSeeked;
 
         mummy.GetMovementController().SetSpeed(mummy.GetParameters().senseMoveSpeed);
         mummy.GetMovementController().SetTarget(player.transform);
@@ -25,13 +25,13 @@ public class MummySenseState : MummyState
 
         if (distance <= mummy.GetParameters().attackDistance)
         {
-            mummy.SetState(mummy.attackState);
+            mummy.SetState(mummy.attackState, new MummyExitStateArgs(player, player.transform.position));
             return;
         }
 
         if (player.GetPlayerSanityController().GetSanity() > 25)
         {
-            mummy.SetState(mummy.patrolState);
+            mummy.SetState(mummy.patrolState, null);
             return;
         }
     }

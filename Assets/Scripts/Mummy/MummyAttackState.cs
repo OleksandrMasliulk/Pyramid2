@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class MummyAttackState : MummyState
 {
-    public override void EnterState(Mummy mummy)
+    public override void EnterState(Mummy mummy, MummyExitStateArgs args)
     {
         Debug.LogWarning("Mummy entered Attack state");
-        PlayerController.Instance.GetComponent<IDamageable>().TakeDamage(1);
-        mummy.SetState(mummy.patrolState);
+        args.playerSeeked.GetComponent<IDamageable>().TakeDamage(1);
+        mummy.SetState(mummy.patrolState, null);
     }
 
     public override void ExitState(Mummy mummy)

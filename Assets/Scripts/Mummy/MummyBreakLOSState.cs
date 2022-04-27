@@ -1,21 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
-public class MummyRoamState : MummyState
+
+public class MummyBreakLOSState : MummyState
 {
     private Transform destinationPoint;
 
+    private Vector3 lastSeenPosition;
+
+    private float timeToRoamState;
     private float timeToNextSenseTick;
 
     public override void EnterState(Mummy mummy, MummyExitStateArgs args)
     {
-        Debug.LogWarning("Mummy entered Roam state");
+        Debug.LogWarning("Mummy entered Break LOS state");
 
         mummy.GetMovementController().SetSpeed(mummy.GetParameters().roamMoveSpeed);
         GetRoamPosition(mummy);
 
+        lastSeenPosition = args.lastSeenPosition;
+
         timeToNextSenseTick = mummy.GetParameters().senseTickTime;
+        timeToRoamState = mummy.GetParameters().breakLosStateDuration;
     }
 
     public override void ExitState(Mummy mummy)
@@ -45,32 +51,32 @@ public class MummyRoamState : MummyState
         {
             timeToNextSenseTick -= Time.deltaTime;
         }
-    }
 
-    public void GetRoamPosition(Mummy mummy) 
-    {
-        GameObject destPoint = new GameObject("Mummy Dest Point");
-
-        Vector3 target;
-        if (PlayerController.Instance != null && PlayerController.Instance.GetPlayerParameters().isAlive)
+        if (timeToRoamState <= 0f)
         {
-            target = PlayerController.Instance.transform.position;
+            mummy.SetState(mummy.patrolState, null);
+            return;
         }
         else
         {
-            target = mummy.transform.position;
+            timeToRoamState -= Time.deltaTime;
         }
+    }
 
-        Vector3 pos = GetRandomPosition(target, mummy.GetParameters().roamRadius);
+    public void GetRoamPosition(Mummy mummy)
+    {
+        GameObject destPoint = new GameObject("Mummy Dest Point");
+
+        Vector3 pos = GetRandomPosition(lastSeenPosition, mummy.GetParameters().breakLOSRoamRadius);
 
         while (!Map.Instance.IsPointWalkable(pos))
         {
-            pos = GetRandomPosition(target, mummy.GetParameters().roamRadius);
+            pos = GetRandomPosition(lastSeenPosition, mummy.GetParameters().breakLOSRoamRadius);
         }
 
         destPoint.transform.position = pos;
         destinationPoint = destPoint.transform;
-        mummy.GetMovementController().SetTarget(destPoint.transform); 
+        mummy.GetMovementController().SetTarget(destPoint.transform);
     }
 
     private Vector3 GetRandomPosition(Vector3 target, float range)

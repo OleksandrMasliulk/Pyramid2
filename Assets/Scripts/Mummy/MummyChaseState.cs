@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class MummyChaseState : MummyState
 {
-    private Transform player;
+    private PlayerController player;
 
-    public override void EnterState(Mummy mummy)
+    public override void EnterState(Mummy mummy, MummyExitStateArgs args)
     {
         Debug.LogWarning("Mummy entered Chase State");
-        player = PlayerController.Instance.transform;
+        player = args.playerSeeked;
         mummy.GetMovementController().SetSpeed(mummy.GetParameters().chaseMoveSpeed);
-        mummy.GetMovementController().SetTarget(player);
+        mummy.GetMovementController().SetTarget(player.transform);
     }
 
     public override void ExitState(Mummy mummy)
@@ -25,12 +25,12 @@ public class MummyChaseState : MummyState
 
         if (distance <= mummy.GetParameters().attackDistance)
         {
-            mummy.SetState(mummy.attackState);
+            mummy.SetState(mummy.attackState, new MummyExitStateArgs(player, player.transform.position));
             return;
         }
         else if (distance > mummy.GetParameters().losRadius)
         {
-            mummy.SetState(mummy.patrolState);
+            mummy.SetState(mummy.breakLOSState, new MummyExitStateArgs(player, player.transform.position));
             return;
         }
     }
