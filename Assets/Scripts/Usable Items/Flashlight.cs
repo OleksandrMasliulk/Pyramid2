@@ -13,6 +13,7 @@ public class Flashlight : Item
 
         isStackable = false;
         isConsumable = false;
+        useOnRelease = false;
 
         //PATHS
         pickableMirrorPath = "Pickable Items/Pickable Flashlight";
@@ -45,5 +46,17 @@ public class Flashlight : Item
     {
         isActive = false;
         Debug.Log("Flashlight turned OFF");
+    }
+
+    public override bool OnButtonPressed(PlayerController user)
+    {
+        Use(user);
+
+        return base.OnButtonPressed(user);
+    }
+
+    public override bool OnButtonReleased(PlayerController user)
+    {
+        return base.OnButtonReleased(user);
     }
 }

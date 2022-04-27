@@ -50,7 +50,29 @@ public class PlayerInventoryController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            UseItem();
+            if (inventory[slotToUse].item == null)
+            {
+                Debug.Log("Slot is empty");
+
+                return;
+            }
+            if (inventory[slotToUse].item.OnButtonPressed(playerController))
+            {
+                UseItem();
+            }
+        }
+        if (Input.GetKeyUp(KeyCode.F))
+        {
+            if (inventory[slotToUse].item == null)
+            {
+                Debug.Log("Slot is empty");
+
+                return;
+            }
+            if (inventory[slotToUse].item.OnButtonReleased(playerController))
+            {
+                UseItem();
+            }
         }
         
         if (Input.GetKeyDown(KeyCode.G))
@@ -125,14 +147,14 @@ public class PlayerInventoryController : MonoBehaviour
 
     private void UseItem()
     {
-        if (inventory[slotToUse].item == null)
-        {
-            Debug.Log("Slot is empty");
+        //if (inventory[slotToUse].item == null)
+        //{
+        //    Debug.Log("Slot is empty");
 
-            return;
-        }
+        //    return;
+        //}
 
-        inventory[slotToUse].item.Use(playerController);
+        //inventory[slotToUse].item.Use(playerController);
 
         if (inventory[slotToUse].item.isConsumable)
         {
@@ -150,6 +172,8 @@ public class PlayerInventoryController : MonoBehaviour
             playerController.GetPlayerHUDContorller().UpdateInventorySlot(slotToUse, inventory[slotToUse]);
         }
     }
+
+
 
     private void SwitchSlot(int num)
     {

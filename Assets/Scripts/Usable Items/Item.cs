@@ -9,6 +9,7 @@ public class Item
 
     public bool isStackable;
     public bool isConsumable;
+    public bool useOnRelease;
 
     public Item()
     {
@@ -19,9 +20,25 @@ public class Item
     {
         pickableMirrorPath = null;
         inventoryImagePath = null;
+        useOnRelease = false;
     }
 
     public virtual void Use(PlayerController user)
     {
+    }
+
+    public virtual bool OnButtonPressed(PlayerController user)
+    {
+        return !useOnRelease;
+    }
+
+    public virtual bool OnButtonReleased(PlayerController user)
+    {
+        return useOnRelease;
+    }
+
+    public bool GetUseOnRelease()
+    {
+        return useOnRelease;
     }
 }

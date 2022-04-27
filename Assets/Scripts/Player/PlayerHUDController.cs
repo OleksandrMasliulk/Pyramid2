@@ -13,6 +13,8 @@ public class PlayerHUDController : MonoBehaviour
     public Slider sanitySlider;
     public Image sanitySliderFill;
 
+    public GameObject paintDirection;
+
     public Color sanity100;
     public Color sanity75;
     public Color sanity50;
@@ -95,5 +97,13 @@ public class PlayerHUDController : MonoBehaviour
         hud.SetActive(false);
     }
 
+    public void ShowPaintDirection()
+    {
+        paintDirection.SetActive(true);
+    }
 
+    public void HidePaintDirection()
+    {
+        paintDirection.SetActive(false);
+    }
 }

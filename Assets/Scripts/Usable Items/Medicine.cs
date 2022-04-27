@@ -11,6 +11,7 @@ public class Medicine : Item
 
         isStackable = true;
         isConsumable = true;
+        useOnRelease = false;
 
         //PATHS
         pickableMirrorPath = "Pickable Items/Pickable Medicine";
@@ -27,5 +28,17 @@ public class Medicine : Item
     private void Heal(PlayerController user)
     {
         user.GetPlayerSanityController().UpdateSanity(30);
+    }
+
+    public override bool OnButtonPressed(PlayerController user)
+    {
+        Use(user);
+
+        return base.OnButtonPressed(user);
+    }
+
+    public override bool OnButtonReleased(PlayerController user)
+    {
+        return base.OnButtonReleased(user);
     }
 }

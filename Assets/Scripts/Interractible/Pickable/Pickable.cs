@@ -8,7 +8,8 @@ public class Pickable : Interractible
     {
         Flare,
         Medkit,
-        Flashlight
+        Flashlight,
+        Paint
     }
 
     public ItemType type;
@@ -30,6 +31,9 @@ public class Pickable : Interractible
                 break;
             case ItemType.Medkit:
                 item = new Medicine();
+                break;
+            case ItemType.Paint:
+                item = new Paint();
                 break;
         }
 
