@@ -6,7 +6,7 @@ public class Treasure : Interractible
 {
     public int value;
 
-    protected override void Action(PlayerInterractionController user)
+    protected override void Action(PlayerController user)
     {
         Gather();
     }

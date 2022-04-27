@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(PlayerController))]
 public class PlayerInterractionController : MonoBehaviour
 {
-    private PlayerHUDController hud;
-    private PlayerParameters parameters;
-    private PlayerGraphicsController graphics;
+    private PlayerController playerController;
 
     private List<Interractible> objectsToInterract;
 
+    private void Awake()
+    {
+        playerController = GetComponent<PlayerController>();
+    }
+
     private void Start()
     {
-        parameters = GetComponent<PlayerParameters>();
-        graphics = GetComponent<PlayerGraphicsController>();
-        hud = GetComponent<PlayerHUDController>();
-
         objectsToInterract = new List<Interractible>();
     }
 
     private void Update()
     {
-        if (parameters.isAlive)
+        if (playerController.GetPlayerParameters().isAlive)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -35,8 +35,8 @@ public class PlayerInterractionController : MonoBehaviour
     {
         objectsToInterract.Add(objectToInterract);
 
-        hud.SetTooltipText(objectToInterract.tooltip);
-        hud.ShowTooltip();
+        playerController.GetPlayerHUDContorller().SetTooltipText(objectToInterract.tooltip);
+        playerController.GetPlayerHUDContorller().ShowTooltip();
     }
     
     public void RemoveFromList(Interractible objectToInterract)
@@ -45,11 +45,11 @@ public class PlayerInterractionController : MonoBehaviour
 
         if (objectsToInterract.Count == 0) 
         {
-            hud.HideTooltip();
+            playerController.GetPlayerHUDContorller().HideTooltip();
         }
         else
         {
-            hud.SetTooltipText(objectsToInterract[^1].tooltip);
+            playerController.GetPlayerHUDContorller().SetTooltipText(objectsToInterract[^1].tooltip);
         }
     } 
 
@@ -57,11 +57,11 @@ public class PlayerInterractionController : MonoBehaviour
     {
         if (objectsToInterract.Count > 0)
         {
-            if (!objectsToInterract[^1].Interract(this))
+            if (!objectsToInterract[^1].Interract(playerController))
             {
                 RemoveFromList(objectsToInterract[^1]);
             }
-            graphics.SetInterract();
+            playerController.GetPlayerGraphicsController().SetInterract();
         }
         else
         {

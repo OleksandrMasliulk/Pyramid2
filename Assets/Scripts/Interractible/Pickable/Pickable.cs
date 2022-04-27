@@ -8,7 +8,8 @@ public class Pickable : Interractible
     {
         Flare,
         Medkit,
-        Flashlight
+        Flashlight,
+        Paint
     }
 
     public ItemType type;
@@ -31,6 +32,9 @@ public class Pickable : Interractible
             case ItemType.Medkit:
                 item = new Medicine();
                 break;
+            case ItemType.Paint:
+                item = new Paint();
+                break;
         }
 
         if (!item.isStackable)
@@ -39,7 +43,7 @@ public class Pickable : Interractible
         }
     }
 
-    protected override void Action(PlayerInterractionController user)
+    protected override void Action(PlayerController user)
     {
         base.Action(user);
 
@@ -50,9 +54,9 @@ public class Pickable : Interractible
         }
     }
 
-    private bool PickUp(PlayerInterractionController user)
+    private bool PickUp(PlayerController user)
     {
-        PlayerInventoryController inventory = user.GetComponent<PlayerInventoryController>();
+        PlayerInventoryController inventory = user.GetPlayerInventoryController();
 
         if (inventory == null)
         {

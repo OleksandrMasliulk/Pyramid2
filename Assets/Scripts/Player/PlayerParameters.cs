@@ -10,7 +10,6 @@ public class PlayerParameters : MonoBehaviour
 
     public float movementSpeed { get; private set; }
 
-    public int maxHealth { get; private set; }
     public int maxSanity { get; private set; }
 
     public bool isAlive { get; private set; }
@@ -23,11 +22,6 @@ public class PlayerParameters : MonoBehaviour
     public void SetMovementSpeed(float _speed)
     {
         movementSpeed = _speed;
-    }
-
-    public void SetMaxHealth(int _maxHealth)
-    {
-        maxHealth = _maxHealth;
     }
 
     public void SetMaxSanity(int _maxSanity)

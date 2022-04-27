@@ -28,13 +28,13 @@ public class FlamethrowerTrap : TrapMaster
         {
             Collider2D[] cols = Physics2D.OverlapBoxAll(fireGraphics.transform.position, damageBox.bounds.size, 0f);
 
-            Player target;
+            PlayerController target;
             foreach (Collider2D col in cols)
             {
-                target = col.GetComponent<Player>();
+                target = col.GetComponent<PlayerController>();
                 if (target != null)
                 {
-                    target.TakeDamage(1);
+                    target.GetComponent<IDamageable>().TakeDamage(1);
                     return;
                 }
             }
@@ -66,17 +66,17 @@ public class FlamethrowerTrap : TrapMaster
         isThrowingFire = false;
     }
 
-    protected override void ReduceSanity(Player target)
+    protected override void ReduceSanity(PlayerController target)
     {
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, sanityLossRadius);
 
-        Player player;
+        PlayerController player;
         foreach (Collider2D col in cols)
         {
-            player = col.GetComponent<Player>();
+            player = col.GetComponent<PlayerController>();
             if (player != null)
             {
-                player.UpdateSanity(-sanityLoss);
+                player.GetPlayerSanityController().UpdateSanity(-sanityLoss);
                 return;
             }
         }

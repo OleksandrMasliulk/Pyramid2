@@ -13,6 +13,8 @@ public class PlayerHUDController : MonoBehaviour
     public Slider sanitySlider;
     public Image sanitySliderFill;
 
+    public GameObject paintDirection;
+
     public Color sanity100;
     public Color sanity75;
     public Color sanity50;
@@ -25,15 +27,15 @@ public class PlayerHUDController : MonoBehaviour
     {
         sanitySlider.value = newValue;
 
-        if (newValue >= 75)
+        if (newValue > 75)
         {
             sanitySliderFill.color = sanity100;
         }
-        else if (newValue >= 50 && newValue < 75)
+        else if (newValue > 50 && newValue <= 75)
         {
             sanitySliderFill.color = sanity75;
         }
-        else if (newValue >= 25 && newValue < 50)
+        else if (newValue > 25 && newValue <= 50)
         {
             sanitySliderFill.color = sanity50;
         }
@@ -95,5 +97,13 @@ public class PlayerHUDController : MonoBehaviour
         hud.SetActive(false);
     }
 
+    public void ShowPaintDirection()
+    {
+        paintDirection.SetActive(true);
+    }
 
+    public void HidePaintDirection()
+    {
+        paintDirection.SetActive(false);
+    }
 }

@@ -11,12 +11,13 @@ public class Flare : Item
 
         isStackable = true;
         isConsumable = true;
+        useOnRelease = false;
 
         //PATHS
         pickableMirrorPath = "Pickable Items/Pickable Flare";
     }
 
-    public override void Use(PlayerInventoryController user)
+    public override void Use(PlayerController user)
     {
         Debug.Log("FLARE USED");
         base.Use(user);
@@ -24,7 +25,7 @@ public class Flare : Item
         Throw(user);
     }
 
-    private void Throw(PlayerInventoryController user)
+    private void Throw(PlayerController user)
     {
         var prefab = Resources.Load("Usable Items/Flare");
         if (prefab == null)
@@ -34,5 +35,17 @@ public class Flare : Item
         }
 
         MonoBehaviour.Instantiate((GameObject)prefab, user.transform.position, Quaternion.identity);
+    }
+
+    public override bool OnButtonPressed(PlayerController user)
+    {
+        return base.OnButtonPressed(user);
+    }
+
+    public override bool OnButtonReleased(PlayerController user)
+    {
+        Use(user);
+
+        return base.OnButtonReleased(user);
     }
 }
