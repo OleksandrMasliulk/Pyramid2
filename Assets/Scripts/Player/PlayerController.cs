@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerInventoryController inventoryController;
     [SerializeField] private PlayerSanityController sanityController;
     [SerializeField] private PlayerHealthController healthController;
-
+    [SerializeField] private PlayerCoverController coverController;
     private void Awake()
     {
         if (Instance == null)
@@ -71,5 +71,10 @@ public class PlayerController : MonoBehaviour
     public PlayerHealthController GetPlayerHealthController()
     {
         return healthController;
+    }
+
+    public PlayerCoverController GetPlayerCoverController()
+    {
+        return coverController;
     }
 }

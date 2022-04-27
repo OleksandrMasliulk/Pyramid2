@@ -28,7 +28,7 @@ public class MummyChaseState : MummyState
             mummy.SetState(mummy.attackState, new MummyExitStateArgs(player, player.transform.position));
             return;
         }
-        else if (distance > mummy.GetParameters().losRadius)
+        if (distance > mummy.GetParameters().losRadius || player.GetPlayerParameters().isCovered)
         {
             mummy.SetState(mummy.breakLOSState, new MummyExitStateArgs(player, player.transform.position));
             return;

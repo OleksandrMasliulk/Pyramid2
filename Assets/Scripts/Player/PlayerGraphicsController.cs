@@ -43,4 +43,14 @@ public class PlayerGraphicsController : MonoBehaviour
     {
         animator.SetTrigger("Interract");
     }
+
+    public void DisableRenderer()
+    {
+        sprite.enabled = false;
+    }
+
+    public void EnableRenderer()
+    {
+        sprite.enabled = true;
+    }
 }

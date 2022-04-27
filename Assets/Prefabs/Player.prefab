@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 2047880730019068929}
   - component: {fileID: 457156009690178018}
   - component: {fileID: 8911981138408250228}
+  - component: {fileID: 5266739786438730416}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -411,6 +412,7 @@ MonoBehaviour:
   inventoryController: {fileID: 8798944664540032055}
   sanityController: {fileID: 457156009690178018}
   healthController: {fileID: 8911981138408250228}
+  coverController: {fileID: 5266739786438730416}
 --- !u!114 &8798944664540032055
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,6 +441,7 @@ MonoBehaviour:
   interractTooltip: {fileID: 0}
   sanitySlider: {fileID: 0}
   sanitySliderFill: {fileID: 0}
+  paintDirection: {fileID: 0}
   sanity100: {r: 0.09546989, g: 0.745283, b: 0, a: 1}
   sanity75: {r: 1, g: 0.8854167, b: 0, a: 1}
   sanity50: {r: 1, g: 0.4895962, b: 0, a: 1}
@@ -484,5 +487,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b2c1bb5695ce29941824ce6eab7ef40d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5266739786438730416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143180252275882768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd1dc64a53cc4674c933e9e88db497bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
