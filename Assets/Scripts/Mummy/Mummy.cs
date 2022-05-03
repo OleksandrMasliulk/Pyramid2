@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mummy : MonoBehaviour
+public class Mummy : MonoBehaviour, IDamageable
 {
     private MummyParameters parameters;
     private MummyPathfindingMovement movement;
+    private MummyGraphicsController graphics;
 
     private MummyState state;
 
@@ -14,11 +15,13 @@ public class Mummy : MonoBehaviour
     public MummyRoamState patrolState = new MummyRoamState();
     public MummySenseState senseState = new MummySenseState();
     public MummyBreakLOSState breakLOSState = new MummyBreakLOSState();
+    public MummyStunnedState stunnedState = new MummyStunnedState();
 
     private void Awake()
     {
         parameters = GetComponent<MummyParameters>();
         movement = GetComponent<MummyPathfindingMovement>();
+        graphics = GetComponent<MummyGraphicsController>();
 
         PlayerController.Instance.GetPlayerSanityController().OnLowSanity += SensePlayer;
     }
@@ -45,7 +48,7 @@ public class Mummy : MonoBehaviour
 
     private void SensePlayer(PlayerController targetPlayer)
     {
-        SetState(senseState, new MummyExitStateArgs(targetPlayer, targetPlayer.transform.position));
+        SetState(senseState, new MummyExitStateArgs(targetPlayer, targetPlayer.transform.position, state));
     }
 
     private void OnDisable()
@@ -62,16 +65,27 @@ public class Mummy : MonoBehaviour
     {
         return parameters;
     }
+
+    public MummyGraphicsController GetGraphicsController()
+    {
+        return graphics;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        state.OnTakeDamage(this);
+    }
 }
 
 public class MummyExitStateArgs
 {
     public PlayerController playerSeeked;
     public Vector3 lastSeenPosition;
-
-    public MummyExitStateArgs(PlayerController playerSeeked, Vector3 lastSeenPosition)
+    public MummyState lastState;
+    public MummyExitStateArgs(PlayerController playerSeeked, Vector3 lastSeenPosition, MummyState lastState)
     {
         this.playerSeeked = playerSeeked;
         this.lastSeenPosition = lastSeenPosition;
+        this.lastState = lastState;
     }
 }

@@ -25,7 +25,7 @@ public class MummySenseState : MummyState
 
         if (distance <= mummy.GetParameters().attackDistance)
         {
-            mummy.SetState(mummy.attackState, new MummyExitStateArgs(player, player.transform.position));
+            mummy.SetState(mummy.attackState, new MummyExitStateArgs(player, player.transform.position, mummy.senseState));
             return;
         }
 
@@ -34,5 +34,10 @@ public class MummySenseState : MummyState
             mummy.SetState(mummy.patrolState, null);
             return;
         }
+    }
+
+    public override void OnTakeDamage(Mummy mummy)
+    {
+        mummy.SetState(mummy.stunnedState, new MummyExitStateArgs(player, player.transform.position, mummy.senseState));
     }
 }

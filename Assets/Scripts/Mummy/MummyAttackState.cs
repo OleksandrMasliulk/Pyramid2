@@ -20,4 +20,9 @@ public class MummyAttackState : MummyState
     {
 
     }
+
+    public override void OnTakeDamage(Mummy mummy)
+    {
+
+    }
 }

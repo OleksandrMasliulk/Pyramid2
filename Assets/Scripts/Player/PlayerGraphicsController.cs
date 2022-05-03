@@ -7,16 +7,10 @@ public class PlayerGraphicsController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sprite;
 
-    private Vector2 lastDirection = Vector2.down;
+    //[SerializeField] private AnimatorOverrideController aliveController;
+    [SerializeField] private AnimatorOverrideController ghostController;
 
-    public void SetIdle()
-    {
-        animator.SetBool("Moving", false);
-        animator.SetFloat("Horizontal", lastDirection.x);
-        animator.SetFloat("Vertical", lastDirection.y);
-    }
-
-    public void SetMovementState(Vector2 direction)
+    public void SetMovementDirection(Vector2 direction)
     {
         if (direction.x < 0f)
         {
@@ -27,21 +21,13 @@ public class PlayerGraphicsController : MonoBehaviour
             sprite.flipX = false;
         }
 
-        animator.SetBool("Moving", true);
         animator.SetFloat("Horizontal", direction.x);
         animator.SetFloat("Vertical", direction.y);
-
-        lastDirection = direction;
     }
 
     public void SetDie()
     {
         animator.SetTrigger("Die");
-    }
-
-    public void SetInterract()
-    {
-        animator.SetTrigger("Interract");
     }
 
     public void DisableRenderer()
@@ -52,5 +38,11 @@ public class PlayerGraphicsController : MonoBehaviour
     public void EnableRenderer()
     {
         sprite.enabled = true;
+    }
+
+    public void SetGhostGraphics()
+    {
+        animator.runtimeAnimatorController = ghostController;
+        animator.SetTrigger("Ghost");
     }
 }

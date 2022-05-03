@@ -13,6 +13,7 @@ public class PlayerParameters : MonoBehaviour
     public int maxSanity { get; private set; }
 
     public bool isAlive { get; private set; }
+    public bool isGhost { get; private set; }
     public bool isCovered { get; private set; }
 
     private void Awake()
@@ -38,5 +39,10 @@ public class PlayerParameters : MonoBehaviour
     public void SetIsCovered(bool value)
     {
         isCovered = value;
+    }
+
+    public void SetIsGhost(bool value)
+    {
+        isGhost = value;
     }
 }

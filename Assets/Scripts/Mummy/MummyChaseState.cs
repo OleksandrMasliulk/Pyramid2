@@ -25,13 +25,18 @@ public class MummyChaseState : MummyState
 
         if (distance <= mummy.GetParameters().attackDistance)
         {
-            mummy.SetState(mummy.attackState, new MummyExitStateArgs(player, player.transform.position));
+            mummy.SetState(mummy.attackState, new MummyExitStateArgs(player, player.transform.position, mummy.chaseState));
             return;
         }
         if (distance > mummy.GetParameters().losRadius || player.GetPlayerParameters().isCovered)
         {
-            mummy.SetState(mummy.breakLOSState, new MummyExitStateArgs(player, player.transform.position));
+            mummy.SetState(mummy.breakLOSState, new MummyExitStateArgs(player, player.transform.position, mummy.chaseState));
             return;
         }
+    }
+
+    public override void OnTakeDamage(Mummy mummy)
+    {
+        mummy.SetState(mummy.stunnedState, new MummyExitStateArgs(player, player.transform.position, mummy.chaseState));
     }
 }

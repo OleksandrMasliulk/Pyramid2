@@ -42,7 +42,7 @@ public class MummyBreakLOSState : MummyState
             if (player != null)
             {
                 Debug.Log("Player seeked");
-                mummy.SetState(mummy.chaseState, new MummyExitStateArgs(player, player.transform.position));
+                mummy.SetState(mummy.chaseState, new MummyExitStateArgs(player, player.transform.position, mummy.breakLOSState));
                 return;
             }
             timeToNextSenseTick = mummy.GetParameters().senseTickTime;
@@ -102,5 +102,10 @@ public class MummyBreakLOSState : MummyState
         }
 
         return player;
+    }
+
+    public override void OnTakeDamage(Mummy mummy)
+    {
+        mummy.SetState(mummy.stunnedState, new MummyExitStateArgs(null, lastSeenPosition, mummy.breakLOSState));
     }
 }

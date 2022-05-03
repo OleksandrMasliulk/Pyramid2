@@ -61,7 +61,6 @@ public class PlayerInterractionController : MonoBehaviour
             {
                 RemoveFromList(objectsToInterract[^1]);
             }
-            playerController.GetPlayerGraphicsController().SetInterract();
         }
         else
         {

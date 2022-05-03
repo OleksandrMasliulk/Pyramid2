@@ -189,9 +189,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingLayerID: 1680369023
+  m_SortingLayer: 4
+  m_SortingOrder: 0
   m_Sprite: {fileID: 564287746, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -368,6 +368,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 9143180252275882769}
+        m_TargetAssemblyTypeName: PlayerParameters, Assembly-CSharp
+        m_MethodName: SetIsGhost
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &9143180252275882783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -465,6 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8137129383538938291}
   sprite: {fileID: 5339026552842488741}
+  ghostController: {fileID: 22100000, guid: 80ddb485576e9a64594df54bfb2b0763, type: 2}
 --- !u!114 &457156009690178018
 MonoBehaviour:
   m_ObjectHideFlags: 0

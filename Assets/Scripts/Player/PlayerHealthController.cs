@@ -21,6 +21,7 @@ public class PlayerHealthController : MonoBehaviour, IDamageable
     {
         playerController.GetPlayerParameters().SetIsAlive(false);
         playerController.SetPlayerLayer(11);
+        playerController.GetPlayerGraphicsController().SetDie();
 
         GameController.Instance.Lose();
     }

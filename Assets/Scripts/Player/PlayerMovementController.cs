@@ -16,17 +16,13 @@ public class PlayerMovementController : MonoBehaviour
 
     private void Update()
     {
-        if (playerController.GetPlayerParameters().isAlive)
+        if (playerController.GetPlayerParameters().isAlive || playerController.GetPlayerParameters().isGhost)
         {
             Vector2 dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+            playerController.GetPlayerGraphicsController().SetMovementDirection(dir);
             if (dir.magnitude > 0f)
             {
-                Move(dir);
-                playerController.GetPlayerGraphicsController().SetMovementState(dir);
-            }
-            else
-            {
-                playerController.GetPlayerGraphicsController().SetIdle();
+                Move(dir); 
             }
         }
     }

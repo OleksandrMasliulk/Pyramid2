@@ -25,4 +25,7 @@ public class MummyParameters : MonoBehaviour
 
     [Header("Attack State")]
     public float attackDistance;
+
+    [Header("Stunned State")]
+    public float stunDuration;
 }

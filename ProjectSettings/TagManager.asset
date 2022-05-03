@@ -17,7 +17,7 @@ TagManager:
   - Mummy
   - Player Covered
   - Player Dead
-  - 
+  - Interractible
   - 
   - 
   - 
@@ -40,4 +40,16 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Floor
+    uniqueID: 2818564603
+    locked: 0
+  - name: Walls
+    uniqueID: 1646564661
+    locked: 0
+  - name: Items
+    uniqueID: 3651521903
+    locked: 0
+  - name: Characters
+    uniqueID: 1680369023
     locked: 0

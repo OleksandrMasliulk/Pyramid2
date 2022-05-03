@@ -28,9 +28,28 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            SetGhost();
+        }
+    }
+
     public void SetPlayerLayer(LayerMask layer)
     {
         this.gameObject.layer = layer;
+    }
+
+    public void SetGhost()
+    {
+        if (parameters.isAlive)
+            return;
+
+        parameters.SetIsGhost(true);
+        SetPlayerLayer(11);
+        graphicsController.SetGhostGraphics();
+
     }
 
     public PlayerParameters GetPlayerParameters()
