@@ -20,17 +20,6 @@ public class PlayerInterractionController : MonoBehaviour
         objectsToInterract = new List<Interractible>();
     }
 
-    private void Update()
-    {
-        if (playerController.GetPlayerParameters().isAlive)
-        {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Interract();
-            }
-        }
-    }
-
     public void AddToList(Interractible objectToInterract)
     {
         objectsToInterract.Add(objectToInterract);
@@ -53,7 +42,7 @@ public class PlayerInterractionController : MonoBehaviour
         }
     } 
 
-    private void Interract()
+    public void Interract()
     {
         if (objectsToInterract.Count > 0)
         {

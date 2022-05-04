@@ -14,20 +14,7 @@ public class PlayerMovementController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
-    {
-        if (playerController.GetPlayerParameters().isAlive || playerController.GetPlayerParameters().isGhost)
-        {
-            Vector2 dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-            playerController.GetPlayerGraphicsController().SetMovementDirection(dir);
-            if (dir.magnitude > 0f)
-            {
-                Move(dir); 
-            }
-        }
-    }
-
-    private void Move(Vector2 direction)
+    public void Move(Vector2 direction)
     {
         rb.MovePosition(transform.position + (Vector3)direction * playerController.GetPlayerParameters().movementSpeed);
     }

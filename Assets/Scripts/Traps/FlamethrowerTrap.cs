@@ -6,6 +6,7 @@ public class FlamethrowerTrap : TrapMaster
 {
     public GameObject fireGraphics;
     public BoxCollider2D damageBox;
+    public LayerMask damageLayer;
 
     public float sanityLossRadius;
 
@@ -26,7 +27,7 @@ public class FlamethrowerTrap : TrapMaster
     {
         if (isThrowingFire)
         {
-            Collider2D[] cols = Physics2D.OverlapBoxAll(fireGraphics.transform.position, damageBox.bounds.size, 0f);
+            Collider2D[] cols = Physics2D.OverlapBoxAll(fireGraphics.transform.position, damageBox.bounds.size, 0f, damageLayer);
 
             PlayerController target;
             foreach (Collider2D col in cols)

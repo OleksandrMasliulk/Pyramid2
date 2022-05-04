@@ -24,9 +24,11 @@ public class PlayerCoverController : MonoBehaviour
     {
         if (playerController.GetPlayerSanityController().GetSanity() <= 25)
         {
-            Debug.Log("You can't woth low sanity");
+            Debug.Log("You can't cover with low sanity");
             return;
         }
+
+        playerController.SetState(playerController.coveredState);
 
         playerController.GetPlayerParameters().SetIsCovered(true);
 
@@ -42,6 +44,8 @@ public class PlayerCoverController : MonoBehaviour
 
     public void Uncover(Vector3 respawnPos)
     {
+        playerController.SetState(playerController.aliveState);
+
         playerController.GetPlayerParameters().SetIsCovered(false);
 
         playerController.SetPlayerLayer(6);

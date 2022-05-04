@@ -17,6 +17,11 @@ public class IngameUIController : MonoBehaviour
         loseScreen.SetActive(true);
     }
 
+    public void ContinueAsGhost()
+    {
+        PlayerController.Instance.SetState(PlayerController.Instance.ghostState);
+    }
+
     public void MainMenu()
     {
         Debug.Log("Main Menu");

@@ -16,6 +16,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private PlayerSanityController sanityController;
     [SerializeField] private PlayerHealthController healthController;
     [SerializeField] private PlayerCoverController coverController;
+
+    public PlayerAliveState aliveState;
+    public PlayerCoveredState coveredState;
+    public PlayerDeadState deadState;
+    public PlayerGhostState ghostState;
+    private PlayerState currentState;
+
     private void Awake()
     {
         if (Instance == null)
@@ -28,12 +35,45 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        aliveState = new PlayerAliveState();
+        coveredState = new PlayerCoveredState();
+        deadState = new PlayerDeadState();
+        ghostState = new PlayerGhostState();
+
+        SetState(aliveState);
+    }
+
     private void Update()
     {
+        Vector2 dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
+        currentState.OnDirectionInput(this, dir);
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            currentState.OnInterractInput(this);
+        }
+
+        if(Input.GetKeyDown(KeyCode.F))
+        {
+            currentState.OnInventoryUsePressInput(this);
+        }
+        if(Input.GetKeyUp(KeyCode.F))
+        {
+            currentState.OnInventoryUseReleaseInput(this);
+        }
+
         if (Input.GetKeyDown(KeyCode.G))
         {
-            SetGhost();
+            currentState.OnInventoryDropInput(this);
         }
+    }
+
+    public void SetState(PlayerState state)
+    {
+        this.currentState = state;
+        currentState.OnStateEnter(this);
     }
 
     public void SetPlayerLayer(LayerMask layer)

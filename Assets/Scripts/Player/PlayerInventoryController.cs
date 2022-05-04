@@ -47,45 +47,33 @@ public class PlayerInventoryController : MonoBehaviour
         {
             SwitchSlot(3);
         }
+    }
 
-        if (Input.GetKeyDown(KeyCode.F))
+    public void UseButtonPress()
+    {
+        if (inventory[slotToUse].item == null)
         {
-            if (inventory[slotToUse].item == null)
-            {
-                Debug.Log("Slot is empty");
+            Debug.Log("Slot is empty");
 
-                return;
-            }
-            if (inventory[slotToUse].item.OnButtonPressed(playerController))
-            {
-                UseItem();
-            }
+            return;
         }
-        if (Input.GetKeyUp(KeyCode.F))
+        if (inventory[slotToUse].item.OnButtonPressed(playerController))
         {
-            if (inventory[slotToUse].item == null)
-            {
-                Debug.Log("Slot is empty");
-
-                return;
-            }
-            if (inventory[slotToUse].item.OnButtonReleased(playerController))
-            {
-                UseItem();
-            }
+            UseItem();
         }
-        
-        if (Input.GetKeyDown(KeyCode.G))
-        {
-            Drop();
-        }
+    }
 
-        if (Input.GetKeyDown(KeyCode.I))
+    public void UseButtonRelease()
+    {
+        if (inventory[slotToUse].item == null)
         {
-            foreach (InventorySlot slot in inventory)
-            {
-                Debug.Log(slot.item + ": " + slot.count);
-            }
+            Debug.Log("Slot is empty");
+
+            return;
+        }
+        if (inventory[slotToUse].item.OnButtonReleased(playerController))
+        {
+            UseItem();
         }
     }
 
@@ -186,7 +174,7 @@ public class PlayerInventoryController : MonoBehaviour
         }
     }
 
-    private void Drop()
+    public void Drop()
     {
         if (inventory[slotToUse].item == null)
         {
