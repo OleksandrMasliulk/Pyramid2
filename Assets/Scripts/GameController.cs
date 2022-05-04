@@ -27,16 +27,7 @@ public class GameController : MonoBehaviour
     {
         Debug.LogWarning("!!!  Player WIN  !!!");
 
-        PlayerData data = SaveLoad.Load();
-        if (data != null)
-        {
-            data.gold += CalculateGold();
-        }
-        else
-        {
-            data = new PlayerData(CalculateGold());
-        }
-        SaveLoad.Save(data);
+        Save();
 
         OnWin?.Invoke();
     }
@@ -44,6 +35,8 @@ public class GameController : MonoBehaviour
     public void Lose()
     {
         Debug.LogWarning("!!! PLAYER LOST !!!");
+
+        Save();
 
         OnLose?.Invoke();
     }
@@ -62,5 +55,19 @@ public class GameController : MonoBehaviour
         }
 
         return gold;
+    }
+
+    private void Save()
+    {
+        PlayerData data = SaveLoad.Load();
+        if (data != null)
+        {
+            data.gold += CalculateGold();
+        }
+        else
+        {
+            data = new PlayerData(CalculateGold());
+        }
+        SaveLoad.Save(data);
     }
 }
