@@ -203,6 +203,14 @@ public class PlayerInventoryController : MonoBehaviour
         }
     }
 
+    public Item GetItemFromSlot(int slot)
+    {
+        if (slot > inventorySlots - 1)
+            return null;
+
+        return inventory[slot].item;
+    }
+
     public struct InventorySlot
     {
         public Item item;

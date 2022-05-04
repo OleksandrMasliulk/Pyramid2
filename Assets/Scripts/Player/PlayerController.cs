@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         Vector2 dir = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        currentState.OnDirectionInput(this, dir);
+        currentState.OnDirectionInput(this, dir.normalized);
 
         if (Input.GetKeyDown(KeyCode.E))
         {

@@ -25,6 +25,19 @@ public class GameController : MonoBehaviour
 
     public void Win()
     {
+        Debug.LogWarning("!!!  Player WIN  !!!");
+
+        PlayerData data = SaveLoad.Load();
+        if (data != null)
+        {
+            data.gold += CalculateGold();
+        }
+        else
+        {
+            data = new PlayerData(CalculateGold());
+        }
+        SaveLoad.Save(data);
+
         OnWin?.Invoke();
     }
 
@@ -33,5 +46,21 @@ public class GameController : MonoBehaviour
         Debug.LogWarning("!!! PLAYER LOST !!!");
 
         OnLose?.Invoke();
+    }
+
+    public int CalculateGold()
+    {
+        int gold = 0;
+
+        for (int i = 0; i < 4; i++)
+        {
+            PickableTreasure treasure = PlayerController.Instance.GetPlayerInventoryController().GetItemFromSlot(i) as PickableTreasure;
+            if (treasure != null)
+            {
+                gold += treasure.value;
+            }
+        }
+
+        return gold;
     }
 }
