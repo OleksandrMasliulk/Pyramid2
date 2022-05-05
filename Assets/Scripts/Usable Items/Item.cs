@@ -23,6 +23,10 @@ public class Item
         useOnRelease = false;
     }
 
+    public virtual void OnDrop(PlayerController user)
+    { 
+    }
+
     public virtual void Use(PlayerController user)
     {
     }

@@ -28,24 +28,33 @@ public class Flashlight : Item
 
         if (isActive)
         {
-            TurnOff();
+            TurnOff(user);
         }
         else
         {
-            TurnOn();
+            TurnOn(user);
         }
     }
 
-    private void TurnOn()
+    private void TurnOn(PlayerController user)
     {
         isActive = true;
         Debug.Log("Flashlight turned ON");
+
+        user.GetPlayerGraphicsController().SwitchFlashlight(true);
     }
 
-    private void TurnOff()
+    public override void OnDrop(PlayerController user)
+    {
+        TurnOff(user);
+    }
+
+    private void TurnOff(PlayerController user)
     {
         isActive = false;
         Debug.Log("Flashlight turned OFF");
+
+        user.GetPlayerGraphicsController().SwitchFlashlight(false);
     }
 
     public override bool OnButtonPressed(PlayerController user)
