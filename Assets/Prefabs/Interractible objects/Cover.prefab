@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: Press E to Cover
+  isActive: 1
   respawnPos: {fileID: 6002796483879193953}
 --- !u!1 &8119649343362183144
 GameObject:

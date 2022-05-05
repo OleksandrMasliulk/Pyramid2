@@ -12,6 +12,8 @@ public class PlayerGraphicsController : MonoBehaviour
 
     //[SerializeField] private SanityPostFX sanityPostFX;
 
+    [SerializeField] private Transform flashlight;
+
     public void SetMovementDirection(Vector2 direction)
     {
         if (direction.x < 0f)
@@ -46,6 +48,11 @@ public class PlayerGraphicsController : MonoBehaviour
     {
         animator.runtimeAnimatorController = ghostController;
         animator.SetTrigger("Ghost");
+    }
+
+    public void SwitchFlashlight(bool value)
+    {
+        flashlight.gameObject.SetActive(value);
     }
 
     //public void SetSanityFX(int sanityLevel)
