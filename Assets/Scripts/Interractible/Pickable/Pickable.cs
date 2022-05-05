@@ -47,7 +47,7 @@ public class Pickable : Interractible
         }
     }
 
-    protected override void Action(PlayerController user)
+    public override void Action(PlayerController user)
     {
         base.Action(user);
 

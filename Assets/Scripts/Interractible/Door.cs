@@ -7,6 +7,7 @@ public class Door : Interractible
     private bool isClosed;
 
     [SerializeField] private Collider2D door;
+    [SerializeField] private Animator anim;
 
     protected override void Init()
     {
@@ -16,7 +17,7 @@ public class Door : Interractible
         door.enabled = true;
     }
 
-    protected override void Action(PlayerController user)
+    public override void Action(PlayerController user)
     {
         if (isClosed)
         {
@@ -26,19 +27,19 @@ public class Door : Interractible
         {
             Close();
         }
-
-        Debug.Log("Closed: " + isClosed);
     }
 
     private void Open()
     {
         isClosed = false;
         door.enabled = false;
+        anim.SetBool("Opened", true);
     }
 
     private void Close()
     {
         isClosed = true;
         door.enabled = true;
+        anim.SetBool("Opened", false);
     }
 }

@@ -6,7 +6,7 @@ public class Interractible : MonoBehaviour
 {
     public string tooltip;
 
-    protected bool isActive;
+    [SerializeField]protected bool isActive;
 
     private void Start()
     {
@@ -15,7 +15,6 @@ public class Interractible : MonoBehaviour
 
     protected virtual void Init()
     {
-        isActive = true;
     }
 
     public bool Interract(PlayerController user)
@@ -28,7 +27,7 @@ public class Interractible : MonoBehaviour
         return isActive;
     }
 
-    protected virtual void Action(PlayerController user)
+    public virtual void Action(PlayerController user)
     {
 
     }
