@@ -116,15 +116,15 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Indiana_0
+      name: IndianaBackStand
       rect:
         serializedVersion: 2
         x: 0
-        y: 128
+        y: 160
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -137,15 +137,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_1
+      name: IndianaBackWalk_Anim1
       rect:
         serializedVersion: 2
         x: 32
-        y: 128
+        y: 160
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -158,15 +158,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_2
+      name: IndianaBackWalk_Anim2
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 160
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -179,15 +179,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_3
+      name: IndianaBackWalk_Anim3
       rect:
         serializedVersion: 2
         x: 96
-        y: 128
+        y: 160
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -200,15 +200,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_4
+      name: IndianaBackWalk_Anim4
       rect:
         serializedVersion: 2
         x: 128
-        y: 128
+        y: 160
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -221,15 +221,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_5
+      name: IndianaBackRun_Anim1
       rect:
         serializedVersion: 2
         x: 160
-        y: 128
+        y: 160
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -242,15 +242,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_6
+      name: IndianaBackRun_Anim2
       rect:
         serializedVersion: 2
         x: 192
-        y: 128
+        y: 160
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -263,15 +263,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_7
+      name: IndianaBackRun_Anim3
       rect:
         serializedVersion: 2
         x: 224
-        y: 128
+        y: 160
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -284,15 +284,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_8
+      name: IndianaBackRun_Anim4
       rect:
         serializedVersion: 2
         x: 256
-        y: 128
+        y: 160
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -305,15 +305,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_9
+      name: IndianaBackRun_Anim5
       rect:
         serializedVersion: 2
         x: 288
-        y: 128
+        y: 160
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -326,15 +326,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_10
+      name: IndianaBackRun_Anim6
       rect:
         serializedVersion: 2
         x: 320
-        y: 128
+        y: 160
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -347,15 +347,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_11
+      name: IndianaSideBackStand
       rect:
         serializedVersion: 2
         x: 0
-        y: 96
+        y: 128
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -368,15 +368,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_12
+      name: IndianaSideBackWalk_Anim1
       rect:
         serializedVersion: 2
         x: 32
-        y: 96
+        y: 128
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -389,15 +389,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_13
+      name: IndianaSideBackWalk_Anim2
       rect:
         serializedVersion: 2
         x: 64
-        y: 96
+        y: 128
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -410,15 +410,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_14
+      name: IndianaSideBackWalk_Anim3
       rect:
         serializedVersion: 2
         x: 96
-        y: 96
+        y: 128
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -431,15 +431,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_15
+      name: IndianaSideBackWalk_Anim4
       rect:
         serializedVersion: 2
         x: 128
-        y: 96
+        y: 128
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -452,15 +452,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_16
+      name: IndianaSideBackRun_Anim1
       rect:
         serializedVersion: 2
         x: 160
-        y: 96
+        y: 128
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -473,15 +473,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_17
+      name: IndianaSideBackRun_Anim2
       rect:
         serializedVersion: 2
         x: 192
-        y: 96
+        y: 128
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -494,15 +494,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_18
+      name: IndianaSideBackRun_Anim3
       rect:
         serializedVersion: 2
         x: 224
-        y: 96
+        y: 128
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -515,15 +515,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_19
+      name: IndianaSideBackRun_Anim4
       rect:
         serializedVersion: 2
         x: 256
-        y: 96
+        y: 128
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -536,15 +536,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_20
+      name: IndianaSideBackRun_Anim5
       rect:
         serializedVersion: 2
         x: 288
-        y: 96
+        y: 128
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -557,15 +557,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_21
+      name: IndianaSideBackRun_Anim6
       rect:
         serializedVersion: 2
         x: 320
-        y: 96
+        y: 128
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -578,15 +578,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_22
+      name: IndianaSideStand
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 96
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -599,15 +599,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_23
+      name: IndianaSideWalk_Anim1
       rect:
         serializedVersion: 2
         x: 32
-        y: 64
+        y: 96
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -620,15 +620,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_24
+      name: IndianaSideWalk_Anim2
       rect:
         serializedVersion: 2
         x: 64
-        y: 64
+        y: 96
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -641,15 +641,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_25
+      name: IndianaSideWalk_Anim3
       rect:
         serializedVersion: 2
         x: 96
-        y: 64
+        y: 96
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -662,15 +662,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_26
+      name: IndianaSideWalk_Anim4
       rect:
         serializedVersion: 2
         x: 128
-        y: 64
+        y: 96
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -683,15 +683,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_27
+      name: IndianaSideRun_Anim1
       rect:
         serializedVersion: 2
         x: 160
-        y: 64
+        y: 96
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -704,15 +704,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_28
+      name: IndianaSideRun_Anim2
       rect:
         serializedVersion: 2
         x: 192
-        y: 64
+        y: 96
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -725,15 +725,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_29
+      name: IndianaSideRun_Anim3
       rect:
         serializedVersion: 2
         x: 224
-        y: 64
+        y: 96
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -746,15 +746,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_30
+      name: IndianaSideRun_Anim4
       rect:
         serializedVersion: 2
         x: 256
-        y: 64
+        y: 96
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -767,15 +767,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_31
+      name: IndianaSideRun_Anim5
       rect:
         serializedVersion: 2
         x: 288
-        y: 64
+        y: 96
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -788,15 +788,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_32
+      name: IndianaSideRun_Anim6
       rect:
         serializedVersion: 2
         x: 320
-        y: 64
+        y: 96
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -809,15 +809,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_33
+      name: IndianaSideFrontStand
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 64
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -830,15 +830,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_34
+      name: IndianaSideFrontWalk_Anim1
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 64
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -851,15 +851,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_35
+      name: IndianaSideFrontWalk_Anim2
       rect:
         serializedVersion: 2
         x: 64
-        y: 32
+        y: 64
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -872,15 +872,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_36
+      name: IndianaSideFrontWalk_Anim3
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
+        x: 95
+        y: 64
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -893,15 +893,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_37
+      name: IndianaSideFrontWalk_Anim4
       rect:
         serializedVersion: 2
         x: 128
-        y: 32
+        y: 64
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -914,15 +914,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_38
+      name: IndianaSideFrontRun_Anim1
       rect:
         serializedVersion: 2
         x: 160
-        y: 32
+        y: 64
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -935,15 +935,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_39
+      name: IndianaSideFrontRun_Anim2
       rect:
         serializedVersion: 2
         x: 192
-        y: 32
+        y: 64
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -956,15 +956,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_40
+      name: IndianaSideFrontRun_Anim3
       rect:
         serializedVersion: 2
         x: 224
-        y: 32
+        y: 64
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -977,15 +977,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_41
+      name: IndianaSideFrontRun_Anim4
       rect:
         serializedVersion: 2
         x: 256
-        y: 32
+        y: 64
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -998,15 +998,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_42
+      name: IndianaSideFrontRun_Anim5
       rect:
         serializedVersion: 2
         x: 288
-        y: 32
+        y: 64
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1019,15 +1019,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_43
+      name: IndianaSideFrontRun_Anim6
       rect:
         serializedVersion: 2
         x: 320
-        y: 32
+        y: 64
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1040,15 +1040,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_44
+      name: IndianaIdle_Anim1
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1061,15 +1061,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_45
+      name: IndianaFrontWalk_Anim1
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1082,15 +1082,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_46
+      name: IndianaFrontWalk_Anim2
       rect:
         serializedVersion: 2
         x: 64
-        y: 0
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1103,15 +1103,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_47
+      name: IndianaFrontWalk_Anim3
       rect:
         serializedVersion: 2
         x: 96
-        y: 0
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1124,15 +1124,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_48
+      name: IndianaFrontWalk_Anim4
       rect:
         serializedVersion: 2
         x: 128
-        y: 0
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1145,15 +1145,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_49
+      name: IndianaFrontRun_Anim1
       rect:
         serializedVersion: 2
         x: 160
-        y: 0
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1166,15 +1166,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_50
+      name: IndianaFrontRun_Anim2
       rect:
         serializedVersion: 2
         x: 192
-        y: 0
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1187,15 +1187,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_51
+      name: IndianaFrontRun_Anim3
       rect:
         serializedVersion: 2
         x: 224
-        y: 0
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1208,15 +1208,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_52
+      name: IndianaFrontRun_Anim4
       rect:
         serializedVersion: 2
         x: 256
-        y: 0
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1229,15 +1229,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_53
+      name: IndianaFrontRun_Anim5
       rect:
         serializedVersion: 2
         x: 288
-        y: 0
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1250,15 +1250,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Indiana_54
+      name: IndianaFrontRun_Anim6
       rect:
         serializedVersion: 2
         x: 320
-        y: 0
+        y: 32
         width: 32
         height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1266,6 +1266,174 @@ TextureImporter:
       bones: []
       spriteID: 7c24937730835ca46a3c8af6a2fb86af
       internalID: -1750356052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndianaDeath_Anim1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7703a29da16be7643a4ecf956b656198
+      internalID: -213546032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndianaDeath_Anim2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a06c5ca126fc364f95e6c8f6cb267fa
+      internalID: -1773253436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndianaDeath_Anim3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03c29b909c5c985479a4d77d96a6e63b
+      internalID: 1739676067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndianaDeath_Anim4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67912e12124b206459924dfa86a86e72
+      internalID: -662153242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndianaDeath_Anim5
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb0121fd2ea851468a471dfc53615be
+      internalID: 1428654662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndianaDeath_Anim6
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb9d74c94d260214e93008e88df2d5b8
+      internalID: -1678356935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndianaIdle_Anim2
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f92dcd5e3759cfa48929af5a0cf7b786
+      internalID: 721189208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IndianaIdle_Anim3
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368337905dab2c740b8c16858ee71577
+      internalID: 738181690
       vertices: []
       indices: 
       edges: []
@@ -1281,61 +1449,69 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Indiana_9: -1056322001
-      Indiana_38: 789857090
-      Indiana_32: 162622856
-      Indiana_47: -1848014801
-      Indiana_3: -225257171
-      Indiana_7: 1454953852
-      Indiana_30: 1905230341
-      Indiana_4: 156021927
-      Indiana_24: -491900791
-      Indiana_46: -1272692861
-      Indiana_29: 1382936052
-      Indiana_49: 1483594104
-      Indiana_28: 1853785646
-      Indiana_22: 923883064
-      Indiana_52: -1286890017
-      Indiana_16: -892415472
-      Indiana_25: 1266333710
-      Indiana_53: -1094477422
-      Indiana_26: -715528508
-      Indiana_44: 2088083307
-      Indiana_1: -794745503
-      Indiana_40: 664633438
-      Indiana_21: -1816280685
-      Indiana_33: -819263158
-      Indiana_41: -1497521129
-      Indiana_48: 1464373529
-      Indiana_31: 1830286566
-      Indiana_15: -1295589180
-      Indiana_18: -259050223
-      Indiana_39: 310312757
-      Indiana_20: 5488012
-      Indiana_50: 596850635
-      Indiana_23: 410681209
-      Indiana_12: 2140109858
-      Indiana_35: 1121242954
-      Indiana_10: -671493161
-      Indiana_27: 1363602745
-      Indiana_43: -21355875
-      Indiana_34: -861944230
-      Indiana_19: 481539451
-      Indiana_51: -1951063905
-      Indiana_11: -2117651347
-      Indiana_45: -1501430329
-      Indiana_5: -1669225537
-      Indiana_6: -703940624
-      Indiana_8: -30710753
-      Indiana_17: 1969434270
-      Indiana_2: 186853664
-      Indiana_36: -438461481
-      Indiana_14: 564287746
-      Indiana_0: -2019241406
-      Indiana_37: -1767110521
-      Indiana_54: -1750356052
-      Indiana_42: 224779972
-      Indiana_13: 1492719342
+      IndianaDeath_Anim5: 1428654662
+      IndianaSideFrontWalk_Anim3: -438461481
+      IndianaIdle_Anim2: 721189208
+      IndianaSideRun_Anim3: 1382936052
+      IndianaSideBackRun_Anim1: -892415472
+      IndianaSideFrontRun_Anim2: 310312757
+      IndianaSideRun_Anim5: 1830286566
+      IndianaSideBackWalk_Anim1: 2140109858
+      IndianaBackWalk_Anim3: -225257171
+      IndianaDeath_Anim1: -213546032
+      IndianaDeath_Anim3: 1739676067
+      IndianaSideWalk_Anim2: -491900791
+      IndianaFrontRun_Anim3: -1951063905
+      IndianaBackRun_Anim3: 1454953852
+      IndianaFrontRun_Anim6: -1750356052
+      IndianaFrontRun_Anim4: -1286890017
+      IndianaSideBackRun_Anim5: 5488012
+      IndianaSideRun_Anim6: 162622856
+      IndianaSideWalk_Anim3: 1266333710
+      IndianaSideWalk_Anim1: 410681209
+      IndianaFrontWalk_Anim3: -1848014801
+      IndianaSideFrontRun_Anim1: 789857090
+      IndianaFrontWalk_Anim4: 1464373529
+      IndianaFrontRun_Anim2: 596850635
+      IndianaSideRun_Anim1: 1363602745
+      IndianaSideFrontRun_Anim3: 664633438
+      IndianaSideBackRun_Anim3: -259050223
+      IndianaBackRun_Anim2: -703940624
+      IndianaSideFrontWalk_Anim2: 1121242954
+      IndianaSideFrontWalk_Anim4: -1767110521
+      IndianaFrontWalk_Anim2: -1272692861
+      IndianaBackRun_Anim4: -30710753
+      IndianaSideRun_Anim2: 1853785646
+      IndianaFrontRun_Anim5: -1094477422
+      IndianaIdle_Anim1: 2088083307
+      IndianaBackWalk_Anim4: 156021927
+      IndianaDeath_Anim2: -1773253436
+      IndianaIdle_Anim3: 738181690
+      IndianaSideFrontRun_Anim5: 224779972
+      IndianaSideBackWalk_Anim3: 564287746
+      IndianaSideWalk_Anim4: -715528508
+      IndianaSideBackRun_Anim2: 1969434270
+      IndianaFrontRun_Anim1: 1483594104
+      IndianaDeath_Anim6: -1678356935
+      IndianaBackRun_Anim1: -1669225537
+      IndianaBackRun_Anim5: -1056322001
+      IndianaSideFrontRun_Anim4: -1497521129
+      IndianaBackStand: -2019241406
+      IndianaBackWalk_Anim2: 186853664
+      IndianaSideBackWalk_Anim4: -1295589180
+      IndianaSideRun_Anim4: 1905230341
+      IndianaSideFrontRun_Anim6: -21355875
+      IndianaSideFrontStand: -819263158
+      IndianaSideBackRun_Anim6: -1816280685
+      IndianaBackWalk_Anim1: -794745503
+      IndianaBackRun_Anim6: -671493161
+      IndianaDeath_Anim4: -662153242
+      IndianaSideBackWalk_Anim2: 1492719342
+      IndianaSideFrontWalk_Anim1: -861944230
+      IndianaSideBackStand: -2117651347
+      IndianaSideStand: 923883064
+      IndianaSideBackRun_Anim4: 481539451
+      IndianaFrontWalk_Anim1: -1501430329
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
