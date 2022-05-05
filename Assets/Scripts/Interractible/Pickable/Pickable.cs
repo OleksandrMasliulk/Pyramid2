@@ -9,7 +9,8 @@ public class Pickable : Interractible
         Flare,
         Medkit,
         Flashlight,
-        Paint
+        Paint,
+        Treasure
     }
 
     public ItemType type;
@@ -35,6 +36,9 @@ public class Pickable : Interractible
             case ItemType.Paint:
                 item = new Paint();
                 break;
+            case ItemType.Treasure:
+                item = new PickableTreasure();
+                break;
         }
 
         if (!item.isStackable)
@@ -43,7 +47,7 @@ public class Pickable : Interractible
         }
     }
 
-    protected override void Action(PlayerController user)
+    public override void Action(PlayerController user)
     {
         base.Action(user);
 

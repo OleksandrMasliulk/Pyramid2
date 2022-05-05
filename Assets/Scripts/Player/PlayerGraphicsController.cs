@@ -10,6 +10,8 @@ public class PlayerGraphicsController : MonoBehaviour
     //[SerializeField] private AnimatorOverrideController aliveController;
     [SerializeField] private AnimatorOverrideController ghostController;
 
+    //[SerializeField] private SanityPostFX sanityPostFX;
+
     public void SetMovementDirection(Vector2 direction)
     {
         if (direction.x < 0f)
@@ -45,4 +47,29 @@ public class PlayerGraphicsController : MonoBehaviour
         animator.runtimeAnimatorController = ghostController;
         animator.SetTrigger("Ghost");
     }
+
+    //public void SetSanityFX(int sanityLevel)
+    //{
+    //    switch (sanityLevel)
+    //    {
+    //        case 100:
+    //            sanityPostFX.SetSanity100Profile();
+    //            break;
+    //        case > 75 and < 100:
+    //            sanityPostFX.SetSanity75Profile();
+    //            break;
+    //        case > 50 and <= 75:
+    //            sanityPostFX.SetSanity100Profile();
+    //            break;
+    //        case > 25 and <= 50:
+    //            sanityPostFX.SetSanity100Profile();
+    //            break;
+    //        case > 0 and <= 25:
+    //            sanityPostFX.SetSanity100Profile();
+    //            break;
+    //        case 0:
+    //            sanityPostFX.SetSanity100Profile();
+    //            break;
+    //    }
+    //}
 }

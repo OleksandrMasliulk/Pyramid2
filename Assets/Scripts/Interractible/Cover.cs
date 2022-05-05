@@ -6,7 +6,7 @@ public class Cover : Interractible
 {
     [SerializeField] private Transform respawnPos;
 
-    protected override void Action(PlayerController user)
+    public override void Action(PlayerController user)
     {
         base.Action(user);
 

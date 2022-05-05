@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5744927620858501870}
   - component: {fileID: 4191890092050399838}
   - component: {fileID: 3390704383070389236}
-  - component: {fileID: 6216992220014349194}
+  - component: {fileID: 8058539301012381398}
   m_Layer: 12
-  m_Name: Treasure
+  m_Name: Pickable Treasure
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6216992220014349194
+--- !u!114 &8058539301012381398
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,8 +143,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2096992095639496621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0965e45f640ed0443ae43ccd00f75f64, type: 3}
+  m_Script: {fileID: 11500000, guid: afee8c17349050b4987b639ef0eab1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: Press E to Pick Up
-  value: 100
+  type: 4
+  count: 1

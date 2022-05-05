@@ -2,31 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Lever : Interractible
 {
-    private bool position;
+    public Interractible objToActivate;
 
-    protected override void Action(PlayerController user)
+    public override void Action(PlayerController user)
     {
-        if (!position)
-        {
-            SwitchActive();
-        }
-        else
-        {
-            SwitchUnactive();
-        }
-
-        Debug.Log("Lever position: " + position);
-    }
-
-    private void SwitchActive()
-    {
-        position = true;
-    }
-
-    private void SwitchUnactive()
-    {
-        position = false;
+        objToActivate.Action(user);
     }
 }
