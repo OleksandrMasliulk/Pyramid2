@@ -137,7 +137,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_1
+      name: MummyWalkB1
       rect:
         serializedVersion: 2
         x: 32
@@ -158,7 +158,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_2
+      name: MummyWalkB2
       rect:
         serializedVersion: 2
         x: 64
@@ -179,7 +179,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_3
+      name: MummyWalkB3
       rect:
         serializedVersion: 2
         x: 96
@@ -200,7 +200,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_4
+      name: MummyWalkB4
       rect:
         serializedVersion: 2
         x: 128
@@ -284,7 +284,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_8
+      name: MummyWalkSB1
       rect:
         serializedVersion: 2
         x: 32
@@ -305,7 +305,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_9
+      name: MummyWalkSB2
       rect:
         serializedVersion: 2
         x: 64
@@ -326,7 +326,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_10
+      name: MummyWalkSB3
       rect:
         serializedVersion: 2
         x: 96
@@ -347,7 +347,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_11
+      name: MummyWalkSB4
       rect:
         serializedVersion: 2
         x: 128
@@ -431,7 +431,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_15
+      name: MummyWalkS1
       rect:
         serializedVersion: 2
         x: 32
@@ -452,7 +452,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_16
+      name: MummyWalkS2
       rect:
         serializedVersion: 2
         x: 64
@@ -473,7 +473,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_17
+      name: MummyWalkS3
       rect:
         serializedVersion: 2
         x: 96
@@ -494,7 +494,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_18
+      name: MummyWalkS4
       rect:
         serializedVersion: 2
         x: 128
@@ -578,7 +578,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_22
+      name: MummyWalkSF1
       rect:
         serializedVersion: 2
         x: 32
@@ -599,7 +599,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_23
+      name: MummyWalkSF2
       rect:
         serializedVersion: 2
         x: 64
@@ -620,7 +620,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_24
+      name: MummyWalkSF3
       rect:
         serializedVersion: 2
         x: 96
@@ -641,7 +641,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_25
+      name: MummyWalkSF4
       rect:
         serializedVersion: 2
         x: 128
@@ -704,7 +704,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_28
+      name: MummyStun1
       rect:
         serializedVersion: 2
         x: 0
@@ -725,7 +725,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_29
+      name: MummyWalkF1
       rect:
         serializedVersion: 2
         x: 32
@@ -746,7 +746,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_30
+      name: MummyWalkF2
       rect:
         serializedVersion: 2
         x: 64
@@ -767,7 +767,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_31
+      name: MummyWalkF3
       rect:
         serializedVersion: 2
         x: 96
@@ -788,7 +788,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_32
+      name: MummyWalkF4
       rect:
         serializedVersion: 2
         x: 128
@@ -809,7 +809,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_33
+      name: MummyStun2
       rect:
         serializedVersion: 2
         x: 160
@@ -830,7 +830,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Mummy_34
+      name: MummyStun3
       rect:
         serializedVersion: 2
         x: 192
@@ -861,41 +861,41 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      MummyWalkF3: -1811588793
       Mummy_20: 878353022
-      Mummy_16: 303834331
       Mummy_14: 22955439
-      Mummy_1: 1457849602
+      MummyWalkS4: 1386198967
       Mummy_27: -993832811
-      Mummy_30: -1446016943
-      Mummy_2: -1206581012
-      Mummy_8: 614105012
+      MummyWalkSB4: 79193095
+      MummyWalkSF1: 1186078166
+      MummyWalkSF2: -409341212
+      MummyStun2: -1022828848
       Mummy_0: -517192759
+      MummyWalkB3: -624652904
       Mummy_7: -629322426
-      Mummy_28: 947370345
+      MummyWalkS3: 753321762
       Mummy_6: -1834746140
-      Mummy_33: -1022828848
-      Mummy_25: 1978669351
-      Mummy_24: -1773406198
-      Mummy_17: 753321762
-      Mummy_9: -170588588
-      Mummy_15: 1183672943
-      Mummy_4: 2012906768
-      Mummy_18: 1386198967
-      Mummy_21: -851725167
+      MummyWalkF4: -1088806195
+      MummyWalkSB3: 1161350101
+      MummyWalkSF3: -1773406198
+      MummyWalkB1: 1457849602
+      MummyWalkSB2: -170588588
+      MummyWalkF2: -1446016943
+      MummyWalkS1: 1183672943
       Mummy_26: 751515561
-      Mummy_29: 202699092
-      Mummy_32: -1088806195
+      MummyWalkS2: 303834331
+      MummyWalkF1: 202699092
+      Mummy_21: -851725167
+      MummyWalkSF4: 1978669351
+      MummyWalkSB1: 614105012
       Mummy_5: -1331235732
-      Mummy_31: -1811588793
+      MummyWalkB4: 2012906768
       Mummy_12: 218723926
       Mummy_13: 1012164305
-      Mummy_22: 1186078166
+      MummyStun1: 947370345
       Mummy_19: -1107643148
-      Mummy_3: -624652904
-      Mummy_23: -409341212
-      Mummy_10: 1161350101
-      Mummy_11: 79193095
-      Mummy_34: -897898038
+      MummyStun3: -897898038
+      MummyWalkB2: -1206581012
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
