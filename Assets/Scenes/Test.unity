@@ -20017,6 +20017,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2262196111597928556, guid: a77f7d61efb44744bbc0ef33646f26d1, type: 3}
   m_PrefabInstance: {fileID: 1708634252}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1257750574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3443260999579358680, guid: d982bf53ef68ae54788862d3365a48f6, type: 3}
+  m_PrefabInstance: {fileID: 928381363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f38c1fe2c9e29e04b8379df92dfbb85b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1335405905 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2262196111597928556, guid: a77f7d61efb44744bbc0ef33646f26d1, type: 3}
@@ -20045,6 +20056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: Press E to Pick Up
+  isActive: 0
   type: 4
   count: 0
 --- !u!1 &1486602348
@@ -20200,7 +20212,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.23
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: fbe1ffa7359524626fcda5d97f652864
@@ -20328,6 +20340,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: Press E to Pick Up
+  isActive: 0
   type: 4
   count: 0
 --- !u!1001 &1647900400
@@ -20406,6 +20419,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lever
       objectReference: {fileID: 0}
+    - target: {fileID: 3177086615106689477, guid: 4bd0505d1b2aee949bb4b4d0c3cf9728, type: 3}
+      propertyPath: objToActivate
+      value: 
+      objectReference: {fileID: 1257750574}
     - target: {fileID: 4912227362184404429, guid: 4bd0505d1b2aee949bb4b4d0c3cf9728, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -21113,13 +21130,13 @@ PrefabInstance:
       propertyPath: inventorySlots.Array.data[3]
       value: 
       objectReference: {fileID: 1695587833}
+    - target: {fileID: 3647965819319135423, guid: fbce028d41cec6b449a05726ffda213e, type: 3}
+      propertyPath: m_ApplyToSortingLayers.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 9143180252275882768, guid: fbce028d41cec6b449a05726ffda213e, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 9143180252275882769, guid: fbce028d41cec6b449a05726ffda213e, type: 3}
-      propertyPath: InitPlayerEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
-      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 9143180252275882782, guid: fbce028d41cec6b449a05726ffda213e, type: 3}
       propertyPath: m_RootOrder
@@ -21182,7 +21199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2085206995
 Transform:
   m_ObjectHideFlags: 0
