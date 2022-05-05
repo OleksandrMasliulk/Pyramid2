@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Ghost_WalkUp
+  m_Name: LeverOn
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,15 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 1331497239, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
-    - time: 0.21666667
-      value: {fileID: 1036477230, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
-    - time: 0.41666666
-      value: {fileID: -226894321, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
-    - time: 0.6166667
-      value: {fileID: 444040580, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
-    - time: 0.8333333
-      value: {fileID: 1331497239, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
+      value: {fileID: 386612972, guid: 4c1c73b52194a4746be68d53b6930b4b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -48,17 +40,13 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 1331497239, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
-    - {fileID: 1036477230, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
-    - {fileID: -226894321, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
-    - {fileID: 444040580, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
-    - {fileID: 1331497239, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
+    - {fileID: 386612972, guid: 4c1c73b52194a4746be68d53b6930b4b, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.84999996
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
