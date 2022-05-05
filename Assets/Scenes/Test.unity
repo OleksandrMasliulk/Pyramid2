@@ -20045,6 +20045,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: Press E to Pick Up
+  isActive: 0
   type: 4
   count: 0
 --- !u!1 &1486602348
@@ -20328,6 +20329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: Press E to Pick Up
+  isActive: 0
   type: 4
   count: 0
 --- !u!1001 &1647900400
