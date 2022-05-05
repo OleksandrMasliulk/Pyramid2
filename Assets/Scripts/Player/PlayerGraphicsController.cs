@@ -25,6 +25,7 @@ public class PlayerGraphicsController : MonoBehaviour
             sprite.flipX = false;
         }
 
+        SetFlashlightDirection(direction);
         animator.SetFloat("Horizontal", direction.x);
         animator.SetFloat("Vertical", direction.y);
     }
@@ -53,6 +54,18 @@ public class PlayerGraphicsController : MonoBehaviour
     public void SwitchFlashlight(bool value)
     {
         flashlight.gameObject.SetActive(value);
+    }
+
+    public void SetFlashlightDirection(Vector3 dir)
+    {
+        float m = 90;
+        if (dir.x == 0 && dir.y == 0)
+        {
+            m = 180;
+        }
+
+        float rot_z = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+        flashlight.rotation = Quaternion.Euler(0f, 0f, rot_z - m);
     }
 
     //public void SetSanityFX(int sanityLevel)
