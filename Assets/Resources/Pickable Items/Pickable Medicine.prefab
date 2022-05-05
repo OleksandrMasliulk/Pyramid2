@@ -147,5 +147,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tooltip: Press E to Pick Up
+  isActive: 1
   type: 1
   count: 1

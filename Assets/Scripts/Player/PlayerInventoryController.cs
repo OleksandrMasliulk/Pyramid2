@@ -188,6 +188,7 @@ public class PlayerInventoryController : MonoBehaviour
 
             Instantiate((GameObject)obj, transform.position, Quaternion.identity);
 
+            inventory[slotToUse].item.OnDrop(playerController);
             int newCount = inventory[slotToUse].count - 1;
 
             if (newCount == 0)
