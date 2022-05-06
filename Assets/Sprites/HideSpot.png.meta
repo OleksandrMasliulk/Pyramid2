@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 534cc15203b238f4fa7daf98c2ad339e
+guid: d61235c04c40a0c418485b2d4d3e5062
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,169 +116,106 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grille
+      name: HideSpot1Opened
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 48
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5e6812b3b9a59d941a9c233cd2e4b36a
-      internalID: -348185830
+      spriteID: d51613fde2825f6418adc4d87be57442
+      internalID: -1024112235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FloorButtonUnTouch
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2873c03c3c24a464ba73d6167fbd8380
-      internalID: -2022556895
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FloorButtonTouch
+      name: HideSpot1Closed
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 48
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ba96c4a44e6d9d4985b9b9fa72e7392
-      internalID: 1916811315
+      spriteID: 35bf10a934323504a94572a6a38def6c
+      internalID: 343198684
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ArowWall
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63bfd56500c5a36449dc8fdc3d08d5b0
-      internalID: -45847975
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spikes
+      name: HideSpot2Opened
       rect:
         serializedVersion: 2
         x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d09f97895c6486439ecf1d7305f7723
-      internalID: 692187078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArowPoisoned
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 31
-        width: 6
-        height: 1
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b62b8f78fc9dc8445b07de541dafb458
-      internalID: 21924160
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpikesActive
-      rect:
-        serializedVersion: 2
-        x: 32
         y: 0
         width: 16
-        height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7616a6ebe6e75b545a3097f77374b703
-      internalID: -1119133101
+      spriteID: 1079662b80aa8e643bce97670613c5f5
+      internalID: 218633770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrillSide
+      name: HideSpot3
       rect:
         serializedVersion: 2
-        x: 48
+        x: 32
         y: 16
         width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a91fe935c7a78ab469025363f95f1509
-      internalID: 1128927455
+      spriteID: 245bf3cfe1309ba42bc20c91a50816ae
+      internalID: -434667436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HideSpot2Closed
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c545553c06990d148bf09b7b83e2270a
+      internalID: -329434196
       vertices: []
       indices: 
       edges: []
@@ -294,15 +231,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spikes: 692187078
-      SpikesActive: -1119133101
-      FloorButtonUnTouch: -2022556895
-      Grille: -348185830
-      ArowWall: -45847975
-      GrillSide: 1128927455
-      FloorButtonTouch: 1916811315
-      ArowPoisoned: 21924160
-      Traps_6: -1969597681
+      HideSpot2Opened: 218633770
+      HideSpot3: -434667436
+      HideSpot1Closed: 343198684
+      HideSpot2Closed: -329434196
+      HideSpot1Opened: -1024112235
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
