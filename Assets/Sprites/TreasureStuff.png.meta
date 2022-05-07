@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 534cc15203b238f4fa7daf98c2ad339e
+guid: 80ed2ef49a06a47459e20f3c4a82b94e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,158 +116,32 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Grille
+      name: ChestClosed
       rect:
         serializedVersion: 2
         x: 0
         y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5e6812b3b9a59d941a9c233cd2e4b36a
-      internalID: -348185830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FloorButtonUnTouch
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2873c03c3c24a464ba73d6167fbd8380
-      internalID: -2022556895
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: FloorButtonTouch
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0ba96c4a44e6d9d4985b9b9fa72e7392
-      internalID: 1916811315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArowWall
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63bfd56500c5a36449dc8fdc3d08d5b0
-      internalID: -45847975
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Spikes
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7d09f97895c6486439ecf1d7305f7723
-      internalID: 692187078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ArowPoisoned
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 31
-        width: 6
-        height: 1
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b62b8f78fc9dc8445b07de541dafb458
-      internalID: 21924160
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: SpikesActive
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
+        width: 32
         height: 32
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7616a6ebe6e75b545a3097f77374b703
-      internalID: -1119133101
+      spriteID: 5ab8202facf4028469635c0891bcc9a6
+      internalID: 510916220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: GrillSide
+      name: Statue1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
+        x: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -277,8 +151,113 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a91fe935c7a78ab469025363f95f1509
-      internalID: 1128927455
+      spriteID: 2bc81fd3c30b7f5409df6a145ea213dd
+      internalID: -1015629901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vases1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e3ee41a82d29ed4fb33c1932147c688
+      internalID: -967113543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Statue2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51647efcb050c5b4fb29b5d832bed81b
+      internalID: -1270511830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ChestOpend
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 9
+      pivot: {x: 0.25, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7a35a4477b52824688ff542ea6e6363
+      internalID: -84358005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Stand
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6829ebd9e5122f147bb45a1d34daed82
+      internalID: -1123106952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Vases2
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 32
+      alignment: 9
+      pivot: {x: 0.5, y: 0.25}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8b988906d9cae49b5628b7ed08a076
+      internalID: 533297222
       vertices: []
       indices: 
       edges: []
@@ -294,15 +273,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Spikes: 692187078
-      SpikesActive: -1119133101
-      FloorButtonUnTouch: -2022556895
-      Grille: -348185830
-      ArowWall: -45847975
-      GrillSide: 1128927455
-      FloorButtonTouch: 1916811315
-      ArowPoisoned: 21924160
-      Traps_6: -1969597681
+      ChestOpend: -84358005
+      Stand: -1123106952
+      ChestClosed: 510916220
+      Statue1: -1015629901
+      Vases1: -967113543
+      Statue2: -1270511830
+      Vases2: 533297222
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
