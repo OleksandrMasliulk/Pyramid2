@@ -77,15 +77,15 @@ SpriteRenderer:
   m_SortingLayerID: -643445393
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1913240094, guid: 441f0fa8c5bb6864daa928161bff814e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 0.22137587, b: 0.19245279, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.375, y: 0.0625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &339209004853471698
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Intensity: 3
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000fbe1ffa7359524626fcda5d97f652864
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
