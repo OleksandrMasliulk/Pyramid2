@@ -39,13 +39,13 @@ public class Flare : Item
 
     public override bool OnButtonPressed(PlayerController user)
     {
+        Use(user);
+
         return base.OnButtonPressed(user);
     }
 
     public override bool OnButtonReleased(PlayerController user)
     {
-        Use(user);
-
         return base.OnButtonReleased(user);
     }
 }

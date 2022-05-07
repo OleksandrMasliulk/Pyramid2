@@ -204,6 +204,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flamethrower trap
       objectReference: {fileID: 0}
+    - target: {fileID: 2771713320268502427, guid: c02e603445ea53d49934ff47bedd3855, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.053363442
+      objectReference: {fileID: 0}
+    - target: {fileID: 2771713320268502427, guid: c02e603445ea53d49934ff47bedd3855, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.9295144
+      objectReference: {fileID: 0}
     - target: {fileID: 6541389082959575530, guid: c02e603445ea53d49934ff47bedd3855, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -222,19 +230,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6541389082959575530, guid: c02e603445ea53d49934ff47bedd3855, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.71351695
       objectReference: {fileID: 0}
     - target: {fileID: 6541389082959575530, guid: c02e603445ea53d49934ff47bedd3855, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6541389082959575530, guid: c02e603445ea53d49934ff47bedd3855, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6541389082959575530, guid: c02e603445ea53d49934ff47bedd3855, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.700638
       objectReference: {fileID: 0}
     - target: {fileID: 6541389082959575530, guid: c02e603445ea53d49934ff47bedd3855, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -246,7 +254,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6541389082959575530, guid: c02e603445ea53d49934ff47bedd3855, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 88.956
+      objectReference: {fileID: 0}
+    - target: {fileID: 7609100023590855524, guid: c02e603445ea53d49934ff47bedd3855, type: 3}
+      propertyPath: m_Size.y
+      value: 2.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c02e603445ea53d49934ff47bedd3855, type: 3}
