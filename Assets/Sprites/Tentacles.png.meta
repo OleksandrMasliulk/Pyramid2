@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80ed2ef49a06a47459e20f3c4a82b94e
+guid: 4331e9274afe6e94690888112f285da9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -116,148 +116,253 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ChestClosed
+      name: Tentacles_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 79
+        width: 16
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00d008991b3f202479f50350acc40748
+      internalID: -1887607512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentacles_1
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 79
+        width: 15
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241cfa10bb6d16f42b34e28f6a16b43a
+      internalID: 1878415605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentacles_2
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 79
+        width: 17
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6cea5c14990ea049996d146ae25c5ac
+      internalID: 1642880205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentacles_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 79
+        width: 16
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a9051db58cdadd4b8efb82fa15df6ce
+      internalID: -1160858617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentacles_4
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 79
+        width: 16
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f369a1185c6aae40a7834f0234c5451
+      internalID: -1316050881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentacles_5
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 79
+        width: 16
+        height: 44
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: deb2aa48b0cbd3a409dc16138ab7ad9d
+      internalID: -47448534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Tentacles_6
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.25, y: 0.25}
+        y: 38
+        width: 30
+        height: 36
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5ab8202facf4028469635c0891bcc9a6
-      internalID: 510916220
+      spriteID: 3f2d52ad2678f48419292e8fdbafed06
+      internalID: -1191847395
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Statue1
+      name: Tentacles_7
       rect:
         serializedVersion: 2
         x: 32
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        y: 37
+        width: 31
+        height: 37
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2bc81fd3c30b7f5409df6a145ea213dd
-      internalID: -1015629901
+      spriteID: 9fa86b878cb08f3488cf20416481d20e
+      internalID: -1450414133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vases1
+      name: Tentacles_8
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
-        width: 16
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+        x: 64
+        y: 38
+        width: 30
+        height: 34
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e3ee41a82d29ed4fb33c1932147c688
-      internalID: -967113543
+      spriteID: 39c3ffe107465d34a9b2f9d175c86923
+      internalID: -564791782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Statue2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 51647efcb050c5b4fb29b5d832bed81b
-      internalID: -1270511830
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: ChestOpend
+      name: Tentacles_9
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 32
-        height: 32
-      alignment: 9
-      pivot: {x: 0.25, y: 0.25}
+        y: 2
+        width: 35
+        height: 31
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c7a35a4477b52824688ff542ea6e6363
-      internalID: -84358005
+      spriteID: 354ba0420a810c04ca1ed4ed88591c21
+      internalID: 953914707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Stand
+      name: Tentacles_10
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
-        width: 16
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+        x: 39
+        y: 1
+        width: 34
+        height: 30
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6829ebd9e5122f147bb45a1d34daed82
-      internalID: -1123106952
+      spriteID: b8cf712a8faf3784bbf096e9eca33929
+      internalID: 94990014
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Vases2
+      name: Tentacles_11
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
-        width: 16
-        height: 32
-      alignment: 9
-      pivot: {x: 0.5, y: 0.25}
+        x: 76
+        y: 1
+        width: 31
+        height: 36
+      alignment: 6
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b8b988906d9cae49b5628b7ed08a076
-      internalID: 533297222
+      spriteID: 144049bdad4060f4d825e8f75a24104d
+      internalID: 1896952139
       vertices: []
       indices: 
       edges: []
@@ -271,17 +376,20 @@ TextureImporter:
     indices: 
     edges: []
     weights: []
-    secondaryTextures:
-    - texture: {fileID: 2800000, guid: 8155bf13792b1ad41be22ba0fd3adf76, type: 3}
-      name: _NormalMap
+    secondaryTextures: []
     nameFileIdTable:
-      ChestOpend: -84358005
-      Stand: -1123106952
-      ChestClosed: 510916220
-      Statue1: -1015629901
-      Vases1: -967113543
-      Statue2: -1270511830
-      Vases2: 533297222
+      Tentacles_0: -1887607512
+      Tentacles_3: -1160858617
+      Tentacles_4: -1316050881
+      Tentacles_9: 953914707
+      Tentacles_10: 94990014
+      Tentacles_5: -47448534
+      Tentacles_11: 1896952139
+      Tentacles_8: -564791782
+      Tentacles_2: 1642880205
+      Tentacles_7: -1450414133
+      Tentacles_1: 1878415605
+      Tentacles_6: -1191847395
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
