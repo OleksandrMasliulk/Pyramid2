@@ -203,8 +203,8 @@ TextureImporter:
       name: PiramidTails_4
       rect:
         serializedVersion: 2
-        x: 0
-        y: 96
+        x: 96
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -224,8 +224,8 @@ TextureImporter:
       name: PiramidTails_5
       rect:
         serializedVersion: 2
-        x: 16
-        y: 96
+        x: 112
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -245,8 +245,8 @@ TextureImporter:
       name: PiramidTails_6
       rect:
         serializedVersion: 2
-        x: 32
-        y: 96
+        x: 112
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -266,8 +266,8 @@ TextureImporter:
       name: PiramidTails_7
       rect:
         serializedVersion: 2
-        x: 48
-        y: 96
+        x: 96
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -287,8 +287,8 @@ TextureImporter:
       name: PiramidTails_8
       rect:
         serializedVersion: 2
-        x: 64
-        y: 96
+        x: 0
+        y: 16
         width: 16
         height: 16
       alignment: 0
@@ -308,8 +308,8 @@ TextureImporter:
       name: PiramidTails_9
       rect:
         serializedVersion: 2
-        x: 80
-        y: 96
+        x: 0
+        y: 0
         width: 16
         height: 16
       alignment: 0
@@ -329,7 +329,7 @@ TextureImporter:
       name: PiramidTails_12
       rect:
         serializedVersion: 2
-        x: 128
+        x: 0
         y: 96
         width: 16
         height: 16
@@ -350,7 +350,7 @@ TextureImporter:
       name: PiramidTails_13
       rect:
         serializedVersion: 2
-        x: 144
+        x: 16
         y: 96
         width: 16
         height: 16
@@ -371,7 +371,7 @@ TextureImporter:
       name: PiramidTails_14
       rect:
         serializedVersion: 2
-        x: 160
+        x: 32
         y: 96
         width: 16
         height: 16
@@ -392,7 +392,7 @@ TextureImporter:
       name: PiramidTails_15
       rect:
         serializedVersion: 2
-        x: 176
+        x: 48
         y: 96
         width: 16
         height: 16
@@ -413,8 +413,8 @@ TextureImporter:
       name: PiramidTails_16
       rect:
         serializedVersion: 2
-        x: 0
-        y: 80
+        x: 64
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -434,8 +434,8 @@ TextureImporter:
       name: PiramidTails_17
       rect:
         serializedVersion: 2
-        x: 16
-        y: 80
+        x: 80
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -455,8 +455,8 @@ TextureImporter:
       name: PiramidTails_18
       rect:
         serializedVersion: 2
-        x: 32
-        y: 80
+        x: 96
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -476,8 +476,8 @@ TextureImporter:
       name: PiramidTails_19
       rect:
         serializedVersion: 2
-        x: 48
-        y: 80
+        x: 112
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -497,8 +497,8 @@ TextureImporter:
       name: PiramidTails_20
       rect:
         serializedVersion: 2
-        x: 64
-        y: 80
+        x: 128
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -518,8 +518,8 @@ TextureImporter:
       name: PiramidTails_21
       rect:
         serializedVersion: 2
-        x: 80
-        y: 80
+        x: 144
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -539,8 +539,8 @@ TextureImporter:
       name: PiramidTails_22
       rect:
         serializedVersion: 2
-        x: 96
-        y: 80
+        x: 160
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -560,8 +560,8 @@ TextureImporter:
       name: PiramidTails_23
       rect:
         serializedVersion: 2
-        x: 112
-        y: 80
+        x: 176
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -581,8 +581,8 @@ TextureImporter:
       name: PiramidTails_32
       rect:
         serializedVersion: 2
-        x: 64
-        y: 64
+        x: 0
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -602,8 +602,8 @@ TextureImporter:
       name: PiramidTails_33
       rect:
         serializedVersion: 2
-        x: 80
-        y: 64
+        x: 16
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -623,8 +623,8 @@ TextureImporter:
       name: PiramidTails_34
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
+        x: 32
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -644,8 +644,8 @@ TextureImporter:
       name: PiramidTails_35
       rect:
         serializedVersion: 2
-        x: 112
-        y: 64
+        x: 48
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -665,8 +665,8 @@ TextureImporter:
       name: PiramidTails_36
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
+        x: 64
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -686,8 +686,8 @@ TextureImporter:
       name: PiramidTails_37
       rect:
         serializedVersion: 2
-        x: 144
-        y: 64
+        x: 80
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -704,11 +704,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_75
+      name: PiramidTails_38
       rect:
         serializedVersion: 2
-        x: 160
-        y: 64
+        x: 96
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -725,11 +725,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_76
+      name: PiramidTails_39
       rect:
         serializedVersion: 2
-        x: 176
-        y: 64
+        x: 112
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -746,11 +746,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_38
+      name: PiramidTails_40
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
+        x: 128
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -767,11 +767,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_39
+      name: PiramidTails_41
       rect:
         serializedVersion: 2
-        x: 16
-        y: 48
+        x: 144
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -788,11 +788,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_40
+      name: PiramidTails_42
       rect:
         serializedVersion: 2
-        x: 32
-        y: 48
+        x: 160
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -809,11 +809,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_41
+      name: PiramidTails_43
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
+        x: 176
+        y: 80
         width: 16
         height: 16
       alignment: 0
@@ -830,11 +830,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_77
+      name: PiramidTails_50
       rect:
         serializedVersion: 2
-        x: 176
-        y: 48
+        x: 0
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -851,11 +851,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_48
+      name: PiramidTails_51
       rect:
         serializedVersion: 2
-        x: 0
-        y: 32
+        x: 16
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -872,11 +872,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_49
+      name: PiramidTails_52
       rect:
         serializedVersion: 2
-        x: 16
-        y: 32
+        x: 32
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -893,11 +893,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_50
+      name: PiramidTails_53
       rect:
         serializedVersion: 2
-        x: 32
-        y: 32
+        x: 48
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -914,11 +914,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_51
+      name: PiramidTails_54
       rect:
         serializedVersion: 2
-        x: 48
-        y: 32
+        x: 64
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -935,11 +935,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_52
+      name: PiramidTails_55
       rect:
         serializedVersion: 2
-        x: 64
-        y: 32
+        x: 80
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -956,11 +956,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_53
+      name: PiramidTails_56
       rect:
         serializedVersion: 2
-        x: 80
-        y: 32
+        x: 96
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -977,11 +977,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_54
+      name: PiramidTails_57
       rect:
         serializedVersion: 2
-        x: 96
-        y: 32
+        x: 112
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -998,11 +998,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_55
+      name: PiramidTails_58
       rect:
         serializedVersion: 2
-        x: 112
-        y: 32
+        x: 128
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -1019,11 +1019,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_56
+      name: PiramidTails_59
       rect:
         serializedVersion: 2
-        x: 128
-        y: 32
+        x: 144
+        y: 64
         width: 16
         height: 16
       alignment: 0
@@ -1040,11 +1040,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_64
+      name: PiramidTails_68
       rect:
         serializedVersion: 2
-        x: 96
-        y: 16
+        x: 0
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -1061,11 +1061,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_65
+      name: PiramidTails_69
       rect:
         serializedVersion: 2
-        x: 112
-        y: 16
+        x: 16
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -1082,11 +1082,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_66
+      name: PiramidTails_70
       rect:
         serializedVersion: 2
-        x: 128
-        y: 16
+        x: 32
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -1103,11 +1103,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_67
+      name: PiramidTails_71
       rect:
         serializedVersion: 2
-        x: 144
-        y: 16
+        x: 48
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -1124,11 +1124,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_68
+      name: PiramidTails_72
       rect:
         serializedVersion: 2
-        x: 160
-        y: 16
+        x: 64
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -1145,11 +1145,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_79
+      name: PiramidTails_73
       rect:
         serializedVersion: 2
-        x: 176
-        y: 16
+        x: 96
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -1166,11 +1166,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_69
+      name: PiramidTails_74
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
+        x: 112
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -1187,11 +1187,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_70
+      name: PiramidTails_75
       rect:
         serializedVersion: 2
-        x: 16
-        y: 0
+        x: 128
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -1208,11 +1208,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_71
+      name: PiramidTails_76
       rect:
         serializedVersion: 2
-        x: 32
-        y: 0
+        x: 144
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -1229,11 +1229,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_72
+      name: PiramidTails_77
       rect:
         serializedVersion: 2
-        x: 48
-        y: 0
+        x: 160
+        y: 48
         width: 16
         height: 16
       alignment: 0
@@ -1250,137 +1250,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_10
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ad4776c512592f14885b5d084f6ebafc
-      internalID: -645538269
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PiramidTails_11
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 96
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c176209cd71e8cc4f91f6dd2c1fea958
-      internalID: 891373102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PiramidTails_24
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8dde7f2862897d43bc2a8da4e417610
-      internalID: -1403852226
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PiramidTails_25
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f02c906cd3cecbb4a88339b4e4108b02
-      internalID: 1873841675
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PiramidTails_26
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e33455ec6297644895065bedd6dff5f
-      internalID: -924535519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PiramidTails_27
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 80
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 59724e48f80816e4ab5d30c6544e3b2f
-      internalID: 1688484670
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PiramidTails_28
+      name: PiramidTails_86
       rect:
         serializedVersion: 2
         x: 0
-        y: 64
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -1390,18 +1264,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf99486181ee7d7429f7022d3e521e14
-      internalID: 1617474461
+      spriteID: 76baa99e34a486d4c83559e03e612037
+      internalID: 1187892455
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_29
+      name: PiramidTails_87
       rect:
         serializedVersion: 2
         x: 16
-        y: 64
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -1411,18 +1285,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 66451496cefd5604ab71550de5cc2fb6
-      internalID: -678700831
+      spriteID: ab64a6eafd7680144907fa3e35950262
+      internalID: -1971352854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_30
+      name: PiramidTails_88
       rect:
         serializedVersion: 2
         x: 32
-        y: 64
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -1432,18 +1306,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3eafd79bfb5ae954bb496e92aadcfaa5
-      internalID: -725128096
+      spriteID: eeeb825b38c506c43a71b1a1f12a6d8b
+      internalID: 1743577877
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_31
+      name: PiramidTails_89
       rect:
         serializedVersion: 2
         x: 48
-        y: 64
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -1453,18 +1327,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cec1fa723b944374c9c96f8ba7384739
-      internalID: 947325076
+      spriteID: ebeaa75e55d8668429da3fcbb070a89c
+      internalID: 1923392522
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails42_
+      name: PiramidTails_90
       rect:
         serializedVersion: 2
         x: 64
-        y: 48
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -1474,18 +1348,39 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c41e7a67510db164e90af6bdf283576a
-      internalID: 1002798651
+      spriteID: b3ecfa563345c64438f11fa5cceaf040
+      internalID: 213386911
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_43
+      name: PiramidTails_91
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29bb5c7b19fa35247a1e154ce6bde030
+      internalID: 237004502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PiramidTails_92
       rect:
         serializedVersion: 2
         x: 96
-        y: 48
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -1495,18 +1390,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d48315d1127a3704a867add37f41b87c
-      internalID: -1362218374
+      spriteID: 8d61c66fb3ffba748a75bb8e7f138d9d
+      internalID: -857457932
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_44
+      name: PiramidTails_93
       rect:
         serializedVersion: 2
         x: 112
-        y: 48
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -1516,18 +1411,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e59e4fc6415ab83419240bdbd9a496f7
-      internalID: 1230350804
+      spriteID: a841ae8efa2473049be68d8a9081207a
+      internalID: -3076551
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_45
+      name: PiramidTails_94
       rect:
         serializedVersion: 2
         x: 128
-        y: 48
+        y: 32
         width: 16
         height: 16
       alignment: 0
@@ -1537,56 +1432,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae333c1428b2c3f4fab1b779245ec305
-      internalID: -1941948127
+      spriteID: 94f7fa71d4757824eb39e308b46e86c6
+      internalID: -1846821595
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_46
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b08fd73ac8f0484f9ce31807244c3ee
-      internalID: -891820650
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PiramidTails_47
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 48
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d8639003ae0a6214593d86ea98e5e0cc
-      internalID: -718733394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PiramidTails_57
+      name: PiramidTails_95
       rect:
         serializedVersion: 2
         x: 144
@@ -1600,14 +1453,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 444a4e59f4e96434d9ee35b6e5100dee
-      internalID: -1930970106
+      spriteID: 7dd8a15b13a0c1c43a916af6c98e73c1
+      internalID: -184243871
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_58
+      name: PiramidTails_96
       rect:
         serializedVersion: 2
         x: 160
@@ -1621,56 +1474,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a25ef73409568e346b4f283b5cafaccb
-      internalID: -828274135
+      spriteID: 565bd7882a8f9ad489b2ca7687fc822d
+      internalID: 360491211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_78
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 32
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: faf186594f3262248b438b14c003ea77
-      internalID: 1574180448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PiramidTails_59
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0911c9894f74c4e4bbd358e5d39da2ee
-      internalID: 686979132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: PiramidTails_60
+      name: PiramidTails_97
       rect:
         serializedVersion: 2
         x: 16
@@ -1684,14 +1495,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5ccae80db4a6f24bb400f834356aefd
-      internalID: 2122632132
+      spriteID: 5ff4c4d78407cd54b8fde011a34cd8bb
+      internalID: 1549794732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_61
+      name: PiramidTails_98
       rect:
         serializedVersion: 2
         x: 48
@@ -1705,14 +1516,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d850dd29931a07b4c8d6929f5108f912
-      internalID: 2122794699
+      spriteID: 74cc36e3dfaa99e41802e555daad15ae
+      internalID: 147359310
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_62
+      name: PiramidTails_99
       rect:
         serializedVersion: 2
         x: 64
@@ -1726,14 +1537,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9979d8b6717eb934c98401bce69de80b
-      internalID: -331673281
+      spriteID: a88109b1147cb254e858108ee4d19d20
+      internalID: -2075854181
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_63
+      name: PiramidTails_100
       rect:
         serializedVersion: 2
         x: 80
@@ -1747,17 +1558,80 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 575f9b208c73f9d419edefb3c27bad8c
-      internalID: -493194591
+      spriteID: 5d0c5b6031cee6c448e0df4f4cf0006f
+      internalID: -1533827710
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_73
+      name: PiramidTails_101
       rect:
         serializedVersion: 2
-        x: 96
+        x: 128
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c43ccbbf87c32438c1fee8d18249e7
+      internalID: 296984207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PiramidTails_102
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b458d470f0a50478e6e4139531d8d3
+      internalID: -91268258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PiramidTails_103
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c519ec8f7b66e8f4dabd7cc1046d5608
+      internalID: -838929526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PiramidTails_106
+      rect:
+        serializedVersion: 2
+        x: 16
         y: 0
         width: 16
         height: 16
@@ -1768,17 +1642,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f8ceceb0ea40b8a4a836b6c42a8cd25a
-      internalID: 896563769
+      spriteID: 5d8f8e280be15be46b78de915bc75066
+      internalID: -2114876246
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_74
+      name: PiramidTails_107
       rect:
         serializedVersion: 2
-        x: 112
+        x: 32
         y: 0
         width: 16
         height: 16
@@ -1789,17 +1663,17 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b8568c98f01bbc49ae28c13fdb63434
-      internalID: 491217604
+      spriteID: 112f3d7c152f95a4c8ba24925fec3ce9
+      internalID: -1251657435
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: PiramidTails_80
+      name: PiramidTails_108
       rect:
         serializedVersion: 2
-        x: 176
+        x: 48
         y: 0
         width: 16
         height: 16
@@ -1810,8 +1684,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0faa65b4a51ff4349b0f5ef3b5bcb3a4
-      internalID: 59103283
+      spriteID: bbff2cad6f027bb418e25601eb90d1b5
+      internalID: -1429156006
       vertices: []
       indices: 
       edges: []
@@ -1829,87 +1703,117 @@ TextureImporter:
     - texture: {fileID: 2800000, guid: 062cf6895c23bdc4b85f0108a4e1ac1e, type: 3}
       name: _NormalMap
     nameFileIdTable:
-      PiramidTails_25: 1873841675
+      PiramidTails_106: -2114876246
+      PiramidTails_107: -1251657435
+      PiramidTails_109: -1886033327
       PiramidTails_2: -1917507654
       PiramidTails_11: 891373102
-      PiramidTails_65: -12437421
-      PiramidTails_15: -2040211131
-      PiramidTails_48: -1659785694
+      PiramidTails_65: 2122794699
       PiramidTails_30: -725128096
-      PiramidTails_0: -520938076
-      PiramidTails_54: 1072186587
-      PiramidTails_52: 250995090
-      PiramidTails_74: 491217604
+      PiramidTails_74: -755927728
       PiramidTails_1: -1301393040
-      PiramidTails_40: 1697759350
+      PiramidTails_40: 672620290
       PiramidTails_5: -1188219991
+      PiramidTails_86: 1187892455
       PiramidTails_4: 1130343937
-      PiramidTails_47: -718733394
-      PiramidTails_58: -828274135
-      PiramidTails_8: 844243991
+      PiramidTails_93: -3076551
+      PiramidTails_47: -1941948127
+      PiramidTails_104: 124442829
       PiramidTails_17: 165085692
-      PiramidTails_46: -891820650
-      PiramidTails_44: 1230350804
-      PiramidTails_51: 1014560221
-      PiramidTails_27: 1688484670
+      PiramidTails_51: -1659785694
       PiramidTails_29: -678700831
+      PiramidTails_72: 553837283
       PiramidTails_6: -517936987
+      PiramidTails_67: -493194591
+      PiramidTails_56: -1514685685
+      PiramidTails_42: 1697759350
+      PiramidTails_57: 1072186587
+      PiramidTails_84: -1913881929
+      PiramidTails_14: 848290451
+      PiramidTails_32: -401903352
+      PiramidTails_43: -739664517
+      PiramidTails_73: 1297581930
+      PiramidTails_102: -91268258
+      PiramidTails_19: 1013101620
+      PiramidTails_63: 686979132
+      PiramidTails_10: -645538269
+      PiramidTails_39: 829437007
+      PiramidTails_59: -1953325210
+      PiramidTails_70: 1054709952
+      PiramidTails_77: -1617791797
+      PiramidTails_110: 1378396492
+      PiramidTails_83: 137732246
+      PiramidTails_82: 823453255
+      PiramidTails_64: 2122632132
+      PiramidTails_7: -927119032
+      PiramidTails_34: 84139123
+      PiramidTails_37: -928850013
+      PiramidTails_35: 192180183
+      PiramidTails_66: -331673281
+      PiramidTails_45: -1362218374
+      PiramidTails_79: 491217604
+      PiramidTails_68: -2065095308
+      PiramidTails_3: 1032539917
+      PiramidTails_90: 213386911
+      PiramidTails_76: -389949273
+      PiramidTails_98: 147359310
+      PiramidTails_62: 1574180448
+      PiramidTails_24: -1403852226
+      PiramidTails_99: -2075854181
+      PiramidTails_25: 1873841675
+      PiramidTails_15: -2040211131
+      PiramidTails_48: -891820650
+      PiramidTails_0: -520938076
+      PiramidTails_54: 1014560221
+      PiramidTails_108: -1429156006
+      PiramidTails_52: -434087215
+      PiramidTails_97: 1549794732
+      PiramidTails_58: -1768159492
+      PiramidTails_8: 844243991
+      PiramidTails_46: 1230350804
+      PiramidTails_88: 1743577877
+      PiramidTails_85: -1076940907
+      PiramidTails_44: 1002798651
+      PiramidTails_27: 1688484670
+      PiramidTails_53: 630901689
       PiramidTails_28: 1617474461
       PiramidTails_20: 236821858
-      PiramidTails_67: -930802327
-      PiramidTails_56: -1953325210
-      PiramidTails_72: -1617791797
-      PiramidTails_53: -1514685685
-      PiramidTails_31: 947325076
-      PiramidTails_57: -1930970106
-      PiramidTails_9: -203543847
-      PiramidTails_14: 848290451
       PiramidTails_80: 59103283
-      PiramidTails_32: -401903352
-      PiramidTails_43: -1362218374
-      PiramidTails_38: 672620290
-      PiramidTails42_: 1002798651
-      PiramidTails_49: -434087215
-      PiramidTails_61: 2122794699
-      PiramidTails_73: 896563769
-      PiramidTails_19: 686979132
-      PiramidTails_78: 1574180448
-      PiramidTails_63: -493194591
-      PiramidTails_10: -972354747
-      PiramidTails_33: 553837283
-      PiramidTails_71: -389949273
-      PiramidTails_39: -755467542
-      PiramidTails_59: 686979132
-      PiramidTails_70: 1179508352
-      PiramidTails_41: -739664517
-      PiramidTails_75: -211231676
-      PiramidTails_77: -1714989377
-      PiramidTails_69: -755927728
-      PiramidTails_18: 628032721
-      PiramidTails_22: 2122632132
-      PiramidTails_64: -2065095308
-      PiramidTails_7: 84139123
-      PiramidTails_34: -812300734
-      PiramidTails_36: -928850013
-      PiramidTails_37: 1452943834
-      PiramidTails_13: 192180183
-      PiramidTails_35: -1649407290
-      PiramidTails_12: -1362218374
-      PiramidTails_45: -1941948127
-      PiramidTails_66: 1054709952
-      PiramidTails_16: -1393373003
-      PiramidTails_23: -1930970106
-      PiramidTails_60: 2122632132
-      PiramidTails_68: 553837283
-      PiramidTails_79: 1297581930
-      PiramidTails_3: -924535519
-      PiramidTails_50: 630901689
-      PiramidTails_26: -1966001992
-      PiramidTails_21: -389949273
-      PiramidTails_76: 829437007
-      PiramidTails_55: -1768159492
-      PiramidTails_62: -331673281
-      PiramidTails_24: -211231676
+      PiramidTails_95: -184243871
+      PiramidTails_81: 735739564
+      PiramidTails_31: 947325076
+      PiramidTails_75: 1179508352
+      PiramidTails_9: -203543847
+      PiramidTails_94: -1846821595
+      PiramidTails_49: -718733394
+      PiramidTails_38: -211231676
+      PiramidTails_87: -1971352854
+      PiramidTails_61: -828274135
+      PiramidTails_78: 896563769
+      PiramidTails_71: -930802327
+      PiramidTails_33: -972354747
+      PiramidTails_96: 360491211
+      PiramidTails_41: -755467542
+      PiramidTails_69: -12437421
+      PiramidTails_18: 629547608
+      PiramidTails_92: -857457932
+      PiramidTails_22: 628032721
+      PiramidTails_100: -1533827710
+      PiramidTails_89: 1923392522
+      PiramidTails_91: 237004502
+      PiramidTails_36: -812300734
+      PiramidTails_13: 1452943834
+      PiramidTails_12: -1649407290
+      PiramidTails_16: -245160909
+      PiramidTails_23: -1393373003
+      PiramidTails_60: -1930970106
+      PiramidTails_50: -1714989377
+      PiramidTails_26: -924535519
+      PiramidTails_21: -1966001992
+      PiramidTails_55: 250995090
+      PiramidTails_101: 296984207
+      PiramidTails_105: 268913028
+      PiramidTails_103: -838929526
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
