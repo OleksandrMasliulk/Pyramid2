@@ -62,7 +62,7 @@ public class PlayerHUDController : MonoBehaviour
 
     public void HighlightInventorySlot(int index) 
     {
-        inventorySlots[highlightedSlot].GetComponent<Image>().color = Color.black;
+        inventorySlots[highlightedSlot].GetComponent<Image>().color = Color.white;
 
         inventorySlots[index].GetComponent<Image>().color = Color.green;
         highlightedSlot = index;
@@ -70,21 +70,41 @@ public class PlayerHUDController : MonoBehaviour
 
     public void UpdateInventorySlot(int index, InventorySlot data)
     {
+        Image img = inventorySlots[index].transform.GetChild(0).GetComponent<Image>();
+        Text txt = inventorySlots[index].transform.GetChild(2).GetComponent<Text>();
+
         if (data.item != null)
         {
-            inventorySlots[index].transform.GetChild(0).GetComponent<Image>().sprite = Resources.Load(data.item.inventoryImagePath) as Sprite;
+            if (data.item.inventoryImage != null)
+            {
+                img.color = Color.white;
+                img.sprite = data.item.inventoryImage;
+            }
+            else
+            {
+                img.color = new Color(0, 0, 0, 0);
+                img.sprite = null;
+            }
+
+            string countText;
+            if (data.count == 0)
+            {
+                countText = "";
+            }
+            else
+            {
+                countText = data.count.ToString();
+            }
+
+            txt.text = countText;
         }
 
-        string countText;
-        if (data.count == 0)
-        {
-            countText = "";
-        }
         else
         {
-            countText = data.count.ToString();
-        }
-        inventorySlots[index].transform.GetChild(2).GetComponent<Text>().text = countText;
+            img.color = new Color(0, 0, 0, 0);
+            img.sprite = null;
+            txt.text = "";
+        }    
     }
 
     public void ShowHUD()

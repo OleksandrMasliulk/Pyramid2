@@ -8,7 +8,7 @@ public class PlayerInterractionController : MonoBehaviour
 {
     private PlayerController playerController;
 
-    private List<Interractible> objectsToInterract;
+    private List<InterractComponent> objectsToInterract;
 
     private void Awake()
     {
@@ -17,18 +17,18 @@ public class PlayerInterractionController : MonoBehaviour
 
     private void Start()
     {
-        objectsToInterract = new List<Interractible>();
+        objectsToInterract = new List<InterractComponent>();
     }
 
-    public void AddToList(Interractible objectToInterract)
+    public void AddToList(InterractComponent objectToInterract)
     {
         objectsToInterract.Add(objectToInterract);
 
-        playerController.GetPlayerHUDContorller().SetTooltipText(objectToInterract.tooltip);
+        playerController.GetPlayerHUDContorller().SetTooltipText(objectToInterract.GetComponent<IInterractible>().tooltip);
         playerController.GetPlayerHUDContorller().ShowTooltip();
     }
     
-    public void RemoveFromList(Interractible objectToInterract)
+    public void RemoveFromList(InterractComponent objectToInterract)
     {
         objectsToInterract.Remove(objectToInterract);
 
@@ -38,7 +38,7 @@ public class PlayerInterractionController : MonoBehaviour
         }
         else
         {
-            playerController.GetPlayerHUDContorller().SetTooltipText(objectsToInterract[^1].tooltip);
+            playerController.GetPlayerHUDContorller().SetTooltipText(objectsToInterract[0].GetComponent<IInterractible>().tooltip);
         }
     } 
 
@@ -46,14 +46,35 @@ public class PlayerInterractionController : MonoBehaviour
     {
         if (objectsToInterract.Count > 0)
         {
-            if (!objectsToInterract[^1].Interract(playerController))
-            {
-                RemoveFromList(objectsToInterract[^1]);
-            }
+            objectsToInterract[0].Interract(playerController);
+            //if (!objectsToInterract[^1].Interract(playerController))
+            //{
+            //    RemoveFromList(objectsToInterract[^1]);
+            //}
         }
         else
         {
             Debug.Log("No objects to interract");
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        InterractComponent obj = collision.GetComponent<InterractComponent>();
+
+        if (obj != null)
+        {
+            AddToList(obj);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        InterractComponent obj = collision.GetComponent<InterractComponent>();
+
+        if (obj != null)
+        {
+            RemoveFromList(obj);
         }
     }
 }

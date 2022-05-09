@@ -2,22 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : Interractible
+public class Door : MonoBehaviour, IInterractible
 {
     private bool isClosed;
 
     [SerializeField] private Collider2D door;
     [SerializeField] private Animator anim;
 
-    protected override void Init()
-    {
-        base.Init();
+    public string tooltip { get; set; }
 
+    private void Start()
+    {
         isClosed = true;
         door.enabled = true;
+
+        tooltip = "Press E to Open";
     }
 
-    public override void Action(PlayerController user)
+    public void Interract(PlayerController user)
     {
         if (isClosed)
         {
@@ -33,6 +35,8 @@ public class Door : Interractible
     {
         isClosed = false;
         door.enabled = false;
+
+        tooltip = "Press E to Close";
         anim.SetBool("Opened", true);
     }
 
@@ -40,6 +44,8 @@ public class Door : Interractible
     {
         isClosed = true;
         door.enabled = true;
+
+        tooltip = "Press E to Open";
         anim.SetBool("Opened", false);
     }
 }

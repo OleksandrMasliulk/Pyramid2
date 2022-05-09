@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Medicine : Item
 {
-    protected override void Init()
+    public Medicine()
     {
         Debug.Log("MEDICINE CLASEE CONSTRUCTED");
-        base.Init();
 
-        isStackable = true;
-        isConsumable = true;
+        this.type = ItemType.Medkit;
+        ItemAssets.Instance.GetItem(type, out pickableMirror, out inventoryImage);
+
         useOnRelease = false;
-
-        //PATHS
-        pickableMirrorPath = "Pickable Items/Pickable Medicine";
+        isConsumable = true;
+        isStackable = true;
     }
 
     public override void Use(PlayerController user)

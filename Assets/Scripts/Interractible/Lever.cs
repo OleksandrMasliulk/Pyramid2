@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Lever : Interractible
+public class Lever : MonoBehaviour, IInterractible
 {
-    public Interractible objToActivate;
+    [SerializeField]private RemoteInterractComponent objToInterract;
 
-    public override void Action(PlayerController user)
+    public string tooltip { get; set; }
+
+    private void Start()
     {
-        objToActivate.Action(user);
+        tooltip = "Press E to Interract";
+    }
+
+    public void Interract(PlayerController user)
+    {
+        objToInterract.Interract(user);
     }
 }

@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class Item
 {
-    public string pickableMirrorPath;
-    public string inventoryImagePath;
+    public enum ItemType
+    {
+        Flare,
+        Medkit,
+        Flashlight,
+        Paint,
+        Treasure5,
+        Treasure10
+    }
+
+    public Transform pickableMirror;
+    public Sprite inventoryImage;
 
     public bool isStackable;
     public bool isConsumable;
     public bool useOnRelease;
 
-    public Item()
-    {
-        Init();
-    }
-
-    protected virtual void Init()
-    {
-        pickableMirrorPath = null;
-        inventoryImagePath = null;
-        useOnRelease = false;
-    }
+    public ItemType type;
 
     public virtual void OnDrop(PlayerController user)
     { 

@@ -184,9 +184,7 @@ public class PlayerInventoryController : MonoBehaviour
         }
         else
         {
-            var obj = Resources.Load(inventory[slotToUse].item.pickableMirrorPath);
-
-            Instantiate((GameObject)obj, transform.position, Quaternion.identity);
+            Instantiate(inventory[slotToUse].item.pickableMirror.gameObject, transform.position, Quaternion.identity);
 
             inventory[slotToUse].item.OnDrop(playerController);
             int newCount = inventory[slotToUse].count - 1;

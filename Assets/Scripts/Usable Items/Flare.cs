@@ -4,17 +4,16 @@ using UnityEngine;
 
 public class Flare : Item
 {
-    protected override void Init()
+    public Flare()
     {
         Debug.Log("FLARE CLASEE CONSTRUCTED");
-        base.Init();
 
-        isStackable = true;
-        isConsumable = true;
+        this.type = ItemType.Flare;
+        ItemAssets.Instance.GetItem(type, out pickableMirror, out inventoryImage);
+
         useOnRelease = false;
-
-        //PATHS
-        pickableMirrorPath = "Pickable Items/Pickable Flare";
+        isConsumable = true;
+        isStackable = true;
     }
 
     public override void Use(PlayerController user)

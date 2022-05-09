@@ -47,7 +47,7 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < 4; i++)
         {
-            PickableTreasure treasure = PlayerController.Instance.GetPlayerInventoryController().GetItemFromSlot(i) as PickableTreasure;
+            Treasure treasure = PlayerController.Instance.GetPlayerInventoryController().GetItemFromSlot(i) as Treasure;
             if (treasure != null)
             {
                 gold += treasure.value;

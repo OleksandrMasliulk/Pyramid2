@@ -6,17 +6,16 @@ public class Paint : Item
 {
     private Vector3 mousePosTemp;
 
-    protected override void Init()
+    public Paint()
     {
         Debug.Log("PAINT CLASS CONSTRUCTED");
-        base.Init();
 
-        isStackable = true;
-        isConsumable = true;
+        this.type = ItemType.Paint;
+        ItemAssets.Instance.GetItem(type, out pickableMirror, out inventoryImage);
+
         useOnRelease = true;
-
-        //PATHS
-        pickableMirrorPath = "Pickable Items/Pickable Paint";
+        isConsumable = true;
+        isStackable = true;
     }
 
     public override void Use(PlayerController user)
@@ -44,6 +43,11 @@ public class Paint : Item
     }
     private void SpawnArrow(string direction, PlayerController user)
     {
+        if (direction == null)
+        {
+            direction = "Up";
+        }
+
         GameObject prefab = (GameObject)Resources.Load("Usable Items/Arrow " + direction);
         if (prefab == null)
         {

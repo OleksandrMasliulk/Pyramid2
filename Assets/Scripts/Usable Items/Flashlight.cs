@@ -6,17 +6,15 @@ public class Flashlight : Item
 {
     private bool isActive;
 
-    protected override void Init()
+    public Flashlight()
     {
         Debug.Log("FLASHLIGH CLASEE CONSTRUCTED");
-        base.Init();
+        this.type = ItemType.Flashlight;
+        ItemAssets.Instance.GetItem(type, out pickableMirror, out inventoryImage);
 
-        isStackable = false;
-        isConsumable = false;
         useOnRelease = false;
-
-        //PATHS
-        pickableMirrorPath = "Pickable Items/Pickable Flashlight";
+        isConsumable = false;
+        isStackable = false;
 
         isActive = false;
     }
