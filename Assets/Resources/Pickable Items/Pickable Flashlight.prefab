@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2671686913426511123}
   - component: {fileID: 5113099986545515935}
   - component: {fileID: 7160664307262152201}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pickable Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

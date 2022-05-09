@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2671686913426511123}
   - component: {fileID: 5113099986545515935}
   - component: {fileID: -3003618175465005137}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Pickable Medicine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
