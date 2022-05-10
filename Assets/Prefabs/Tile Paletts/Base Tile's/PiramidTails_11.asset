@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: PiramidTails_11
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 891373102, guid: 5df3de94f49e50b43b7e55eca4f60378, type: 3}
+  m_Sprite: {fileID: 52565550, guid: 5df3de94f49e50b43b7e55eca4f60378, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
