@@ -2,32 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlamethrowerTrap : TrapMaster
+public class FlamethrowerTrap : Trap
 {
     public GameObject fireGraphics;
+
     public BoxCollider2D damageBox;
     public LayerMask damageLayer;
 
     public float sanityLossRadius;
 
-    public float timeBtwShots;
+    public float rearmTime;
+
     public float flameThrowingDuration;
 
-    private bool isThrowingFire;
-
-    protected override void Init()
+    private void Start()
     {
-        base.Init();
-
-        StopThrowingFire();
-        StartCoroutine(FlameThrowerCoroutine()); 
+        StartCoroutine(RearmCoroutine());
     }
 
-    protected override void UpdateSeq()
+    IEnumerator ThrowFire()
     {
-        if (isThrowingFire)
+        float time = flameThrowingDuration;
+
+        fireGraphics.SetActive(true);
+        ReduceSanity(null);
+
+        while(time > 0)
         {
-            Collider2D[] cols = Physics2D.OverlapBoxAll(fireGraphics.transform.position, damageBox.bounds.size, 0f, damageLayer);
+            Collider2D[] cols = Physics2D.OverlapBoxAll(damageBox.transform.position, damageBox.bounds.size, 0f, damageLayer);
 
             PlayerController target;
             foreach (Collider2D col in cols)
@@ -36,38 +38,26 @@ public class FlamethrowerTrap : TrapMaster
                 if (target != null)
                 {
                     target.GetComponent<IDamageable>().TakeDamage(1);
-                    return;
                 }
             }
+
+            yield return new WaitForSeconds(Time.deltaTime);
+            time -= Time.deltaTime;
         }
-    }
 
-    IEnumerator FlameThrowerCoroutine()
-    {
-        while(isActive)
-        {
-            yield return new WaitForSeconds(timeBtwShots);
-
-            ThrowFire();
-            Invoke("StopThrowingFire", flameThrowingDuration);
-        }
-    }
-
-    private void ThrowFire()
-    {
-        fireGraphics.SetActive(true);
-        isThrowingFire = true;
-
-        ReduceSanity(null);
-    }
-
-    private void StopThrowingFire()
-    {
         fireGraphics.SetActive(false);
-        isThrowingFire = false;
+
+        StartCoroutine(RearmCoroutine());
     }
 
-    protected override void ReduceSanity(PlayerController target)
+    IEnumerator RearmCoroutine()
+    {
+        yield return new WaitForSeconds(rearmTime);
+
+        StartCoroutine(ThrowFire());
+    }
+
+    public override void ReduceSanity(PlayerController target)
     {
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, sanityLossRadius);
 
@@ -85,7 +75,11 @@ public class FlamethrowerTrap : TrapMaster
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(fireGraphics.transform.position, damageBox.bounds.size);
+        Gizmos.DrawWireCube(damageBox.transform.position, damageBox.bounds.size);
         Gizmos.DrawWireSphere(transform.position, sanityLossRadius);
+    }
+
+    public override void Activate(IDamageable target)
+    {
     }
 }

@@ -2966,7 +2966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5681723403936239884
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3042,8 +3042,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef41d1a17a3fe6f4aa991ca9f5382ce0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-  highlightedColor: {r: 1, g: 1, b: 1, a: 1}
+  defaultColor: {r: 0.7264151, g: 0.6521823, b: 0.1946244, a: 0.6901961}
+  highlightedColor: {r: 1, g: 0.85925925, b: 0, a: 0.6901961}
   leftSegment: {fileID: 7432344013076865086}
   rightSegment: {fileID: 1287541908853882718}
   upSegment: {fileID: 2246426586992779023}

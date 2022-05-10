@@ -5,6 +5,7 @@ using UnityEngine;
 public class Cover : MonoBehaviour, IInterractible
 {
     [SerializeField] private Transform respawnPos;
+    [SerializeField] private Animator graphics;
 
     public string tooltip { get; set; }
 
@@ -19,11 +20,17 @@ public class Cover : MonoBehaviour, IInterractible
         {
             tooltip = "Press E to Cover";
             user.GetPlayerCoverController().Uncover(respawnPos.position);
+
+            if (graphics != null)
+                graphics.SetBool("isOpened", true);
         }
         else
         {
             tooltip = "Press E to Uncover";
             user.GetPlayerCoverController().Cover(transform.position);
+
+            if (graphics != null)
+                graphics.SetBool("isOpened", false);
         }
     }
 }

@@ -14,6 +14,8 @@ public class PlayerGraphicsController : MonoBehaviour
 
     [SerializeField] private Transform flashlight;
 
+    [SerializeField] private Sprite corpseSprite;
+
     public void SetMovementDirection(Vector2 direction)
     {
         if (direction.x < 0f)
@@ -47,6 +49,12 @@ public class PlayerGraphicsController : MonoBehaviour
 
     public void SetGhostGraphics()
     {
+        GameObject corpse = Instantiate(new GameObject(), transform.position, Quaternion.identity);
+        SpriteRenderer sr = corpse.AddComponent<SpriteRenderer>();
+        corpse.transform.localScale *= 2;
+        sr.sprite = corpseSprite;
+        sr.sortingLayerName = "Characters";
+
         animator.runtimeAnimatorController = ghostController;
         animator.SetTrigger("Ghost");
     }

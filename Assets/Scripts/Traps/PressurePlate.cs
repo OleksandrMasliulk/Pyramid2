@@ -4,25 +4,11 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
 {
-    public TrapMaster trapToActivate;
+    [SerializeField] private RemoteInterractComponent objToInterract;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerController player = collision.GetComponent<PlayerController>();
-
-        if (player != null)
-        {
-            trapToActivate.Trigger(player);
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        PlayerController player = collision.GetComponent<PlayerController>();
-
-        if (player != null)
-        {
-            trapToActivate.StopCountdown();
-        }
+        objToInterract.Interract(player);
     }
 }

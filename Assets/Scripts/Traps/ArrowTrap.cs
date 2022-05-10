@@ -2,23 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowTrap : TrapMaster
+public class ArrowTrap : Trap, IInterractible
 {
     public ParticleSystem arrows;
 
-    protected override void Activate(PlayerController target)
+    [SerializeField] private float rearmTime;
+    private bool canShoot;
+    private float timeToRearm;
+
+    public string tooltip { get; set; }
+
+    private void Start()
     {
-        Debug.Log("ARROW TRAP ACTIVATED");
-
-        base.Activate(target);
-
-        Shoot();
-        ReduceSanity(target);
+        canShoot = true;
+        timeToRearm = 0;
     }
 
     private void Shoot()
     {
         arrows.Play();
+
+        canShoot = false;
+        timeToRearm = rearmTime;
+    }
+
+    private void Update()
+    {
+        if (!canShoot)
+        {
+            if (timeToRearm <= 0)
+            {
+                canShoot = true;
+            }
+            else
+            {
+                timeToRearm -= Time.deltaTime;
+            }
+        }
     }
 
     private void OnParticleCollision(GameObject other)
@@ -30,6 +50,24 @@ public class ArrowTrap : TrapMaster
         if (target != null)
         {
             target.TakeDamage(1);
+        }
+    }
+
+    public override void Activate(IDamageable target)
+    {
+        Shoot();
+    }
+
+    public void Interract(PlayerController user)
+    {
+        if (canShoot)
+        {
+            if (user != null)
+            {
+                ReduceSanity(user);
+            }
+
+            Activate(user.GetComponent<IDamageable>());
         }
     }
 }
