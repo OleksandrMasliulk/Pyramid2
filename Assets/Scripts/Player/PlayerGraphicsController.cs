@@ -7,7 +7,7 @@ public class PlayerGraphicsController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sprite;
 
-    //[SerializeField] private AnimatorOverrideController aliveController;
+    [SerializeField] private RuntimeAnimatorController aliveController;
     [SerializeField] private AnimatorOverrideController ghostController;
 
     //[SerializeField] private SanityPostFX sanityPostFX;
@@ -56,6 +56,12 @@ public class PlayerGraphicsController : MonoBehaviour
         sr.sortingLayerName = "Characters";
 
         animator.runtimeAnimatorController = ghostController;
+        animator.SetTrigger("Ghost");
+    }
+
+    public void SetAliveGraphics()
+    {
+        animator.runtimeAnimatorController = aliveController;
         animator.SetTrigger("Ghost");
     }
 

@@ -5,6 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 public class PlayerHealthController : MonoBehaviour, IDamageable
 {
+    public delegate void OnPlayerDiedDelegate();
+    public event OnPlayerDiedDelegate OnPlayerDied;
+
     private PlayerController playerController;
 
     private void Awake()
@@ -21,6 +24,9 @@ public class PlayerHealthController : MonoBehaviour, IDamageable
     {
         playerController.SetState(playerController.deadState);
 
-        GameController.Instance.Lose();
+        OnPlayerDied?.Invoke();
+
+        if (GameController.Instance != null)
+            GameController.Instance.Lose();
     }
 }
