@@ -19,6 +19,7 @@ public class PlayerGhostState : PlayerState
 
     public override void OnInterractInput(PlayerController player)
     {
+        player.GetPlayerInterractionController().Interract();
     }
 
     public override void OnInventoryUsePressInput(PlayerController player)

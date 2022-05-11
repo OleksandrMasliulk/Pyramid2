@@ -7,22 +7,12 @@ public class TutorialController : MonoBehaviour
 {
     public GameObject diePanel;
 
-    public Transform checkpoint;
-
     private void Awake()
     {
         PlayerController.Instance.GetPlayerHealthController().OnPlayerDied += ShowDiePanel;
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R)) 
-        {
-            ResurrectPlayer();
-        }
-    }
-
-    public void ResurrectPlayer()
+    public void ResurrectPlayer(Transform pos)
     {
         PlayerController.Instance.GetPlayerParameters().SetIsAlive(true);
         PlayerController.Instance.GetPlayerParameters().SetIsGhost(false);
@@ -33,7 +23,7 @@ public class TutorialController : MonoBehaviour
         PlayerController.Instance.SetState(PlayerController.Instance.aliveState);
        
 
-        PlayerController.Instance.transform.position = checkpoint.position;
+        PlayerController.Instance.transform.position = pos.position;
     }
 
     public void SetGhost()
@@ -52,11 +42,6 @@ public class TutorialController : MonoBehaviour
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
-    }
-
-    public void SetCheckpoint(Transform checkpoint)
-    {
-        this.checkpoint = checkpoint;
     }
 
     private void OnDisable()

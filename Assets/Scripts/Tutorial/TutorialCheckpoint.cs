@@ -2,17 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TutorialCheckpoint : MonoBehaviour
+public class TutorialCheckpoint : MonoBehaviour, IInterractible
 {
     public TutorialController tutController;
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        PlayerController player = collision.GetComponent<PlayerController>();
+    public string tooltip { get; set; }
 
-        if (player != null)
-        {
-            tutController.SetCheckpoint(transform);
-        }
+    private void Start()
+    {
+        tooltip = "Press E to Resurrect";
+    }
+
+    public void Interract(PlayerController user)
+    {
+        tutController.ResurrectPlayer(this.transform);
     }
 }
