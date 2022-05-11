@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: a7ed56e681692cb41906e05454502e01
   - enabled: 1
-    path: Assets/Scenes/Piramid (v 0 1).unity
+    path: Assets/Scenes/Not Use/Piramid (v 0 1).unity
     guid: 13f90248436840c42a9bbc2d3446d7f5
   m_configObjects: {}
