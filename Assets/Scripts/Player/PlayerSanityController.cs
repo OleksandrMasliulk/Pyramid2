@@ -47,6 +47,7 @@ public class PlayerSanityController : MonoBehaviour
         }
 
         playerController.GetPlayerHUDContorller().UpdateSanitySlider(currentSanity);
+        playerController.GetPlayerGraphicsController().SetSanityFX(currentSanity);
     }
 
     public int GetSanity()

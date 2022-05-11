@@ -10,7 +10,9 @@ public class PlayerGraphicsController : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController aliveController;
     [SerializeField] private AnimatorOverrideController ghostController;
 
-    //[SerializeField] private SanityPostFX sanityPostFX;
+    [SerializeField] private SanityFX sanityPostFX;
+    private bool tentaclesEnabled = false;
+    [SerializeField] private Animation tentaclesAnim; 
 
     [SerializeField] private Transform flashlight;
 
@@ -54,6 +56,7 @@ public class PlayerGraphicsController : MonoBehaviour
         corpse.transform.localScale *= 2;
         sr.sprite = corpseSprite;
         sr.sortingLayerName = "Characters";
+        SetSanityFX(100);
 
         animator.runtimeAnimatorController = ghostController;
         animator.SetTrigger("Ghost");
@@ -82,28 +85,55 @@ public class PlayerGraphicsController : MonoBehaviour
         flashlight.rotation = Quaternion.Euler(0f, 0f, rot_z - m);
     }
 
-    //public void SetSanityFX(int sanityLevel)
-    //{
-    //    switch (sanityLevel)
-    //    {
-    //        case 100:
-    //            sanityPostFX.SetSanity100Profile();
-    //            break;
-    //        case > 75 and < 100:
-    //            sanityPostFX.SetSanity75Profile();
-    //            break;
-    //        case > 50 and <= 75:
-    //            sanityPostFX.SetSanity100Profile();
-    //            break;
-    //        case > 25 and <= 50:
-    //            sanityPostFX.SetSanity100Profile();
-    //            break;
-    //        case > 0 and <= 25:
-    //            sanityPostFX.SetSanity100Profile();
-    //            break;
-    //        case 0:
-    //            sanityPostFX.SetSanity100Profile();
-    //            break;
-    //    }
-    //}
+    public void SetSanityFX(int sanityLevel)
+    {
+        switch (sanityLevel)
+        {
+            case 100:
+                {
+                    sanityPostFX.SetSanity100Volume();
+                    HideTentacles();
+                    break;
+                }
+            case > 75 and < 100:
+                {
+                    sanityPostFX.SetSanity75Volume();
+                    HideTentacles();
+                    break;
+                }
+            case > 50 and <= 75:
+                {
+                    sanityPostFX.SetSanity50Volume();
+                    HideTentacles();
+                    break;
+                }
+            case > 25 and <= 50:
+                {
+                    sanityPostFX.SetSanity25Volume();
+                    HideTentacles();
+                    break;
+                }
+            case > 0 and <= 25:
+                {
+                    sanityPostFX.SetSanity0Volume();
+                    ShowTentacles();
+                    break;
+                }
+        }
+    }
+
+    private void ShowTentacles()
+    {
+        tentaclesAnim.Play("ShowTentacles");
+        tentaclesEnabled = true;
+    }
+
+    private void HideTentacles()
+    {
+        if (tentaclesEnabled)
+        {
+            tentaclesAnim.Play("HideTentacles");
+            tentaclesEnabled = false;
+        }
+    }
 }

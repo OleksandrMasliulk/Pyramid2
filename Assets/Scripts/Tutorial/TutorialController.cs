@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TutorialController : MonoBehaviour
 {
     public GameObject diePanel;
-    public TutorialPanel tutorialPanel;
+    public SidePanel tutorialPanel;
 
     private void Awake()
     {
@@ -35,7 +35,7 @@ public class TutorialController : MonoBehaviour
         PlayerController.Instance.GetPlayerHUDContorller().ShowHUD(); 
         PlayerController.Instance.GetPlayerGraphicsController().SetAliveGraphics();
         PlayerController.Instance.SetState(PlayerController.Instance.aliveState);
-       
+        PlayerController.Instance.GetPlayerSanityController().UpdateSanity(100);
 
         PlayerController.Instance.transform.position = pos.position;
     }
