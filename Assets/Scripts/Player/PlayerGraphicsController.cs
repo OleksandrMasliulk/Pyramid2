@@ -124,8 +124,11 @@ public class PlayerGraphicsController : MonoBehaviour
 
     private void ShowTentacles()
     {
-        tentaclesAnim.Play("ShowTentacles");
-        tentaclesEnabled = true;
+        if (!tentaclesEnabled)
+        {
+            tentaclesAnim.Play("ShowTentacles");
+            tentaclesEnabled = true;
+        }
     }
 
     private void HideTentacles()

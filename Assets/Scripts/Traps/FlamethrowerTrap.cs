@@ -59,7 +59,7 @@ public class FlamethrowerTrap : Trap
 
     public override void ReduceSanity(PlayerController target)
     {
-        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, sanityLossRadius);
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, sanityLossRadius, damageLayer);
 
         PlayerController player;
         foreach (Collider2D col in cols)

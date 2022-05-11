@@ -33,8 +33,6 @@ public class SanityFX : MonoBehaviour
             time += Time.deltaTime;
             yield return new WaitForSeconds(Time.deltaTime);
         }
-        currentVolume.weight = 0f;
-        newVolume.weight = 1f;
 
         currentVolume = newVolume;
     }
