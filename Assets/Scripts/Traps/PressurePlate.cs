@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PressurePlate : MonoBehaviour
 {
-    [SerializeField] private RemoteInterractComponent objToInterract;
+    [SerializeField] private RemoteInterractComponent[] objectsToInterract;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PlayerController player = collision.GetComponent<PlayerController>();
-        objToInterract.Interract(player);
+
+        foreach (RemoteInterractComponent obj in objectsToInterract)
+            obj.Interract(player);
     }
 }

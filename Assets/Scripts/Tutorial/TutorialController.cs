@@ -6,10 +6,24 @@ using UnityEngine.SceneManagement;
 public class TutorialController : MonoBehaviour
 {
     public GameObject diePanel;
+    public TutorialPanel tutorialPanel;
 
     private void Awake()
     {
-        PlayerController.Instance.GetPlayerHealthController().OnPlayerDied += ShowDiePanel;
+        PlayerController.Instance.GetPlayerHealthController().OnPlayerDied += ShowDiePanelDelayed;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (!tutorialPanel.isActiveAndEnabled)
+                tutorialPanel.ShowPanel();
+            else
+            {
+                tutorialPanel.HidePanel();
+            }
+        }
     }
 
     public void ResurrectPlayer(Transform pos)
@@ -34,9 +48,16 @@ public class TutorialController : MonoBehaviour
         PlayerController.Instance.SetState(PlayerController.Instance.ghostState);
     }
 
+
+
     public void ShowDiePanel()
     {
         diePanel.SetActive(true);
+    }
+
+    public void ShowDiePanelDelayed()
+    {
+        Invoke("ShowDiePanel", .5f);
     }
 
     public void MainMenu()
@@ -46,6 +67,6 @@ public class TutorialController : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerController.Instance.GetPlayerHealthController().OnPlayerDied -= ShowDiePanel;
+        PlayerController.Instance.GetPlayerHealthController().OnPlayerDied -= ShowDiePanelDelayed;
     }
 }
