@@ -23,11 +23,12 @@ public class Mummy : MonoBehaviour, IDamageable
         movement = GetComponent<MummyPathfindingMovement>();
         graphics = GetComponent<MummyGraphicsController>();
 
-        PlayerController.Instance.GetPlayerSanityController().OnLowSanity += SensePlayer;
+        
     }
 
     private void Start()
     {
+        PlayerController.Instance.GetPlayerSanityController().OnLowSanity += SensePlayer;
         SetState(patrolState, null);
     }
 
