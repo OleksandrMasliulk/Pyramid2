@@ -67,7 +67,7 @@ public class ArrowTrap : Trap, IInterractible
                 ReduceSanity(user);
             }
 
-            Activate(user.GetComponent<IDamageable>());
+            Activate(null);
         }
     }
 }
