@@ -95,13 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8687b438d42d0294fac3b46ab33d9f8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itm:
-    rid: -2
-  references:
-    version: 2
-    RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+  objToInterract: {fileID: 0}
+  anim: {fileID: 1850027928842862484}
 --- !u!114 &22041691204112380
 MonoBehaviour:
   m_ObjectHideFlags: 0

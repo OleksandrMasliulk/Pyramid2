@@ -31,13 +31,12 @@ public class FlamethrowerTrap : Trap
         {
             Collider2D[] cols = Physics2D.OverlapBoxAll(damageBox.transform.position, damageBox.bounds.size, 0f, damageLayer);
 
-            PlayerController target;
             foreach (Collider2D col in cols)
             {
-                target = col.GetComponent<PlayerController>();
+                IDamageable target = col.GetComponent<IDamageable>();
                 if (target != null)
                 {
-                    target.GetComponent<IDamageable>().TakeDamage(1);
+                    target.TakeDamage(1);
                 }
             }
 

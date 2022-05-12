@@ -16,7 +16,7 @@ public class SanityFX : MonoBehaviour
 
     private Volume currentVolume;
 
-    private void Start()
+    private void Awake()
     {
         currentVolume = sanity100;
     }

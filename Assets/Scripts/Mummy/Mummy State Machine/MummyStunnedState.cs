@@ -15,6 +15,8 @@ public class MummyStunnedState : MummyState
         saveArgs = args;
 
         mummy.GetMovementController().SetCanMove(false);
+        mummy.GetGraphicsController().SetStunned(true);
+
         timeToStunEnd = mummy.GetParameters().stunDuration;
         lastState = args.lastState;
     }
@@ -22,6 +24,7 @@ public class MummyStunnedState : MummyState
     public override void ExitState(Mummy mummy)
     {
         mummy.GetMovementController().SetCanMove(true);
+        mummy.GetGraphicsController().SetStunned(true);
     }
 
     public override void StateTick(Mummy mummy)

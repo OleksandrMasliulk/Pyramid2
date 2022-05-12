@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void Win()
+    public virtual void Win()
     {
         Debug.LogWarning("!!!  Player WIN  !!!");
 
@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
         OnWin?.Invoke();
     }
 
-    public void Lose()
+    public virtual void Lose()
     {
         Debug.LogWarning("!!! PLAYER LOST !!!");
 
