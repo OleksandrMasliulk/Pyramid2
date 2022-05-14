@@ -24,7 +24,7 @@ public class MummyStunnedState : MummyState
     public override void ExitState(Mummy mummy)
     {
         mummy.GetMovementController().SetCanMove(true);
-        mummy.GetGraphicsController().SetStunned(true);
+        mummy.GetGraphicsController().SetStunned(false);
     }
 
     public override void StateTick(Mummy mummy)
