@@ -6,6 +6,7 @@ public class Map : MonoBehaviour
 {
     public static Map Instance { get; private set; }
 
+    public LayerMask obstacleLayers;
     public LayerMask walkableLayers;
     [SerializeField]private Collider2D walkableMap;
 
@@ -33,8 +34,9 @@ public class Map : MonoBehaviour
             return false;
         }
 
-        Collider2D[] cols = Physics2D.OverlapCircleAll(point, .25f, walkableLayers);
-        if (cols.Length > 0)
+        Collider2D[] obstacleSeek = Physics2D.OverlapCircleAll(point, .25f, obstacleLayers);
+        Collider2D[] walkableSeek = Physics2D.OverlapCircleAll(point, .25f, walkableLayers);
+        if (walkableSeek.Length > 0 && obstacleSeek.Length <= 0)
         {
             return true;
         }

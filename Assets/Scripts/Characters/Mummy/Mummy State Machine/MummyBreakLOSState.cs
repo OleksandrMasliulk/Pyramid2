@@ -16,9 +16,8 @@ public class MummyBreakLOSState : MummyState
         Debug.LogWarning("Mummy entered Break LOS state");
 
         mummy.GetMovementController().SetSpeed(mummy.GetParameters().roamMoveSpeed);
-        GetRoamPosition(mummy);
-
         lastSeenPosition = args.lastSeenPosition;
+        GetRoamPosition(mummy);
 
         timeToNextSenseTick = mummy.GetParameters().senseTickTime;
         timeToRoamState = mummy.GetParameters().breakLosStateDuration;
