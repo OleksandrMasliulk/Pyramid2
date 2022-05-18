@@ -125,6 +125,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPos: {fileID: 6002796483879193953}
   graphics: {fileID: 0}
+  dustPS: {fileID: 6691001445476703100, guid: 7ae2d849ea41d824ca973bbdae620b7b, type: 3}
 --- !u!114 &4587136787527470001
 MonoBehaviour:
   m_ObjectHideFlags: 0

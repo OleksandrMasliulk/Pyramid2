@@ -6,6 +6,7 @@ public class Cover : MonoBehaviour, IInterractible
 {
     [SerializeField] private Transform respawnPos;
     [SerializeField] private Animator graphics;
+    [SerializeField] private GameObject dustPS;
 
     public string tooltip { get; set; }
 
@@ -20,6 +21,7 @@ public class Cover : MonoBehaviour, IInterractible
         {
             tooltip = "Press E to Cover";
             user.GetPlayerCoverController().Uncover(respawnPos.position);
+            Instantiate(dustPS, respawnPos.position, Quaternion.identity);
 
             if (graphics != null)
                 graphics.SetBool("isOpened", true);

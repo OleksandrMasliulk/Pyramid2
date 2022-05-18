@@ -7,8 +7,14 @@ public class PlayerGraphicsController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sprite;
 
+    [SerializeField] private ParticleSystem stepsPS;
+    [SerializeField] private ParticleSystem ghostPS;
+
     [SerializeField] private RuntimeAnimatorController aliveController;
     [SerializeField] private AnimatorOverrideController ghostController;
+
+    [SerializeField] private LayerMask aliveRender;
+    [SerializeField] private LayerMask ghostRender;
 
     [SerializeField] private SanityFX sanityPostFX;
     private bool tentaclesEnabled = false;
@@ -51,6 +57,10 @@ public class PlayerGraphicsController : MonoBehaviour
 
     public void SetGhostGraphics()
     {
+        Camera.main.cullingMask = ghostRender;
+        ghostPS.Play();
+        stepsPS.Stop();
+
         GameObject corpse = Instantiate(new GameObject(), transform.position, Quaternion.identity);
         SpriteRenderer sr = corpse.AddComponent<SpriteRenderer>();
         corpse.transform.localScale *= 2;
@@ -64,6 +74,9 @@ public class PlayerGraphicsController : MonoBehaviour
 
     public void SetAliveGraphics()
     {
+        Camera.main.cullingMask = aliveRender;
+        ghostPS.Stop();
+        stepsPS.Play();
         animator.runtimeAnimatorController = aliveController;
         animator.SetTrigger("Ghost");
     }
