@@ -23,6 +23,12 @@ public class PlayerHUDController : MonoBehaviour
     public GameObject[] inventorySlots;
     private int highlightedSlot;
 
+    private void Start()
+    {
+        DialogueManager.OnStartDialogue += HideHUD;
+        DialogueManager.OnEndDialogue += ShowHUD;
+    }
+
     public void UpdateSanitySlider(int newValue)
     {
         sanitySlider.value = newValue;
@@ -125,5 +131,11 @@ public class PlayerHUDController : MonoBehaviour
     public void HidePaintDirection()
     {
         paintDirection.SetActive(false);
+    }
+
+    private void OnDisable()
+    {
+        DialogueManager.OnStartDialogue -= HideHUD;
+        DialogueManager.OnEndDialogue -= ShowHUD;
     }
 }

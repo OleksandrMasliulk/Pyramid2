@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7246388732606895093}
   - component: {fileID: 7246388732606895091}
   - component: {fileID: 239167783666483966}
-  m_Layer: 13
+  m_Layer: 12
   m_Name: Action Trigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,3 +71,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4608510d348a41d40a7aa8ab60cc45b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnTriggerEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  destroyOnTrigger: 0
