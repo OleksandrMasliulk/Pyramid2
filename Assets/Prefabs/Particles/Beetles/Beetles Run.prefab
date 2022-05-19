@@ -601,7 +601,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 5
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -1421,8 +1421,8 @@ ParticleSystem:
         m_NumAlphaKeys: 2
   UVModule:
     serializedVersion: 2
-    enabled: 0
-    mode: 0
+    enabled: 1
+    mode: 1
     timeMode: 0
     fps: 30
     frameOverTime:
@@ -1540,7 +1540,10 @@ ParticleSystem:
     uvChannelMask: -1
     rowMode: 1
     sprites:
-    - sprite: {fileID: 0}
+    - sprite: {fileID: -1777709862, guid: 14299cdda61b85e4bbe27b7758b51cc8, type: 3}
+    - sprite: {fileID: 158972775, guid: 14299cdda61b85e4bbe27b7758b51cc8, type: 3}
+    - sprite: {fileID: 959858531, guid: 14299cdda61b85e4bbe27b7758b51cc8, type: 3}
+    - sprite: {fileID: 432877969, guid: 14299cdda61b85e4bbe27b7758b51cc8, type: 3}
     flipU: 0
     flipV: 0
   VelocityModule:
