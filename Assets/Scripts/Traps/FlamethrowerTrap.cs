@@ -5,7 +5,8 @@ using UnityEngine;
 public class FlamethrowerTrap : Trap
 {
     public GameObject fireGraphics;
-    public ParticleSystem ps;
+    public ParticleSystem ps; 
+    public ParticleSystem ps2;
 
     public BoxCollider2D damageBox;
     public LayerMask damageLayer;
@@ -25,7 +26,8 @@ public class FlamethrowerTrap : Trap
     {
         float time = flameThrowingDuration;
 
-        ps.Play();
+        ps.Play(); 
+        ps2.Play();
         fireGraphics.SetActive(true);
         ReduceSanity(null);
 
@@ -54,6 +56,7 @@ public class FlamethrowerTrap : Trap
     IEnumerator RearmCoroutine()
     {
         ps.Stop();
+        ps2.Stop();
 
         yield return new WaitForSeconds(rearmTime);
 
