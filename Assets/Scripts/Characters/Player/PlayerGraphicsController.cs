@@ -7,7 +7,7 @@ public class PlayerGraphicsController : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer sprite;
 
-    //[SerializeField] private ParticleSystem stepsPS;
+    [SerializeField] private ParticleSystem stepsPS;
     [SerializeField] private ParticleSystem ghostPS;
 
     [SerializeField] private RuntimeAnimatorController aliveController;
@@ -59,6 +59,9 @@ public class PlayerGraphicsController : MonoBehaviour
     {
         Camera.main.cullingMask = ghostRender;
         ghostPS.Play();
+        stepsPS.Stop();
+
+        SwitchFlashlight(false);
 
         GameObject corpse = Instantiate(new GameObject(), transform.position, Quaternion.identity);
         SpriteRenderer sr = corpse.AddComponent<SpriteRenderer>();
@@ -75,6 +78,7 @@ public class PlayerGraphicsController : MonoBehaviour
     {
         Camera.main.cullingMask = aliveRender;
         ghostPS.Stop();
+        stepsPS.Play();
         animator.runtimeAnimatorController = aliveController;
         animator.SetTrigger("Ghost");
     }

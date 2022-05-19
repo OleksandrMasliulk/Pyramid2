@@ -61,7 +61,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: -1.07
   far clip plane: 5000
   field of view: 60
   orthographic: 1
@@ -69,7 +69,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 8183
+    m_Bits: 24567
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -429,9 +429,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
-      minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      minMaxState: 2
+      minColor: {r: 0.6698113, g: 0.52795947, b: 0.2995194, a: 1}
+      maxColor: {r: 0.31132078, g: 0.31132078, b: 0.31132078, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -1070,12 +1070,12 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
   EmissionModule:
-    enabled: 0
+    enabled: 1
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 45
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1573,7 +1573,7 @@ ParticleSystem:
     serializedVersion: 2
     enabled: 1
     mode: 1
-    timeMode: 0
+    timeMode: 2
     fps: 30
     frameOverTime:
       serializedVersion: 2
@@ -5781,7 +5781,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1680369023
   m_SortingLayer: 4
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -1899033494, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -11584,12 +11584,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8137129383538938291}
   sprite: {fileID: 5339026552842488741}
+  stepsPS: {fileID: 6702818121481829852}
   ghostPS: {fileID: 7795068515394533906}
   aliveController: {fileID: 9100000, guid: cd05d04332b5daf4581f391afb6442c0, type: 2}
   ghostController: {fileID: 22100000, guid: 80ddb485576e9a64594df54bfb2b0763, type: 2}
   aliveRender:
     serializedVersion: 2
-    m_Bits: 8183
+    m_Bits: 24567
   ghostRender:
     serializedVersion: 2
     m_Bits: 2147483647
