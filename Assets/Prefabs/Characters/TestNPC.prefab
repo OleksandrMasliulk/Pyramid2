@@ -127,4 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63542abcca953c428c5c344c801a793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentDialogue: {fileID: 11400000, guid: 9a6c32fd598d79c45a054669f5213055, type: 2}
+  currentDialogue:
+    dialogueSO: {fileID: 11400000, guid: 772d6a3f23dc7d44e832af6301312385, type: 2}
+    OnDialogueEndEvent:
+      m_PersistentCalls:
+        m_Calls: []
