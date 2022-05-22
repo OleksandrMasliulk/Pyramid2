@@ -11,6 +11,8 @@ public class GameController : MonoBehaviour
     public delegate void OnLoseDelegate();
     public event OnWinDelegate OnLose;
 
+    private AudioSource levelTheme;
+
     private void Awake()
     {
         if (Instance == null)
@@ -21,6 +23,12 @@ public class GameController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        AudioManager.Init();
+    }
+
+    private void Start()
+    {
+        PlayLevelTheme();
     }
 
     public virtual void Win()
@@ -35,6 +43,7 @@ public class GameController : MonoBehaviour
     public virtual void Lose()
     {
         Debug.LogWarning("!!! PLAYER LOST !!!");
+        AudioManager.PlaySound(AudioManager.Sound.PlayerDieFX);
 
         Save();
 
@@ -69,5 +78,22 @@ public class GameController : MonoBehaviour
             data = new PlayerData(CalculateGold());
         }
         SaveLoad.Save(data);
+    }
+
+    public void PlayLevelTheme()
+    {
+        if (levelTheme == null)
+        {
+            levelTheme = AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
+        }
+        else
+        {
+            levelTheme.UnPause();
+        }
+    }
+
+    public void PauseLevelTheme()
+    {
+        levelTheme.Pause();
     }
 }

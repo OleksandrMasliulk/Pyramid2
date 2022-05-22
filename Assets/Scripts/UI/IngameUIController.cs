@@ -7,11 +7,28 @@ public class IngameUIController : MonoBehaviour
 {
     public GameObject loseScreen;
     public GameObject winScreen;
+    public SidePanel menu;
 
     private void Start()
     {
         GameController.Instance.OnLose += ShowLoseScrren;
         GameController.Instance.OnWin += ShowWinScreen;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                if (!menu.isActiveAndEnabled)
+                    menu.ShowPanel();
+                else
+                {
+                    menu.HidePanel();
+                }
+            }
+        }
     }
 
     private void ShowLoseScrren()

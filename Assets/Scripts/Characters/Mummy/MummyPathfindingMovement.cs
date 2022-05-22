@@ -23,6 +23,7 @@ public class MummyPathfindingMovement : MonoBehaviour
         if (aiPath.desiredVelocity.magnitude >= .5f)
         {
             isMoving = true;
+            AudioManager.PlaySound(AudioManager.Sound.MummyWalk, transform.position, .3f);
             mummy.GetGraphicsController().SetMovementDirection(aiPath.desiredVelocity.normalized);
         }
         else

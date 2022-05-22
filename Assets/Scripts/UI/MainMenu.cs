@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    private void Start()
+    {
+        AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
+    }
+
     public void Quit()
     {
 #if UNITY_EDITOR

@@ -38,6 +38,7 @@ public class Door : MonoBehaviour, IInterractible
 
         tooltip = "Press E to Close";
         anim.SetBool("Opened", true);
+        AudioManager.PlaySound(AudioManager.Sound.Door, transform.position, 1f);
     }
 
     private void Close()

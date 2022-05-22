@@ -30,8 +30,9 @@ public class FlamethrowerTrap : Trap
         ps2.Play();
         fireGraphics.SetActive(true);
         ReduceSanity(null);
+        AudioManager.PlaySound(AudioManager.Sound.FireTrap, transform.position, flameThrowingDuration);
 
-        while(time > 0)
+        while (time > 0)
         {
             Collider2D[] cols = Physics2D.OverlapBoxAll(damageBox.transform.position, damageBox.bounds.size, 0f, damageLayer);
 

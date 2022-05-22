@@ -16,6 +16,8 @@ public class SanityFX : MonoBehaviour
 
     private Volume currentVolume;
 
+    private AudioSource noSanitySound;
+
     private void Awake()
     {
         currentVolume = sanity100;
@@ -39,22 +41,48 @@ public class SanityFX : MonoBehaviour
 
     public void SetSanity100Volume()
     {
+        StopNoSanitySound();
+        GameController.Instance.PlayLevelTheme();
         StartCoroutine(BlendVolumes(sanity100));
     }
     public void SetSanity75Volume()
     {
+        StopNoSanitySound();
+        GameController.Instance.PlayLevelTheme();
         StartCoroutine(BlendVolumes(sanity75));
     }
     public void SetSanity50Volume()
     {
+        StopNoSanitySound();
+        GameController.Instance.PlayLevelTheme();
         StartCoroutine(BlendVolumes(sanity50));
     }
     public void SetSanity25Volume()
     {
+        StopNoSanitySound();
+        GameController.Instance.PlayLevelTheme();
         StartCoroutine(BlendVolumes(sanity25));
     }
     public void SetSanity0Volume()
     {
+        PlayerNoSanitySound();
+        GameController.Instance.PauseLevelTheme();
         StartCoroutine(BlendVolumes(sanity0));
+    }
+
+    private void PlayerNoSanitySound()
+    {
+        if (noSanitySound == null)
+        {
+            noSanitySound = AudioManager.PlaySound(AudioManager.Sound.NoSanity, true);
+        }
+    }
+
+    private void StopNoSanitySound()
+    {
+        if (noSanitySound != null)
+        {
+            Destroy(noSanitySound.gameObject);
+        }
     }
 }
