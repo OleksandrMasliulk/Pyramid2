@@ -21,6 +21,7 @@ public class ArrowTrap : Trap, IInterractible
     private void Shoot()
     {
         arrows.Play();
+        AudioManager.PlaySound(AudioManager.Sound.ArrowTrap, transform.position, .3f);
 
         canShoot = false;
         timeToRearm = rearmTime;

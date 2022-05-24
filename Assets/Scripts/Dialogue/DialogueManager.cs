@@ -14,7 +14,8 @@ public class DialogueManager : MonoBehaviour
     public delegate void OnEndDialogueDelegate();
     public static event OnEndDialogueDelegate OnEndDialogue;
 
-    private Queue<DialogueLine> currentDialogue;
+    private Queue<DialogueLine> currentLines;
+    private Dialogue currentDialogue;
 
     public GameObject dialogueWindow;
     public Text speakerName;
@@ -32,20 +33,21 @@ public class DialogueManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        currentDialogue = new Queue<DialogueLine>();
+        currentLines = new Queue<DialogueLine>();
     }
 
-    public void StartDialogue(DialogueSO dialogueSO)
+    public void StartDialogue(Dialogue dialogue)
     {
         Time.timeScale = 0;
         dialogueWindow.SetActive(true);
         OnStartDialogue?.Invoke();
 
-        currentDialogue.Clear();
+        currentDialogue = dialogue;
+        currentLines.Clear();
 
-        foreach (DialogueLine line in dialogueSO.dialogue)
+        foreach (DialogueLine line in dialogue.dialogueSO.dialogue)
         {
-            currentDialogue.Enqueue(line);
+            currentLines.Enqueue(line);
         }
 
         DisplayNextLine();
@@ -53,13 +55,13 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextLine()
     {
-        if (currentDialogue.Count == 0)
+        if (currentLines.Count == 0)
         {
             EndDialogue();
             return;
         }
 
-        DialogueLine dLine = currentDialogue.Dequeue();
+        DialogueLine dLine = currentLines.Dequeue();
         speakerIcon.sprite = dLine.speaker.image;
         speakerName.text = dLine.speaker.name;
         line.text = dLine.line;
@@ -70,5 +72,6 @@ public class DialogueManager : MonoBehaviour
         Time.timeScale = 1;
         dialogueWindow.SetActive(false);
         OnEndDialogue?.Invoke();
+        currentDialogue.OnDialogueEndEvent?.Invoke();
     }
 }

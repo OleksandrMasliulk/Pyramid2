@@ -10,7 +10,11 @@ public class PlayerAliveState : PlayerState
 
     public override void OnDirectionInput(PlayerController player, Vector2 direction)
     {
-        player.GetPlayerMovementController().Move(direction);
+        if (direction.magnitude > 0f)
+        {
+            player.GetPlayerMovementController().Move(direction);
+            AudioManager.PlaySound(AudioManager.Sound.PlayerWalk, player.transform.position, .2f);
+        }
         player.GetPlayerGraphicsController().SetMovementDirection(direction);
     }
 

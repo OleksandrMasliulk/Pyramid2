@@ -13,26 +13,30 @@ MonoBehaviour:
   m_Name: Test Dialogue
   m_EditorClassIdentifier: 
   dialogueMembers:
-  - name: Patch
+  - name: 
     image: {fileID: 0}
-  - name: Me
-    image: {fileID: 0}
-  - name: Not me
-    image: {fileID: 0}
+  - name: Indiana
+    image: {fileID: 1755315967, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
+  - name: Mummy
+    image: {fileID: -1589796447, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
   dialogue:
   - speaker:
-      name: Me
-      image: {fileID: 0}
-    line: Indiana line 1
+      name: Indiana
+      image: {fileID: 1755315967, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
+    line: Indiana Test Line 1
   - speaker:
-      name: Not me
-      image: {fileID: 0}
-    line: Mummy line 1
+      name: Mummy
+      image: {fileID: -1589796447, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
+    line: Mummy Test Line 1
   - speaker:
-      name: Me
-      image: {fileID: 0}
-    line: Indiana line 2
+      name: Mummy
+      image: {fileID: -1589796447, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
+    line: Mummy Test Line 2
   - speaker:
-      name: Not me
-      image: {fileID: 0}
-    line: Mummy line 2
+      name: Indiana
+      image: {fileID: 1755315967, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
+    line: Indiana Test Line 1
+  - speaker:
+      name: Mummy
+      image: {fileID: -1589796447, guid: 8545e05e17a080a40a3589b6b04b9694, type: 3}
+    line: Mummy Test Line 3

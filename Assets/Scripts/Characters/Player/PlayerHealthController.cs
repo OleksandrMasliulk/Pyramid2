@@ -23,6 +23,7 @@ public class PlayerHealthController : MonoBehaviour, IDamageable
     private void Die()
     {
         playerController.SetState(playerController.deadState);
+        AudioManager.PlaySound(AudioManager.Sound.PlayerDie);
 
         OnPlayerDied?.Invoke();
 

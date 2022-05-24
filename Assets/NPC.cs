@@ -6,7 +6,7 @@ public class NPC : MonoBehaviour, IInterractible
 {
     public string tooltip { get; set; }
 
-    [SerializeField] private DialogueSO currentDialogue;
+    [SerializeField] private Dialogue currentDialogue;
 
     private void Awake()
     {
