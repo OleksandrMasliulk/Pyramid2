@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ed00ee00e6c5b6d4698205660ef70b1b, type: 3}
-  m_Name: First
+  m_Name: Dialog Tutorial
   m_EditorClassIdentifier: 
   dialogueMembers:
   - name: 
@@ -22,19 +22,19 @@ MonoBehaviour:
   dialogue:
   - speaker:
       name: Kuba Vons
-      image: {fileID: -608497974, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
+      image: {fileID: -1899033494, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
     line: 'Hallow ? Where am I? '
   - speaker:
       name: Guardian of the Tomb
-      image: {fileID: 125910085, guid: e9bb0d67834e93a4e9899b2e1e01181d, type: 3}
+      image: {fileID: -1639226507, guid: 70e33c3485c65da42b957971612386e7, type: 3}
     line: Hi, you're in the artifact repository.
   - speaker:
       name: Kuba Vons
-      image: {fileID: -608497974, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
+      image: {fileID: -1899033494, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
     line: "How did I get here ?\r"
   - speaker:
       name: Guardian of the Tomb
-      image: {fileID: 125910085, guid: e9bb0d67834e93a4e9899b2e1e01181d, type: 3}
+      image: {fileID: -1639226507, guid: 70e33c3485c65da42b957971612386e7, type: 3}
     line: 'Here treasure seekers test their skills, you can''t die here.
 
       The
