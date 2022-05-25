@@ -17,6 +17,7 @@ public class SanityFX : MonoBehaviour
     private Volume currentVolume;
 
     private AudioSource noSanitySound;
+    private AudioSource lowSanitySound;
 
     private void Awake()
     {
@@ -41,36 +42,41 @@ public class SanityFX : MonoBehaviour
 
     public void SetSanity100Volume()
     {
+        StopLowSanitySound();
         StopNoSanitySound();
         GameController.Instance.PlayLevelTheme();
         StartCoroutine(BlendVolumes(sanity100));
     }
     public void SetSanity75Volume()
     {
+        StopLowSanitySound();
         StopNoSanitySound();
         GameController.Instance.PlayLevelTheme();
         StartCoroutine(BlendVolumes(sanity75));
     }
     public void SetSanity50Volume()
     {
+        PlayLowSanitySound();
         StopNoSanitySound();
         GameController.Instance.PlayLevelTheme();
         StartCoroutine(BlendVolumes(sanity50));
     }
     public void SetSanity25Volume()
     {
+        PlayLowSanitySound();
         StopNoSanitySound();
         GameController.Instance.PlayLevelTheme();
         StartCoroutine(BlendVolumes(sanity25));
     }
     public void SetSanity0Volume()
     {
-        PlayerNoSanitySound();
+        StopLowSanitySound();
+        PlayNoSanitySound();
         GameController.Instance.PauseLevelTheme();
         StartCoroutine(BlendVolumes(sanity0));
     }
 
-    private void PlayerNoSanitySound()
+    private void PlayNoSanitySound()
     {
         if (noSanitySound == null)
         {
@@ -83,6 +89,22 @@ public class SanityFX : MonoBehaviour
         if (noSanitySound != null)
         {
             Destroy(noSanitySound.gameObject);
+        }
+    }
+
+    private void PlayLowSanitySound()
+    {
+        if (lowSanitySound == null)
+        {
+            lowSanitySound = AudioManager.PlaySound(AudioManager.Sound.LowSanity, true);
+        }
+    }
+
+    private void StopLowSanitySound()
+    {
+        if (lowSanitySound != null)
+        {
+            Destroy(lowSanitySound.gameObject);
         }
     }
 }

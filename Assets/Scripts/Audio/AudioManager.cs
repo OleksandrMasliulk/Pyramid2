@@ -10,12 +10,16 @@ public static class AudioManager
         MummyWalk,
         PlayerDie,
         PlayerDieFX,
-        Door,
+        DoorOpen,
+        DoorClose,
         LevelTheme,
-        SanityWhisper,
+        LowSanity,
         NoSanity,
         FireTrap,
-        ArrowTrap
+        ArrowTrap,
+        PickUpItem,
+        PickUpTreasure,
+        Lever
     }
 
     private static Dictionary<Sound, float> soundTimerDictionary;

@@ -112,6 +112,16 @@ public class PlayerInventoryController : MonoBehaviour
 
                     playerController.GetPlayerHUDContorller().UpdateInventorySlot(i, inventory[i]);
 
+                    switch (item.type)
+                    {
+                        default:
+                            AudioManager.PlaySound(AudioManager.Sound.PickUpItem, 1f);
+                            break;
+                        case (Item.ItemType.Treasure10 or Item.ItemType.Treasure5):
+                            AudioManager.PlaySound(AudioManager.Sound.PickUpTreasure, 1f);
+                            break;
+                    }
+
                     return true;
                 }
             }
