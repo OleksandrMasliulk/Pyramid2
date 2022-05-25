@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour
         Debug.LogWarning("!!! PLAYER LOST !!!");
         AudioManager.PlaySound(AudioManager.Sound.PlayerDieFX);
 
-        Save();
+        //Save();
 
         OnLose?.Invoke();
     }
