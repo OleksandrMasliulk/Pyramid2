@@ -4828,7 +4828,7 @@ GameObject:
   m_Layer: 12
   m_Name: Pickable Treasure5
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4907,7 +4907,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afee8c17349050b4987b639ef0eab1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 4
+  itemSO: {fileID: 11400000, guid: 44ccbdf5fc19e09478319c8a065be235, type: 2}
   count: 1
 --- !u!114 &6302731743925719626
 MonoBehaviour:

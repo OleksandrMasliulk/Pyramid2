@@ -2,22 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Flashlight : Item
 {
-    private bool isActive;
-
-    public Flashlight()
-    {
-        Debug.Log("FLASHLIGH CLASEE CONSTRUCTED");
-        this.type = ItemType.Flashlight;
-        ItemAssets.Instance.GetItem(type, out pickableMirror, out inventoryImage);
-
-        useOnRelease = false;
-        isConsumable = false;
-        isStackable = false;
-
-        isActive = false;
-    }
+    private bool isActive = false;
 
     public override void Use(PlayerController user)
     {

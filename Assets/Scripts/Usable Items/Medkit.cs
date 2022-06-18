@@ -2,19 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Medicine : Item
+[System.Serializable]
+public class Medkit : Item
 {
-    public Medicine()
-    {
-        Debug.Log("MEDICINE CLASEE CONSTRUCTED");
-
-        this.type = ItemType.Medkit;
-        ItemAssets.Instance.GetItem(type, out pickableMirror, out inventoryImage);
-
-        useOnRelease = false;
-        isConsumable = true;
-        isStackable = true;
-    }
+    public int sanityRestoreValue;
 
     public override void Use(PlayerController user)
     {
@@ -26,7 +17,7 @@ public class Medicine : Item
 
     private void Heal(PlayerController user)
     {
-        user.GetPlayerSanityController().UpdateSanity(30);
+        user.GetPlayerSanityController().UpdateSanity(sanityRestoreValue);
     }
 
     public override bool OnButtonPressed(PlayerController user)

@@ -2,19 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Flare : Item
 {
-    public Flare()
-    {
-        Debug.Log("FLARE CLASEE CONSTRUCTED");
-
-        this.type = ItemType.Flare;
-        ItemAssets.Instance.GetItem(type, out pickableMirror, out inventoryImage);
-
-        useOnRelease = false;
-        isConsumable = true;
-        isStackable = true;
-    }
+    [SerializeField] private GameObject flarePrefab;
 
     public override void Use(PlayerController user)
     {
@@ -26,14 +17,7 @@ public class Flare : Item
 
     private void Throw(PlayerController user)
     {
-        var prefab = Resources.Load("Usable Items/Flare");
-        if (prefab == null)
-        {
-            Debug.Log("No FLARE RESOURCE found");
-            return;
-        }
-
-        MonoBehaviour.Instantiate((GameObject)prefab, user.transform.position, Quaternion.identity);
+        MonoBehaviour.Instantiate(flarePrefab, user.transform.position, Quaternion.identity);
     }
 
     public override bool OnButtonPressed(PlayerController user)

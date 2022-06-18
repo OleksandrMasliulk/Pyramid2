@@ -5,10 +5,9 @@ using static Item;
 
 public class Pickable : MonoBehaviour, IInterractible
 {
-    public ItemType type;
-
+    [SerializeField] private ItemSO itemSO;
+    private Item item;
     public int count;
-    protected Item item;
 
     public string tooltip { get; set; }
 
@@ -19,29 +18,11 @@ public class Pickable : MonoBehaviour, IInterractible
         Init();
     }
 
-    private void Init()
+    public void Init()
     {
-        switch (type)
-        {
-            case ItemType.Flare:
-                item = new Flare();
-                break;
-            case ItemType.Flashlight:
-                item = new Flashlight();
-                break;
-            case ItemType.Medkit:
-                item = new Medicine();
-                break;
-            case ItemType.Paint:
-                item = new Paint();
-                break;
-            case ItemType.Treasure5:
-                item = new Treasure(ItemType.Treasure5);
-                break;
-            case ItemType.Treasure10:
-                item = new Treasure(ItemType.Treasure10);
-                break;
-        }
+        item = itemSO.GetItem();
+        item.dropObject = this.gameObject;
+
 
         if (!item.isStackable)
         {

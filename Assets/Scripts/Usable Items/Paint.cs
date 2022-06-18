@@ -2,21 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Paint : Item
 {
     private Vector3 mousePosTemp;
-
-    public Paint()
-    {
-        Debug.Log("PAINT CLASS CONSTRUCTED");
-
-        this.type = ItemType.Paint;
-        ItemAssets.Instance.GetItem(type, out pickableMirror, out inventoryImage);
-
-        useOnRelease = true;
-        isConsumable = true;
-        isStackable = true;
-    }
 
     public override void Use(PlayerController user)
     {

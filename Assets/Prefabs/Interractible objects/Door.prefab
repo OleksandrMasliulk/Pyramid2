@@ -4829,7 +4829,7 @@ GameObject:
   m_Layer: 12
   m_Name: Door
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5081,4 +5081,4 @@ MonoBehaviour:
   - {x: 0.9367938, y: 2.717229, z: 0}
   m_ShapePathHash: 1382908045
   m_Mesh: {fileID: 0}
-  m_InstanceId: 144768
+  m_InstanceId: 47832

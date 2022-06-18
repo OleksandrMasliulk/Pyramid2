@@ -211,7 +211,7 @@ GameObject:
   m_Layer: 12
   m_Name: Pickable Paint
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -290,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afee8c17349050b4987b639ef0eab1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
+  itemSO: {fileID: 11400000, guid: e5ff4fc0504476944acd98a9b7d087d0, type: 2}
   count: 1
 --- !u!114 &-2744318565905180164
 MonoBehaviour:

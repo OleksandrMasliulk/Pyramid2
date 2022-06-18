@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item
+public abstract class Item
 {
     public enum ItemType
     {
@@ -10,18 +10,17 @@ public class Item
         Medkit,
         Flashlight,
         Paint,
-        Treasure5,
-        Treasure10
+        Treasure
     }
 
-    public Transform pickableMirror;
+    public ItemType type;
+
     public Sprite inventoryImage;
+    [HideInInspector]public GameObject dropObject;
 
     public bool isStackable;
     public bool isConsumable;
     public bool useOnRelease;
-
-    public ItemType type;
 
     public virtual void OnDrop(PlayerController user)
     { 

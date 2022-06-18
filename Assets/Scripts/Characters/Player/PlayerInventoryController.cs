@@ -117,7 +117,7 @@ public class PlayerInventoryController : MonoBehaviour
                         default:
                             AudioManager.PlaySound(AudioManager.Sound.PickUpItem, 1f);
                             break;
-                        case (Item.ItemType.Treasure10 or Item.ItemType.Treasure5):
+                        case (Item.ItemType.Treasure):
                             AudioManager.PlaySound(AudioManager.Sound.PickUpTreasure, 1f);
                             break;
                     }
@@ -194,7 +194,7 @@ public class PlayerInventoryController : MonoBehaviour
         }
         else
         {
-            Instantiate(inventory[slotToUse].item.pickableMirror.gameObject, transform.position, Quaternion.identity);
+            Instantiate(inventory[slotToUse].item.dropObject, transform.position, Quaternion.identity);
 
             inventory[slotToUse].item.OnDrop(playerController);
             int newCount = inventory[slotToUse].count - 1;
