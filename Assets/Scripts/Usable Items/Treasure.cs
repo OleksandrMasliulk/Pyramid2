@@ -5,5 +5,33 @@ using UnityEngine;
 [System.Serializable]
 public class Treasure : Item
 {
-    public int value;
+    private int value;
+
+    public Treasure(TreasureSO so/*, GameObject prefab*/) : base(so/*, prefab*/)
+    {
+        this.value = so.value;
+    }
+
+    public int GetValue()
+    {
+        return value;
+    }
+
+    public override bool OnButtonPressed(PlayerController user)
+    {
+        return !UseOnRelease;
+    }
+
+    public override bool OnButtonReleased(PlayerController user)
+    {
+        return UseOnRelease;
+    }
+
+    public override void OnDrop(PlayerController user)
+    {
+    }
+
+    public override void Use(PlayerController user)
+    {
+    }
 }

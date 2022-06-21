@@ -6,10 +6,5 @@ using UnityEngine;
 public class TreasureSO : ItemSO
 {
     [Header("Item Parameters")]
-    public Treasure treasure;
-
-    public override Item GetItem()
-    {
-        return treasure;
-    }
+    public int value;
 }

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fabb77ab42104f94792afc5fc82c87fb, type: 3}
   m_Name: Default Medkit
   m_EditorClassIdentifier: 
-  medkit:
-    type: 1
-    inventoryImage: {fileID: -1179972609, guid: efc2d046806ea2f41b94463556e004e2, type: 3}
-    dropObject: {fileID: 0}
-    isStackable: 1
-    isConsumable: 1
-    useOnRelease: 0
-    sanityRestoreValue: 30
+  type: 1
+  itemID: 3
+  inventoryIcon: {fileID: -1179972609, guid: efc2d046806ea2f41b94463556e004e2, type: 3}
+  isStackable: 1
+  isConsumable: 1
+  useOnRelease: 0
+  dropPrefab: {fileID: 7923633346994375038, guid: eb398cd73696e0e4abc855e51bb7ed5c, type: 3}
+  restoreAmount: 30

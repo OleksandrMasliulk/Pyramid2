@@ -5,12 +5,16 @@ using UnityEngine;
 [System.Serializable]
 public class Medkit : Item
 {
-    public int sanityRestoreValue;
+    private int sanityRestoreValue;
+
+    public Medkit(MedkitSO so/*, GameObject prefab*/) : base(so/*, prefab*/)
+    {
+        sanityRestoreValue = so.restoreAmount;
+    }
 
     public override void Use(PlayerController user)
     {
         Debug.Log("MEDKIT USED");
-        base.Use(user);
 
         Heal(user);
     }
@@ -24,11 +28,15 @@ public class Medkit : Item
     {
         Use(user);
 
-        return base.OnButtonPressed(user);
+        return !UseOnRelease;
     }
 
     public override bool OnButtonReleased(PlayerController user)
     {
-        return base.OnButtonReleased(user);
+        return UseOnRelease;
+    }
+
+    public override void OnDrop(PlayerController user)
+    {
     }
 }

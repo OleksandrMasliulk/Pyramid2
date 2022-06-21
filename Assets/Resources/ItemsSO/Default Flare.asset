@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f03dcf533df91d14b859ead94fcc6fd1, type: 3}
   m_Name: Default Flare
   m_EditorClassIdentifier: 
-  flare:
-    type: 0
-    inventoryImage: {fileID: 751715039, guid: 658d8bdd4f501b24faa02c07f7752b08, type: 3}
-    dropObject: {fileID: 0}
-    isStackable: 1
-    isConsumable: 1
-    useOnRelease: 0
-    flarePrefab: {fileID: 2096992095639496621, guid: 1ee8ac740c0c65b47b7a4da840176de8, type: 3}
+  type: 0
+  itemID: 1
+  inventoryIcon: {fileID: 610067866, guid: efc2d046806ea2f41b94463556e004e2, type: 3}
+  isStackable: 1
+  isConsumable: 1
+  useOnRelease: 0
+  dropPrefab: {fileID: 7923633346994375038, guid: a77f7d61efb44744bbc0ef33646f26d1, type: 3}
+  flareToDropPb: {fileID: 2096992095639496621, guid: 1ee8ac740c0c65b47b7a4da840176de8, type: 3}

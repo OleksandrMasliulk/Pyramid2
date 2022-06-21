@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d577b3175eb9abd4cabd24c613b266fc, type: 3}
   m_Name: Treasure10_2
   m_EditorClassIdentifier: 
-  treasure:
-    type: 4
-    inventoryImage: {fileID: 533297222, guid: 80ed2ef49a06a47459e20f3c4a82b94e, type: 3}
-    dropObject: {fileID: 0}
-    isStackable: 0
-    isConsumable: 0
-    useOnRelease: 0
-    value: 10
+  type: 4
+  itemID: 8
+  inventoryIcon: {fileID: 533297222, guid: 80ed2ef49a06a47459e20f3c4a82b94e, type: 3}
+  isStackable: 0
+  isConsumable: 0
+  useOnRelease: 0
+  dropPrefab: {fileID: 2096992095639496621, guid: 7f0e54153fb925d4a8470b4e73856c58, type: 3}
+  value: 10

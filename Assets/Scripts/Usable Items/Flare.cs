@@ -2,16 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
 public class Flare : Item
 {
-    [SerializeField] private GameObject flarePrefab;
+    private GameObject flarePrefab;
+
+    public Flare(FlareSO so/*, GameObject prefab*/) : base(so/*, prefab*/)
+    {
+        flarePrefab = so.flareToDropPb;
+    }
 
     public override void Use(PlayerController user)
     {
-        Debug.Log("FLARE USED");
-        base.Use(user);
-
         Throw(user);
     }
 
@@ -24,11 +25,15 @@ public class Flare : Item
     {
         Use(user);
 
-        return base.OnButtonPressed(user);
+        return !UseOnRelease;
     }
 
     public override bool OnButtonReleased(PlayerController user)
     {
-        return base.OnButtonReleased(user);
+        return UseOnRelease;
+    }
+
+    public override void OnDrop(PlayerController user)
+    {
     }
 }

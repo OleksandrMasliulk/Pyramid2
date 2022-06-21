@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ce276232ac2d954db003af5812a1ff6, type: 3}
   m_Name: Default Paint
   m_EditorClassIdentifier: 
-  paint:
-    type: 3
-    inventoryImage: {fileID: 411174458, guid: efc2d046806ea2f41b94463556e004e2, type: 3}
-    dropObject: {fileID: 0}
-    isStackable: 1
-    isConsumable: 1
-    useOnRelease: 1
+  type: 3
+  itemID: 4
+  inventoryIcon: {fileID: 411174458, guid: efc2d046806ea2f41b94463556e004e2, type: 3}
+  isStackable: 1
+  isConsumable: 1
+  useOnRelease: 1
+  dropPrefab: {fileID: 7923633346994375038, guid: c8349ac169d928a4f869c06310c031cf, type: 3}

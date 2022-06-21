@@ -7,10 +7,12 @@ public class Paint : Item
 {
     private Vector3 mousePosTemp;
 
+    public Paint(PaintSO so/*, GameObject prefab*/) : base(so/*, prefab*/)
+    {
+    }
+
     public override void Use(PlayerController user)
     {
-        base.Use(user);
-
         SpawnArrow(MouseUtils.GetMouseDragDirectionString(mousePosTemp, Input.mousePosition), user);
         Debug.Log("Paint used");
     }
@@ -20,7 +22,7 @@ public class Paint : Item
         user.GetPlayerHUDContorller().ShowPaintDirection();
         mousePosTemp = Input.mousePosition;
 
-        return base.OnButtonPressed(user);
+        return !UseOnRelease;
     }
 
     public override bool OnButtonReleased(PlayerController user)
@@ -28,7 +30,7 @@ public class Paint : Item
         user.GetPlayerHUDContorller().HidePaintDirection();
         Use(user);
 
-        return base.OnButtonReleased(user);
+        return UseOnRelease;
     }
     private void SpawnArrow(string direction, PlayerController user)
     {
@@ -45,5 +47,9 @@ public class Paint : Item
         }
 
         MonoBehaviour.Instantiate((GameObject)prefab, user.transform.position, Quaternion.identity);
+    }
+
+    public override void OnDrop(PlayerController user)
+    {
     }
 }

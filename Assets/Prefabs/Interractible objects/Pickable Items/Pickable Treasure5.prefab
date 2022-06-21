@@ -4909,6 +4909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemSO: {fileID: 11400000, guid: 44ccbdf5fc19e09478319c8a065be235, type: 2}
   count: 1
+  dropPrefab: {fileID: 2096992095639496621}
 --- !u!114 &6302731743925719626
 MonoBehaviour:
   m_ObjectHideFlags: 0

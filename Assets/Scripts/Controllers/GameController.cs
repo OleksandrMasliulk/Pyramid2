@@ -59,7 +59,7 @@ public class GameController : MonoBehaviour
             Treasure treasure = PlayerController.Instance.GetPlayerInventoryController().GetItemFromSlot(i) as Treasure;
             if (treasure != null)
             {
-                gold += treasure.value;
+                gold += treasure.GetValue();
             }
         }
 

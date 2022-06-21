@@ -5,11 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Flare", menuName = "Items/Flares/New Flare")]
 public class FlareSO : ItemSO
 {
-    [Header("Item Parameters")]
-    public Flare flare;
-
-    public override Item GetItem()
-    {
-        return flare;
-    }
+    [Header("Item behaviour")]
+    public GameObject flareToDropPb;
 }

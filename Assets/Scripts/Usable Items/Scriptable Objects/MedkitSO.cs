@@ -6,10 +6,5 @@ using UnityEngine;
 public class MedkitSO : ItemSO
 {
     [Header("Item Parameters")]
-    public Medkit medkit;
-
-    public override Item GetItem()
-    {
-        return medkit;
-    }
+    public int restoreAmount;
 }

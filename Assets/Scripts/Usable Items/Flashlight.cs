@@ -5,12 +5,16 @@ using UnityEngine;
 [System.Serializable]
 public class Flashlight : Item
 {
-    private bool isActive = false;
+    private bool isActive;
+
+    public Flashlight(FlashlightSO so/*, GameObject prefab*/) : base(so/*, prefab*/)
+    {
+        isActive = false;
+    }
 
     public override void Use(PlayerController user)
     {
         Debug.Log("Flashlight USED");
-        base.Use(user);
 
         if (isActive)
         {
@@ -47,11 +51,11 @@ public class Flashlight : Item
     {
         Use(user);
 
-        return base.OnButtonPressed(user);
+        return !UseOnRelease;
     }
 
     public override bool OnButtonReleased(PlayerController user)
     {
-        return base.OnButtonReleased(user);
+        return UseOnRelease;
     }
 }
