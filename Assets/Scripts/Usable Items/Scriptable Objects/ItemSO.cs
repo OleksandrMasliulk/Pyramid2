@@ -15,6 +15,7 @@ public abstract class ItemSO : ScriptableObject
 
     [Header("Inventory behaviour")]
     public bool isStackable;
+    public int maxStack;
     public bool isConsumable;
     public bool useOnRelease;
     public GameObject dropPrefab;
@@ -58,6 +59,20 @@ public class ItemEditor : Editor
     public override void OnInspectorGUI()
     {
         ItemSO so = (ItemSO)target;
+        //SerializedObject serializedSO = new SerializedObject(so);
+
+        EditorGUILayout.BeginVertical();
+
+        #region GENERAL OPTIONS       
+        //GENERAL OPTIONS
+        EditorGUILayout.LabelField("General", EditorStyles.boldLabel);
+
+        //Item type
+        so.type = (Item.ItemType)EditorGUILayout.EnumPopup("Type", so.type);
+        //ID
+        GUI.enabled = false;
+        so.itemID = EditorGUILayout.IntField("ID", so.itemID);
+        GUI.enabled = true;
         if (GUILayout.Button("Generate ID"))
         {
             if (so.GenerateID(out int ID))
@@ -71,29 +86,40 @@ public class ItemEditor : Editor
             }
 
         }
-        DrawDefaultInspector();
-    }
-}
+        #endregion
+        EditorGUILayout.Space(10);
+        #region GRAPHICS OPTIONS
+        //GRAPHICS OPTIONS
+        EditorGUILayout.LabelField("Graphics", EditorStyles.boldLabel);
 
-[CustomEditor(typeof(FlareSO))]
-public class FlareEditor : ItemEditor
-{
-}
-[CustomEditor(typeof(MedkitSO))]
-public class MedkitEditor : ItemEditor
-{
-}
-[CustomEditor(typeof(FlashlightSO))]
-public class FlashlightEditor : ItemEditor
-{
-}
-[CustomEditor(typeof(PaintSO))]
-public class PaintEditor : ItemEditor
-{
-}
-[CustomEditor(typeof(TreasureSO))]
-public class TreasureEditor : ItemEditor
-{
+        //Inventory icon
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.LabelField("Inventory icon");
+        so.inventoryIcon = (Sprite)EditorGUILayout.ObjectField(so.inventoryIcon, typeof(Sprite), allowSceneObjects: true);
+        EditorGUILayout.EndHorizontal();
+        #endregion
+        EditorGUILayout.Space(10);
+        #region INVENTORY BEHAVIOUR OPTIONS
+        //INVENTORY BEHAVIOUR
+        EditorGUILayout.LabelField("Inventory behaviour", EditorStyles.boldLabel);
+
+        //Is item stackable
+        so.isStackable = EditorGUILayout.Toggle("Is Stackable", so.isStackable);
+        if (so.isStackable)
+        {
+            so.maxStack = EditorGUILayout.IntField("Max stack count", so.maxStack);
+        }
+        //Is Item consumable
+        so.isConsumable = EditorGUILayout.Toggle("Is Consumable", so.isConsumable);
+        //Use on release
+        so.useOnRelease = EditorGUILayout.Toggle("Use On Release", so.useOnRelease);
+        //Item drop prefab
+        so.dropPrefab = (GameObject)EditorGUILayout.ObjectField("Item drop prefab", so.dropPrefab, typeof(GameObject), allowSceneObjects: false);
+        #endregion
+
+        EditorGUILayout.EndVertical();
+        //DrawDefaultInspector();
+    }
 }
 
 
