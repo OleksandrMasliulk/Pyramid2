@@ -25,5 +25,8 @@ public class FlareEditor : ItemEditor
 
         //Flare prefab
         so.flareToDropPb = (GameObject)EditorGUILayout.ObjectField("Flare Prefab", so.flareToDropPb, typeof(GameObject), allowSceneObjects: false);
+
+        if (GUI.changed)
+            EditorUtility.SetDirty(so);
     }
 }

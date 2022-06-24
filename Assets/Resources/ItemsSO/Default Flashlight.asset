@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Default Flashlight
   m_EditorClassIdentifier: 
   type: 2
-  itemID: 2
+  itemID: 911
   inventoryIcon: {fileID: 1235890156, guid: efc2d046806ea2f41b94463556e004e2, type: 3}
   isStackable: 0
+  maxStack: 0
   isConsumable: 0
   useOnRelease: 0
   dropPrefab: {fileID: 7923633346994375038, guid: b9e463112a966804bacb3892d6df016d, type: 3}

@@ -7,10 +7,10 @@ public class Pickable : MonoBehaviour, IInterractible
 {
     [SerializeField] private ItemSO itemSO;
     private Item item;
-    public int count;
+    [SerializeField] private int count;
     public string tooltip { get; set; }
 
-    private void Start()
+    private void Awake()
     {
         tooltip = "Press E to PickUp";
 
@@ -52,6 +52,11 @@ public class Pickable : MonoBehaviour, IInterractible
         {
             count = 1;
         }
+
+        if (count > item.MaxStack)
+        {
+            count = item.MaxStack;
+        }
     }
 
     private bool PickUp(PlayerController user)
@@ -74,6 +79,15 @@ public class Pickable : MonoBehaviour, IInterractible
         if (PickUp(user))
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    public void SetCount(int count)
+    {
+        this.count = count;
+        if (this.count > item.MaxStack)
+        {
+            this.count = item.MaxStack;
         }
     }
 }

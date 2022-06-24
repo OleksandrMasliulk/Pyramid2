@@ -83,7 +83,7 @@ public class PlayerInventoryController : MonoBehaviour
         {
             for (int i = 0; i < inventorySlots; i++)
             {
-                if (inventory[i].item != null && inventory[i].item.ID == item.ID)
+                if (inventory[i].item != null && inventory[i].item.ID == item.ID && inventory[i].count < item.MaxStack)
                 {
                     inventory[i] = new InventorySlot(item, inventory[i].count + count, dropPrefab);
                     Debug.Log("Stacked");
@@ -194,19 +194,11 @@ public class PlayerInventoryController : MonoBehaviour
         }
         else
         {
-            Instantiate(inventory[slotToUse].dropPrefab, transform.position, Quaternion.identity);
+            Pickable itemDropped = Instantiate(inventory[slotToUse].dropPrefab, transform.position, Quaternion.identity).GetComponent<Pickable>();
+            itemDropped.SetCount(inventory[slotToUse].count);
 
             inventory[slotToUse].item.OnDrop(playerController);
-            int newCount = inventory[slotToUse].count - 1;
-
-            if (newCount == 0)
-            {
-                inventory[slotToUse] = new InventorySlot(null, 0, null);
-            }
-            else
-            {
-                inventory[slotToUse] = new InventorySlot(inventory[slotToUse].item, inventory[slotToUse].count - 1, inventory[slotToUse].dropPrefab);
-            }
+            inventory[slotToUse] = new InventorySlot(null, 0, null);
 
             playerController.GetPlayerHUDContorller().UpdateInventorySlot(slotToUse, inventory[slotToUse]);
         }

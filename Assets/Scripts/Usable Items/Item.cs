@@ -32,14 +32,6 @@ public abstract class Item
             return _type;
         }
     }
-    //private GameObject _dropPrefab;
-    //public GameObject DropPrefab
-    //{
-    //    get
-    //    {
-    //        return _dropPrefab;
-    //    }
-    //}
 
     private Sprite _inventoryIcon;
     public Sprite InventoryIcon
@@ -66,6 +58,14 @@ public abstract class Item
             return _isStackable;
         }
     }
+    private int _maxStack;
+    public int MaxStack
+    {
+        get
+        {
+            return _maxStack;
+        }
+    }
     private bool _useOnRelease;
     public bool UseOnRelease
     {
@@ -84,6 +84,7 @@ public abstract class Item
         _inventoryIcon = so.inventoryIcon;
 
         _isStackable = so.isStackable;
+        _maxStack = so.maxStack;
         _isConsumable = so.isConsumable;
         _useOnRelease = so.useOnRelease;
     }

@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Treasure10_2
   m_EditorClassIdentifier: 
   type: 4
-  itemID: 8
+  itemID: 898
   inventoryIcon: {fileID: 533297222, guid: 80ed2ef49a06a47459e20f3c4a82b94e, type: 3}
   isStackable: 0
+  maxStack: 0
   isConsumable: 0
   useOnRelease: 0
   dropPrefab: {fileID: 2096992095639496621, guid: 7f0e54153fb925d4a8470b4e73856c58, type: 3}

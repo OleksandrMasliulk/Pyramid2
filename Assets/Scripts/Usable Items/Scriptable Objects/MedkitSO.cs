@@ -25,5 +25,8 @@ public class MedkitEditor : ItemEditor
 
         //Restore amount
         so.restoreAmount = EditorGUILayout.IntField("Restore amount", so.restoreAmount);
+
+        if (GUI.changed)
+            EditorUtility.SetDirty(so);
     }
 }

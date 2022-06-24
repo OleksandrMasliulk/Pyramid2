@@ -20,5 +20,8 @@ public class PaintEditor : ItemEditor
 
         //Item behaviour
         EditorGUILayout.LabelField("Item behaviour", EditorStyles.boldLabel);
+
+        if (GUI.changed)
+            EditorUtility.SetDirty(so);
     }
 }

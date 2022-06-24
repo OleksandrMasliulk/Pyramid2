@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Default Medkit
   m_EditorClassIdentifier: 
   type: 1
-  itemID: 3
+  itemID: 526
   inventoryIcon: {fileID: -1179972609, guid: efc2d046806ea2f41b94463556e004e2, type: 3}
   isStackable: 1
+  maxStack: 2
   isConsumable: 1
   useOnRelease: 0
   dropPrefab: {fileID: 7923633346994375038, guid: eb398cd73696e0e4abc855e51bb7ed5c, type: 3}

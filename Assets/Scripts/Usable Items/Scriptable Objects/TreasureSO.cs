@@ -24,5 +24,8 @@ public class TreasureEditor : ItemEditor
         EditorGUILayout.LabelField("Item behaviour", EditorStyles.boldLabel);
 
         so.value = EditorGUILayout.IntField("Treasure value", so.value);
+
+        if (GUI.changed)
+            EditorUtility.SetDirty(so);
     }
 }

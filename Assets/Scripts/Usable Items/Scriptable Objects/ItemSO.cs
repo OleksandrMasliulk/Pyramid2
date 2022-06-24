@@ -36,19 +36,21 @@ public abstract class ItemSO : ScriptableObject
         return IDs;
     }
 
-    public bool GenerateID(out int ID)
+    public bool GenerateID()
     {
+        List<int> IDs = GetItemsIDs();
         int iterations = 1000;
         for (int i = 0; i < iterations; i++)
         {
-            ID = Random.Range(0, 1000);
-            if (!GetItemsIDs().Contains(ID))
+            int ID = Random.Range(0, 1000);
+            if (!IDs.Contains(ID))
             {
+                itemID = ID;
                 return true;
             }
         }
 
-        ID = -1;
+        itemID = -1;
         return false;
     }
 }
@@ -59,7 +61,7 @@ public class ItemEditor : Editor
     public override void OnInspectorGUI()
     {
         ItemSO so = (ItemSO)target;
-        //SerializedObject serializedSO = new SerializedObject(so);
+        GUI.changed = false;
 
         EditorGUILayout.BeginVertical();
 
@@ -75,16 +77,10 @@ public class ItemEditor : Editor
         GUI.enabled = true;
         if (GUILayout.Button("Generate ID"))
         {
-            if (so.GenerateID(out int ID))
+            if (!so.GenerateID())
             {
-                so.itemID = ID;
-            }
-            else
-            {
-                so.itemID = ID;
                 EditorGUILayout.LabelField("FAILED!");
             }
-
         }
         #endregion
         EditorGUILayout.Space(10);
@@ -118,7 +114,9 @@ public class ItemEditor : Editor
         #endregion
 
         EditorGUILayout.EndVertical();
-        //DrawDefaultInspector();
+
+        if (GUI.changed)
+            EditorUtility.SetDirty(so);
     }
 }
 

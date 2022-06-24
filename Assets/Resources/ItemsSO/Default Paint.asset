@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Default Paint
   m_EditorClassIdentifier: 
   type: 3
-  itemID: 4
+  itemID: 616
   inventoryIcon: {fileID: 411174458, guid: efc2d046806ea2f41b94463556e004e2, type: 3}
   isStackable: 1
+  maxStack: 5
   isConsumable: 1
   useOnRelease: 1
   dropPrefab: {fileID: 7923633346994375038, guid: c8349ac169d928a4f869c06310c031cf, type: 3}
