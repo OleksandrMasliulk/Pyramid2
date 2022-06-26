@@ -10,6 +10,6 @@ public abstract class Trap : MonoBehaviour
     public virtual void ReduceSanity(PlayerController target)
     {
         if (target != null)
-            target.GetPlayerSanityController().UpdateSanity(-sanityLoss);
+            target.SanityController.UpdateSanity(-sanityLoss);
     }
 }

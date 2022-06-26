@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class PlayerHealthController : MonoBehaviour, IDamageable
+public class PlayerHealthController : MonoBehaviour
 {
-    public delegate void OnPlayerDiedDelegate();
-    public event OnPlayerDiedDelegate OnPlayerDied;
+    public delegate void OnPlayerDiedDelegate(PlayerController player);
+    public static event OnPlayerDiedDelegate OnPlayerDied;
 
     private PlayerController playerController;
 
@@ -15,19 +15,10 @@ public class PlayerHealthController : MonoBehaviour, IDamageable
         playerController = GetComponent<PlayerController>();
     }
 
-    public void TakeDamage(int damage)
-    {
-        Die();
-    }
-
-    private void Die()
+    public void Die()
     {
         playerController.SetState(playerController.deadState);
-        AudioManager.PlaySound(AudioManager.Sound.PlayerDie);
 
-        OnPlayerDied?.Invoke();
-
-        if (GameController.Instance != null)
-            GameController.Instance.Lose();
+        OnPlayerDied?.Invoke(playerController);
     }
 }

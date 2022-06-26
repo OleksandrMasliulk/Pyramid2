@@ -35,24 +35,24 @@ public class TutorialController : GameController
 
     public void ResurrectPlayer(Transform pos)
     {
-        PlayerController.Instance.GetPlayerParameters().SetIsAlive(true);
-        PlayerController.Instance.GetPlayerParameters().SetIsGhost(false);
-        PlayerController.Instance.GetPlayerParameters().SetIsCovered(false);
-        PlayerController.Instance.SetPlayerLayer(6);
-        PlayerController.Instance.GetPlayerHUDContorller().ShowHUD(); 
-        PlayerController.Instance.GetPlayerGraphicsController().SetAliveGraphics();
-        PlayerController.Instance.SetState(PlayerController.Instance.aliveState);
-        PlayerController.Instance.GetPlayerSanityController().UpdateSanity(100);
+        UnitManager.Instance.PlayerList[0].Stats.IsAlive = true;
+        UnitManager.Instance.PlayerList[0].Stats.SetGhost(false);
+        UnitManager.Instance.PlayerList[0].Stats.SetCovered(false);
+        UnitManager.Instance.PlayerList[0].SetPlayerLayer(6);
+        UnitManager.Instance.PlayerList[0].HUDController.ShowHUD();
+        UnitManager.Instance.PlayerList[0].GraphicsController.SetAliveGraphics();
+        UnitManager.Instance.PlayerList[0].SetState(UnitManager.Instance.PlayerList[0].aliveState);
+        UnitManager.Instance.PlayerList[0].SanityController.UpdateSanity(100);
 
-        PlayerController.Instance.transform.position = pos.position;
+        UnitManager.Instance.PlayerList[0].transform.position = pos.position;
     }
 
     public void SetGhost()
     {
-        PlayerController.Instance.GetPlayerGraphicsController().SetGhostGraphics();
-        PlayerController.Instance.SetPlayerLayer(11);
-        PlayerController.Instance.GetPlayerParameters().SetIsGhost(true);
-        PlayerController.Instance.SetState(PlayerController.Instance.ghostState);
+        UnitManager.Instance.PlayerList[0].GraphicsController.SetGhostGraphics();
+        UnitManager.Instance.PlayerList[0].SetPlayerLayer(11);
+        UnitManager.Instance.PlayerList[0].Stats.SetGhost(true);
+        UnitManager.Instance.PlayerList[0].SetState(UnitManager.Instance.PlayerList[0].ghostState);
     }
 
     public void ShowDiePanel()

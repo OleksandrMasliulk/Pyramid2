@@ -6,10 +6,17 @@ public class PlayerDeadState : PlayerState
 {
     public override void OnStateEnter(PlayerController player)
     {
-        player.GetPlayerParameters().SetIsAlive(false);
-        player.GetPlayerGraphicsController().SetDie();
-        player.GetPlayerHUDContorller().HideHUD();
+        AudioManager.PlaySound(AudioManager.Sound.PlayerDie);
+
+        player.Stats.IsAlive = false;
+        player.GraphicsController.SetDie();
+        player.HUDController.HideHUD();
         player.SetPlayerLayer(11);
+        player.InventoryController.DropWholeInventory();
+    }
+
+    public override void OnStateExit(PlayerController player)
+    {
     }
 
     public override void OnDirectionInput(PlayerController player, Vector2 direction)

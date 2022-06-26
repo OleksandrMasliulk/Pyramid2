@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using System.Threading.Tasks;
 
 public class SanityFX : MonoBehaviour
 {
@@ -19,25 +20,34 @@ public class SanityFX : MonoBehaviour
     private AudioSource noSanitySound;
     private AudioSource lowSanitySound;
 
+    private List<Task> taskList;
+
     private void Awake()
     {
         currentVolume = sanity100;
+        taskList = new List<Task>();
     }
 
-    IEnumerator BlendVolumes(Volume newVolume)
+    private async Task BlendVolumes(Volume newVolume)
     {
-        float time = 0f;
+        if (newVolume == currentVolume)
+            return;
 
+        if (taskList.Count > 0)
+            await taskList[taskList.Count - 1];
+
+        Volume oldVolume = currentVolume;
+        currentVolume = newVolume;
+
+        float time = 0f;
         while(time <= blendTime)
         {
-            newVolume.weight = Mathf.Lerp(0f, 1f, time / blendTime);
-            currentVolume.weight = Mathf.Lerp(1f, 0f, time / blendTime);
+            currentVolume.weight = Mathf.Lerp(0f, 1f, time / blendTime);
+            oldVolume.weight = Mathf.Lerp(1f, 0f, time / blendTime);
 
             time += Time.deltaTime;
-            yield return new WaitForSeconds(Time.deltaTime);
+            await Task.Yield();
         }
-
-        currentVolume = newVolume;
     }
 
     public void SetSanity100Volume()
@@ -45,35 +55,40 @@ public class SanityFX : MonoBehaviour
         StopLowSanitySound();
         StopNoSanitySound();
         GameController.Instance.PlayLevelTheme();
-        StartCoroutine(BlendVolumes(sanity100));
+
+        taskList.Add(BlendVolumes(sanity100));
     }
     public void SetSanity75Volume()
     {
         StopLowSanitySound();
         StopNoSanitySound();
         GameController.Instance.PlayLevelTheme();
-        StartCoroutine(BlendVolumes(sanity75));
+
+        BlendVolumes(sanity75);
     }
     public void SetSanity50Volume()
     {
         PlayLowSanitySound();
         StopNoSanitySound();
         GameController.Instance.PlayLevelTheme();
-        StartCoroutine(BlendVolumes(sanity50));
+
+        BlendVolumes(sanity50);
     }
     public void SetSanity25Volume()
     {
         PlayLowSanitySound();
         StopNoSanitySound();
         GameController.Instance.PlayLevelTheme();
-        StartCoroutine(BlendVolumes(sanity25));
+
+        BlendVolumes(sanity25);
     }
     public void SetSanity0Volume()
     {
         StopLowSanitySound();
         PlayNoSanitySound();
         GameController.Instance.PauseLevelTheme();
-        StartCoroutine(BlendVolumes(sanity0));
+
+        BlendVolumes(sanity0);
     }
 
     private void PlayNoSanitySound()

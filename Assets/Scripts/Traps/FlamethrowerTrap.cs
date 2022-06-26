@@ -74,7 +74,7 @@ public class FlamethrowerTrap : Trap
             player = col.GetComponent<PlayerController>();
             if (player != null)
             {
-                player.GetPlayerSanityController().UpdateSanity(-sanityLoss);
+                player.SanityController.UpdateSanity(-sanityLoss);
                 return;
             }
         }

@@ -13,6 +13,9 @@ public class GameController : MonoBehaviour
 
     private AudioSource levelTheme;
 
+    private List<PlayerController> _alivePlayersList;
+    public List<PlayerController> AlivePlayersList => _alivePlayersList;
+
     private void Awake()
     {
         if (Instance == null)
@@ -24,10 +27,14 @@ public class GameController : MonoBehaviour
             Destroy(this.gameObject);
         }
         AudioManager.Init();
+        _alivePlayersList = new List<PlayerController>();
+
+        PlayerHealthController.OnPlayerDied += RemovePlayerFromAlive;
     }
 
     private void Start()
     {
+        UnitManager.Instance.InitialSpawn();
         PlayLevelTheme();
     }
 
@@ -50,18 +57,32 @@ public class GameController : MonoBehaviour
         OnLose?.Invoke();
     }
 
+    private void RemovePlayerFromAlive(PlayerController player)
+    {
+        _alivePlayersList.Remove(player);
+        CheckPlayers();
+    }
+
+    private void CheckPlayers()
+    {
+        if (_alivePlayersList.Count <= 0)
+        {
+            Lose();
+        }
+    }
+
     public int CalculateGold()
     {
         int gold = 0;
 
-        for (int i = 0; i < 4; i++)
-        {
-            Treasure treasure = PlayerController.Instance.GetPlayerInventoryController().GetItemFromSlot(i) as Treasure;
-            if (treasure != null)
-            {
-                gold += treasure.GetValue();
-            }
-        }
+        //for (int i = 0; i < 4; i++)
+        //{
+        //    Treasure treasure = PlayerController.Instance.InventoryController.GetItemFromSlot(i) as Treasure;
+        //    if (treasure != null)
+        //    {
+        //        gold += treasure.GetValue();
+        //    }
+        //}
 
         return gold;
     }

@@ -17,10 +17,10 @@ public class Cover : MonoBehaviour, IInterractible
 
     public void Interract(PlayerController user)
     {
-        if (user.GetPlayerParameters().isCovered)
+        if (user.Stats.IsCovered)
         {
             tooltip = "Press E to Cover";
-            user.GetPlayerCoverController().Uncover(respawnPos.position);
+            user.CoverController.Uncover(respawnPos.position);
             Instantiate(dustPS, respawnPos.position, Quaternion.identity);
 
             if (graphics != null)
@@ -29,7 +29,7 @@ public class Cover : MonoBehaviour, IInterractible
         else
         {
             tooltip = "Press E to Uncover";
-            user.GetPlayerCoverController().Cover(transform.position);
+            user.CoverController.Cover(transform.position);
 
             if (graphics != null)
                 graphics.SetBool("isOpened", false);

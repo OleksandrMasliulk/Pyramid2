@@ -30,6 +30,18 @@ public class Door : MonoBehaviour, IInterractible
             Close();
         }
     }
+    
+    public void Interract()
+    {
+        if (isClosed)
+        {
+            Open();
+        }
+        else
+        {
+            Close();
+        }
+    }
 
     private void Open()
     {

@@ -24,8 +24,8 @@ public class PlayerInterractionController : MonoBehaviour
     {
         objectsToInterract.Add(objectToInterract);
 
-        playerController.GetPlayerHUDContorller().SetTooltipText(objectToInterract.GetComponent<IInterractible>().tooltip);
-        playerController.GetPlayerHUDContorller().ShowTooltip();
+        playerController.HUDController.SetTooltipText(objectToInterract.GetComponent<IInterractible>().tooltip);
+        playerController.HUDController.ShowTooltip();
     }
     
     public void RemoveFromList(InterractComponent objectToInterract)
@@ -34,11 +34,11 @@ public class PlayerInterractionController : MonoBehaviour
 
         if (objectsToInterract.Count == 0) 
         {
-            playerController.GetPlayerHUDContorller().HideTooltip();
+            playerController.HUDController.HideTooltip();
         }
         else
         {
-            playerController.GetPlayerHUDContorller().SetTooltipText(objectsToInterract[0].GetComponent<IInterractible>().tooltip);
+            playerController.HUDController.SetTooltipText(objectsToInterract[0].GetComponent<IInterractible>().tooltip);
         }
     } 
 

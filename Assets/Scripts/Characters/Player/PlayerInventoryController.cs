@@ -25,7 +25,7 @@ public class PlayerInventoryController : MonoBehaviour
 
         for (int i = 0; i < inventorySlots; i++)
         {
-            playerController.GetPlayerHUDContorller().UpdateInventorySlot(i, inventory[i]);
+            playerController.HUDController.UpdateInventorySlot(i, inventory[i]);
         }
     }
 
@@ -88,7 +88,7 @@ public class PlayerInventoryController : MonoBehaviour
                     inventory[i] = new InventorySlot(item, inventory[i].count + count, dropPrefab);
                     Debug.Log("Stacked");
 
-                    playerController.GetPlayerHUDContorller().UpdateInventorySlot(i, inventory[i]);
+                    playerController.HUDController.UpdateInventorySlot(i, inventory[i]);
 
                     return true;
                 }
@@ -110,7 +110,7 @@ public class PlayerInventoryController : MonoBehaviour
                     inventory[i] = new InventorySlot(item, count, dropPrefab);
                     Debug.Log("Item added");
 
-                    playerController.GetPlayerHUDContorller().UpdateInventorySlot(i, inventory[i]);
+                    playerController.HUDController.UpdateInventorySlot(i, inventory[i]);
 
                     switch (item.Type)
                     {
@@ -167,7 +167,7 @@ public class PlayerInventoryController : MonoBehaviour
                 inventory[slotToUse] = new InventorySlot(inventory[slotToUse].item, inventory[slotToUse].count - 1, inventory[slotToUse].dropPrefab);
             }
 
-            playerController.GetPlayerHUDContorller().UpdateInventorySlot(slotToUse, inventory[slotToUse]);
+            playerController.HUDController.UpdateInventorySlot(slotToUse, inventory[slotToUse]);
         }
     }
 
@@ -178,9 +178,9 @@ public class PlayerInventoryController : MonoBehaviour
         slotToUse = num;
         Debug.Log("Slot to use: " + num);
 
-        if (playerController.GetPlayerHUDContorller() != null)
+        if (playerController.HUDController != null)
         {
-            playerController.GetPlayerHUDContorller().HighlightInventorySlot(num);
+            playerController.HUDController.HighlightInventorySlot(num);
         }
     }
 
@@ -200,7 +200,26 @@ public class PlayerInventoryController : MonoBehaviour
             inventory[slotToUse].item.OnDrop(playerController);
             inventory[slotToUse] = new InventorySlot(null, 0, null);
 
-            playerController.GetPlayerHUDContorller().UpdateInventorySlot(slotToUse, inventory[slotToUse]);
+            playerController.HUDController.UpdateInventorySlot(slotToUse, inventory[slotToUse]);
+        }
+    }
+    public void Drop(int slotIndex)
+    {
+        if (inventory[slotIndex].item == null)
+        {
+            Debug.Log("Slot is empty");
+
+            return;
+        }
+        else
+        {
+            Pickable itemDropped = Instantiate(inventory[slotIndex].dropPrefab, transform.position, Quaternion.identity).GetComponent<Pickable>();
+            itemDropped.SetCount(inventory[slotIndex].count);
+
+            inventory[slotIndex].item.OnDrop(playerController);
+            inventory[slotIndex] = new InventorySlot(null, 0, null);
+
+            playerController.HUDController.UpdateInventorySlot(slotIndex, inventory[slotIndex]);
         }
     }
 
@@ -223,6 +242,14 @@ public class PlayerInventoryController : MonoBehaviour
             item = _item;
             count = _count;
             dropPrefab = _dropPrefab;
+        }
+    }
+
+    public void DropWholeInventory()
+    {
+        for (int i = 0; i < inventorySlots; i++)
+        {
+            Drop(i);
         }
     }
 }

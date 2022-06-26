@@ -43,7 +43,7 @@ public class IngameUIController : MonoBehaviour
 
     public void ContinueAsGhost()
     {
-        PlayerController.Instance.SetState(PlayerController.Instance.ghostState);
+        UnitManager.Instance.PlayerList[0].SetState(UnitManager.Instance.PlayerList[0].ghostState);
     }
 
     public void MainMenu()
