@@ -2,33 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Treasure : Item
 {
-    public int value;
+    private int value;
 
-    public Treasure(ItemType type)
+    public Treasure(TreasureSO so/*, GameObject prefab*/) : base(so/*, prefab*/)
     {
-        Debug.Log("TREASURE CLASEE CONSTRUCTED");
+        this.value = so.value;
+    }
 
-        switch (type)
-        {
-            case ItemType.Treasure5:
-                value = 5;
-                break;
-            case ItemType.Treasure10:
-                value = 10;
-                break;
-            default:
-                type = ItemType.Treasure5;
-                value = 5;
-                break;
-        }
+    public int GetValue()
+    {
+        return value;
+    }
 
-        this.type = type;
-        ItemAssets.Instance.GetItem(type, out pickableMirror, out inventoryImage);
+    public override bool OnButtonPressed(PlayerController user)
+    {
+        return !UseOnRelease;
+    }
 
-        useOnRelease = false;
-        isConsumable = false;
-        isStackable = false;
+    public override bool OnButtonReleased(PlayerController user)
+    {
+        return UseOnRelease;
+    }
+
+    public override void OnDrop(PlayerController user)
+    {
+    }
+
+    public override void Use(PlayerController user)
+    {
     }
 }

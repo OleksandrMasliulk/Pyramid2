@@ -2,27 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Flashlight : Item
 {
     private bool isActive;
 
-    public Flashlight()
+    public Flashlight(FlashlightSO so/*, GameObject prefab*/) : base(so/*, prefab*/)
     {
-        Debug.Log("FLASHLIGH CLASEE CONSTRUCTED");
-        this.type = ItemType.Flashlight;
-        ItemAssets.Instance.GetItem(type, out pickableMirror, out inventoryImage);
-
-        useOnRelease = false;
-        isConsumable = false;
-        isStackable = false;
-
         isActive = false;
     }
 
     public override void Use(PlayerController user)
     {
         Debug.Log("Flashlight USED");
-        base.Use(user);
 
         if (isActive)
         {
@@ -59,11 +51,11 @@ public class Flashlight : Item
     {
         Use(user);
 
-        return base.OnButtonPressed(user);
+        return !UseOnRelease;
     }
 
     public override bool OnButtonReleased(PlayerController user)
     {
-        return base.OnButtonReleased(user);
+        return UseOnRelease;
     }
 }

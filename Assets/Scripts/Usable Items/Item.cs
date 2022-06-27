@@ -2,47 +2,95 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Item
+public abstract class Item
 {
+    [System.Serializable]
     public enum ItemType
     {
         Flare,
         Medkit,
         Flashlight,
         Paint,
-        Treasure5,
-        Treasure10
+        Treasure
     }
 
-    public Transform pickableMirror;
-    public Sprite inventoryImage;
 
-    public bool isStackable;
-    public bool isConsumable;
-    public bool useOnRelease;
 
-    public ItemType type;
-
-    public virtual void OnDrop(PlayerController user)
-    { 
-    }
-
-    public virtual void Use(PlayerController user)
+    private int _id;
+    public int ID
     {
+        get
+        {
+            return _id;
+        }
+    }
+    private ItemType _type;
+    public ItemType Type
+    {
+        get
+        {
+            return _type;
+        }
     }
 
-    public virtual bool OnButtonPressed(PlayerController user)
+    private Sprite _inventoryIcon;
+    public Sprite InventoryIcon
     {
-        return !useOnRelease;
+        get
+        {
+            return _inventoryIcon;
+        }
     }
 
-    public virtual bool OnButtonReleased(PlayerController user)
+    private bool _isConsumable;
+    public bool IsConsumable
     {
-        return useOnRelease;
+        get
+        {
+            return _isConsumable;
+        }
+    }
+    private bool _isStackable;
+    public bool IsStackable
+    {
+        get
+        {
+            return _isStackable;
+        }
+    }
+    private int _maxStack;
+    public int MaxStack
+    {
+        get
+        {
+            return _maxStack;
+        }
+    }
+    private bool _useOnRelease;
+    public bool UseOnRelease
+    {
+        get
+        {
+            return _useOnRelease;
+        }
     }
 
-    public bool GetUseOnRelease()
+    public Item(ItemSO so /*GameObject prefab*/)
     {
-        return useOnRelease;
+        _type = so.type;
+        _id = so.itemID;
+        //_dropPrefab = prefab;
+
+        _inventoryIcon = so.inventoryIcon;
+
+        _isStackable = so.isStackable;
+        _maxStack = so.maxStack;
+        _isConsumable = so.isConsumable;
+        _useOnRelease = so.useOnRelease;
     }
+
+    public abstract void OnDrop(PlayerController user);
+    public abstract void Use(PlayerController user);
+    public abstract bool OnButtonPressed(PlayerController user);
+    public abstract bool OnButtonReleased(PlayerController user);
 }

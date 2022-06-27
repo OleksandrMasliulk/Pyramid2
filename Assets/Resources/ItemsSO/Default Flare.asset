@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f03dcf533df91d14b859ead94fcc6fd1, type: 3}
+  m_Name: Default Flare
+  m_EditorClassIdentifier: 
+  type: 0
+  itemID: 391
+  inventoryIcon: {fileID: 610067866, guid: efc2d046806ea2f41b94463556e004e2, type: 3}
+  isStackable: 1
+  maxStack: 5
+  isConsumable: 1
+  useOnRelease: 0
+  dropPrefab: {fileID: 7923633346994375038, guid: a77f7d61efb44744bbc0ef33646f26d1, type: 3}
+  flareToDropPb: {fileID: 2096992095639496621, guid: 1ee8ac740c0c65b47b7a4da840176de8, type: 3}

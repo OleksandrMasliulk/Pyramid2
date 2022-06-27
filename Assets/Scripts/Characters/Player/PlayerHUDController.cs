@@ -81,10 +81,10 @@ public class PlayerHUDController : MonoBehaviour
 
         if (data.item != null)
         {
-            if (data.item.inventoryImage != null)
+            if (data.item.InventoryIcon != null)
             {
                 img.color = Color.white;
-                img.sprite = data.item.inventoryImage;
+                img.sprite = data.item.InventoryIcon;
             }
             else
             {

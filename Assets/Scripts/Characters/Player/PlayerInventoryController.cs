@@ -77,15 +77,15 @@ public class PlayerInventoryController : MonoBehaviour
         }
     }
 
-    public bool AddToInventory(Item item, int count)
+    public bool AddToInventory(Item item, int count, GameObject dropPrefab)
     {
-        if (item.isStackable)
+        if (item.IsStackable)
         {
             for (int i = 0; i < inventorySlots; i++)
             {
-                if (inventory[i].item != null && inventory[i].item.GetType() == item.GetType())
+                if (inventory[i].item != null && inventory[i].item.ID == item.ID && inventory[i].count < item.MaxStack)
                 {
-                    inventory[i] = new InventorySlot(item, inventory[i].count + count);
+                    inventory[i] = new InventorySlot(item, inventory[i].count + count, dropPrefab);
                     Debug.Log("Stacked");
 
                     playerController.GetPlayerHUDContorller().UpdateInventorySlot(i, inventory[i]);
@@ -107,17 +107,17 @@ public class PlayerInventoryController : MonoBehaviour
             {
                 if (inventory[i].item == null)
                 {
-                    inventory[i] = new InventorySlot(item, count);
+                    inventory[i] = new InventorySlot(item, count, dropPrefab);
                     Debug.Log("Item added");
 
                     playerController.GetPlayerHUDContorller().UpdateInventorySlot(i, inventory[i]);
 
-                    switch (item.type)
+                    switch (item.Type)
                     {
                         default:
                             AudioManager.PlaySound(AudioManager.Sound.PickUpItem, 1f);
                             break;
-                        case (Item.ItemType.Treasure10 or Item.ItemType.Treasure5):
+                        case (Item.ItemType.Treasure):
                             AudioManager.PlaySound(AudioManager.Sound.PickUpTreasure, 1f);
                             break;
                     }
@@ -154,17 +154,17 @@ public class PlayerInventoryController : MonoBehaviour
 
         //inventory[slotToUse].item.Use(playerController);
 
-        if (inventory[slotToUse].item.isConsumable)
+        if (inventory[slotToUse].item.IsConsumable)
         {
             int newCount = inventory[slotToUse].count - 1;
 
             if (newCount == 0)
             {
-                inventory[slotToUse] = new InventorySlot(null, 0);
+                inventory[slotToUse] = new InventorySlot(null, 0, null);
             }
             else
             {
-                inventory[slotToUse] = new InventorySlot(inventory[slotToUse].item, inventory[slotToUse].count - 1);
+                inventory[slotToUse] = new InventorySlot(inventory[slotToUse].item, inventory[slotToUse].count - 1, inventory[slotToUse].dropPrefab);
             }
 
             playerController.GetPlayerHUDContorller().UpdateInventorySlot(slotToUse, inventory[slotToUse]);
@@ -194,19 +194,11 @@ public class PlayerInventoryController : MonoBehaviour
         }
         else
         {
-            Instantiate(inventory[slotToUse].item.pickableMirror.gameObject, transform.position, Quaternion.identity);
+            Pickable itemDropped = Instantiate(inventory[slotToUse].dropPrefab, transform.position, Quaternion.identity).GetComponent<Pickable>();
+            itemDropped.SetCount(inventory[slotToUse].count);
 
             inventory[slotToUse].item.OnDrop(playerController);
-            int newCount = inventory[slotToUse].count - 1;
-
-            if (newCount == 0)
-            {
-                inventory[slotToUse] = new InventorySlot(null, 0);
-            }
-            else
-            {
-                inventory[slotToUse] = new InventorySlot(inventory[slotToUse].item, inventory[slotToUse].count - 1);
-            }
+            inventory[slotToUse] = new InventorySlot(null, 0, null);
 
             playerController.GetPlayerHUDContorller().UpdateInventorySlot(slotToUse, inventory[slotToUse]);
         }
@@ -224,11 +216,13 @@ public class PlayerInventoryController : MonoBehaviour
     {
         public Item item;
         public int count;
+        public GameObject dropPrefab;
 
-        public InventorySlot (Item _item, int _count)
+        public InventorySlot (Item _item, int _count, GameObject _dropPrefab)
         {
             item = _item;
             count = _count;
+            dropPrefab = _dropPrefab;
         }
     }
 }

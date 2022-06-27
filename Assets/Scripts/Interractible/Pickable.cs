@@ -5,47 +5,57 @@ using static Item;
 
 public class Pickable : MonoBehaviour, IInterractible
 {
-    public ItemType type;
-
-    public int count;
-    protected Item item;
-
+    [SerializeField] private ItemSO itemSO;
+    private Item item;
+    [SerializeField] private int count;
     public string tooltip { get; set; }
 
-    private void Start()
+    private void Awake()
     {
         tooltip = "Press E to PickUp";
 
         Init();
     }
 
-    private void Init()
+    public void Init()
     {
-        switch (type)
+        if (itemSO.itemID == -1)
         {
+            Debug.LogWarning(name + ": Inavlid ID, object destroyed!");
+            Destroy(this.gameObject);
+            return;
+        }
+
+        switch (itemSO.type) 
+        {
+            //default:
+            //    Destroy(this.gameObject);
+            //    break;
             case ItemType.Flare:
-                item = new Flare();
-                break;
-            case ItemType.Flashlight:
-                item = new Flashlight();
+                item = new Flare((FlareSO)itemSO/*, dropPrefab*/);
                 break;
             case ItemType.Medkit:
-                item = new Medicine();
+                item = new Medkit((MedkitSO)itemSO/*, dropPrefab*/);
+                break;
+            case ItemType.Flashlight:
+                item = new Flashlight((FlashlightSO)itemSO/*, dropPrefab*/);
                 break;
             case ItemType.Paint:
-                item = new Paint();
+                item = new Paint((PaintSO)itemSO/*, dropPrefab*/);
                 break;
-            case ItemType.Treasure5:
-                item = new Treasure(ItemType.Treasure5);
-                break;
-            case ItemType.Treasure10:
-                item = new Treasure(ItemType.Treasure10);
+            case ItemType.Treasure:
+                item = new Treasure((TreasureSO)itemSO/*, dropPrefab*/);
                 break;
         }
 
-        if (!item.isStackable)
+        if (!item.IsStackable)
         {
             count = 1;
+        }
+
+        if (count > item.MaxStack)
+        {
+            count = item.MaxStack;
         }
     }
 
@@ -60,7 +70,7 @@ public class Pickable : MonoBehaviour, IInterractible
         }
         else
         {
-            return inventory.AddToInventory(item, count);
+            return inventory.AddToInventory(item, count, itemSO.dropPrefab);
         }
     }
 
@@ -69,6 +79,15 @@ public class Pickable : MonoBehaviour, IInterractible
         if (PickUp(user))
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    public void SetCount(int count)
+    {
+        this.count = count;
+        if (this.count > item.MaxStack)
+        {
+            this.count = item.MaxStack;
         }
     }
 }
