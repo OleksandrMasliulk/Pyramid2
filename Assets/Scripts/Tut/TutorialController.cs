@@ -22,12 +22,12 @@ public class TutorialController : GameController
         }
     }
 
-    public override void Win()
+    protected override void OnWin()
     {
         tutorialWinPanel.SetActive(true);
     }
 
-    public override void Lose()
+    protected override void OnLose()
     {
         AudioManager.PlaySound(AudioManager.Sound.PlayerDieFX);
         ShowDiePanelDelayed();

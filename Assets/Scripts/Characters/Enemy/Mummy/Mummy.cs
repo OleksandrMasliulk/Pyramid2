@@ -2,9 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mummy : EnemyCharacterBase, IDamageable
+public class Mummy : EnemyBase, IDamageable
 {
     public new MummyStats Stats => (MummyStats)_stats;
+    public new MummyGraphicsController GraphicsController => (MummyGraphicsController)_graphicsController;
 
     private MummyState state;
 

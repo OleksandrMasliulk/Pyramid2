@@ -9,6 +9,7 @@ public class PlayerDeadState : PlayerState
         AudioManager.PlaySound(AudioManager.Sound.PlayerDie);
 
         player.Stats.IsAlive = false;
+        player.SanityController.UpdateSanity(100);
         player.GraphicsController.SetDie();
         player.HUDController.HideHUD();
         player.SetPlayerLayer(11);

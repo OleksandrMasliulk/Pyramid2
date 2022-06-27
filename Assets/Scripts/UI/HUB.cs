@@ -14,7 +14,7 @@ public class HUB : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene(chosenMap);
+        LevelManager.Instance.LoadLevel(chosenMap);
     }
 
     public void ChoseMap(int index)

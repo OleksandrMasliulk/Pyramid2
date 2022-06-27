@@ -11,8 +11,8 @@ public class IngameUIController : MonoBehaviour
 
     private void Start()
     {
-        GameController.Instance.OnLose += ShowLoseScrren;
-        GameController.Instance.OnWin += ShowWinScreen;
+        GameController.Instance.OnLoseEvent += ShowLoseScrren;
+        GameController.Instance.OnWinEvent += ShowWinScreen;
     }
 
     private void Update()
@@ -48,13 +48,12 @@ public class IngameUIController : MonoBehaviour
 
     public void MainMenu()
     {
-        Debug.Log("Main Menu");
-        SceneManager.LoadScene(0);
+        LevelManager.Instance.MainMenu();
     }
 
     private void OnDisable()
     {
-        GameController.Instance.OnLose -= ShowLoseScrren;
-        GameController.Instance.OnWin -= ShowWinScreen;
+        GameController.Instance.OnLoseEvent -= ShowLoseScrren;
+        GameController.Instance.OnWinEvent -= ShowWinScreen;
     }
 }

@@ -252,4 +252,9 @@ public class PlayerInventoryController : MonoBehaviour
             Drop(i);
         }
     }
+
+    public int CalculateInventoryValue()
+    {
+        return 0;
+    }
 }

@@ -10,18 +10,23 @@ public class MummyRoamState : MummyState
         Debug.LogWarning("Mummy entered Roam state");
 
         mummy.MovementController.SetSpeed(mummy.Stats.MoveSpeed);
-        Roam(mummy, GetRoamPosition(mummy));
+        mummy.MovementController.SetTarget(GetRoamPosition(mummy));
 
         timeToNextSenseTick = mummy.Stats.SenseTickTime;
     }
 
     public override void ExitState(Mummy mummy)
     {
-        mummy.MovementController.CancelMoveTask();
+        //mummy.MovementController.CancelMoveTask();
     }
 
     public override void StateTick(Mummy mummy)
     {
+        if (mummy.MovementController.ReachedTarget)
+        {
+            mummy.MovementController.SetTarget(GetRoamPosition(mummy));
+        }
+
         if (timeToNextSenseTick <= 0f)
         {
             PlayerController player = SensePlayer(mummy);
@@ -75,12 +80,12 @@ public class MummyRoamState : MummyState
         return player;
     }
 
-    private async void Roam(Mummy mummy, Vector3 roamPos)
-    {
-        await mummy.MovementController.Move(roamPos);
+    //private async void Roam(Mummy mummy, Vector3 roamPos)
+    //{
+    //    await mummy.MovementController.Move(roamPos);
 
-        Roam(mummy, GetRandomPosition(GetRoamPosition(mummy), mummy.Stats.BreakLoSRoamRadius));
-    }
+    //    Roam(mummy, GetRandomPosition(GetRoamPosition(mummy), mummy.Stats.BreakLoSRoamRadius));
+    //}
 
     public override void OnTakeDamage(Mummy mummy)
     {

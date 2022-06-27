@@ -19,8 +19,8 @@ public class UnitManager : MonoBehaviour
     [SerializeField]private Spawn[] initialNPCSpawnList;
     [SerializeField]private Spawn[] initialEnemySpawnList;
 
-    private List<EnemyCharacterBase> _enemyList;
-    public List<EnemyCharacterBase> EnemyList => _enemyList;
+    private List<EnemyBase> _enemyList;
+    public List<EnemyBase> EnemyList => _enemyList;
     private List<PlayerController> _playerList;
     public List<PlayerController> PlayerList => _playerList;
     private List<NPCBase> _npcList;
@@ -37,7 +37,7 @@ public class UnitManager : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        _enemyList = new List<EnemyCharacterBase>();
+        _enemyList = new List<EnemyBase>();
         _playerList = new List<PlayerController>();
         _npcList = new List<NPCBase>();
     }
@@ -72,7 +72,7 @@ public class UnitManager : MonoBehaviour
     {
         foreach (Spawn s in initialEnemySpawnList)
         {
-            EnemyCharacterBase enemy = (EnemyCharacterBase)SpawnCharacter(s.character, s.position);
+            EnemyBase enemy = (EnemyBase)SpawnCharacter(s.character, s.position);
             _enemyList.Add(enemy);
         }
     }

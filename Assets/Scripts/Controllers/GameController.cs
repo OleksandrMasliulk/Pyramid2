@@ -7,11 +7,20 @@ public class GameController : MonoBehaviour
     public static GameController Instance { get; private set; }
 
     public delegate void OnWinDelegate();
-    public event OnWinDelegate OnWin;
+    public event OnWinDelegate OnWinEvent;
     public delegate void OnLoseDelegate();
-    public event OnWinDelegate OnLose;
+    public event OnWinDelegate OnLoseEvent;
 
-    private AudioSource levelTheme;
+    public enum GameState
+    {
+        Init,
+        SpawningCharacters,
+        Win,
+        Lose
+    }
+    private GameState _gameState;
+
+    private AudioSource _levelTheme;
 
     private List<PlayerController> _alivePlayersList;
     public List<PlayerController> AlivePlayersList => _alivePlayersList;
@@ -26,35 +35,64 @@ public class GameController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        AudioManager.Init();
-        _alivePlayersList = new List<PlayerController>();
-
-        PlayerHealthController.OnPlayerDied += RemovePlayerFromAlive;
     }
 
     private void Start()
     {
-        UnitManager.Instance.InitialSpawn();
-        PlayLevelTheme();
+        SetGameState(GameState.Init);
     }
 
-    public virtual void Win()
+    private void SetGameState(GameState state)
+    {
+        _gameState = state;
+
+        switch (_gameState)
+        {
+            case GameState.Init:
+                AudioManager.Init();
+                PlayLevelTheme();
+                _alivePlayersList = new List<PlayerController>();
+                PlayerHealthController.OnPlayerDied += RemovePlayerFromAlive;
+                SetGameState(GameState.SpawningCharacters);
+                break;
+
+            case GameState.SpawningCharacters:
+                UnitManager.Instance.InitialSpawn();
+                break;
+
+            case GameState.Win:
+                OnWin();
+                break;
+
+            case GameState.Lose:
+                OnLose();
+                break;
+        }
+    }
+
+    public void Win()
     {
         Debug.LogWarning("!!!  Player WIN  !!!");
-
-        Save();
-
-        OnWin?.Invoke();
+        SetGameState(GameState.Win);
     }
 
-    public virtual void Lose()
+    protected virtual void OnWin()
+    {
+        Save();
+        OnWinEvent?.Invoke();
+    }
+
+    public void Lose()
     {
         Debug.LogWarning("!!! PLAYER LOST !!!");
+        SetGameState(GameState.Lose);
+    }
+
+
+    protected virtual void OnLose()
+    {
         AudioManager.PlaySound(AudioManager.Sound.PlayerDieFX);
-
-        //Save();
-
-        OnLose?.Invoke();
+        OnLoseEvent?.Invoke();
     }
 
     private void RemovePlayerFromAlive(PlayerController player)
@@ -71,50 +109,34 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public int CalculateGold()
-    {
-        int gold = 0;
-
-        //for (int i = 0; i < 4; i++)
-        //{
-        //    Treasure treasure = PlayerController.Instance.InventoryController.GetItemFromSlot(i) as Treasure;
-        //    if (treasure != null)
-        //    {
-        //        gold += treasure.GetValue();
-        //    }
-        //}
-
-        return gold;
-    }
-
     private void Save()
     {
         PlayerData data = SaveLoad.Load();
         if (data != null)
         {
-            data.gold += CalculateGold();
+            data.gold += _alivePlayersList[0].InventoryController.CalculateInventoryValue();
         }
         else
         {
-            data = new PlayerData(CalculateGold());
+            data = new PlayerData(_alivePlayersList[0].InventoryController.CalculateInventoryValue());
         }
         SaveLoad.Save(data);
     }
 
     public void PlayLevelTheme()
     {
-        if (levelTheme == null)
+        if (_levelTheme == null)
         {
-            levelTheme = AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
+            _levelTheme = AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
         }
         else
         {
-            levelTheme.UnPause();
+            _levelTheme.UnPause();
         }
     }
 
     public void PauseLevelTheme()
     {
-        levelTheme.Pause();
+        _levelTheme.Pause();
     }
 }

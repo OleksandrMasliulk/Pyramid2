@@ -12,12 +12,12 @@ public class MummyChaseState : MummyState
         player = args.playerSeeked;
 
         mummy.MovementController.SetSpeed(mummy.Stats.ChaseMoveSpeed);
-        mummy.MovementController.Move(player.transform.position);
+        mummy.MovementController.SetTarget(player.transform.position);
     }
 
     public override void ExitState(Mummy mummy)
     {
-        mummy.MovementController.CancelMoveTask();
+        //mummy.MovementController.CancelMoveTask();
         player = null;
     }
 

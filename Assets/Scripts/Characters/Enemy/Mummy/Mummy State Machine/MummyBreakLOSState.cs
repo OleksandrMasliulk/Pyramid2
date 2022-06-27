@@ -19,7 +19,9 @@ public class MummyBreakLOSState : MummyState
 
         mummy.MovementController.SetSpeed(mummy.Stats.MoveSpeed);
         lastSeenPosition = args.lastSeenPosition;
-        Roam(mummy, lastSeenPosition);
+        //Roam(mummy, lastSeenPosition);
+
+        mummy.MovementController.SetTarget(GetRoamPosition(mummy));
 
         timeToNextSenseTick = mummy.Stats.SenseTickTime;
         timeToRoamState = mummy.Stats.BreakLoSStateDuration;
@@ -27,11 +29,16 @@ public class MummyBreakLOSState : MummyState
 
     public override void ExitState(Mummy mummy)
     {
-        mummy.MovementController.CancelMoveTask();
+        //mummy.MovementController.CancelMoveTask();
     }
 
     public override void StateTick(Mummy mummy)
     {
+        if (mummy.MovementController.ReachedTarget)
+        {
+            mummy.MovementController.SetTarget(GetRoamPosition(mummy));
+        }
+
         if (timeToNextSenseTick <= 0f)
         {
             PlayerController player = SensePlayer(mummy);
@@ -59,16 +66,23 @@ public class MummyBreakLOSState : MummyState
         }
     }
 
+    public Vector3 GetRoamPosition(Mummy mummy)
+    {
+        Vector3 target = lastSeenPosition;
+        Vector3 pos = GetRandomPosition(target, mummy.Stats.BreakLoSRoamRadius);
+
+        while (!Map.Instance.IsPointWalkable(pos))
+        {
+            pos = GetRandomPosition(target, mummy.Stats.BreakLoSRoamRadius);
+        }
+
+        return pos;
+    }
+
     private Vector3 GetRandomPosition(Vector3 target, float range)
     {
         Vector3 randomDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f).normalized;
         return target + randomDirection * range;
-    }
-
-    private void DestroyDestinationPoint(Mummy mummy, Transform destPoint)
-    {
-        MonoBehaviour.Destroy(destPoint.gameObject);
-        destinationPoint = null;
     }
 
     private PlayerController SensePlayer(Mummy mummy)
@@ -84,12 +98,12 @@ public class MummyBreakLOSState : MummyState
         return player;
     }
 
-    private async void Roam(Mummy mummy, Vector3 roamPos)
-    {
-        await mummy.MovementController.Move(roamPos);
+    //private async void Roam(Mummy mummy, Vector3 roamPos)
+    //{
+    //    await mummy.MovementController.Move(roamPos);
 
-        Roam(mummy, GetRandomPosition(lastSeenPosition, mummy.Stats.BreakLoSRoamRadius));
-    }
+    //    Roam(mummy, GetRandomPosition(lastSeenPosition, mummy.Stats.BreakLoSRoamRadius));
+    //}
 
     public override void OnTakeDamage(Mummy mummy)
     {

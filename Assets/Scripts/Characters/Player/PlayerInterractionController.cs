@@ -13,10 +13,6 @@ public class PlayerInterractionController : MonoBehaviour
     private void Awake()
     {
         playerController = GetComponent<PlayerController>();
-    }
-
-    private void Start()
-    {
         objectsToInterract = new List<InterractComponent>();
     }
 

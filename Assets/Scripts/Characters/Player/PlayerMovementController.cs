@@ -16,7 +16,7 @@ public class PlayerMovementController : MonoBehaviour, IMove
 
     public void Move(Vector2 direction)
     {
-        rb.MovePosition(transform.position + (Vector3)direction.normalized * playerController.Stats.MoveSpeed * Time.deltaTime);
+        rb.MovePosition(transform.position + (Vector3)direction.normalized * playerController.Stats.MoveSpeed);
         playerController.GraphicsController.SetMovementDirection(direction);
     }
 }
