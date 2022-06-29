@@ -2,90 +2,122 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class AudioManager
+public class AudioManager : MonoBehaviour
 {
-    public enum Sound 
-    { 
-        PlayerWalk,
-        MummyWalk,
-        PlayerDie,
-        PlayerDieFX,
-        DoorOpen,
-        DoorClose,
-        LevelTheme,
-        LowSanity,
-        NoSanity,
-        FireTrap,
-        ArrowTrap,
-        PickUpItem,
-        PickUpTreasure,
-        Lever
+    //public enum Sound 
+    //{ 
+    //    //PlayerWalk,
+    //    //MummyWalk,
+    //    //PlayerDie,
+    //    //PlayerDieFX,
+    //    //DoorOpen,
+    //    //DoorClose,
+    //    LevelTheme, //Music
+    //    LowSanity, //Music
+    //    NoSanity, //Music
+    //    //FireTrap,
+    //    //ArrowTrap,
+    //    //PickUpItem,
+    //    //PickUpTreasure,
+    //    //Lever
+    //}
+
+    public static AudioManager Instance { get; private set; }
+
+    [SerializeField] private SoundBoardSO[] _soundBoards;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+        InitSoundBoards();
     }
 
-    private static Dictionary<Sound, float> soundTimerDictionary;
-
-    public static void Init()
+    private void InitSoundBoards()
     {
-        soundTimerDictionary = new Dictionary<Sound, float>();
-        soundTimerDictionary[Sound.PlayerWalk] = 0f;
-        soundTimerDictionary[Sound.MummyWalk] = 0f;
+        foreach (SoundBoardSO sb in _soundBoards)
+        {
+            sb.SoundBoard.Init();
+        }
     }
 
-    public static AudioSource PlaySound(Sound sound)
+    public T GetSoundBoard<T>() where T : SoundBoard
     {
-        AudioClip clip = AudioAssets.Instance.GetAudioClip(sound);
+        T tmp = new SoundBoard() as T;
+
+        foreach (SoundBoardSO sb in _soundBoards)
+        {
+            if (typeof(T) == sb.SoundBoard.GetType())
+            {
+                return (T)sb.SoundBoard;
+            }
+        }
+
+        return null;
+    }
+
+    public AudioSource PlaySound(SoundAudioClip sound)
+    {
+        AudioClip clip = sound.clip;
         AudioSource audioSource = null;
-        if (clip != null && CanPlaySound(sound))
+        if (clip != null && sound.CanPlay())
         {
             GameObject go = new GameObject("Sound");
             audioSource = go.AddComponent<AudioSource>();
-            audioSource.volume = AudioAssets.Instance.GetSoundVolume(sound);
+            audioSource.volume = sound.volume;
             audioSource.PlayOneShot(clip);
         }
 
         return audioSource;
     }
 
-    public static AudioSource PlaySound(Sound sound, bool looped)
+    public AudioSource PlaySound(SoundAudioClip sound, bool looped)
     {
-        AudioClip clip = AudioAssets.Instance.GetAudioClip(sound);
+        AudioClip clip = sound.clip;
         AudioSource audioSource = null;
-        if (clip != null && CanPlaySound(sound))
+        if (clip != null && sound.CanPlay())
         {
             GameObject go = new GameObject("Sound");
             audioSource = go.AddComponent<AudioSource>();
             audioSource.clip = clip;
             audioSource.loop = looped;
-            audioSource.volume = AudioAssets.Instance.GetSoundVolume(sound);
+            audioSource.volume = sound.volume;
             audioSource.Play();
         }
 
         return audioSource;
     }
 
-    public static AudioClip PlaySound(Sound sound, Vector3 position)
+    public AudioClip PlaySound(SoundAudioClip sound, Vector3 position)
     {
-        AudioClip clip = AudioAssets.Instance.GetAudioClip(sound);
-        if (clip != null && CanPlaySound(sound))
+        AudioClip clip = sound.clip;
+        if (clip != null && sound.CanPlay())
         {
             GameObject go = new GameObject("Sound");
             AudioSource audioSource = go.AddComponent<AudioSource>();
             audioSource.clip = clip;
-            audioSource.volume = AudioAssets.Instance.GetSoundVolume(sound);
+            audioSource.volume = sound.volume;
+            audioSource.maxDistance = sound.maxRange;
             audioSource.Play();
         }
 
         return clip;
     }
-    public static AudioSource PlaySound(Sound sound, float playbackTime)
+    public AudioSource PlaySound(SoundAudioClip sound, float playbackTime)
     {
-        AudioClip clip = AudioAssets.Instance.GetAudioClip(sound);
+        AudioClip clip = sound.clip;
         AudioSource audioSource = null;
-        if (clip != null && CanPlaySound(sound))
+        if (clip != null && sound.CanPlay())
         {
             GameObject go = new GameObject("Sound");
             audioSource = go.AddComponent<AudioSource>();
-            audioSource.volume = AudioAssets.Instance.GetSoundVolume(sound);
+            audioSource.volume = sound.volume;
             audioSource.PlayOneShot(clip);
 
             MonoBehaviour.Destroy(audioSource.gameObject, playbackTime);
@@ -94,16 +126,17 @@ public static class AudioManager
         return audioSource;
     }
     
-    public static AudioSource PlaySound(Sound sound, Vector3 position, float playbackTime)
+    public AudioSource PlaySound(SoundAudioClip sound, Vector3 position, float playbackTime)
     {
-        AudioClip clip = AudioAssets.Instance.GetAudioClip(sound);
+        AudioClip clip = sound.clip;
         AudioSource audioSource = null;
-        if (clip != null && CanPlaySound(sound))
+        if (clip != null && sound.CanPlay())
         {
             GameObject go = new GameObject("Sound");
             audioSource = go.AddComponent<AudioSource>();
             audioSource.clip = clip;
-            audioSource.volume = AudioAssets.Instance.GetSoundVolume(sound);
+            audioSource.volume = sound.volume;
+            audioSource.maxDistance = sound.maxRange;
             audioSource.Play();
 
             MonoBehaviour.Destroy(audioSource.gameObject, playbackTime);
@@ -112,52 +145,4 @@ public static class AudioManager
         return audioSource;
     }
 
-    private static bool CanPlaySound(Sound sound)
-    {
-        switch (sound) 
-        {
-            default:
-                return true;
-            case Sound.PlayerWalk:
-                if (soundTimerDictionary.ContainsKey(sound))
-                {
-                    float lastTimePlayed = soundTimerDictionary[sound];
-                    float maxTimer = .2f;
-                    if (lastTimePlayed + maxTimer < Time.time)
-                    {
-                        soundTimerDictionary[sound] = Time.time;
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    return true;
-                }
-                break;
-            case Sound.MummyWalk:
-                if (soundTimerDictionary.ContainsKey(sound))
-                {
-                    float lastTimePlayed = soundTimerDictionary[sound];
-                    float maxTimer = 1f;
-                    if (lastTimePlayed + maxTimer < Time.time)
-                    {
-                        soundTimerDictionary[sound] = Time.time;
-                        return true;
-                    }
-                    else
-                    {
-                        return false;
-                    }
-                }
-                else
-                {
-                    return true;
-                }
-                break;
-        }
-    }
 }

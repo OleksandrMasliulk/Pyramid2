@@ -112,16 +112,6 @@ public class PlayerInventoryController : MonoBehaviour
 
                     playerController.HUDController.UpdateInventorySlot(i, inventory[i]);
 
-                    switch (item.Type)
-                    {
-                        default:
-                            AudioManager.PlaySound(AudioManager.Sound.PickUpItem, 1f);
-                            break;
-                        case (Item.ItemType.Treasure):
-                            AudioManager.PlaySound(AudioManager.Sound.PickUpTreasure, 1f);
-                            break;
-                    }
-
                     return true;
                 }
             }

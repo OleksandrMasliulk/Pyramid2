@@ -1,5 +1,57 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &277645686569577829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4541934602218152362}
+  - component: {fileID: 2544324523522529502}
+  m_Layer: 0
+  m_Name: Audio Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4541934602218152362
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277645686569577829}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 613072740010730353}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2544324523522529502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 277645686569577829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24e57591e7e415e45b283fad2215f46f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundBoards:
+  - {fileID: 11400000, guid: e0dd82ca8e242d04bb2f23e37a6760c0, type: 2}
+  - {fileID: 11400000, guid: 22341318154536c42a7424a8fbbc242c, type: 2}
+  - {fileID: 11400000, guid: 50eca973b29a48345a6436d0d904495c, type: 2}
+  - {fileID: 11400000, guid: 55a7c233620508645b574e45dac58f0b, type: 2}
+  - {fileID: 11400000, guid: 573828bce5ab930449160fd73991c03c, type: 2}
+  - {fileID: 11400000, guid: a3a33aefeb903cb4fb54457c85e083b9, type: 2}
+  - {fileID: 11400000, guid: 87f438540b0e1934ebef4e6228e5bdad, type: 2}
 --- !u!1 &613072740010730352
 GameObject:
   m_ObjectHideFlags: 0
@@ -30,6 +82,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6065412181745253763}
+  - {fileID: 4541934602218152362}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

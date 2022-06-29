@@ -95,7 +95,7 @@ public class SanityFX : MonoBehaviour
     {
         if (noSanitySound == null)
         {
-            noSanitySound = AudioManager.PlaySound(AudioManager.Sound.NoSanity, true);
+            //noSanitySound = AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<>.NoSanity, true);
         }
     }
 
@@ -111,7 +111,7 @@ public class SanityFX : MonoBehaviour
     {
         if (lowSanitySound == null)
         {
-            lowSanitySound = AudioManager.PlaySound(AudioManager.Sound.LowSanity, true);
+            //lowSanitySound = AudioManager.PlaySound(AudioManager.Sound.LowSanity, true);
         }
     }
 

@@ -45,6 +45,10 @@ public abstract class Item
         _useOnRelease = so.useOnRelease;
     }
 
+    public virtual void OnPickUp(PlayerController player)
+    {
+        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<ItemsSoundboard>().pickUp, 1f);
+    }
     public abstract void OnDrop(PlayerController user);
     public abstract void Use(PlayerController user);
     public abstract bool OnButtonPressed(PlayerController user);

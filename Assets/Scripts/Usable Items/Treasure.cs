@@ -31,6 +31,10 @@ public class Treasure : Item
     {
     }
 
+    public override void OnPickUp(PlayerController player)
+    {
+        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<ItemsSoundboard>().pickUpTreasure, 1f);
+    }
     public override void Use(PlayerController user)
     {
     }

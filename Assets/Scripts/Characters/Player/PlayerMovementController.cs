@@ -18,5 +18,6 @@ public class PlayerMovementController : MonoBehaviour, IMove
     {
         rb.MovePosition(transform.position + (Vector3)direction.normalized * playerController.Stats.MoveSpeed);
         playerController.GraphicsController.SetMovementDirection(direction);
+        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<PlayerSoundBoard>().walk, playerController.transform.position, .2f);
     }
 }

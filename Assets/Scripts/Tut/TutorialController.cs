@@ -29,7 +29,7 @@ public class TutorialController : GameController
 
     protected override void OnLose()
     {
-        AudioManager.PlaySound(AudioManager.Sound.PlayerDieFX);
+        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<GameActionsSoundBoard>().playerLost);
         ShowDiePanelDelayed();
     }
 
