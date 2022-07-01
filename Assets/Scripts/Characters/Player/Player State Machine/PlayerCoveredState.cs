@@ -7,7 +7,7 @@ public class PlayerCoveredState : PlayerState
     public override void OnStateEnter(PlayerController player)
     {
         player.SetPlayerLayer(10);
-        player.Stats.SetCovered(true);
+        player.Stats.IsCovered = true;
         player.GraphicsController.DisableRenderer();
         player.MovementController.enabled = false;
     }
@@ -15,7 +15,7 @@ public class PlayerCoveredState : PlayerState
     public override void OnStateExit(PlayerController player)
     {
         player.SetPlayerLayer(6);
-        player.Stats.SetCovered(false);
+        player.Stats.IsCovered = false;
         player.GraphicsController.EnableRenderer();
         player.MovementController.enabled = true;
     }
@@ -26,7 +26,8 @@ public class PlayerCoveredState : PlayerState
 
     public override void OnInterractInput(PlayerController player)
     {
-        player.InterractionController.Interract();
+        player.CoverController.Cover.Interract(player);
+        //player.InterractionController.Interract();
     }
 
     public override void OnInventoryUsePressInput(PlayerController player)

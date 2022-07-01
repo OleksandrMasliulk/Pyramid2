@@ -11,18 +11,18 @@ public class PlayerStats : CharacterStats
     [SerializeField] private int _maxSanity;
     public int MaxSanity => _maxSanity;
 
-    [SerializeField] private bool _isGhost;
-    public bool IsGhost => _isGhost;
+    //[SerializeField] private bool _isGhost;
+    public bool IsGhost; //=> _isGhost;
 
-    [SerializeField] private bool _isCovered;
-    public bool IsCovered => _isCovered;
+    //[SerializeField] private bool _isCovered;
+    public bool IsCovered; //=> _isCovered;
 
-    public void SetGhost(bool newValue)
-    {
-        _isGhost = newValue;
-    }
-    public void SetCovered(bool newValue)
-    {
-        _isCovered = newValue;
-    }
+    //public void SetGhost(bool newValue)
+    //{
+    //    _isGhost = newValue;
+    //}
+    //public void SetCovered(bool newValue)
+    //{
+    //    _isCovered = newValue;
+    //}
 }

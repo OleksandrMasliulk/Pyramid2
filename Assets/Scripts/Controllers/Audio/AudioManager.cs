@@ -4,24 +4,6 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    //public enum Sound 
-    //{ 
-    //    //PlayerWalk,
-    //    //MummyWalk,
-    //    //PlayerDie,
-    //    //PlayerDieFX,
-    //    //DoorOpen,
-    //    //DoorClose,
-    //    LevelTheme, //Music
-    //    LowSanity, //Music
-    //    NoSanity, //Music
-    //    //FireTrap,
-    //    //ArrowTrap,
-    //    //PickUpItem,
-    //    //PickUpTreasure,
-    //    //Lever
-    //}
-
     public static AudioManager Instance { get; private set; }
 
     [System.Serializable]

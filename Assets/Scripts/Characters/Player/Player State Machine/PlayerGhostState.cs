@@ -6,7 +6,7 @@ public class PlayerGhostState : PlayerState
 {
     public override void OnStateEnter(PlayerController player)
     {
-        player.Stats.SetGhost(true);
+        player.Stats.IsGhost = true;
         player.GraphicsController.SetGhostGraphics();
         player.GhostCamera.gameObject.SetActive(true);
         player.SetPlayerLayer(11);
