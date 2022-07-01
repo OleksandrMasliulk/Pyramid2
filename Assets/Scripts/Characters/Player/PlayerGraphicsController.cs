@@ -2,19 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerGraphicsController : MonoBehaviour
+public class PlayerGraphicsController : CharacterGraphicsController
 {
-    [SerializeField] private Animator animator;
-    [SerializeField] private SpriteRenderer sprite;
-
     [SerializeField] private ParticleSystem stepsPS;
     [SerializeField] private ParticleSystem ghostPS;
 
     [SerializeField] private RuntimeAnimatorController aliveController;
     [SerializeField] private AnimatorOverrideController ghostController;
-
-    [SerializeField] private LayerMask aliveRender;
-    [SerializeField] private LayerMask ghostRender;
 
     [SerializeField] private SanityFX sanityPostFX;
     private bool tentaclesEnabled = false;
@@ -24,40 +18,30 @@ public class PlayerGraphicsController : MonoBehaviour
 
     [SerializeField] private Sprite corpseSprite;
 
-    public void SetMovementDirection(Vector2 direction)
+    public override void SetMovementDirection(Vector2 direction)
     {
-        if (direction.x < 0f)
-        {
-            sprite.flipX = true;
-        }
-        else
-        {
-            sprite.flipX = false;
-        }
+        base.SetMovementDirection(direction);
 
         SetFlashlightDirection(direction);
-        animator.SetFloat("Horizontal", direction.x);
-        animator.SetFloat("Vertical", direction.y);
     }
 
     public void SetDie()
     {
-        animator.SetTrigger("Die");
+        _animator.SetTrigger("Die");
     }
 
     public void DisableRenderer()
     {
-        sprite.enabled = false;
+        _renderer.enabled = false;
     }
 
     public void EnableRenderer()
     {
-        sprite.enabled = true;
+        _renderer.enabled = true;
     }
 
     public void SetGhostGraphics()
     {
-        Camera.main.cullingMask = ghostRender;
         ghostPS.Play();
         stepsPS.Stop();
 
@@ -68,19 +52,18 @@ public class PlayerGraphicsController : MonoBehaviour
         corpse.transform.localScale *= 2;
         sr.sprite = corpseSprite;
         sr.sortingLayerName = "Characters";
-        SetSanityFX(100);
 
-        animator.runtimeAnimatorController = ghostController;
-        animator.SetTrigger("Ghost");
+        _animator.runtimeAnimatorController = ghostController;
+        //_animator.SetTrigger("Ghost");
+        _animator.Rebind();
     }
 
     public void SetAliveGraphics()
     {
-        Camera.main.cullingMask = aliveRender;
         ghostPS.Stop();
         stepsPS.Play();
-        animator.runtimeAnimatorController = aliveController;
-        animator.SetTrigger("Ghost");
+        _animator.runtimeAnimatorController = aliveController;
+        _animator.Rebind();
     }
 
     public void SwitchFlashlight(bool value)

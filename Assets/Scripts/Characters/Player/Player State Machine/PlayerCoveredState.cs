@@ -6,6 +6,18 @@ public class PlayerCoveredState : PlayerState
 {
     public override void OnStateEnter(PlayerController player)
     {
+        player.SetPlayerLayer(10);
+        player.Stats.SetCovered(true);
+        player.GraphicsController.DisableRenderer();
+        player.MovementController.enabled = false;
+    }
+
+    public override void OnStateExit(PlayerController player)
+    {
+        player.SetPlayerLayer(6);
+        player.Stats.SetCovered(false);
+        player.GraphicsController.EnableRenderer();
+        player.MovementController.enabled = true;
     }
 
     public override void OnDirectionInput(PlayerController player, Vector2 direction)
@@ -14,7 +26,7 @@ public class PlayerCoveredState : PlayerState
 
     public override void OnInterractInput(PlayerController player)
     {
-        player.GetPlayerInterractionController().Interract();
+        player.InterractionController.Interract();
     }
 
     public override void OnInventoryUsePressInput(PlayerController player)

@@ -19,7 +19,7 @@ public class Paint : Item
 
     public override bool OnButtonPressed(PlayerController user)
     {
-        user.GetPlayerHUDContorller().ShowPaintDirection();
+        user.HUDController.ShowPaintDirection();
         mousePosTemp = Input.mousePosition;
 
         return !UseOnRelease;
@@ -27,7 +27,7 @@ public class Paint : Item
 
     public override bool OnButtonReleased(PlayerController user)
     {
-        user.GetPlayerHUDContorller().HidePaintDirection();
+        user.HUDController.HidePaintDirection();
         Use(user);
 
         return UseOnRelease;

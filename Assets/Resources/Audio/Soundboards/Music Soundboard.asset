@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44aaa83f69c7df846ae5397f4a8d447a, type: 3}
+  m_Name: Music Soundboard
+  m_EditorClassIdentifier: 
+  _soundBoard:
+    mainMenuTheme:
+      clip: {fileID: 8300000, guid: ac315cbbf25d501488744e7b409a12aa, type: 3}
+      volume: 1
+      repeatPlayeDelay: 0
+      maxRange: 0
+    pyramidMenuTheme:
+      clip: {fileID: 8300000, guid: eb485786d043a3e4c85a0e132680cf0d, type: 3}
+      volume: 1
+      repeatPlayeDelay: 0
+      maxRange: 0
+    lowSanitySFX:
+      clip: {fileID: 8300000, guid: 999e0232b018b324291a0d0caf0a3ee7, type: 3}
+      volume: 0.211
+      repeatPlayeDelay: 0
+      maxRange: 0
+    noSanitySFX:
+      clip: {fileID: 8300000, guid: ca409dba6d0cf1e459d838d4193075d9, type: 3}
+      volume: 0.207
+      repeatPlayeDelay: 0
+      maxRange: 0

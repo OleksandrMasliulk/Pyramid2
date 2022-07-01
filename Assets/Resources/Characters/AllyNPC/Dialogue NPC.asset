@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8414bfa252af9f439b4acb049d61250, type: 3}
+  m_Name: Dialogue NPC
+  m_EditorClassIdentifier: 
+  Type: 1
+  prefab: {fileID: 3336946564759758558, guid: 8a6819265fb84254e89d9c2dc53901eb, type: 3}
+  dialogueNPCStats:
+    _moveSpeed: 0
+    _dialogue:
+      dialogueSO: {fileID: 11400000, guid: f2c1b314ecdb70d4ca9449301e837465, type: 2}
+      OnDialogueEndEvent:
+        m_PersistentCalls:
+          m_Calls: []

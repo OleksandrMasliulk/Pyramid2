@@ -31,7 +31,7 @@ public class Flashlight : Item
         isActive = true;
         Debug.Log("Flashlight turned ON");
 
-        user.GetPlayerGraphicsController().SwitchFlashlight(true);
+        user.GraphicsController.SwitchFlashlight(true);
     }
 
     public override void OnDrop(PlayerController user)
@@ -44,7 +44,7 @@ public class Flashlight : Item
         isActive = false;
         Debug.Log("Flashlight turned OFF");
 
-        user.GetPlayerGraphicsController().SwitchFlashlight(false);
+        user.GraphicsController.SwitchFlashlight(false);
     }
 
     public override bool OnButtonPressed(PlayerController user)

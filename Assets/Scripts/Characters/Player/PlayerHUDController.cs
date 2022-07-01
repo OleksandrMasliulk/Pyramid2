@@ -6,21 +6,21 @@ using static PlayerInventoryController;
 
 public class PlayerHUDController : MonoBehaviour
 {
-    public GameObject hud;
+    [SerializeField] private GameObject hud;
 
-    public Text interractTooltip;
+    [SerializeField] private Text interractTooltip;
 
-    public Slider sanitySlider;
-    public Image sanitySliderFill;
+    [SerializeField] private Slider sanitySlider;
+    [SerializeField] private Image sanitySliderFill;
 
-    public GameObject paintDirection;
+    [SerializeField] private GameObject paintDirection;
 
-    public Color sanity100;
-    public Color sanity75;
-    public Color sanity50;
-    public Color sanity25;
+    [SerializeField] private Color sanity100;
+    [SerializeField] private Color sanity75;
+    [SerializeField] private Color sanity50;
+    [SerializeField] private Color sanity25;
 
-    public GameObject[] inventorySlots;
+    [SerializeField] private GameObject[] inventorySlots;
     private int highlightedSlot;
 
     private void Start()

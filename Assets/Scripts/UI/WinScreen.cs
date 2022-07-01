@@ -9,6 +9,6 @@ public class WinScreen : MonoBehaviour
 
     private void OnEnable()
     {
-        collectedGoldText.text = GameController.Instance.CalculateGold().ToString();
+        collectedGoldText.text = GameController.Instance.AlivePlayersList[0].InventoryController.CalculateInventoryValue().ToString();
     }
 }

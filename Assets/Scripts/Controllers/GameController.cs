@@ -7,11 +7,23 @@ public class GameController : MonoBehaviour
     public static GameController Instance { get; private set; }
 
     public delegate void OnWinDelegate();
-    public event OnWinDelegate OnWin;
+    public event OnWinDelegate OnWinEvent;
     public delegate void OnLoseDelegate();
-    public event OnWinDelegate OnLose;
+    public event OnWinDelegate OnLoseEvent;
 
-    private AudioSource levelTheme;
+    public enum GameState
+    {
+        Init,
+        SpawningCharacters,
+        Win,
+        Lose
+    }
+    private GameState _gameState;
+
+    private AudioSource _levelTheme;
+
+    private List<PlayerController> _alivePlayersList;
+    public List<PlayerController> AlivePlayersList => _alivePlayersList;
 
     private void Awake()
     {
@@ -23,47 +35,77 @@ public class GameController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        AudioManager.Init();
     }
 
     private void Start()
     {
-        PlayLevelTheme();
+        SetGameState(GameState.Init);
     }
 
-    public virtual void Win()
+    private void SetGameState(GameState state)
+    {
+        _gameState = state;
+
+        switch (_gameState)
+        {
+            case GameState.Init:
+                PlayLevelTheme();
+                _alivePlayersList = new List<PlayerController>();
+                PlayerHealthController.OnPlayerDied += RemovePlayerFromAlive;
+                SetGameState(GameState.SpawningCharacters);
+                break;
+
+            case GameState.SpawningCharacters:
+                UnitManager.Instance.InitialSpawn();
+                break;
+
+            case GameState.Win:
+                OnWin();
+                break;
+
+            case GameState.Lose:
+                OnLose();
+                break;
+        }
+    }
+
+    public void Win()
     {
         Debug.LogWarning("!!!  Player WIN  !!!");
-
-        Save();
-
-        OnWin?.Invoke();
+        SetGameState(GameState.Win);
     }
 
-    public virtual void Lose()
+    protected virtual void OnWin()
+    {
+        Save();
+        OnWinEvent?.Invoke();
+    }
+
+    public void Lose()
     {
         Debug.LogWarning("!!! PLAYER LOST !!!");
-        AudioManager.PlaySound(AudioManager.Sound.PlayerDieFX);
-
-        //Save();
-
-        OnLose?.Invoke();
+        SetGameState(GameState.Lose);
     }
 
-    public int CalculateGold()
+
+    protected virtual void OnLose()
     {
-        int gold = 0;
+        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<GameActionsSoundBoard>().playerLost);
+        OnLoseEvent?.Invoke();
+    }
 
-        for (int i = 0; i < 4; i++)
+    private void RemovePlayerFromAlive(PlayerController player)
+    {
+        _alivePlayersList.Remove(player);
+        CheckPlayers();
+    }
+
+    private void CheckPlayers()
+    {
+        if (_alivePlayersList.Count <= 0)
         {
-            Treasure treasure = PlayerController.Instance.GetPlayerInventoryController().GetItemFromSlot(i) as Treasure;
-            if (treasure != null)
-            {
-                gold += treasure.GetValue();
-            }
+            Lose();
         }
-
-        return gold;
     }
 
     private void Save()
@@ -71,29 +113,29 @@ public class GameController : MonoBehaviour
         PlayerData data = SaveLoad.Load();
         if (data != null)
         {
-            data.gold += CalculateGold();
+            data.gold += _alivePlayersList[0].InventoryController.CalculateInventoryValue();
         }
         else
         {
-            data = new PlayerData(CalculateGold());
+            data = new PlayerData(_alivePlayersList[0].InventoryController.CalculateInventoryValue());
         }
         SaveLoad.Save(data);
     }
 
     public void PlayLevelTheme()
     {
-        if (levelTheme == null)
-        {
-            levelTheme = AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
-        }
-        else
-        {
-            levelTheme.UnPause();
-        }
+        //if (_levelTheme == null)
+        //{
+        //    _levelTheme = AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
+        //}
+        //else
+        //{
+        //    _levelTheme.UnPause();
+        //}
     }
 
     public void PauseLevelTheme()
     {
-        levelTheme.Pause();
+        //_levelTheme.Pause();
     }
 }

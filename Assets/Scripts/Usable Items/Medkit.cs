@@ -21,7 +21,7 @@ public class Medkit : Item
 
     private void Heal(PlayerController user)
     {
-        user.GetPlayerSanityController().UpdateSanity(sanityRestoreValue);
+        user.SanityController.UpdateSanity(sanityRestoreValue);
     }
 
     public override bool OnButtonPressed(PlayerController user)

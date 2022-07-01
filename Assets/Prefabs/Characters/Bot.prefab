@@ -120,6 +120,8 @@ GameObject:
   - component: {fileID: 9153242969195637269}
   - component: {fileID: 8509724497178458251}
   - component: {fileID: 792335505016859642}
+  - component: {fileID: 265776289113392279}
+  - component: {fileID: 5207299870351723005}
   m_Layer: 10
   m_Name: Bot
   m_TagString: Untagged
@@ -276,7 +278,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88d55653e3feb564b9a7e58474cee07f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiPath: {fileID: 5666413911348664018}
-  destSetter: {fileID: 329953013807211958}
-  anim: {fileID: 6648076243895702719}
-  sprite: {fileID: 1845636828547627810}
+  _graphicsController: {fileID: 5207299870351723005}
+  _movementController: {fileID: 265776289113392279}
+  target: {fileID: 0}
+--- !u!114 &265776289113392279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2991011510594694026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3309b788b1f3a2e4db1f45174ffb51d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _aiPath: {fileID: 5666413911348664018}
+  _seeker: {fileID: 2712826317581218089}
+  _destSetter: {fileID: 329953013807211958}
+--- !u!114 &5207299870351723005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2991011510594694026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671f0ead3ee96894d9d4a120c46a724d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 6648076243895702719}
+  _renderer: {fileID: 1845636828547627810}

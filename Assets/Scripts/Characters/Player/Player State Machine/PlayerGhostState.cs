@@ -6,20 +6,25 @@ public class PlayerGhostState : PlayerState
 {
     public override void OnStateEnter(PlayerController player)
     {
-        player.GetPlayerParameters().SetIsGhost(true);
-        player.GetPlayerGraphicsController().SetGhostGraphics();
+        player.Stats.SetGhost(true);
+        player.GraphicsController.SetGhostGraphics();
+        player.GhostCamera.gameObject.SetActive(true);
         player.SetPlayerLayer(11);
+    }
+
+    public override void OnStateExit(PlayerController player)
+    {
     }
 
     public override void OnDirectionInput(PlayerController player, Vector2 direction)
     {
-        player.GetPlayerMovementController().Move(direction);
-        player.GetPlayerGraphicsController().SetMovementDirection(direction);
+        if (direction.magnitude > 0f)
+            player.MovementController.Move(direction); 
     }
 
     public override void OnInterractInput(PlayerController player)
     {
-        player.GetPlayerInterractionController().Interract();
+        player.InterractionController.Interract();
     }
 
     public override void OnInventoryUsePressInput(PlayerController player)

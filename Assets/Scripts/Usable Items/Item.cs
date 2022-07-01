@@ -14,66 +14,22 @@ public abstract class Item
         Treasure
     }
 
-
-
     private int _id;
-    public int ID
-    {
-        get
-        {
-            return _id;
-        }
-    }
+    public int ID => _id;
     private ItemType _type;
-    public ItemType Type
-    {
-        get
-        {
-            return _type;
-        }
-    }
+    public ItemType Type => _type;
 
     private Sprite _inventoryIcon;
-    public Sprite InventoryIcon
-    {
-        get
-        {
-            return _inventoryIcon;
-        }
-    }
+    public Sprite InventoryIcon => _inventoryIcon;
 
     private bool _isConsumable;
-    public bool IsConsumable
-    {
-        get
-        {
-            return _isConsumable;
-        }
-    }
+    public bool IsConsumable => _isConsumable;
     private bool _isStackable;
-    public bool IsStackable
-    {
-        get
-        {
-            return _isStackable;
-        }
-    }
+    public bool IsStackable => _isStackable;
     private int _maxStack;
-    public int MaxStack
-    {
-        get
-        {
-            return _maxStack;
-        }
-    }
+    public int MaxStack => _maxStack;
     private bool _useOnRelease;
-    public bool UseOnRelease
-    {
-        get
-        {
-            return _useOnRelease;
-        }
-    }
+    public bool UseOnRelease => _useOnRelease;
 
     public Item(ItemSO so /*GameObject prefab*/)
     {
@@ -89,6 +45,10 @@ public abstract class Item
         _useOnRelease = so.useOnRelease;
     }
 
+    public virtual void OnPickUp(PlayerController player)
+    {
+        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<ItemsSoundboard>().pickUp, 1f);
+    }
     public abstract void OnDrop(PlayerController user);
     public abstract void Use(PlayerController user);
     public abstract bool OnButtonPressed(PlayerController user);

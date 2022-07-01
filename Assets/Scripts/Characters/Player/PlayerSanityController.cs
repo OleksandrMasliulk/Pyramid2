@@ -10,7 +10,8 @@ public class PlayerSanityController : MonoBehaviour
     public delegate void OnLowSanityDelegate(PlayerController player);
     public event OnLowSanityDelegate OnLowSanity;
 
-    private int currentSanity;
+    private int _currentSanity;
+    public int CurrentSanity => _currentSanity;
 
     private void Awake()
     {
@@ -24,34 +25,29 @@ public class PlayerSanityController : MonoBehaviour
 
     private void Init()
     {
-        currentSanity = playerController.GetPlayerParameters().maxSanity;
-        UpdateSanity(currentSanity);
+        _currentSanity = playerController.Stats.MaxSanity;
+        UpdateSanity(_currentSanity);
     }
 
     public void UpdateSanity(int value)
     {
-        currentSanity += value;
+        _currentSanity += value;
 
-        if (currentSanity < 0)
+        if (_currentSanity < 0)
         {
-            currentSanity = 0;
+            _currentSanity = 0;
         }
-        if (currentSanity > 100)
+        if (_currentSanity > 100)
         {
-            currentSanity = 100;
+            _currentSanity = 100;
         }
 
-        if (currentSanity <= 25)
+        if (_currentSanity <= 25)
         {
             OnLowSanity?.Invoke(this.playerController);
         }
 
-        playerController.GetPlayerHUDContorller().UpdateSanitySlider(currentSanity);
-        playerController.GetPlayerGraphicsController().SetSanityFX(currentSanity);
-    }
-
-    public int GetSanity()
-    {
-        return currentSanity;
+        playerController.HUDController.UpdateSanitySlider(_currentSanity);
+        playerController.GraphicsController.SetSanityFX(_currentSanity);
     }
 }

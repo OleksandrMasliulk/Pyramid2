@@ -61,7 +61,7 @@ public class Pickable : MonoBehaviour, IInterractible
 
     private bool PickUp(PlayerController user)
     {
-        PlayerInventoryController inventory = user.GetPlayerInventoryController();
+        PlayerInventoryController inventory = user.InventoryController;
 
         if (inventory == null)
         {
@@ -78,6 +78,7 @@ public class Pickable : MonoBehaviour, IInterractible
     {
         if (PickUp(user))
         {
+            item.OnPickUp(user);
             Destroy(this.gameObject);
         }
     }

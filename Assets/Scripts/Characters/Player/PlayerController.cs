@@ -3,37 +3,34 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : CharacterBase
 {
-    public static PlayerController Instance { get; private set; }
+    public new PlayerStats Stats => (PlayerStats)_stats;
+    public new PlayerGraphicsController GraphicsController => (PlayerGraphicsController)_graphicsController;
 
-    [SerializeField] private PlayerParameters parameters;
-    [SerializeField] private PlayerGraphicsController graphicsController;
-    [SerializeField] private PlayerHUDController hudController;
-    [SerializeField] private PlayerMovementController movementController;
-    [SerializeField] private PlayerInterractionController interractionController;
-    [SerializeField] private PlayerInventoryController inventoryController;
-    [SerializeField] private PlayerSanityController sanityController;
-    [SerializeField] private PlayerHealthController healthController;
-    [SerializeField] private PlayerCoverController coverController;
+    [SerializeField] private PlayerHUDController _hudController;
+    public PlayerHUDController HUDController => _hudController;
+    [SerializeField] private PlayerMovementController _movementController;
+    public PlayerMovementController MovementController => _movementController;
+    [SerializeField] private PlayerInterractionController _interractionController;
+    public PlayerInterractionController InterractionController => _interractionController;
+    [SerializeField] private PlayerInventoryController _inventoryController;
+    public PlayerInventoryController InventoryController => _inventoryController;
+    [SerializeField] private PlayerSanityController _sanityController;
+    public PlayerSanityController SanityController => _sanityController;
+    [SerializeField] private PlayerHealthController _healthController;
+    public PlayerHealthController HealthController => _healthController;
+    [SerializeField] private PlayerCoverController _coverController;
+    public PlayerCoverController CoverController => _coverController;
+
+    [SerializeField] private Camera _ghostCamera;
+    public Camera GhostCamera => _ghostCamera;
 
     public PlayerAliveState aliveState;
     public PlayerCoveredState coveredState;
     public PlayerDeadState deadState;
     public PlayerGhostState ghostState;
     private PlayerState currentState;
-
-    private void Awake()
-    {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
 
     private void Start()
     {
@@ -72,6 +69,9 @@ public class PlayerController : MonoBehaviour
 
     public void SetState(PlayerState state)
     {
+        if (currentState != null)
+            currentState.OnStateExit(this);
+
         this.currentState = state;
         currentState.OnStateEnter(this);
     }
@@ -81,59 +81,8 @@ public class PlayerController : MonoBehaviour
         this.gameObject.layer = layer;
     }
 
-    public void SetGhost()
+    public override void TakeDamage(int damage)
     {
-        if (parameters.isAlive)
-            return;
-
-        parameters.SetIsGhost(true);
-        SetPlayerLayer(11);
-        graphicsController.SetGhostGraphics();
-
-    }
-
-    public PlayerParameters GetPlayerParameters()
-    {
-        return parameters;
-    }
-
-    public PlayerGraphicsController GetPlayerGraphicsController()
-    {
-        return graphicsController;
-    }
-
-    public PlayerHUDController GetPlayerHUDContorller()
-    {
-        return hudController;
-    }
-
-    public PlayerMovementController GetPlayerMovementController()
-    {
-        return movementController;
-    }
-
-    public PlayerInterractionController GetPlayerInterractionController()
-    {
-        return interractionController;
-    }
-
-    public PlayerInventoryController GetPlayerInventoryController()
-    {
-        return inventoryController;
-    }
-
-    public PlayerSanityController GetPlayerSanityController()
-    {
-        return sanityController;
-    }
-
-    public PlayerHealthController GetPlayerHealthController()
-    {
-        return healthController;
-    }
-
-    public PlayerCoverController GetPlayerCoverController()
-    {
-        return coverController;
+        _healthController.Die();
     }
 }
