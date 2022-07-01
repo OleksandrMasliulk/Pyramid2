@@ -13,6 +13,7 @@ public class SoundAudioClip
     private float lastTimePlayed;
 
     [Header("3D Sound settings")]
+    [Range(0f, 100f)]
     public float maxRange;
 
     public void Init() 
@@ -22,6 +23,11 @@ public class SoundAudioClip
 
     public bool CanPlay()
     {
+        if (repeatPlayeDelay == 0)
+        {
+            return true;
+        }
+
         if (lastTimePlayed + repeatPlayeDelay < Time.time)
         {
             lastTimePlayed = Time.time;

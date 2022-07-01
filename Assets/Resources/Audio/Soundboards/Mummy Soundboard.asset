@@ -9,15 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c85bd98909cf34fbc44d8368c5df1c, type: 3}
-  m_Name: New UI Soundboard
+  m_Script: {fileID: 11500000, guid: d5540360baedf0b45b93597e97f20544, type: 3}
+  m_Name: Mummy Soundboard
   m_EditorClassIdentifier: 
   _soundBoard:
-    buttonOverlap:
-      clip: {fileID: 0}
-      volume: 0
-      maxRange: 0
-    buttonClick:
-      clip: {fileID: 0}
-      volume: 0
-      maxRange: 0
+    walk:
+      clip: {fileID: 8300000, guid: 92e295168f274734ba1f24c644416ec1, type: 3}
+      volume: 1
+      repeatPlayeDelay: 0
+      maxRange: 2.5

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b326da493e0361043b8e03336ecd28c0, type: 3}
-  m_Name: New Traps Soundboard
+  m_Name: Traps Soundboard
   m_EditorClassIdentifier: 
   _soundBoard:
     flamethrowerTrap:

@@ -52,6 +52,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 573828bce5ab930449160fd73991c03c, type: 2}
   - {fileID: 11400000, guid: a3a33aefeb903cb4fb54457c85e083b9, type: 2}
   - {fileID: 11400000, guid: 87f438540b0e1934ebef4e6228e5bdad, type: 2}
+  - {fileID: 11400000, guid: b1e09a5f6bb8f7f4a84f21be14609e16, type: 2}
+  _fadeTime: 1
 --- !u!1 &613072740010730352
 GameObject:
   m_ObjectHideFlags: 0

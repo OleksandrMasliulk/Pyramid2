@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5540360baedf0b45b93597e97f20544, type: 3}
-  m_Name: New Mummy Soundboard
+  m_Script: {fileID: 11500000, guid: a8ccd155a63793a43901e2702e744f32, type: 3}
+  m_Name: GameActions Soundboard
   m_EditorClassIdentifier: 
   _soundBoard:
-    walk:
-      clip: {fileID: 8300000, guid: 92e295168f274734ba1f24c644416ec1, type: 3}
+    playerLost:
+      clip: {fileID: 8300000, guid: 7cb8d08b790048d45b86e8aee878b3e4, type: 3}
       volume: 1
       repeatPlayeDelay: 0
-      maxRange: 2.5
+      maxRange: 0

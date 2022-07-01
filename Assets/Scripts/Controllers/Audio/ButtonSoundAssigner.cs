@@ -22,10 +22,16 @@ public class ButtonSoundAssigner : MonoBehaviour, IPointerEnterHandler, ISelectH
     {
         btn = GetComponent<Button>();
 
-        if(btn == null)
+        if (btn == null)
         {
             Debug.Log("No Button Component attached");
             Destroy(this.gameObject);
         }
+
+        btn.onClick.AddListener(() =>
+        {
+            AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<UISoundBoard>().buttonClick, 1f);
+        });
     }
 }
+
