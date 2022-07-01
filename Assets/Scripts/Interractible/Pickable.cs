@@ -78,6 +78,7 @@ public class Pickable : MonoBehaviour, IInterractible
     {
         if (PickUp(user))
         {
+            item.OnPickUp(user);
             Destroy(this.gameObject);
         }
     }

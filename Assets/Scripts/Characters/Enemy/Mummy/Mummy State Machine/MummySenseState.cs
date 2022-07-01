@@ -11,7 +11,7 @@ public class MummySenseState : MummyState
         player = args.playerSeeked;
 
         mummy.MovementController.SetSpeed(mummy.Stats.SenseMoveSpeed);
-        mummy.MovementController.Move(player.transform.position);
+        mummy.MovementController.SetTarget(player.transform);
     }
 
     public override void ExitState(Mummy mummy)

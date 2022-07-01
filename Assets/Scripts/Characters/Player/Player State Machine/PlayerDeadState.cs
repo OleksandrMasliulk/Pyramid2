@@ -6,7 +6,7 @@ public class PlayerDeadState : PlayerState
 {
     public override void OnStateEnter(PlayerController player)
     {
-        AudioManager.PlaySound(AudioManager.Sound.PlayerDie);
+        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<PlayerSoundBoard>().die);
 
         player.Stats.IsAlive = false;
         player.SanityController.UpdateSanity(100);

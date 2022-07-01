@@ -78,6 +78,7 @@ public class SpikeTrap : Trap
     private void Disable()
     {
         isTriggered = false;
+        timeToDisable = spikeDuration;
 
         anim.SetBool("isActive", false);
     }

@@ -48,6 +48,13 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMove
 
         _destSetter.target = _target;
     }
+    
+    public void SetTarget(Transform target)
+    {
+        DestroyTarget();
+
+        _destSetter.target = target;
+    }
 
     private void DestroyTarget()
     {

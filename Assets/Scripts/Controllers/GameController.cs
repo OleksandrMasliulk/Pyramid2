@@ -49,7 +49,6 @@ public class GameController : MonoBehaviour
         switch (_gameState)
         {
             case GameState.Init:
-                AudioManager.Init();
                 PlayLevelTheme();
                 _alivePlayersList = new List<PlayerController>();
                 PlayerHealthController.OnPlayerDied += RemovePlayerFromAlive;
@@ -91,7 +90,7 @@ public class GameController : MonoBehaviour
 
     protected virtual void OnLose()
     {
-        AudioManager.PlaySound(AudioManager.Sound.PlayerDieFX);
+        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<GameActionsSoundBoard>().playerLost);
         OnLoseEvent?.Invoke();
     }
 
@@ -125,18 +124,18 @@ public class GameController : MonoBehaviour
 
     public void PlayLevelTheme()
     {
-        if (_levelTheme == null)
-        {
-            _levelTheme = AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
-        }
-        else
-        {
-            _levelTheme.UnPause();
-        }
+        //if (_levelTheme == null)
+        //{
+        //    _levelTheme = AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
+        //}
+        //else
+        //{
+        //    _levelTheme.UnPause();
+        //}
     }
 
     public void PauseLevelTheme()
     {
-        _levelTheme.Pause();
+        //_levelTheme.Pause();
     }
 }

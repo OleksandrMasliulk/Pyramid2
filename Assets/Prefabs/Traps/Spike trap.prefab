@@ -95,7 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sanityLoss: 5
-  spikeDuration: 0
+  spikeDuration: 3
   triggerDelay: 1.5
   anim: {fileID: 8604743775951118615}
 --- !u!1 &4561832637744995596

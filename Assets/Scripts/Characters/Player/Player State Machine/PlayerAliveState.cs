@@ -22,7 +22,6 @@ public class PlayerAliveState : PlayerState
         if (direction.magnitude > 0f)
         {
             player.MovementController.Move(direction);
-            AudioManager.PlaySound(AudioManager.Sound.PlayerWalk, player.transform.position, .2f);
         }
         else
         {
