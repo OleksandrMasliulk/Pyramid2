@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: 49091951755215f4f80f9b39c9e64a83
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: HUBUninteractable_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 31
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61ce5b93c5fad345a1ce914fa41137a
+      internalID: -817423161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c8b8d62d3440e43a9b09dfca82a248
+      internalID: 577605777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 16
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c236546d364c159438513e8e5d8bd751
+      internalID: -1483927227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 64
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd3b19d45661224db8016d0480a4f4f
+      internalID: -1536002086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94e165e8645c36e4dbf9334b04bcff01
+      internalID: -2010645854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 64
+        width: 16
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b212b372b13771e4f82ab60d30d3e40b
+      internalID: 1445727020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb2b76521d84f0c44a341f8936bd9d9c
+      internalID: 2096190501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_46
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 48
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e47943a0db7c7945a624ae6c4a6bf8e
+      internalID: 138802752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_49
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 32
+        width: 16
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7024960d3879a6544a4fabe7841a4de0
+      internalID: -1139661468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_51
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fbe0e9de20bd144e8fd4a32e211a35a
+      internalID: 206439309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_54
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d20eb4474112e774184a714bfbcd4795
+      internalID: -683937689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_55
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9f138b4143632742bedecb4c662ae01
+      internalID: -1744910648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_59
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 48
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b1ca70f64e17a1429bbb429e559ba4c
+      internalID: 1561246491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HUBUninteractable_69
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e280bced86cf4984f908a29fdcbb6bf1
+      internalID: -973606360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      HUBUninteractable_30: -1394002700
+      HUBUninteractable_34: 1360436452
+      HUBUninteractable_77: -1622471003
+      HUBUninteractable_63: -1221190657
+      HUBUninteractable_74: -1466000819
+      HUBUninteractable_45: 1412540572
+      HUBUninteractable_19: 763685787
+      HUBUninteractable_49: -1139661468
+      HUBUninteractable_78: 577550878
+      HUBUninteractable_60: 1821488602
+      HUBUninteractable_17: 2128422562
+      HUBUninteractable_56: -1785750610
+      HUBUninteractable_68: 1847960449
+      HUBUninteractable_76: -432073156
+      HUBUninteractable_48: -1893009642
+      HUBUninteractable_55: -1744910648
+      HUBUninteractable_8: -2010645854
+      HUBUninteractable_3: -611077787
+      HUBUninteractable_38: 1023456745
+      HUBUninteractable_51: 206439309
+      HUBUninteractable_16: 149846695
+      HUBUninteractable_47: 647406418
+      HUBUninteractable_52: -301480329
+      HUBUninteractable_12: -1540936120
+      HUBUninteractable_20: 1123627360
+      HUBUninteractable_0: -817423161
+      HUBUninteractable_37: -1077879203
+      HUBUninteractable_36: 2096190501
+      HUBUninteractable_39: 1312737633
+      HUBUninteractable_64: 2033435654
+      HUBUninteractable_40: 1947325990
+      HUBUninteractable_21: -262802429
+      HUBUninteractable_24: -129994351
+      HUBUninteractable_25: 854702984
+      HUBUninteractable_42: 1353444943
+      HUBUninteractable_46: 138802752
+      HUBUninteractable_22: 1797895237
+      HUBUninteractable_54: -683937689
+      HUBUninteractable_32: 1062889764
+      HUBUninteractable_57: 1894324458
+      HUBUninteractable_7: -248873726
+      HUBUninteractable_65: 1637099779
+      HUBUninteractable_29: -1267415022
+      HUBUninteractable_23: -47847785
+      HUBUninteractable_26: -246020946
+      HUBUninteractable_53: 1473678505
+      HUBUninteractable_10: 497886002
+      HUBUninteractable_62: 33865434
+      HUBUninteractable_9: -1686663704
+      HUBUninteractable_75: 379031722
+      HUBUninteractable_44: 1980897175
+      HUBUninteractable_1: 827978226
+      HUBUninteractable_18: 710735046
+      HUBUninteractable_43: -1154868660
+      HUBUninteractable_27: 857015934
+      HUBUninteractable_69: -973606360
+      HUBUninteractable_71: -1572907075
+      HUBUninteractable_13: -1233244320
+      HUBUninteractable_61: -541641362
+      HUBUninteractable_41: 1087011455
+      HUBUninteractable_67: -1540947021
+      HUBUninteractable_6: -903461187
+      HUBUninteractable_79: -802393033
+      HUBUninteractable_4: -1483927227
+      HUBUninteractable_28: -509997463
+      HUBUninteractable_31: 685997575
+      HUBUninteractable_72: 949264628
+      HUBUninteractable_66: 1959494848
+      HUBUninteractable_50: 1143493938
+      HUBUninteractable_15: 959269693
+      HUBUninteractable_11: 1445727020
+      HUBUninteractable_58: -1480656053
+      HUBUninteractable_59: 1561246491
+      HUBUninteractable_73: 435865254
+      HUBUninteractable_33: -1561342063
+      HUBUninteractable_70: 297292904
+      HUBUninteractable_14: 103074000
+      HUBUninteractable_5: -1536002086
+      HUBUninteractable_35: 120643594
+      HUBUninteractable_2: 577605777
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
