@@ -8,6 +8,8 @@ public class Cover : MonoBehaviour, IInterractible
     [SerializeField] private Animator graphics;
     [SerializeField] private GameObject dustPS;
 
+    private PlayerController _palyerHidingIn;
+
     public string tooltip { get; set; }
 
     private void Start()
@@ -17,22 +19,49 @@ public class Cover : MonoBehaviour, IInterractible
 
     public void Interract(PlayerController user)
     {
-        if (user.Stats.IsCovered)
+        if (_palyerHidingIn == null)
         {
-            tooltip = "Press E to Cover";
-            user.CoverController.Uncover(respawnPos.position);
-            Instantiate(dustPS, respawnPos.position, Quaternion.identity);
-
-            if (graphics != null)
-                graphics.SetBool("isOpened", true);
+            CoverIn(user);
         }
         else
         {
-            tooltip = "Press E to Uncover";
-            user.CoverController.Cover(transform.position);
-
-            if (graphics != null)
-                graphics.SetBool("isOpened", false);
+            if (user == _palyerHidingIn)
+            {
+                Uncover(user);
+            }
+            else
+            {
+                return;
+            }
         }
+    }
+
+    private void CoverIn(PlayerController user)
+    {
+        _palyerHidingIn = user;
+
+        user.SetState(user.coveredState);
+        user.transform.position = transform.position;
+        user.CoverController.SetCover(this);
+
+        //gameObject.layer = 10;
+        tooltip = "Press E to Uncover";
+        if (graphics != null)
+            graphics.SetBool("isOpened", false);
+    }
+
+    private void Uncover(PlayerController user)
+    {
+        _palyerHidingIn = null;
+
+        user.SetState(user.aliveState);
+        user.transform.position = respawnPos.position;
+        user.CoverController.SetCover(null);
+
+        //gameObject.layer = 12;
+        tooltip = "Press E to Cover";
+        Instantiate(dustPS, respawnPos.position, Quaternion.identity);
+        if (graphics != null)
+            graphics.SetBool("isOpened", true);
     }
 }

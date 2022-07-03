@@ -8,41 +8,27 @@ public class PlayerCoverController : MonoBehaviour
     public delegate void OnPlayerCoveredDelegate();
     public event OnPlayerCoveredDelegate OnPlayerCovered;
 
-    private PlayerController playerController;
+    private Cover _coverHidingIn;
+    public Cover Cover => _coverHidingIn;
 
-    private Rigidbody2D rb;
     private Collider2D col;
 
     private void Awake()
     {
-        playerController = GetComponent<PlayerController>();
-        rb = GetComponent<Rigidbody2D>();
         col = GetComponent<Collider2D>();
     }
 
-    public void Cover(Vector3 coverPos)
+    public void SetCover(Cover cover)
     {
-        if (playerController.SanityController.CurrentSanity <= 25)
+        _coverHidingIn = cover;
+
+        if (cover == null)
         {
-            Debug.Log("You can't cover with low sanity");
-            return;
+            col.isTrigger = false;
         }
-
-        playerController.SetState(playerController.coveredState);
-
-        col.isTrigger = true;
-        transform.position = coverPos;
-
-        OnPlayerCovered?.Invoke();
-    }
-
-    public void Uncover(Vector3 respawnPos)
-    {
-        playerController.SetState(playerController.aliveState);
-
-        playerController.Stats.SetCovered(false);
-
-        col.isTrigger = false;
-        transform.position = respawnPos;
+        else
+        {
+            col.isTrigger = true;
+        }
     }
 }

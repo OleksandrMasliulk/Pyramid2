@@ -46,10 +46,11 @@ public class MummyRoamState : MummyState
 
     public Vector3 GetRoamPosition(Mummy mummy) 
     {
-        int rand = Random.Range(0, GameController.Instance.AlivePlayersList.Count);
-        Vector3 target = GameController.Instance.AlivePlayersList[rand].transform.position;
-        if (target == null)
-            target = mummy.transform.position;
+        Vector3 target = mummy.transform.position;
+
+        PlayerController pc = GetPlayer();
+        if (pc != null)
+            target = pc.transform.position;
 
         Vector3 pos = GetRandomPosition(target, mummy.Stats.RoamRadius);
 
@@ -60,6 +61,23 @@ public class MummyRoamState : MummyState
 
         return pos;
     }
+
+    private PlayerController GetPlayer()
+    {
+        if (GameController.Instance.AlivePlayersList.Count > 0)
+        {
+            for (int i = 0; i < 10; i++)
+            {
+                int rand = Random.Range(0, GameController.Instance.AlivePlayersList.Count);
+                PlayerController pc = GameController.Instance.AlivePlayersList[rand];
+                if (!pc.Stats.IsCovered)
+                    return pc;
+            }
+        }
+
+        return null;
+    }
+
 
     private Vector3 GetRandomPosition(Vector3 target, float range)
     {
