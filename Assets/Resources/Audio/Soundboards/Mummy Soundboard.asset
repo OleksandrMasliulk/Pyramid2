@@ -17,4 +17,4 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 92e295168f274734ba1f24c644416ec1, type: 3}
       volume: 1
       repeatPlayeDelay: 0
-      maxRange: 2.5
+      maxRange: 5
