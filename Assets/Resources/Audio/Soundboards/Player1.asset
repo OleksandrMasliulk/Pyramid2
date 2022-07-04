@@ -20,6 +20,6 @@ MonoBehaviour:
       maxRange: 2.5
     die:
       clip: {fileID: 8300000, guid: e199b34c7a3b5f94e9003279ed956886, type: 3}
-      volume: 1
+      volume: 0.65
       repeatPlayeDelay: 0
-      maxRange: 1
+      maxRange: 7

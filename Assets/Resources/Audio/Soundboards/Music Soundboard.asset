@@ -15,21 +15,21 @@ MonoBehaviour:
   _soundBoard:
     mainMenuTheme:
       clip: {fileID: 8300000, guid: ac315cbbf25d501488744e7b409a12aa, type: 3}
-      volume: 1
+      volume: 0
       repeatPlayeDelay: 0
       maxRange: 0
     pyramidMenuTheme:
       clip: {fileID: 8300000, guid: eb485786d043a3e4c85a0e132680cf0d, type: 3}
-      volume: 1
+      volume: 0
       repeatPlayeDelay: 0
       maxRange: 0
     lowSanitySFX:
       clip: {fileID: 8300000, guid: 999e0232b018b324291a0d0caf0a3ee7, type: 3}
-      volume: 0.211
+      volume: 0
       repeatPlayeDelay: 0
       maxRange: 0
     noSanitySFX:
       clip: {fileID: 8300000, guid: ca409dba6d0cf1e459d838d4193075d9, type: 3}
-      volume: 0.207
+      volume: 0
       repeatPlayeDelay: 0
       maxRange: 0
