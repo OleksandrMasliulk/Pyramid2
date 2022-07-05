@@ -23,6 +23,6 @@ public class Lever : MonoBehaviour, IInterractible
         objToInterract.Interract(user);
         isOn = !isOn;
         anim.SetBool("On", isOn);
-        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().lever, transform.position, 1f);
+        AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().lever, transform.position, 1f);
     }
 }

@@ -1,0 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+[System.Serializable]
+public class Settings
+{
+    //Graphics settings
+    public SerializableResolution Resolution { get; set; }
+    public int GraphicsQuality { get; set; }
+    public FullScreenMode Mode { get; set; }
+
+    //Audio Settings
+    public float MasterVolume { get; set; }
+    public float SoundVolume { get; set; }
+    public float MusicVolume { get; set; }
+
+    public Settings()
+    {
+        //Default settings
+        Resolution = new SerializableResolution(800, 600);
+        GraphicsQuality = 1;
+        Mode = FullScreenMode.Windowed;
+
+        MasterVolume = 100f;
+        SoundVolume = 100f;
+        MusicVolume = 100f;
+    }
+}

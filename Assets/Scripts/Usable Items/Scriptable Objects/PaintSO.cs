@@ -8,6 +8,7 @@ public class PaintSO : ItemSO
 {
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(PaintSO))]
 public class PaintEditor : ItemEditor
 {
@@ -25,3 +26,4 @@ public class PaintEditor : ItemEditor
             EditorUtility.SetDirty(so);
     }
 }
+#endif

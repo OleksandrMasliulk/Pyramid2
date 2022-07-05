@@ -11,7 +11,7 @@ public class HUBShop : MonoBehaviour
 
     private void Awake()
     {
-        PlayerData data = SaveLoad.Load();
+        PlayerData data = SaveLoad.Load<PlayerData>(SaveLoad.playerDataPath);
         if (data != null)
         {
             gold = data.gold;
@@ -20,7 +20,7 @@ public class HUBShop : MonoBehaviour
         {
             gold = 0;
             data = new PlayerData(gold);
-            SaveLoad.Save(data);
+            SaveLoad.Save(data, SaveLoad.playerDataPath);
         }
     }
 

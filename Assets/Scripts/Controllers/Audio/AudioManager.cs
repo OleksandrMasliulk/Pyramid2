@@ -19,6 +19,10 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    [SerializeField]private float _masterVolume;
+    [SerializeField]private float _soundVolume;
+    [SerializeField]private float _musicVolume;
+
     [SerializeField] private SoundBoardSO[] _soundBoards;
 
     [SerializeField] private float _fadeTime;
@@ -70,7 +74,8 @@ public class AudioManager : MonoBehaviour
         {
             GameObject go = new GameObject("Sound");
             audioSource = go.AddComponent<AudioSource>();
-            audioSource.volume = sound.volume;
+            float modifier = sound.type == SoundAudioClip.SoundType.Sound ? _masterVolume * _soundVolume : _masterVolume * _musicVolume;
+            audioSource.volume = sound.volume * modifier;
             audioSource.PlayOneShot(clip);
             float duration = clip.length;
             Destroy(audioSource.gameObject, duration);
@@ -89,14 +94,15 @@ public class AudioManager : MonoBehaviour
             audioSource = go.AddComponent<AudioSource>();
             audioSource.clip = clip;
             audioSource.loop = looped;
-            audioSource.volume = sound.volume;
+            float modifier = sound.type == SoundAudioClip.SoundType.Sound ? _masterVolume * _soundVolume : _masterVolume * _musicVolume;
+            audioSource.volume = sound.volume * modifier;
             audioSource.Play();
         }
 
         return audioSource;
     }
 
-    public AudioClip PlaySound(SoundAudioClip sound, Vector3 position)
+    public AudioClip PlayeSound3D(SoundAudioClip sound, Vector3 position)
     {
         AudioClip clip = sound.clip;
         if (clip != null && sound.CanPlay())
@@ -105,10 +111,12 @@ public class AudioManager : MonoBehaviour
             go.transform.position = position;
             AudioSource audioSource = go.AddComponent<AudioSource>();
             audioSource.clip = clip;
-            audioSource.volume = sound.volume;
+            float modifier = sound.type == SoundAudioClip.SoundType.Sound ? _masterVolume * _soundVolume : _masterVolume * _musicVolume;
+            audioSource.volume = sound.volume * modifier;
             audioSource.spatialBlend = 1;
-            //audioSource.rolloffMode = AudioRolloffMode.Custom;
+            audioSource.minDistance = .05f;
             audioSource.maxDistance = sound.maxRange;
+            audioSource.rolloffMode = AudioRolloffMode.Linear;
             audioSource.Play();
         }
 
@@ -122,7 +130,8 @@ public class AudioManager : MonoBehaviour
         {
             GameObject go = new GameObject("Sound");
             audioSource = go.AddComponent<AudioSource>();
-            audioSource.volume = sound.volume;
+            float modifier = sound.type == SoundAudioClip.SoundType.Sound ? _masterVolume * _soundVolume : _masterVolume * _musicVolume;
+            audioSource.volume = sound.volume * modifier;
             audioSource.PlayOneShot(clip);
 
             MonoBehaviour.Destroy(audioSource.gameObject, playbackTime);
@@ -131,7 +140,7 @@ public class AudioManager : MonoBehaviour
         return audioSource;
     }
     
-    public AudioSource PlaySound(SoundAudioClip sound, Vector3 position, float playbackTime)
+    public AudioSource PlayerSound3D(SoundAudioClip sound, Vector3 position, float playbackTime)
     {
         AudioClip clip = sound.clip;
         AudioSource audioSource = null;
@@ -141,10 +150,12 @@ public class AudioManager : MonoBehaviour
             go.transform.position = position;
             audioSource = go.AddComponent<AudioSource>();
             audioSource.clip = clip;
-            audioSource.volume = sound.volume;
+            float modifier = sound.type == SoundAudioClip.SoundType.Sound ? _masterVolume * _soundVolume : _masterVolume * _musicVolume;
+            audioSource.volume = sound.volume * modifier;
             audioSource.spatialBlend = 1;
-            //audioSource.rolloffMode = AudioRolloffMode.Custom;
+            audioSource.minDistance = .05f;
             audioSource.maxDistance = sound.maxRange;
+            audioSource.rolloffMode = AudioRolloffMode.Linear;
             audioSource.Play();
 
             MonoBehaviour.Destroy(audioSource.gameObject, playbackTime);
@@ -241,7 +252,8 @@ public class AudioManager : MonoBehaviour
         if (!source.source.isPlaying)
             source.source.UnPause();
 
-        float initialVolume = source.volume;
+        float modifier =  _masterVolume * _musicVolume;
+        float initialVolume = source.volume * modifier;
         float time = 0;
         while (time <= _fadeTime)
         {
@@ -268,5 +280,20 @@ public class AudioManager : MonoBehaviour
         {
             Destroy(source.gameObject);
         }
+    }
+
+    public void SetMasterVolume(float value)
+    {
+        _masterVolume = value * .01f;
+    }
+
+    public void SetSoundVolume(float value)
+    {
+        _soundVolume = value * .01f;
+    }
+
+    public void SetMusicVolume(float volume)
+    {
+        _musicVolume = volume * .01f;
     }
 }

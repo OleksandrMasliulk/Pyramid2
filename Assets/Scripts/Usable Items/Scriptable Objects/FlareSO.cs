@@ -10,6 +10,7 @@ public class FlareSO : ItemSO
     public GameObject flareToDropPb;
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(FlareSO))]
 public class FlareEditor : ItemEditor
 {
@@ -30,3 +31,4 @@ public class FlareEditor : ItemEditor
             EditorUtility.SetDirty(so);
     }
 }
+#endif

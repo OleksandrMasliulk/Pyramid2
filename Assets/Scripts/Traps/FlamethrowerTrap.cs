@@ -30,7 +30,7 @@ public class FlamethrowerTrap : Trap
         ps2.Play();
         fireGraphics.SetActive(true);
         ReduceSanity(null);
-        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<TrapsSoundBoard>().flamethrowerTrap, transform.position, flameThrowingDuration);
+        AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<TrapsSoundBoard>().flamethrowerTrap, transform.position, flameThrowingDuration);
 
         while (time > 0)
         {

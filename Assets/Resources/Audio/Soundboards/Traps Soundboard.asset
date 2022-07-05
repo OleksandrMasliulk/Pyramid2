@@ -17,7 +17,7 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 707339ddf0f4edb4395351e4d656418f, type: 3}
       volume: 1
       repeatPlayeDelay: 0
-      maxRange: 100
+      maxRange: 19.7
     arrowTrapShoot:
       clip: {fileID: 8300000, guid: 63aa30291606352498deb72626336ac9, type: 3}
       volume: 1

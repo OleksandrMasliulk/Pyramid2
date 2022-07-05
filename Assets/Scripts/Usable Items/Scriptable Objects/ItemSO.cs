@@ -55,6 +55,7 @@ public abstract class ItemSO : ScriptableObject
     }
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(ItemSO))]
 public class ItemEditor : Editor
 {
@@ -119,6 +120,7 @@ public class ItemEditor : Editor
             EditorUtility.SetDirty(so);
     }
 }
+#endif
 
 
 

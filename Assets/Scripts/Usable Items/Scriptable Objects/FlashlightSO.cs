@@ -10,6 +10,7 @@ public class FlashlightSO : ItemSO
     //public Flashlight flashlight;
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(FlashlightSO))]
 public class FlashlightEditor : ItemEditor
 {
@@ -27,3 +28,4 @@ public class FlashlightEditor : ItemEditor
             EditorUtility.SetDirty(so);
     }
 }
+#endif

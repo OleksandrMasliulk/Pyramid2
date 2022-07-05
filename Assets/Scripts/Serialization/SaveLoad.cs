@@ -6,21 +6,24 @@ using System.IO;
 
 public static class SaveLoad
 {
-    public static void Save(PlayerData data)
+    public const string settingsProfilePath = "/SettingsProfile.bin";
+    public const string playerDataPath = "/PlayerData.bin";
+
+    public static void Save<T>(T dataToSave, string savePath)
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        string path = Application.persistentDataPath + "/PlayerData.bin";
+        string path = Application.persistentDataPath + savePath;
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        formatter.Serialize(stream, data);
+        formatter.Serialize(stream, dataToSave);
         stream.Close();
 
-        Debug.Log("Stats saved");
+        Debug.Log("Data of " + dataToSave.GetType().ToString() + " type is saved!");
     }
 
-    public static PlayerData Load()
+    public static T Load<T>(string loadPath)
     {
-        string path = Application.persistentDataPath + "/PlayerData.bin";
+        string path = Application.persistentDataPath + loadPath;
         Debug.Log(path);
 
         if (File.Exists(path))
@@ -28,15 +31,16 @@ public static class SaveLoad
             BinaryFormatter formatter = new BinaryFormatter();
             FileStream stream = new FileStream(path, FileMode.Open);
 
-            PlayerData data = formatter.Deserialize(stream) as PlayerData;
+            T data = (T)formatter.Deserialize(stream);
             stream.Close();
 
+            Debug.Log("Data of " + data.GetType().ToString() + " type is loaded!");
             return data;
         }
         else
         {
-            return null;
+            Debug.Log("No data found at " + path + " path!");
+            return default(T);
         }
-
     }
 }
