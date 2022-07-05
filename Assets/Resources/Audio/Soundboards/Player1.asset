@@ -18,10 +18,10 @@ MonoBehaviour:
       clip: {fileID: 8300000, guid: 0f93834a275145049bf4adba3742df6b, type: 3}
       volume: 1
       repeatPlayeDelay: 0.2
-      maxRange: 8.1
+      maxRange: 15
     die:
       type: 0
       clip: {fileID: 8300000, guid: e199b34c7a3b5f94e9003279ed956886, type: 3}
       volume: 0.65
       repeatPlayeDelay: 0
-      maxRange: 7
+      maxRange: 15
