@@ -54,6 +54,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 87f438540b0e1934ebef4e6228e5bdad, type: 2}
   - {fileID: 11400000, guid: b1e09a5f6bb8f7f4a84f21be14609e16, type: 2}
   _fadeTime: 1
+  _levelThemePlaying:
+    source: {fileID: 0}
+    volume: 0
+  _overlapThemeList: []
+  _musicOutput: {fileID: -8371512501099232330, guid: e31671f7584c1854987b5fec05ae551a, type: 2}
+  _soundOutput: {fileID: 5915213946197180362, guid: e31671f7584c1854987b5fec05ae551a, type: 2}
 --- !u!1 &613072740010730352
 GameObject:
   m_ObjectHideFlags: 0

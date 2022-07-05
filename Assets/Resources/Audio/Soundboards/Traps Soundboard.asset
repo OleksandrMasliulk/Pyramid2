@@ -14,31 +14,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundBoard:
     flamethrowerTrap:
+      type: 0
       clip: {fileID: 8300000, guid: 707339ddf0f4edb4395351e4d656418f, type: 3}
       volume: 1
       repeatPlayeDelay: 0
       maxRange: 19.7
     arrowTrapShoot:
+      type: 0
       clip: {fileID: 8300000, guid: 63aa30291606352498deb72626336ac9, type: 3}
       volume: 1
       repeatPlayeDelay: 0
       maxRange: 26.3
     arrowTrapHitWall:
+      type: 0
       clip: {fileID: 0}
       volume: 0
       repeatPlayeDelay: 0
       maxRange: 0
     arrowTrapHitCharacter:
+      type: 0
       clip: {fileID: 0}
       volume: 0
       repeatPlayeDelay: 0
       maxRange: 0
     spikeTrapTrigger:
+      type: 0
       clip: {fileID: 0}
       volume: 0
       repeatPlayeDelay: 0
       maxRange: 0
     spikeTrapHide:
+      type: 0
       clip: {fileID: 0}
       volume: 0
       repeatPlayeDelay: 0

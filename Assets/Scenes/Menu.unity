@@ -1663,6 +1663,7 @@ MonoBehaviour:
   - Low
   - Medium
   - High
+  _mixer: {fileID: 24100000, guid: e31671f7584c1854987b5fec05ae551a, type: 2}
 --- !u!1 &164845065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1828,10 +1829,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1785823292}
   m_HandleRect: {fileID: 432154054}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -8578,10 +8579,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1806298003}
   m_HandleRect: {fileID: 660992046}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -11390,10 +11391,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1648410375}
   m_HandleRect: {fileID: 1777099121}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 100
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 1
-  m_Value: 100
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:

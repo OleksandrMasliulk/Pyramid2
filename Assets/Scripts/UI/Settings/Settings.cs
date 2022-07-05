@@ -22,8 +22,8 @@ public class Settings
         GraphicsQuality = 1;
         Mode = FullScreenMode.Windowed;
 
-        MasterVolume = 100f;
-        SoundVolume = 100f;
-        MusicVolume = 100f;
+        MasterVolume = 0f;
+        SoundVolume = 0f;
+        MusicVolume = 0f;
     }
 }

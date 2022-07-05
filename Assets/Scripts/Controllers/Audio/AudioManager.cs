@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -19,15 +20,14 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    [SerializeField]private float _masterVolume;
-    [SerializeField]private float _soundVolume;
-    [SerializeField]private float _musicVolume;
-
     [SerializeField] private SoundBoardSO[] _soundBoards;
 
     [SerializeField] private float _fadeTime;
     [SerializeField]private MusicTheme _levelThemePlaying;
     [SerializeField]private List<MusicTheme> _overlapThemeList;
+
+    [SerializeField] private AudioMixerGroup _musicOutput;
+    [SerializeField] private AudioMixerGroup _soundOutput;
 
     private void Awake()
     {
@@ -74,8 +74,8 @@ public class AudioManager : MonoBehaviour
         {
             GameObject go = new GameObject("Sound");
             audioSource = go.AddComponent<AudioSource>();
-            float modifier = sound.type == SoundAudioClip.SoundType.Sound ? _masterVolume * _soundVolume : _masterVolume * _musicVolume;
-            audioSource.volume = sound.volume * modifier;
+            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
+            audioSource.volume = sound.volume;
             audioSource.PlayOneShot(clip);
             float duration = clip.length;
             Destroy(audioSource.gameObject, duration);
@@ -92,10 +92,10 @@ public class AudioManager : MonoBehaviour
         {
             GameObject go = new GameObject("Sound");
             audioSource = go.AddComponent<AudioSource>();
+            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
             audioSource.clip = clip;
             audioSource.loop = looped;
-            float modifier = sound.type == SoundAudioClip.SoundType.Sound ? _masterVolume * _soundVolume : _masterVolume * _musicVolume;
-            audioSource.volume = sound.volume * modifier;
+            audioSource.volume = sound.volume;
             audioSource.Play();
         }
 
@@ -110,9 +110,9 @@ public class AudioManager : MonoBehaviour
             GameObject go = new GameObject("Sound");
             go.transform.position = position;
             AudioSource audioSource = go.AddComponent<AudioSource>();
+            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
             audioSource.clip = clip;
-            float modifier = sound.type == SoundAudioClip.SoundType.Sound ? _masterVolume * _soundVolume : _masterVolume * _musicVolume;
-            audioSource.volume = sound.volume * modifier;
+            audioSource.volume = sound.volume;
             audioSource.spatialBlend = 1;
             audioSource.minDistance = .05f;
             audioSource.maxDistance = sound.maxRange;
@@ -130,8 +130,8 @@ public class AudioManager : MonoBehaviour
         {
             GameObject go = new GameObject("Sound");
             audioSource = go.AddComponent<AudioSource>();
-            float modifier = sound.type == SoundAudioClip.SoundType.Sound ? _masterVolume * _soundVolume : _masterVolume * _musicVolume;
-            audioSource.volume = sound.volume * modifier;
+            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
+            audioSource.volume = sound.volume;
             audioSource.PlayOneShot(clip);
 
             MonoBehaviour.Destroy(audioSource.gameObject, playbackTime);
@@ -149,9 +149,9 @@ public class AudioManager : MonoBehaviour
             GameObject go = new GameObject("Sound");
             go.transform.position = position;
             audioSource = go.AddComponent<AudioSource>();
+            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
             audioSource.clip = clip;
-            float modifier = sound.type == SoundAudioClip.SoundType.Sound ? _masterVolume * _soundVolume : _masterVolume * _musicVolume;
-            audioSource.volume = sound.volume * modifier;
+            audioSource.volume = sound.volume;
             audioSource.spatialBlend = 1;
             audioSource.minDistance = .05f;
             audioSource.maxDistance = sound.maxRange;
@@ -252,8 +252,7 @@ public class AudioManager : MonoBehaviour
         if (!source.source.isPlaying)
             source.source.UnPause();
 
-        float modifier =  _masterVolume * _musicVolume;
-        float initialVolume = source.volume * modifier;
+        float initialVolume = source.volume;
         float time = 0;
         while (time <= _fadeTime)
         {
@@ -279,33 +278,6 @@ public class AudioManager : MonoBehaviour
         if (destroyFaded)
         {
             Destroy(source.gameObject);
-        }
-    }
-
-    public void SetMasterVolume(float value)
-    {
-        _masterVolume = value * .01f;
-        UpdatePlayingMusic();
-    }
-
-    public void SetSoundVolume(float value)
-    {
-        _soundVolume = value * .01f;
-    }
-
-    public void SetMusicVolume(float volume)
-    {
-        _musicVolume = volume * .01f;
-        UpdatePlayingMusic();
-    }
-
-    private void UpdatePlayingMusic()
-    {
-        float modifier = _masterVolume * _musicVolume;
-        _levelThemePlaying.source.volume = _levelThemePlaying.volume * modifier;
-        foreach(MusicTheme mt in _overlapThemeList)
-        {
-            mt.source.volume = mt.volume * modifier;
         }
     }
 }
