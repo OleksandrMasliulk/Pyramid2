@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class SettingsWindow : MonoBehaviour
 {
@@ -24,14 +25,10 @@ public class SettingsWindow : MonoBehaviour
 
     [SerializeField] private SerializableResolution[] _resolutions;
     [SerializeField] private string[] _qualityLevels;
+    [SerializeField] private AudioMixer _mixer;
     private Settings _settings;
 
-    private void OnEnable()
-    {
-        InitWindow();
-    }
-
-    public void InitWindow()
+    public void InitSettings()
     {
         _settings = SaveLoad.Load<Settings>(SaveLoad.settingsProfilePath);
         if (_settings == null)
@@ -67,6 +64,8 @@ public class SettingsWindow : MonoBehaviour
         SetSliderParameters(_soundVolumeSlider, _soundVolumeText, _settings.SoundVolume);
         SetSliderParameters(_musicVolumeSlider, _musicVolumeText, _settings.MusicVolume);
 
+        ApplySettings();
+
         SetDirty(false);
     }
 
@@ -76,10 +75,9 @@ public class SettingsWindow : MonoBehaviour
         Screen.SetResolution(_settings.Resolution.width, _settings.Resolution.height, _settings.Mode);
         QualitySettings.SetQualityLevel(_settings.GraphicsQuality);
 
-        //Audio Manager changes
-        AudioManager.Instance.SetMasterVolume(_settings.MasterVolume);
-        AudioManager.Instance.SetSoundVolume(_settings.SoundVolume);
-        AudioManager.Instance.SetMusicVolume(_settings.MusicVolume);
+        _mixer.SetFloat("MasterVolume", _settings.MasterVolume);
+        _mixer.SetFloat("SoundVolume", _settings.SoundVolume);
+        _mixer.SetFloat("MusicVolume", _settings.MusicVolume);
 
         SetDirty(false);
         SaveLoad.Save<Settings>(_settings, SaveLoad.settingsProfilePath);
@@ -169,6 +167,7 @@ public class SettingsWindow : MonoBehaviour
     private void SetSliderParameters(Slider slider, Text text, float value)
     {
         slider.value = value;
-        text.text = value.ToString();
+        float textValue = Mathf.Lerp(0, 100, 1 - (Mathf.Abs(value) / 80));
+        text.text = ((int)textValue).ToString();
     }
 }
