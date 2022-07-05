@@ -15,16 +15,16 @@ MonoBehaviour:
   Type: 2
   prefab: {fileID: 4375982250974133244, guid: d0e3a87b5f4c92642b85a3669397b2a2, type: 3}
   mummyStats:
-    _moveSpeed: 3
+    _moveSpeed: 4.5
     _senseLayer:
       serializedVersion: 2
       m_Bits: 64
-    _losRadius: 7
-    _senseTickTime: 1
+    _losRadius: 8
+    _senseTickTime: 0.5
     _roamRadius: 10
-    _chaseMoveSpeed: 3.5
+    _chaseMoveSpeed: 4.5
     _breakLosStateDuration: 2
     _breakLOSRoamRadius: 5
-    _senseMoveSpeed: 4
-    _attackDistance: 1
+    _senseMoveSpeed: 4.5
+    _attackDistance: 1.5
     _stunDuration: 2

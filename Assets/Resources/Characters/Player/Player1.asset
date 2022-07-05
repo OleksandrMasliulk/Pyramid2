@@ -18,5 +18,5 @@ MonoBehaviour:
     _moveSpeed: 0.2
     _walkSpeed: 0.1
     _maxSanity: 100
-    _isGhost: 0
-    _isCovered: 0
+    IsGhost: 1
+    IsCovered: 0
