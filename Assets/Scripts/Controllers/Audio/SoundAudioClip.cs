@@ -20,7 +20,7 @@ public class SoundAudioClip
     private float lastTimePlayed;
 
     [Header("3D Sound settings")]
-    [Range(0f, 100f)]
+    [Range(1f, 100f)]
     public float maxRange;
 
     public void Init() 

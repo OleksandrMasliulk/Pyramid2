@@ -285,6 +285,7 @@ public class AudioManager : MonoBehaviour
     public void SetMasterVolume(float value)
     {
         _masterVolume = value * .01f;
+        UpdatePlayingMusic();
     }
 
     public void SetSoundVolume(float value)
@@ -295,5 +296,16 @@ public class AudioManager : MonoBehaviour
     public void SetMusicVolume(float volume)
     {
         _musicVolume = volume * .01f;
+        UpdatePlayingMusic();
+    }
+
+    private void UpdatePlayingMusic()
+    {
+        float modifier = _masterVolume * _musicVolume;
+        _levelThemePlaying.source.volume = _levelThemePlaying.volume * modifier;
+        foreach(MusicTheme mt in _overlapThemeList)
+        {
+            mt.source.volume = mt.volume * modifier;
+        }
     }
 }

@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
+    [SerializeField] private SettingsWindow _settings;
+
     private void Start()
     {
+        _settings.InitSettings();
         //AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
     }
 

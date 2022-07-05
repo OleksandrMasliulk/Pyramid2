@@ -26,12 +26,7 @@ public class SettingsWindow : MonoBehaviour
     [SerializeField] private string[] _qualityLevels;
     private Settings _settings;
 
-    private void OnEnable()
-    {
-        InitWindow();
-    }
-
-    public void InitWindow()
+    public void InitSettings()
     {
         _settings = SaveLoad.Load<Settings>(SaveLoad.settingsProfilePath);
         if (_settings == null)
@@ -66,6 +61,8 @@ public class SettingsWindow : MonoBehaviour
         SetSliderParameters(_masterVolumeSlider, _masterVolumeText, _settings.MasterVolume);
         SetSliderParameters(_soundVolumeSlider, _soundVolumeText, _settings.SoundVolume);
         SetSliderParameters(_musicVolumeSlider, _musicVolumeText, _settings.MusicVolume);
+
+        ApplySettings();
 
         SetDirty(false);
     }

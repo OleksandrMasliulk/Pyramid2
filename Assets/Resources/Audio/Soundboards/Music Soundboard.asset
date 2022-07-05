@@ -16,13 +16,13 @@ MonoBehaviour:
     mainMenuTheme:
       type: 1
       clip: {fileID: 8300000, guid: ac315cbbf25d501488744e7b409a12aa, type: 3}
-      volume: 0.346
+      volume: 0.163
       repeatPlayeDelay: 0
       maxRange: 0
     pyramidMenuTheme:
       type: 1
       clip: {fileID: 8300000, guid: eb485786d043a3e4c85a0e132680cf0d, type: 3}
-      volume: 0.186
+      volume: 0.146
       repeatPlayeDelay: 0
       maxRange: 0
     lowSanitySFX:
