@@ -14,9 +14,11 @@ public class PlayerGraphicsController : CharacterGraphicsController
     private bool tentaclesEnabled = false;
     [SerializeField] private Animation tentaclesAnim; 
 
-    [SerializeField] private Transform flashlight;
-
     [SerializeField] private Sprite corpseSprite;
+
+    [Header("Sockets")]
+    [SerializeField] private Transform _flashlightSocket;
+    public Transform FlashlightSocket => _flashlightSocket;
 
     public override void SetMovementDirection(Vector2 direction)
     {
@@ -25,9 +27,19 @@ public class PlayerGraphicsController : CharacterGraphicsController
         SetFlashlightDirection(direction);
     }
 
+    public void SetMoving()
+    {
+        _animator.SetTrigger("Moving");
+    }
+
     public void SetDie()
     {
         _animator.SetTrigger("Die");
+    }
+
+    public void SetIdle()
+    {
+        _animator.SetTrigger("Idle");
     }
 
     public void DisableRenderer()
@@ -44,8 +56,6 @@ public class PlayerGraphicsController : CharacterGraphicsController
     {
         ghostPS.Play();
         stepsPS.Stop();
-
-        SwitchFlashlight(false);
 
         GameObject corpse = Instantiate(new GameObject(), transform.position, Quaternion.identity);
         SpriteRenderer sr = corpse.AddComponent<SpriteRenderer>();
@@ -66,11 +76,6 @@ public class PlayerGraphicsController : CharacterGraphicsController
         _animator.Rebind();
     }
 
-    public void SwitchFlashlight(bool value)
-    {
-        flashlight.gameObject.SetActive(value);
-    }
-
     public void SetFlashlightDirection(Vector3 dir)
     {
         float m = 90;
@@ -80,7 +85,7 @@ public class PlayerGraphicsController : CharacterGraphicsController
         }
 
         float rot_z = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        flashlight.rotation = Quaternion.Euler(0f, 0f, rot_z - m);
+        _flashlightSocket.rotation = Quaternion.Euler(0f, 0f, rot_z - m);
     }
 
     public void SetSanityFX(int sanityLevel)

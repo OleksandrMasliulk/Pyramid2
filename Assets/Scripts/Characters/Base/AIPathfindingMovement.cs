@@ -7,13 +7,21 @@ using Pathfinding;
 
 public class AIPathfindingMovement : MonoBehaviour, IPathfindingMove
 {
+    [SerializeField] private CharacterBase _character;
+
     [SerializeField] private AIPath _aiPath;
     public bool ReachedTarget => _aiPath.reachedEndOfPath;
     [SerializeField] private Seeker _seeker;
     [SerializeField] private AIDestinationSetter _destSetter;
+    public bool CanMove => _aiPath.canMove;
 
     private Transform _target;
 
+
+    private void Update()
+    {
+        _character.GraphicsController.SetMovementDirection(_aiPath.desiredVelocity);
+    }
     //public async Task Move(Vector3 target)
     //{
     //    SetTarget(target);

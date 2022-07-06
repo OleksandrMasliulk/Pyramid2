@@ -10,6 +10,7 @@ public class MedkitSO : ItemSO
     public int restoreAmount;
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(MedkitSO))]
 public class MedkitEditor : ItemEditor
 {
@@ -30,3 +31,4 @@ public class MedkitEditor : ItemEditor
             EditorUtility.SetDirty(so);
     }
 }
+#endif

@@ -19,7 +19,15 @@ public class PlayerGhostState : PlayerState
     public override void OnDirectionInput(PlayerController player, Vector2 direction)
     {
         if (direction.magnitude > 0f)
-            player.MovementController.Move(direction); 
+        {
+            player.MovementController.Move(direction);
+            player.GraphicsController.SetMoving();
+            player.GraphicsController.SetMovementDirection(direction);
+        }
+        else
+        {
+            player.GraphicsController.SetIdle();
+        }
     }
 
     public override void OnInterractInput(PlayerController player)

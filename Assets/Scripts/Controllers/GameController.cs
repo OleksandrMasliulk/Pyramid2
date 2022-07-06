@@ -110,7 +110,7 @@ public class GameController : MonoBehaviour
 
     private void Save()
     {
-        PlayerData data = SaveLoad.Load();
+        PlayerData data = SaveLoad.Load<PlayerData>(SaveLoad.playerDataPath);
         if (data != null)
         {
             data.gold += _alivePlayersList[0].InventoryController.CalculateInventoryValue();
@@ -119,7 +119,7 @@ public class GameController : MonoBehaviour
         {
             data = new PlayerData(_alivePlayersList[0].InventoryController.CalculateInventoryValue());
         }
-        SaveLoad.Save(data);
+        SaveLoad.Save(data, SaveLoad.playerDataPath);
     }
 
     public void PlayLevelTheme()

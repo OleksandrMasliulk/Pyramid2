@@ -20,3 +20,4 @@ MonoBehaviour:
   isConsumable: 0
   useOnRelease: 0
   dropPrefab: {fileID: 7923633346994375038, guid: b9e463112a966804bacb3892d6df016d, type: 3}
+  flashlightPrefab: {fileID: 9035521663564037455, guid: b12f350dc256ad146bc81e97130afbee, type: 3}

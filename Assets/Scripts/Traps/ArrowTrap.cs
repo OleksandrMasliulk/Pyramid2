@@ -21,7 +21,7 @@ public class ArrowTrap : Trap, IInterractible
     private void Shoot()
     {
         arrows.Play();
-        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<TrapsSoundBoard>().arrowTrapShoot, transform.position, .3f);
+        AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<TrapsSoundBoard>().arrowTrapShoot, transform.position, .3f);
 
         canShoot = false;
         timeToRearm = rearmTime;

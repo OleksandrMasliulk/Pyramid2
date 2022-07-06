@@ -14,12 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundBoard:
     buttonOverlap:
+      type: 0
       clip: {fileID: 0}
       volume: 0
       repeatPlayeDelay: 0
       maxRange: 0
     buttonClick:
+      type: 0
       clip: {fileID: 8300000, guid: a701a3ed983e4474292009589197e56d, type: 3}
-      volume: 1
+      volume: 0.203
       repeatPlayeDelay: 0
       maxRange: 0

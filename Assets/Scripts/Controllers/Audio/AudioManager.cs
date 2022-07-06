@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private float _fadeTime;
     [SerializeField]private MusicTheme _levelThemePlaying;
     [SerializeField]private List<MusicTheme> _overlapThemeList;
+
+    [SerializeField] private AudioMixerGroup _musicOutput;
+    [SerializeField] private AudioMixerGroup _soundOutput;
 
     private void Awake()
     {
@@ -70,6 +74,7 @@ public class AudioManager : MonoBehaviour
         {
             GameObject go = new GameObject("Sound");
             audioSource = go.AddComponent<AudioSource>();
+            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
             audioSource.volume = sound.volume;
             audioSource.PlayOneShot(clip);
             float duration = clip.length;
@@ -87,6 +92,7 @@ public class AudioManager : MonoBehaviour
         {
             GameObject go = new GameObject("Sound");
             audioSource = go.AddComponent<AudioSource>();
+            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
             audioSource.clip = clip;
             audioSource.loop = looped;
             audioSource.volume = sound.volume;
@@ -96,7 +102,7 @@ public class AudioManager : MonoBehaviour
         return audioSource;
     }
 
-    public AudioClip PlaySound(SoundAudioClip sound, Vector3 position)
+    public AudioClip PlayeSound3D(SoundAudioClip sound, Vector3 position)
     {
         AudioClip clip = sound.clip;
         if (clip != null && sound.CanPlay())
@@ -104,11 +110,13 @@ public class AudioManager : MonoBehaviour
             GameObject go = new GameObject("Sound");
             go.transform.position = position;
             AudioSource audioSource = go.AddComponent<AudioSource>();
+            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
             audioSource.clip = clip;
             audioSource.volume = sound.volume;
             audioSource.spatialBlend = 1;
-            //audioSource.rolloffMode = AudioRolloffMode.Custom;
+            audioSource.minDistance = .05f;
             audioSource.maxDistance = sound.maxRange;
+            audioSource.rolloffMode = AudioRolloffMode.Linear;
             audioSource.Play();
         }
 
@@ -122,6 +130,7 @@ public class AudioManager : MonoBehaviour
         {
             GameObject go = new GameObject("Sound");
             audioSource = go.AddComponent<AudioSource>();
+            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
             audioSource.volume = sound.volume;
             audioSource.PlayOneShot(clip);
 
@@ -131,7 +140,7 @@ public class AudioManager : MonoBehaviour
         return audioSource;
     }
     
-    public AudioSource PlaySound(SoundAudioClip sound, Vector3 position, float playbackTime)
+    public AudioSource PlayerSound3D(SoundAudioClip sound, Vector3 position, float playbackTime)
     {
         AudioClip clip = sound.clip;
         AudioSource audioSource = null;
@@ -140,11 +149,13 @@ public class AudioManager : MonoBehaviour
             GameObject go = new GameObject("Sound");
             go.transform.position = position;
             audioSource = go.AddComponent<AudioSource>();
+            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
             audioSource.clip = clip;
             audioSource.volume = sound.volume;
             audioSource.spatialBlend = 1;
-            //audioSource.rolloffMode = AudioRolloffMode.Custom;
+            audioSource.minDistance = .05f;
             audioSource.maxDistance = sound.maxRange;
+            audioSource.rolloffMode = AudioRolloffMode.Linear;
             audioSource.Play();
 
             MonoBehaviour.Destroy(audioSource.gameObject, playbackTime);

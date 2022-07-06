@@ -5,7 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class SoundAudioClip
 {
+    public enum SoundType 
+    {
+        Sound,
+        Music
+    }
+
     [Header("General parameters")]
+    public SoundType type;
     public AudioClip clip;
     [Range(0f, 1f)]
     public float volume;
@@ -13,7 +20,7 @@ public class SoundAudioClip
     private float lastTimePlayed;
 
     [Header("3D Sound settings")]
-    [Range(0f, 100f)]
+    [Range(1f, 100f)]
     public float maxRange;
 
     public void Init() 

@@ -22,10 +22,13 @@ public class PlayerAliveState : PlayerState
         if (direction.magnitude > 0f)
         {
             player.MovementController.Move(direction);
+            player.GraphicsController.SetMoving();
+            player.GraphicsController.SetMovementDirection(direction);
+            AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<PlayerSoundBoard>().walk, player.transform.position, .2f);
         }
         else
         {
-            player.GraphicsController.SetMovementDirection(Vector2.zero);
+            player.GraphicsController.SetIdle();
         }
     }
 

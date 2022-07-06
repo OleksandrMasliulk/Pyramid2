@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEditor;
 
+#if UNITY_EDITOR
 [CustomPropertyDrawer(typeof(ReadOnlyAttribute))]
 public class ReadOnlyPropertyDrawer : PropertyDrawer
 {
@@ -11,3 +12,4 @@ public class ReadOnlyPropertyDrawer : PropertyDrawer
         GUI.enabled = true;
     }
 }
+#endif

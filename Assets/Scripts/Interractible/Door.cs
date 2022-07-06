@@ -50,7 +50,7 @@ public class Door : MonoBehaviour, IInterractible
 
         tooltip = "Press E to Close";
         anim.SetBool("Opened", true);
-        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorOpen, transform.position, 1f);
+        AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorOpen, transform.position, 1f);
     }
 
     private void Close()
@@ -60,6 +60,6 @@ public class Door : MonoBehaviour, IInterractible
 
         tooltip = "Press E to Open";
         anim.SetBool("Opened", false);
-        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorClose, transform.position, 1f);
+        AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorClose, transform.position, 1f);
     }
 }

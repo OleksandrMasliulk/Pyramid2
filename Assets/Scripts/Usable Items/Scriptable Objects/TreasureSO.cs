@@ -10,6 +10,7 @@ public class TreasureSO : ItemSO
     public int value;
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(TreasureSO))]
 public class TreasureEditor : ItemEditor
 {
@@ -29,3 +30,4 @@ public class TreasureEditor : ItemEditor
             EditorUtility.SetDirty(so);
     }
 }
+#endif
