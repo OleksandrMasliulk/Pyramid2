@@ -6,8 +6,8 @@ using UnityEditor;
 [CreateAssetMenu(fileName = "New Flashlight", menuName = "Items/Flashlights/New Flashlight")]
 public class FlashlightSO : ItemSO
 {
-    //[Header("Item Parameters")]
-    //public Flashlight flashlight;
+    [Header("Item Parameters")]
+    public GameObject flashlightPrefab;
 }
 
 #if UNITY_EDITOR
@@ -23,6 +23,9 @@ public class FlashlightEditor : ItemEditor
 
         //Item behaviour
         EditorGUILayout.LabelField("Item behaviour", EditorStyles.boldLabel);
+
+        //Flashlight prefab
+        so.flashlightPrefab = (GameObject)EditorGUILayout.ObjectField("Flashlight Prefab", so.flashlightPrefab, typeof(GameObject), allowSceneObjects: false);
 
         if (GUI.changed)
             EditorUtility.SetDirty(so);

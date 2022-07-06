@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _soundBoard:
     walk:
+      type: 0
       clip: {fileID: 8300000, guid: 92e295168f274734ba1f24c644416ec1, type: 3}
-      volume: 1
-      repeatPlayeDelay: 0
-      maxRange: 5
+      volume: 0.302
+      repeatPlayeDelay: 0.5
+      maxRange: 20

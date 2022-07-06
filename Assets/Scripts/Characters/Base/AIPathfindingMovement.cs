@@ -13,6 +13,7 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMove
     public bool ReachedTarget => _aiPath.reachedEndOfPath;
     [SerializeField] private Seeker _seeker;
     [SerializeField] private AIDestinationSetter _destSetter;
+    public bool CanMove => _aiPath.canMove;
 
     private Transform _target;
 
