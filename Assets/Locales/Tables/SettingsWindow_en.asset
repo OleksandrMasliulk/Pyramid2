@@ -54,6 +54,30 @@ MonoBehaviour:
     m_Localized: Settings
     m_Metadata:
       m_Items: []
+  - m_Id: 326297560567808
+    m_Localized: Fullscreen Window
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326281165033472
+    m_Localized: Fullscreen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326232800514048
+    m_Localized: Windowed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326165322551296
+    m_Localized: Low
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326217550024704
+    m_Localized: Medium
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326232423026688
+    m_Localized: High
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

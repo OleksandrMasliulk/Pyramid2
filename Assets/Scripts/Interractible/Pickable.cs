@@ -12,7 +12,7 @@ public class Pickable : MonoBehaviour, IInterractible
 
     private void Awake()
     {
-        tooltip = "Press E to PickUp";
+        tooltip = LocalizationHandler.Instance.SetTextLocalized(LocalizationHandler.Tables.TOOLTIPS, "PICK_UP");
 
         Init();
     }

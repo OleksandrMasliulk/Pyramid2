@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 
     private void Start()
     {
-        _settings.InitSettings();
+        _settings.LoadSettings();
         //AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
     }
 

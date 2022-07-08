@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-
+using UnityEngine.Localization;
 public class SettingsWindow : MonoBehaviour
 {
     //Graphics settings
@@ -27,6 +27,11 @@ public class SettingsWindow : MonoBehaviour
     [SerializeField] private string[] _qualityLevels;
     [SerializeField] private AudioMixer _mixer;
     private Settings _settings;
+
+    private void Awake()
+    {
+        InitSettings();
+    }
 
     public void InitSettings()
     {
@@ -57,6 +62,11 @@ public class SettingsWindow : MonoBehaviour
         }
         _qualityDropdown.AddOptions(qualityOptions);
         _qualityDropdown.value = _settings.GraphicsQuality;
+
+        //Window mode setup
+        //foreach (var opt in _windowDropdown.options)
+        //{
+        //}
         _windowDropdown.value = (int)_settings.Mode - 1;
 
         //Audio
@@ -64,8 +74,7 @@ public class SettingsWindow : MonoBehaviour
         SetSliderParameters(_soundVolumeSlider, _soundVolumeText, _settings.SoundVolume);
         SetSliderParameters(_musicVolumeSlider, _musicVolumeText, _settings.MusicVolume);
 
-        ApplySettings();
-
+        LocalizeSettingsDropdowns();
         SetDirty(false);
     }
 
@@ -169,5 +178,31 @@ public class SettingsWindow : MonoBehaviour
         slider.value = value;
         float textValue = Mathf.Lerp(0, 100, 1 - (Mathf.Abs(value) / 80));
         text.text = ((int)textValue).ToString();
+    }
+
+    public void LoadSettings()
+    {
+        Settings settings = SaveLoad.Load<Settings>(SaveLoad.settingsProfilePath);
+
+        Screen.fullScreenMode = settings.Mode;
+        Screen.SetResolution(settings.Resolution.width, settings.Resolution.height, settings.Mode);
+        QualitySettings.SetQualityLevel(settings.GraphicsQuality);
+
+        _mixer.SetFloat("MasterVolume", settings.MasterVolume);
+        _mixer.SetFloat("SoundVolume", settings.SoundVolume);
+        _mixer.SetFloat("MusicVolume", settings.MusicVolume);
+    }
+
+    public void LocalizeSettingsDropdowns()
+    {
+        foreach (var opt in _qualityDropdown.options.ToArray())
+        {
+            opt.text = LocalizationHandler.Instance.SetTextLocalized(LocalizationHandler.Tables.SETTINGS, opt.text);
+        }
+
+        foreach (var opt in _windowDropdown.options.ToArray())
+        {
+            opt.text = LocalizationHandler.Instance.SetTextLocalized(LocalizationHandler.Tables.SETTINGS, opt.text);
+        }
     }
 }

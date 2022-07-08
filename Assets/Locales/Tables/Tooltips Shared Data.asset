@@ -10,47 +10,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: UI Shared Data
+  m_Name: Tooltips Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: UIButtons
-  m_TableCollectionNameGuidString: e6f3ba487a0d2444da9e699ee0958a76
+  m_TableCollectionName: Tooltips
+  m_TableCollectionNameGuidString: 21690e526c863f140b96c0182feccec5
   m_Entries:
-  - m_Id: 98204405760
-    m_Key: APPLY
+  - m_Id: 9268383744
+    m_Key: INTERRACT
     m_Metadata:
       m_Items: []
-  - m_Id: 143712604160
-    m_Key: PLAY
+  - m_Id: 42403385344
+    m_Key: PICK_UP
     m_Metadata:
       m_Items: []
-  - m_Id: 220959100928
-    m_Key: MAIN_MENU
+  - m_Id: 232363413504
+    m_Key: OPEN
     m_Metadata:
       m_Items: []
-  - m_Id: 246422720512
-    m_Key: QUIT
+  - m_Id: 279314452480
+    m_Key: COVER
     m_Metadata:
       m_Items: []
-  - m_Id: 269415895040
-    m_Key: SETTINGS
+  - m_Id: 308297093120
+    m_Key: UNCOVER
     m_Metadata:
       m_Items: []
-  - m_Id: 2419088969728
-    m_Key: BACK
+  - m_Id: 994313261056
+    m_Key: CLOSE
     m_Metadata:
       m_Items: []
-  - m_Id: 2490392137728
-    m_Key: REVERT
+  - m_Id: 1567821418496
+    m_Key: SPEAK
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 3370741082550960169
+    rid: 3370741104272474114
   references:
     version: 2
     RefIds:
-    - rid: 3370741082550960169
+    - rid: 3370741104272474114
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1657203442332
+        m_CustomEpoch: 1657290378558

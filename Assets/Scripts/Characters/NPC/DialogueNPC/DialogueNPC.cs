@@ -10,7 +10,7 @@ public class DialogueNPC : NPCBase, IInterractible
 
     private void Awake()
     {
-        tooltip = "Press E to Speak";
+        tooltip = LocalizationHandler.Instance.SetTextLocalized(LocalizationHandler.Tables.TOOLTIPS, "SPEAK");
     }
 
     public void Interract(PlayerController user)

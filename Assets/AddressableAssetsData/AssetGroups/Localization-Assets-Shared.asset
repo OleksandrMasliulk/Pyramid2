@@ -25,6 +25,10 @@ MonoBehaviour:
     m_Address: Assets/Locales/Tables/SettingsWindow Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 21690e526c863f140b96c0182feccec5
+    m_Address: Assets/Locales/Tables/Tooltips Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
   m_SchemaSet:
