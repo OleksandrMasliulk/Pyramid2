@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -66,10 +66,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1504,10 +1504,10 @@ TextureImporter:
       Archeologist2_56: 517498927
       Archeologist2_33: -1148299923
       Archeologist2_29: -1271984283
-      Archeologist2_28: 1948375173
       Archeologist2_63: -145938606
-      Archeologist2_10: 1546556549
       Archeologist2_47: 562303605
+      Archeologist2_10: 1546556549
+      Archeologist2_28: 1948375173
       Archeologist2_14: 1783425977
       Archeologist2_41: -645649139
       Archeologist2_24: -31125949

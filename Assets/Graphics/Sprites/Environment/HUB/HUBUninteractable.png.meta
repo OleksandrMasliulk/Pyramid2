@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -66,10 +66,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,6 +94,18 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -433,11 +445,11 @@ TextureImporter:
       HUBUninteractable_52: -301480329
       HUBUninteractable_12: -1540936120
       HUBUninteractable_42: 1353444943
-      HUBUninteractable_20: 1123627360
-      HUBUninteractable_0: -817423161
-      HUBUninteractable_36: 2096190501
       HUBUninteractable_37: -1077879203
-      HUBUninteractable_39: 1312737633
+      HUBUninteractable_0: -817423161
+      HUBUninteractable_20: 1123627360
+      HUBUninteractable_36: 2096190501
+      HUBUninteractable_64: 2033435654
       HUBUninteractable_7: -248873726
       HUBUninteractable_40: 1947325990
       HUBUninteractable_24: -129994351
@@ -449,7 +461,7 @@ TextureImporter:
       HUBUninteractable_32: 1062889764
       HUBUninteractable_65: 1637099779
       HUBUninteractable_29: -1267415022
-      HUBUninteractable_64: 2033435654
+      HUBUninteractable_39: 1312737633
       HUBUninteractable_23: -47847785
       HUBUninteractable_26: -246020946
       HUBUninteractable_21: -262802429

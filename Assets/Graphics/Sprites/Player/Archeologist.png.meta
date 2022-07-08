@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -66,10 +66,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1451,9 +1451,9 @@ TextureImporter:
     nameFileIdTable:
       Archeologist_6: 1616543420
       Archeologist_26: -592120046
-      Archeologist_58: 1003202316
-      Archeologist_61: 1624556353
       Archeologist_59: 151348005
+      Archeologist_61: 1624556353
+      Archeologist_39: 423845567
       Archeologist_30: -1238752451
       Archeologist_55: -1563131310
       Archeologist_46: -568782653
@@ -1488,8 +1488,8 @@ TextureImporter:
       Archeologist_40: -926320677
       Archeologist_12: 1694859115
       Archeologist_14: -1589626913
-      Archeologist_23: -707894894
       Archeologist_34: 283919017
+      Archeologist_23: -707894894
       Archeologist_60: -1013130840
       Archeologist_53: -1993301576
       Archeologist_8: 1215472872
@@ -1511,7 +1511,7 @@ TextureImporter:
       Archeologist_3: -2145274459
       Archeologist_28: -1101497022
       Archeologist_24: -1960565580
-      Archeologist_39: 423845567
+      Archeologist_58: 1003202316
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
