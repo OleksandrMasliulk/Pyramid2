@@ -13,7 +13,7 @@ public class Lever : MonoBehaviour, IInterractible
 
     private void Start()
     {
-        tooltip = LocalizationHandler.Instance.SetTextLocalized(LocalizationHandler.Tables.TOOLTIPS, "INTERRACT");
+        tooltip = "INTERRACT";
         isOn = false;
         anim.SetBool("On", isOn);
     }

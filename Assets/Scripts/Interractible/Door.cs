@@ -16,7 +16,7 @@ public class Door : MonoBehaviour, IInterractible
         isClosed = true;
         door.enabled = true;
 
-        tooltip = LocalizationHandler.Instance.SetTextLocalized(LocalizationHandler.Tables.TOOLTIPS, "OPEN");
+        tooltip = "OPEN";
     }
 
     public void Interract(PlayerController user)
@@ -48,7 +48,7 @@ public class Door : MonoBehaviour, IInterractible
         isClosed = false;
         door.enabled = false;
 
-        tooltip = LocalizationHandler.Instance.SetTextLocalized(LocalizationHandler.Tables.TOOLTIPS, "CLOSE");
+        tooltip = "CLOSE";
         anim.SetBool("Opened", true);
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorOpen, transform.position, 1f);
     }
@@ -58,7 +58,7 @@ public class Door : MonoBehaviour, IInterractible
         isClosed = true;
         door.enabled = true;
 
-        tooltip = LocalizationHandler.Instance.SetTextLocalized(LocalizationHandler.Tables.TOOLTIPS, "OPEN");
+        tooltip = "OPEN";
         anim.SetBool("Opened", false);
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorClose, transform.position, 1f);
     }

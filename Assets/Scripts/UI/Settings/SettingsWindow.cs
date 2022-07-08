@@ -19,6 +19,9 @@ public class SettingsWindow : MonoBehaviour
     [SerializeField] private Slider _musicVolumeSlider;
     [SerializeField] private Text _musicVolumeText;
 
+    //Game settings
+    [SerializeField] private Dropdown _languageDropdown;
+
     [SerializeField] private Button _applyButton;
     [SerializeField] private Button _revertButton;
     private bool _isDirty;
@@ -74,6 +77,9 @@ public class SettingsWindow : MonoBehaviour
         SetSliderParameters(_soundVolumeSlider, _soundVolumeText, _settings.SoundVolume);
         SetSliderParameters(_musicVolumeSlider, _musicVolumeText, _settings.MusicVolume);
 
+        //Language
+        _languageDropdown.value = _settings.Language;
+
         LocalizeSettingsDropdowns();
         SetDirty(false);
     }
@@ -87,6 +93,10 @@ public class SettingsWindow : MonoBehaviour
         _mixer.SetFloat("MasterVolume", _settings.MasterVolume);
         _mixer.SetFloat("SoundVolume", _settings.SoundVolume);
         _mixer.SetFloat("MusicVolume", _settings.MusicVolume);
+
+        StartCoroutine(LocalizationHandler.Instance.SetLocale(_settings.Language));
+
+        LocalizeSettingsDropdowns();
 
         SetDirty(false);
         SaveLoad.Save<Settings>(_settings, SaveLoad.settingsProfilePath);
@@ -111,6 +121,7 @@ public class SettingsWindow : MonoBehaviour
     {
         Settings backup = SaveLoad.Load<Settings>(SaveLoad.settingsProfilePath);
 
+        //Graphics
         _resolutionDropdown.value = FindResIndex(backup.Resolution);
         _qualityDropdown.value = backup.GraphicsQuality;
         _windowDropdown.value = (int)backup.Mode - 1;
@@ -119,6 +130,9 @@ public class SettingsWindow : MonoBehaviour
         SetSliderParameters(_masterVolumeSlider, _masterVolumeText, backup.MasterVolume);
         SetSliderParameters(_soundVolumeSlider, _soundVolumeText, backup.SoundVolume);
         SetSliderParameters(_musicVolumeSlider, _musicVolumeText, backup.MusicVolume);
+
+        //Game
+        _languageDropdown.value = backup.Language;
 
         _settings = backup;
         SetDirty(false);
@@ -173,6 +187,12 @@ public class SettingsWindow : MonoBehaviour
         SetDirty(true);
     }
 
+    public void SetLanguage()
+    {
+        _settings.Language = _languageDropdown.value;
+        SetDirty(true);
+    }
+
     private void SetSliderParameters(Slider slider, Text text, float value)
     {
         slider.value = value;
@@ -183,6 +203,10 @@ public class SettingsWindow : MonoBehaviour
     public void LoadSettings()
     {
         Settings settings = SaveLoad.Load<Settings>(SaveLoad.settingsProfilePath);
+        if (settings == null)
+        {
+            settings = new Settings();
+        }
 
         Screen.fullScreenMode = settings.Mode;
         Screen.SetResolution(settings.Resolution.width, settings.Resolution.height, settings.Mode);
@@ -191,18 +215,20 @@ public class SettingsWindow : MonoBehaviour
         _mixer.SetFloat("MasterVolume", settings.MasterVolume);
         _mixer.SetFloat("SoundVolume", settings.SoundVolume);
         _mixer.SetFloat("MusicVolume", settings.MusicVolume);
+
+        StartCoroutine(LocalizationHandler.Instance.SetLocale(settings.Language));
     }
 
     public void LocalizeSettingsDropdowns()
     {
         foreach (var opt in _qualityDropdown.options.ToArray())
         {
-            opt.text = LocalizationHandler.Instance.SetTextLocalized(LocalizationHandler.Tables.SETTINGS, opt.text);
+            opt.text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, opt.text);
         }
 
         foreach (var opt in _windowDropdown.options.ToArray())
         {
-            opt.text = LocalizationHandler.Instance.SetTextLocalized(LocalizationHandler.Tables.SETTINGS, opt.text);
+            opt.text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, opt.text);
         }
     }
 }

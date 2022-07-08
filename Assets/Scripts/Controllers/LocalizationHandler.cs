@@ -26,7 +26,7 @@ public class LocalizationHandler : MonoBehaviour
         }
     }
 
-    public string SetTextLocalized(Tables table, string key)
+    public string GetTextLocalized(Tables table, string key)
     {
         string tableName = GetTableName(table);
         if (tableName == null)
@@ -63,4 +63,9 @@ public class LocalizationHandler : MonoBehaviour
         }
     }
 
+    public IEnumerator SetLocale(int locale)
+    {
+        yield return LocalizationSettings.InitializationOperation;
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[locale];
+    }
 }

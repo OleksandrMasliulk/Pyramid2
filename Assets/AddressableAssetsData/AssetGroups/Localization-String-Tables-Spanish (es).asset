@@ -28,7 +28,6 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-es
-    - Preload
   - m_GUID: b0c62e5c4283077458328a5cfd0d0897
     m_Address: Tooltips_es
     m_ReadOnly: 1

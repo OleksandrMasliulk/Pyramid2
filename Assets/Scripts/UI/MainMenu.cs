@@ -6,10 +6,16 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] private SettingsWindow _settings;
 
+    private IEnumerator InitializationChain()
+    {
+        yield return null;
+
+        _settings.LoadSettings();
+    }
+
     private void Start()
     {
-        _settings.LoadSettings();
-        //AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
+        StartCoroutine(InitializationChain());
     }
 
     public void Quit()

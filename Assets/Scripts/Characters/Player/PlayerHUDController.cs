@@ -51,9 +51,9 @@ public class PlayerHUDController : MonoBehaviour
         }
     }
 
-    public void SetTooltipText(string newText)
+    public void SetTooltipText(string tooltipKey)
     {
-        interractTooltip.text = newText;
+        interractTooltip.text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.TOOLTIPS, tooltipKey);
     }
 
     public void ShowTooltip()

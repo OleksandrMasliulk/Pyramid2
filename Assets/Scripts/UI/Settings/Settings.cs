@@ -15,6 +15,9 @@ public class Settings
     public float SoundVolume { get; set; }
     public float MusicVolume { get; set; }
 
+    //Game settings
+    public int Language { get; set; }
+
     public Settings()
     {
         //Default settings
@@ -25,5 +28,7 @@ public class Settings
         MasterVolume = 0f;
         SoundVolume = 0f;
         MusicVolume = 0f;
+
+        Language = 0;
     }
 }
