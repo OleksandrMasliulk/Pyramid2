@@ -17,7 +17,35 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 21690e526c863f140b96c0182feccec5, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 9268383744
+    m_Localized: "Naci\u015Bnij E, aby wej\u015B\u0107 w interakcj\u0119"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42403385344
+    m_Localized: "Naci\u015Bnij E, aby odebra\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 232363413504
+    m_Localized: "Naci\u015Bnij E, aby otworzy\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 279314452480
+    m_Localized: "Naci\u015Bnij E, aby si\u0119 ukry\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 308297093120
+    m_Localized: "Naci\u015Bnij E, aby wyj\u015B\u0107 z ukrycia"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 994313261056
+    m_Localized: "Naci\u015Bnij E, aby zamkn\u0105\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1567821418496
+    m_Localized: "Naci\u015Bnij klawisz E, aby przem\xF3wi\u0107"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

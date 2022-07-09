@@ -17,7 +17,32 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 68efe0bdb242f41468c65bf8357a3a97, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 1421821890560
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 549243080704
+    m_Localized: "\xA1Felicitaciones!\r\nT\xFA ganaste"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 552732741632
+    m_Localized: "Est\xE1s muerto"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 799538171904
+    m_Localized: "Puedes convertirte en un fantasma\r\ny ayuda a tus amigos,\r\no
+      vaya al men\xFA principal"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646928420864
+    m_Localized: "Mostrar Men\xFA"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 596655493120
+    m_Localized: Oro recogido
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

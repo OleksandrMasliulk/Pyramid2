@@ -17,7 +17,67 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 06c0a7621bfa32b40b928ae82f7aec63, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 54248166412288
+    m_Localized: "Rozdzielczo\u015B\u0107"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54288318484480
+    m_Localized: "Jako\u015B\u0107 Grafiki"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54319800930304
+    m_Localized: Tryb Okna
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54338775961600
+    m_Localized: "Og\xF3lny"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54365757919232
+    m_Localized: "D\u017Awi\u0119k"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54394249826304
+    m_Localized: Muzyka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54428739588096
+    m_Localized: Grafika
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54449505587200
+    m_Localized: Audio
+    m_Metadata:
+      m_Items: []
+  - m_Id: 54543936147456
+    m_Localized: Ustawienia
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326165322551296
+    m_Localized: Niskie
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326217550024704
+    m_Localized: "\u015Aredni"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326232423026688
+    m_Localized: Wysoka
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326232800514048
+    m_Localized: Okienny
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326281165033472
+    m_Localized: Pelnoekranowy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 326297560567808
+    m_Localized: Bezramkowy
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

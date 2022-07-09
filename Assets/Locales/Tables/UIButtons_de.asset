@@ -17,7 +17,47 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: e6f3ba487a0d2444da9e699ee0958a76, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 98204405760
+    m_Localized: Gelten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 143712604160
+    m_Localized: Spielen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 220959100928
+    m_Localized: "Hauptmen\xFC"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 246422720512
+    m_Localized: Beenden
+    m_Metadata:
+      m_Items: []
+  - m_Id: 269415895040
+    m_Localized: Einstellung
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2419088969728
+    m_Localized: "Zur\xFCck"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2490392137728
+    m_Localized: Revert
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743428655697920
+    m_Localized: "Schlie\xDFen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743465548795904
+    m_Localized: Weiter als Geist
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746109923250176
+    m_Localized: Auferstehen
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

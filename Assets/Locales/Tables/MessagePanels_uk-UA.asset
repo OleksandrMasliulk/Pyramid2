@@ -17,7 +17,35 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 68efe0bdb242f41468c65bf8357a3a97, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 596655493120
+    m_Localized: "\u0417\u0456\u0431\u0440\u0430\u043D\u0435 \u0437\u043E\u043B\u043E\u0442\u043E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1421821890560
+    m_Localized: "\u041C\u0435\u043D\u044E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646928420864
+    m_Localized: "\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u0438 \u043C\u0435\u043D\u044E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 799538171904
+    m_Localized: "\u041C\u043E\u0436\u0435\u0448 \u0437\u0430\u043B\u0438\u0448\u0438\u0442\u0438\u0441\u044F
+      \u0434\u0443\u0445\u043E\u043C \u0456 \u0434\u043E\u043F\u043E\u043C\u043E\u0433\u0442\u0438
+      \u0434\u0440\u0443\u0437\u044F\u043C, \u0430\u0431\u043E \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u0438\u0441\u044F
+      \u0432 \u0413\u043E\u043B\u043E\u0432\u043D\u0435 \u043C\u0435\u043D\u044E"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 552732741632
+    m_Localized: "\u0422\u0438 \u043F\u043E\u043C\u0435\u0440"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 549243080704
+    m_Localized: "\u041F\u043E\u0437\u0434\u043E\u0440\u043E\u0432\u043B\u044F\u044E!\r\n\u0422\u0438
+      \u043F\u0435\u0440\u0435\u043C\u0456\u0433"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

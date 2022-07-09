@@ -19,31 +19,43 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 98204405760
-    m_Localized: Spanish Apply
+    m_Localized: Aplicar
     m_Metadata:
       m_Items: []
   - m_Id: 143712604160
-    m_Localized: Spanish Play
+    m_Localized: Jugar
     m_Metadata:
       m_Items: []
   - m_Id: 220959100928
-    m_Localized: Spanish Main Menu
+    m_Localized: "Men\xFA Principal"
     m_Metadata:
       m_Items: []
   - m_Id: 246422720512
-    m_Localized: Spanis Quit
+    m_Localized: Dejar
     m_Metadata:
       m_Items: []
   - m_Id: 269415895040
-    m_Localized: Spanish Settings
+    m_Localized: "Configuraci\xF3n"
     m_Metadata:
       m_Items: []
   - m_Id: 2490392137728
-    m_Localized: Spanish Revert
+    m_Localized: Revertir
     m_Metadata:
       m_Items: []
   - m_Id: 2419088969728
-    m_Localized: Spanish Back
+    m_Localized: Volver
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743428655697920
+    m_Localized: Cerca
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743465548795904
+    m_Localized: Continuar como Fantasma
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746109923250176
+    m_Localized: Resucitar
     m_Metadata:
       m_Items: []
   references:

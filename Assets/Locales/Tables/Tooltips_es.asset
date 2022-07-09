@@ -17,7 +17,35 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 21690e526c863f140b96c0182feccec5, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 9268383744
+    m_Localized: Presione E para interactuar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42403385344
+    m_Localized: Presione E para seleccionar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 232363413504
+    m_Localized: Presione E para abrir
+    m_Metadata:
+      m_Items: []
+  - m_Id: 279314452480
+    m_Localized: Presione E para esconderse
+    m_Metadata:
+      m_Items: []
+  - m_Id: 308297093120
+    m_Localized: Presione E para salir del escondite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 994313261056
+    m_Localized: Presione E para cerrar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1567821418496
+    m_Localized: Presione E para hablar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

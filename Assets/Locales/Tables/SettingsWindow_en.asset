@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 54248166412288
-    m_Localized: Rsolution
+    m_Localized: Resolution
     m_Metadata:
       m_Items: []
   - m_Id: 54288318484480
@@ -31,7 +31,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 54338775961600
-    m_Localized: Master
+    m_Localized: General
     m_Metadata:
       m_Items: []
   - m_Id: 54365757919232

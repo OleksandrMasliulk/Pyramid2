@@ -17,7 +17,67 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 106c4da7bd16a0540b752007b3dd3e5a, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 144790540288
+    m_Localized: "\xA1Felicitaciones!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 215070298112
+    m_Localized: "T\xDA MORISTE"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 234464759808
+    m_Localized: 'Ahora puedes ser llamado a
+
+      "Cazador De Tesoros"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 309114982400
+    m_Localized: Cuidado!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339964088320
+    m_Localized: "\nLas flechas se activan desde las placas de presi\xF3n\nsi te
+      paras en tal, no te apresures a correr hacia adelante.\n\nTrate de no pisar
+      los picos en el piso."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417437077504
+    m_Localized: Mostrar consejos
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441260724224
+    m_Localized: ' Consejos'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 641740066816
+    m_Localized: 'Con los botones W A S D,
+
+      el jugador puede moverse
+
+
+
+      Para
+      seleccionar un elemento,
+
+      uso 1 2 3 4
+
+      para usar el elemento,
+      presione F,
+
+      Para lanzar un objeto, usa G
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 684744265728
+    m_Localized: 'Movimiento
+
+      
+
+      Elemento'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

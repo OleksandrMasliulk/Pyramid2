@@ -17,7 +17,32 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 68efe0bdb242f41468c65bf8357a3a97, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 549243080704
+    m_Localized: "Gratulacje !\r\nWygra\u0142e\u015B"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 552732741632
+    m_Localized: "Nie \u017Cyjesz"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 799538171904
+    m_Localized: "Mo\u017Cesz sta\u0107 si\u0119 duchem\r\ni pom\xF3\u0441 przyjacio\u0142om,\r\nlub
+      przejd\u017A do menu g\u0142\xF3wnego"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 646928420864
+    m_Localized: "Poka\u017C Menu"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 596655493120
+    m_Localized: "Z\u0142oto zebrane"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1421821890560
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
