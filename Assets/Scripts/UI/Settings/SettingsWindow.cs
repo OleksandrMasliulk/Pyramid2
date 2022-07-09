@@ -197,7 +197,7 @@ public class SettingsWindow : MonoBehaviour
     private void SetSliderParameters(Slider slider, Text text, float value)
     {
         slider.value = value;
-        float textValue = Mathf.Lerp(0, 100, 1 - (Mathf.Abs(value) / 80));
+        float textValue = Mathf.Lerp(0, 100, 1 - (Mathf.Abs(value) / slider.maxValue));
         text.text = ((int)textValue).ToString();
     }
 

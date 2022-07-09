@@ -47,6 +47,7 @@ public class Flashlight : Item
 
     public override void OnPickUp(PlayerController player)
     {
+        base.OnPickUp(player);
         _flashlight = MonoBehaviour.Instantiate(_prefab, player.GraphicsController.FlashlightSocket);
     }
 
