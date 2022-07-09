@@ -97,10 +97,10 @@ public class SettingsWindow : MonoBehaviour
 
         LocalizationHandler.Instance.SetLocale(_settings.Language);
 
-        LocalizeSettingsDropdowns();
-
         SetDirty(false);
         SaveLoad.Save<Settings>(_settings, SaveLoad.settingsProfilePath);
+
+        LocalizeSettingsDropdowns();
     }
 
     private int FindResIndex(SerializableResolution res)
@@ -228,12 +228,12 @@ public class SettingsWindow : MonoBehaviour
         {
             _qualityDropdown.options[i].text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, _qualityLevels[i]);
         }
-        _qualityDropdown.value = _settings.GraphicsQuality;
+        _qualityDropdown.RefreshShownValue();
 
         for (int i = 0; i < _windowModeOptions.Length; i++)
         {
             _windowDropdown.options[i].text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, _windowModeOptions[i]);
         }
-        _windowDropdown.value = (int)_settings.Mode;
+        _windowDropdown.RefreshShownValue();
     }
 }
