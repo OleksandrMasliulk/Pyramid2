@@ -74,9 +74,9 @@ public class SettingsWindow : MonoBehaviour
         _windowDropdown.value = (int)_settings.Mode - 1;
 
         //Audio
-        SetSliderParameters(_masterVolumeSlider, _masterVolumeText, _settings.MasterVolume);
-        SetSliderParameters(_soundVolumeSlider, _soundVolumeText, _settings.SoundVolume);
-        SetSliderParameters(_musicVolumeSlider, _musicVolumeText, _settings.MusicVolume);
+        SetSliderParameters(_masterVolumeSlider, _masterVolumeText, _settings.MasterVolume, true);
+        SetSliderParameters(_soundVolumeSlider, _soundVolumeText, _settings.SoundVolume, true);
+        SetSliderParameters(_musicVolumeSlider, _musicVolumeText, _settings.MusicVolume, true);
 
         //Language
         _languageDropdown.value = _settings.Language;
@@ -128,9 +128,9 @@ public class SettingsWindow : MonoBehaviour
         _windowDropdown.value = (int)backup.Mode - 1;
 
         //Audio
-        SetSliderParameters(_masterVolumeSlider, _masterVolumeText, backup.MasterVolume);
-        SetSliderParameters(_soundVolumeSlider, _soundVolumeText, backup.SoundVolume);
-        SetSliderParameters(_musicVolumeSlider, _musicVolumeText, backup.MusicVolume);
+        SetSliderParameters(_masterVolumeSlider, _masterVolumeText, backup.MasterVolume, true);
+        SetSliderParameters(_soundVolumeSlider, _soundVolumeText, backup.SoundVolume, true);
+        SetSliderParameters(_musicVolumeSlider, _musicVolumeText, backup.MusicVolume, true);
 
         //Game
         _languageDropdown.value = backup.Language;
@@ -151,21 +151,21 @@ public class SettingsWindow : MonoBehaviour
 
     public void SetMasterVolume(float value)
     {
-        SetSliderParameters(_masterVolumeSlider, _masterVolumeText, value);
+        SetSliderParameters(_masterVolumeSlider, _masterVolumeText, value, true);
         _settings.MasterVolume = value;
         SetDirty(true);
     }
 
     public void SetSoundVolume(float value)
     {
-        SetSliderParameters(_soundVolumeSlider, _soundVolumeText, value);
+        SetSliderParameters(_soundVolumeSlider, _soundVolumeText, value, true);
         _settings.SoundVolume = value;
         SetDirty(true);
     }
     
     public void SetMusicVolume(float value)
     {
-        SetSliderParameters(_musicVolumeSlider, _musicVolumeText, value);
+        SetSliderParameters(_musicVolumeSlider, _musicVolumeText, value, true);
         _settings.MusicVolume = value;
         SetDirty(true);
     }
@@ -194,10 +194,12 @@ public class SettingsWindow : MonoBehaviour
         SetDirty(true);
     }
 
-    private void SetSliderParameters(Slider slider, Text text, float value)
+    private void SetSliderParameters(Slider slider, Text text, float value, bool maxIsMin)
     {
         slider.value = value;
-        float textValue = Mathf.Lerp(0, 100, 1 - (Mathf.Abs(value) / slider.maxValue));
+
+        float diff = maxIsMin ? -slider.maxValue : slider.minValue;
+        float textValue = Mathf.Lerp(0, 100, 1 - (Mathf.Abs(value + diff) / Mathf.Abs(maxIsMin ? slider.minValue + diff : slider.maxValue)));
         text.text = ((int)textValue).ToString();
     }
 
@@ -226,10 +228,12 @@ public class SettingsWindow : MonoBehaviour
         {
             _qualityDropdown.options[i].text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, _qualityLevels[i]);
         }
+        _qualityDropdown.value = _settings.GraphicsQuality;
 
         for (int i = 0; i < _windowModeOptions.Length; i++)
         {
             _windowDropdown.options[i].text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, _windowModeOptions[i]);
         }
+        _windowDropdown.value = (int)_settings.Mode;
     }
 }

@@ -1461,7 +1461,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:06c0a7621bfa32b40b928ae82f7aec63
     m_TableEntryReference:
-      m_KeyId: 54248166412288
+      m_KeyId: 815416816455680
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -1748,7 +1748,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:06c0a7621bfa32b40b928ae82f7aec63
     m_TableEntryReference:
-      m_KeyId: 54428739588096
+      m_KeyId: 815384734224384
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -2020,7 +2020,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 1785823292}
   m_HandleRect: {fileID: 432154054}
   m_Direction: 0
-  m_MinValue: -80
+  m_MinValue: -65
   m_MaxValue: 0
   m_WholeNumbers: 1
   m_Value: 0
@@ -9224,8 +9224,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1806298003}
   m_HandleRect: {fileID: 660992046}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: -65
+  m_MaxValue: -10
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -12522,8 +12522,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1648410375}
   m_HandleRect: {fileID: 1777099121}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: -65
+  m_MaxValue: 10
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
