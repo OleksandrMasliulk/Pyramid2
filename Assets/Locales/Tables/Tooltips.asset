@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be51871efa6c3e4eae1703925c8f5ac, type: 3}
+  m_Name: Tooltips
+  m_EditorClassIdentifier: 
+  m_SharedTableData: {fileID: 11400000, guid: 21690e526c863f140b96c0182feccec5, type: 2}
+  m_Tables:
+  - {fileID: 11400000, guid: ca9081bc1b561e6419e7d4bb224e8e8f, type: 2}
+  - {fileID: 11400000, guid: 02f8fc7bbe8efea46a7db16e8c6cc09e, type: 2}
+  - {fileID: 11400000, guid: 980090c090343c0439e850bb0be92f9e, type: 2}
+  - {fileID: 11400000, guid: b0c62e5c4283077458328a5cfd0d0897, type: 2}
+  - {fileID: 11400000, guid: d297aec8bebe056468ad6b27f39b28f7, type: 2}
+  - {fileID: 11400000, guid: f55615ec85e9d914f993589003795831, type: 2}
+  m_Extensions: []
+  m_Group: String Table
+  references:
+    version: 2
+    RefIds: []

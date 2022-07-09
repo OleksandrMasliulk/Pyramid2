@@ -19,8 +19,6 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-
-        AudioManager.Instance.PlayLevelTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().mainMenuTheme);
     }
 
     public void LoadLevel(int index)
@@ -47,6 +45,9 @@ public class LevelManager : MonoBehaviour
         switch (level)
         {
             default:
+                break;
+            case 0:
+                AudioManager.Instance.PlayLevelTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().mainMenuTheme);
                 break;
             case >= 1 and <= 2:
                 AudioManager.Instance.PlayLevelTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().pyramidMenuTheme);

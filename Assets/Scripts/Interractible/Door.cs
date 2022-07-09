@@ -16,7 +16,7 @@ public class Door : MonoBehaviour, IInterractible
         isClosed = true;
         door.enabled = true;
 
-        tooltip = "Press E to Open";
+        tooltip = "OPEN";
     }
 
     public void Interract(PlayerController user)
@@ -48,7 +48,7 @@ public class Door : MonoBehaviour, IInterractible
         isClosed = false;
         door.enabled = false;
 
-        tooltip = "Press E to Close";
+        tooltip = "CLOSE";
         anim.SetBool("Opened", true);
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorOpen, transform.position, 1f);
     }
@@ -58,7 +58,7 @@ public class Door : MonoBehaviour, IInterractible
         isClosed = true;
         door.enabled = true;
 
-        tooltip = "Press E to Open";
+        tooltip = "OPEN";
         anim.SetBool("Opened", false);
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorClose, transform.position, 1f);
     }

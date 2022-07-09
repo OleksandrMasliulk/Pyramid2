@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -66,10 +66,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,6 +94,18 @@ TextureImporter:
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1401,6 +1413,7 @@ TextureImporter:
       StorageTails_9: -1953503280
       StorageTails_12: 240898701
       StorageTails_42: 1097120561
+      StorageTails_56: -1179940493
       StorageTails_14: 508029032
       StorageTails_40: 2134925126
       StorageTails_0: 1945408690
@@ -1408,13 +1421,12 @@ TextureImporter:
       StorageTails_27: -1094284865
       StorageTails_11: -437963729
       StorageTails_22: -914475724
-      StorageTails_56: -1179940493
       StorageTails_25: -630258736
       StorageTails_48: -683355524
       StorageTails_20: 589150820
-      StorageTails_49: 1656610581
-      StorageTails_47: 288607507
       StorageTails_57: -389571638
+      StorageTails_47: 288607507
+      StorageTails_49: 1656610581
       StorageTails_17: -555620318
       StorageTails_54: -849098483
       StorageTails_52: 560685993

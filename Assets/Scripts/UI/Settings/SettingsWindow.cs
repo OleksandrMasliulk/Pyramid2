@@ -19,14 +19,23 @@ public class SettingsWindow : MonoBehaviour
     [SerializeField] private Slider _musicVolumeSlider;
     [SerializeField] private Text _musicVolumeText;
 
+    //Game settings
+    [SerializeField] private Dropdown _languageDropdown;
+
     [SerializeField] private Button _applyButton;
     [SerializeField] private Button _revertButton;
     private bool _isDirty;
 
     [SerializeField] private SerializableResolution[] _resolutions;
     [SerializeField] private string[] _qualityLevels;
+    [SerializeField] private string[] _windowModeOptions; 
     [SerializeField] private AudioMixer _mixer;
     private Settings _settings;
+
+    private void Awake()
+    {
+        InitSettings();
+    }
 
     public void InitSettings()
     {
@@ -57,6 +66,11 @@ public class SettingsWindow : MonoBehaviour
         }
         _qualityDropdown.AddOptions(qualityOptions);
         _qualityDropdown.value = _settings.GraphicsQuality;
+
+        //Window mode setup
+        //foreach (var opt in _windowDropdown.options)
+        //{
+        //}
         _windowDropdown.value = (int)_settings.Mode - 1;
 
         //Audio
@@ -64,8 +78,10 @@ public class SettingsWindow : MonoBehaviour
         SetSliderParameters(_soundVolumeSlider, _soundVolumeText, _settings.SoundVolume);
         SetSliderParameters(_musicVolumeSlider, _musicVolumeText, _settings.MusicVolume);
 
-        ApplySettings();
+        //Language
+        _languageDropdown.value = _settings.Language;
 
+        LocalizeSettingsDropdowns();
         SetDirty(false);
     }
 
@@ -78,6 +94,10 @@ public class SettingsWindow : MonoBehaviour
         _mixer.SetFloat("MasterVolume", _settings.MasterVolume);
         _mixer.SetFloat("SoundVolume", _settings.SoundVolume);
         _mixer.SetFloat("MusicVolume", _settings.MusicVolume);
+
+        LocalizationHandler.Instance.SetLocale(_settings.Language);
+
+        LocalizeSettingsDropdowns();
 
         SetDirty(false);
         SaveLoad.Save<Settings>(_settings, SaveLoad.settingsProfilePath);
@@ -102,6 +122,7 @@ public class SettingsWindow : MonoBehaviour
     {
         Settings backup = SaveLoad.Load<Settings>(SaveLoad.settingsProfilePath);
 
+        //Graphics
         _resolutionDropdown.value = FindResIndex(backup.Resolution);
         _qualityDropdown.value = backup.GraphicsQuality;
         _windowDropdown.value = (int)backup.Mode - 1;
@@ -110,6 +131,9 @@ public class SettingsWindow : MonoBehaviour
         SetSliderParameters(_masterVolumeSlider, _masterVolumeText, backup.MasterVolume);
         SetSliderParameters(_soundVolumeSlider, _soundVolumeText, backup.SoundVolume);
         SetSliderParameters(_musicVolumeSlider, _musicVolumeText, backup.MusicVolume);
+
+        //Game
+        _languageDropdown.value = backup.Language;
 
         _settings = backup;
         SetDirty(false);
@@ -164,10 +188,48 @@ public class SettingsWindow : MonoBehaviour
         SetDirty(true);
     }
 
+    public void SetLanguage()
+    {
+        _settings.Language = _languageDropdown.value;
+        SetDirty(true);
+    }
+
     private void SetSliderParameters(Slider slider, Text text, float value)
     {
         slider.value = value;
         float textValue = Mathf.Lerp(0, 100, 1 - (Mathf.Abs(value) / 80));
         text.text = ((int)textValue).ToString();
+    }
+
+    public void LoadSettings()
+    {
+        Settings settings = SaveLoad.Load<Settings>(SaveLoad.settingsProfilePath);
+        if (settings == null)
+        {
+            settings = new Settings();
+        }
+
+        Screen.fullScreenMode = settings.Mode;
+        Screen.SetResolution(settings.Resolution.width, settings.Resolution.height, settings.Mode);
+        QualitySettings.SetQualityLevel(settings.GraphicsQuality);
+
+        _mixer.SetFloat("MasterVolume", settings.MasterVolume);
+        _mixer.SetFloat("SoundVolume", settings.SoundVolume);
+        _mixer.SetFloat("MusicVolume", settings.MusicVolume);
+
+        LocalizationHandler.Instance.SetLocale(settings.Language);
+    }
+
+    public void LocalizeSettingsDropdowns()
+    {
+        for (int i = 0; i < _qualityLevels.Length; i++)
+        {
+            _qualityDropdown.options[i].text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, _qualityLevels[i]);
+        }
+
+        for (int i = 0; i < _windowModeOptions.Length; i++)
+        {
+            _windowDropdown.options[i].text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, _windowModeOptions[i]);
+        }
     }
 }
