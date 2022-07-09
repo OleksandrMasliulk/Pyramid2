@@ -22,7 +22,6 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ru
-    - Preload
   - m_GUID: f30adb3f9bf317940b1318cc31d894ac
     m_Address: SettingsWindow_ru
     m_ReadOnly: 1
@@ -30,6 +29,17 @@ MonoBehaviour:
     - Locale-ru
   - m_GUID: 980090c090343c0439e850bb0be92f9e
     m_Address: Tooltips_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+  - m_GUID: 9e119720150ca4146ae2fabafd780615
+    m_Address: MessagePanels_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+  - m_GUID: 382f9b8fa5748c64ebbe924f152fb978
+    m_Address: Tutorial_ru
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-ru

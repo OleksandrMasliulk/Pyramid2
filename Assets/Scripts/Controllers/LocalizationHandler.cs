@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using System.Threading.Tasks;
 
 public class LocalizationHandler : MonoBehaviour
 {
@@ -35,15 +36,16 @@ public class LocalizationHandler : MonoBehaviour
             return null;
         }
 
-        var op = LocalizationSettings.StringDatabase.GetLocalizedStringAsync(tableName, key);
-        if (op.IsDone)
-        {
-            return op.Result;
-        }
-        else
-        {
-            op.Completed += (op) => Debug.Log(op.Result);
-        }
+        //var op = LocalizationSettings.StringDatabase.GetLocalizedStringAsync(tableName, key);
+        return LocalizationSettings.StringDatabase.GetLocalizedString(tableName, key);
+        //if (op.IsDone)
+        //{
+        //    return op.Result;
+        //}
+        //else
+        //{
+        //    op.Completed += (op) => Debug.Log(op.Result);
+        //}
 
         return null;
     }
@@ -63,9 +65,13 @@ public class LocalizationHandler : MonoBehaviour
         }
     }
 
-    public IEnumerator SetLocale(int locale)
+    public void SetLocale(int locale)
+    {
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[locale];
+    }
+
+    public IEnumerator InitLocales()
     {
         yield return LocalizationSettings.InitializationOperation;
-        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[locale];
     }
 }

@@ -10,59 +10,57 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: UI Shared Data
+  m_Name: Tutorial Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: UIButtons
-  m_TableCollectionNameGuidString: e6f3ba487a0d2444da9e699ee0958a76
+  m_TableCollectionName: Tutorial
+  m_TableCollectionNameGuidString: 106c4da7bd16a0540b752007b3dd3e5a
   m_Entries:
-  - m_Id: 98204405760
-    m_Key: APPLY
+  - m_Id: 144790540288
+    m_Key: PLAYER_WIN
     m_Metadata:
       m_Items: []
-  - m_Id: 143712604160
-    m_Key: PLAY
+  - m_Id: 215070298112
+    m_Key: PLAYER_LOSE
     m_Metadata:
       m_Items: []
-  - m_Id: 220959100928
-    m_Key: MAIN_MENU
+  - m_Id: 234464759808
+    m_Key: WIN_MESSAGE
     m_Metadata:
       m_Items: []
-  - m_Id: 246422720512
-    m_Key: QUIT
+  - m_Id: 309114982400
+    m_Key: LOSE_MESSAGE1
     m_Metadata:
       m_Items: []
-  - m_Id: 269415895040
-    m_Key: SETTINGS
+  - m_Id: 339964088320
+    m_Key: LOSE_MESSAGE2
     m_Metadata:
       m_Items: []
-  - m_Id: 2419088969728
-    m_Key: BACK
+  - m_Id: 417437077504
+    m_Key: TIPS_TOOLTIP
     m_Metadata:
       m_Items: []
-  - m_Id: 2490392137728
-    m_Key: REVERT
+  - m_Id: 441260724224
+    m_Key: TIPS_LABEL
     m_Metadata:
       m_Items: []
-  - m_Id: 743428655697920
-    m_Key: CLOSE
+  - m_Id: 641740066816
+    m_Key: TIPS_TEXTS
     m_Metadata:
       m_Items: []
-  - m_Id: 743465548795904
-    m_Key: GHOST
-    m_Metadata:
-      m_Items: []
-  - m_Id: 746109923250176
-    m_Key: RESURRECT
+  - m_Id: 684744265728
+    m_Key: 'TIPS_HEADERS
+
+'
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 3370741082550960169
+    rid: 3370741129060548623
   references:
     version: 2
     RefIds:
-    - rid: 3370741082550960169
+    - rid: 3370741129060548623
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1657203442332
+        m_CustomEpoch: 1657381051141

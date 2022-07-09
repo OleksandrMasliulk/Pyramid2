@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
-using UnityEngine.Localization;
+
 public class SettingsWindow : MonoBehaviour
 {
     //Graphics settings
@@ -28,6 +28,7 @@ public class SettingsWindow : MonoBehaviour
 
     [SerializeField] private SerializableResolution[] _resolutions;
     [SerializeField] private string[] _qualityLevels;
+    [SerializeField] private string[] _windowModeOptions; 
     [SerializeField] private AudioMixer _mixer;
     private Settings _settings;
 
@@ -94,7 +95,7 @@ public class SettingsWindow : MonoBehaviour
         _mixer.SetFloat("SoundVolume", _settings.SoundVolume);
         _mixer.SetFloat("MusicVolume", _settings.MusicVolume);
 
-        StartCoroutine(LocalizationHandler.Instance.SetLocale(_settings.Language));
+        LocalizationHandler.Instance.SetLocale(_settings.Language);
 
         LocalizeSettingsDropdowns();
 
@@ -216,19 +217,19 @@ public class SettingsWindow : MonoBehaviour
         _mixer.SetFloat("SoundVolume", settings.SoundVolume);
         _mixer.SetFloat("MusicVolume", settings.MusicVolume);
 
-        StartCoroutine(LocalizationHandler.Instance.SetLocale(settings.Language));
+        LocalizationHandler.Instance.SetLocale(settings.Language);
     }
 
     public void LocalizeSettingsDropdowns()
     {
-        foreach (var opt in _qualityDropdown.options.ToArray())
+        for (int i = 0; i < _qualityLevels.Length; i++)
         {
-            opt.text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, opt.text);
+            _qualityDropdown.options[i].text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, _qualityLevels[i]);
         }
 
-        foreach (var opt in _windowDropdown.options.ToArray())
+        for (int i = 0; i < _windowModeOptions.Length; i++)
         {
-            opt.text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, opt.text);
+            _windowDropdown.options[i].text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, _windowModeOptions[i]);
         }
     }
 }

@@ -1688,6 +1688,10 @@ MonoBehaviour:
   - OPTION_LOW
   - OPTION_MEDIUM
   - OPTION_HIGH
+  _windowModeOptions:
+  - OPTION_FULLSCREEN
+  - OPTION_FULLSCREEN_WINDOW
+  - OPTION_WINDOWED
   _mixer: {fileID: 24100000, guid: e31671f7584c1854987b5fec05ae551a, type: 2}
 --- !u!1 &145294229
 GameObject:

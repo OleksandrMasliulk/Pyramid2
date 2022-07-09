@@ -10,59 +10,43 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: UI Shared Data
+  m_Name: MessagePanels Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: UIButtons
-  m_TableCollectionNameGuidString: e6f3ba487a0d2444da9e699ee0958a76
+  m_TableCollectionName: MessagePanels
+  m_TableCollectionNameGuidString: 68efe0bdb242f41468c65bf8357a3a97
   m_Entries:
-  - m_Id: 98204405760
-    m_Key: APPLY
+  - m_Id: 549243080704
+    m_Key: PLAYER_WIN
     m_Metadata:
       m_Items: []
-  - m_Id: 143712604160
-    m_Key: PLAY
+  - m_Id: 552732741632
+    m_Key: PLAYER_LOSE
     m_Metadata:
       m_Items: []
-  - m_Id: 220959100928
-    m_Key: MAIN_MENU
+  - m_Id: 799538171904
+    m_Key: LOSE_MESSAGE
     m_Metadata:
       m_Items: []
-  - m_Id: 246422720512
-    m_Key: QUIT
+  - m_Id: 646928420864
+    m_Key: MENU_TOOLTIP
     m_Metadata:
       m_Items: []
-  - m_Id: 269415895040
-    m_Key: SETTINGS
+  - m_Id: 596655493120
+    m_Key: GOLD_COLLECTED
     m_Metadata:
       m_Items: []
-  - m_Id: 2419088969728
-    m_Key: BACK
-    m_Metadata:
-      m_Items: []
-  - m_Id: 2490392137728
-    m_Key: REVERT
-    m_Metadata:
-      m_Items: []
-  - m_Id: 743428655697920
-    m_Key: CLOSE
-    m_Metadata:
-      m_Items: []
-  - m_Id: 743465548795904
-    m_Key: GHOST
-    m_Metadata:
-      m_Items: []
-  - m_Id: 746109923250176
-    m_Key: RESURRECT
+  - m_Id: 1421821890560
+    m_Key: MENU_LABEL
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 3370741082550960169
+    rid: 3370741129060548622
   references:
     version: 2
     RefIds:
-    - rid: 3370741082550960169
+    - rid: 3370741129060548622
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1657203442332
+        m_CustomEpoch: 1657380315224

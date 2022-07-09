@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tutorial_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 106c4da7bd16a0540b752007b3dd3e5a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 441260724224
+    m_Localized: TIPS
+    m_Metadata:
+      m_Items: []
+  - m_Id: 641740066816
+    m_Localized: "With the W A S D buttons, \nthe player can move\n\n\nTo select
+      an item,\nuse 1 2 3 4\nto use the item, press F,\nTo throw item use G"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 684744265728
+    m_Localized: 'Movement
+
+
+      Items'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417437077504
+    m_Localized: Show tips
+    m_Metadata:
+      m_Items: []
+  - m_Id: 309114982400
+    m_Localized: 'Be careful!
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339964088320
+    m_Localized: "\nArrows are triggered by pressure plates\nif you stand on such
+      a do not rush to run forward.\r\n\nTry not to step on the spikes on the floor.\r\n\nFire
+      traps work periodically \nSometimes it's better to wait a little."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 215070298112
+    m_Localized: YOU DIED
+    m_Metadata:
+      m_Items: []
+  - m_Id: 144790540288
+    m_Localized: Congratulations!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 234464759808
+    m_Localized: "Now you can be called a \n\"Treasure Hunter\""
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

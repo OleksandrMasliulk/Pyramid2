@@ -27,9 +27,19 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-de
-    - Preload
   - m_GUID: 1c8cdd34552cb1e49abacc10afa18d08
     m_Address: UIButtons_de
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-de
+  - m_GUID: 07de7db77bcad1144a21edd44e92c0a0
+    m_Address: MessagePanels_de
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-de
+    - Preload
+  - m_GUID: 2883789ea8b221d49858a21c9fc5d752
+    m_Address: Tutorial_de
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-de

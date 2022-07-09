@@ -46,6 +46,18 @@ MonoBehaviour:
     m_Localized: Revert
     m_Metadata:
       m_Items: []
+  - m_Id: 743428655697920
+    m_Localized: Close
+    m_Metadata:
+      m_Items: []
+  - m_Id: 743465548795904
+    m_Localized: "Continue\n as Ghost"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 746109923250176
+    m_Localized: Resurrect
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
