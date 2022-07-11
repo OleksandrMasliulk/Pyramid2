@@ -10,7 +10,7 @@ public class DialogueNPC : NPCBase, IInterractible
 
     private void Awake()
     {
-        tooltip = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.TOOLTIPS, "SPEAK");
+        tooltip = "SPEAK";
     }
 
     public void Interract(PlayerController user)
