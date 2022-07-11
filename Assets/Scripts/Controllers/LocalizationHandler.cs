@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using UnityEngine.Localization;
 using System.Threading.Tasks;
 
 public class LocalizationHandler : MonoBehaviour
@@ -12,7 +13,8 @@ public class LocalizationHandler : MonoBehaviour
     {
         BUTTONS,
         SETTINGS,
-        TOOLTIPS
+        TOOLTIPS,
+        NPCs
     }
 
     private void Awake()
@@ -46,8 +48,11 @@ public class LocalizationHandler : MonoBehaviour
         //{
         //    op.Completed += (op) => Debug.Log(op.Result);
         //}
+    }
 
-        return null;
+    public string GetTextLocalized(LocalizedString reference)
+    {
+        return LocalizationSettings.StringDatabase.GetLocalizedString(reference.TableReference, reference.TableEntryReference);
     }
 
     private string GetTableName(Tables table)
@@ -60,6 +65,8 @@ public class LocalizationHandler : MonoBehaviour
                 return "SettingsWindow";
             case Tables.TOOLTIPS:
                 return "Tooltips";
+            case Tables.NPCs:
+                return "NPCNames";
             default:
                 return null;
         }

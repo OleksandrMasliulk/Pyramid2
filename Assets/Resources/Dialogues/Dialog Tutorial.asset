@@ -13,61 +13,260 @@ MonoBehaviour:
   m_Name: Dialog Tutorial
   m_EditorClassIdentifier: 
   dialogueMembers:
-  - name: 
-    image: {fileID: 0}
-  - name: Guardian of the Tomb
+  - localizedName:
+      m_TableReference:
+        m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+      m_TableEntryReference:
+        m_KeyId: 11940155392
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    name: player
+    image: {fileID: -667418024, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
+  - localizedName:
+      m_TableReference:
+        m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+      m_TableEntryReference:
+        m_KeyId: 32085397504
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+    name: npc
     image: {fileID: -1639226507, guid: 70e33c3485c65da42b957971612386e7, type: 3}
-  - name: Kuba Vons
-    image: {fileID: -1899033494, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
   dialogue:
   - speaker:
-      name: Kuba Vons
-      image: {fileID: -1899033494, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
-    line: 'Hallow ? Where am I? '
+      localizedName:
+        m_TableReference:
+          m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+        m_TableEntryReference:
+          m_KeyId: 11940155392
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      name: player
+      image: {fileID: 0}
+    localizedLine:
+      m_TableReference:
+        m_TableCollectionName: GUID:602608e91bdd6c64ba6c49e21bc3ad0f
+      m_TableEntryReference:
+        m_KeyId: 6975671783424
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - speaker:
-      name: Guardian of the Tomb
+      localizedName:
+        m_TableReference:
+          m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+        m_TableEntryReference:
+          m_KeyId: 32085397504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      name: npc
       image: {fileID: -1639226507, guid: 70e33c3485c65da42b957971612386e7, type: 3}
-    line: Hi, you're in the artifact repository.
+    localizedLine:
+      m_TableReference:
+        m_TableCollectionName: GUID:602608e91bdd6c64ba6c49e21bc3ad0f
+      m_TableEntryReference:
+        m_KeyId: 8249624514560
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - speaker:
-      name: Kuba Vons
-      image: {fileID: -1899033494, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
-    line: "How did I get here ?\r"
+      localizedName:
+        m_TableReference:
+          m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+        m_TableEntryReference:
+          m_KeyId: 11940155392
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      name: player
+      image: {fileID: 0}
+    localizedLine:
+      m_TableReference:
+        m_TableCollectionName: GUID:602608e91bdd6c64ba6c49e21bc3ad0f
+      m_TableEntryReference:
+        m_KeyId: 8280981131264
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - speaker:
-      name: Guardian of the Tomb
+      localizedName:
+        m_TableReference:
+          m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+        m_TableEntryReference:
+          m_KeyId: 32085397504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      name: npc
       image: {fileID: -1639226507, guid: 70e33c3485c65da42b957971612386e7, type: 3}
-    line: 'Here treasure seekers test their skills, you can''t die here.
-
-      The
-      sacred artifact does not allow the soul to escape to another world, and otherworldly
-      fractures will return your body.'
+    localizedLine:
+      m_TableReference:
+        m_TableCollectionName: GUID:602608e91bdd6c64ba6c49e21bc3ad0f
+      m_TableEntryReference:
+        m_KeyId: 8305643638784
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - speaker:
-      name: Kuba Vons
-      image: {fileID: -1899033494, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
-    line: Am I immortal here ?
+      localizedName:
+        m_TableReference:
+          m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+        m_TableEntryReference:
+          m_KeyId: 11940155392
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      name: player
+      image: {fileID: 0}
+    localizedLine:
+      m_TableReference:
+        m_TableCollectionName: GUID:602608e91bdd6c64ba6c49e21bc3ad0f
+      m_TableEntryReference:
+        m_KeyId: 8356931588096
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - speaker:
-      name: Guardian of the Tomb
+      localizedName:
+        m_TableReference:
+          m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+        m_TableEntryReference:
+          m_KeyId: 32085397504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      name: npc
       image: {fileID: -1639226507, guid: 70e33c3485c65da42b957971612386e7, type: 3}
-    line: Yes.
+    localizedLine:
+      m_TableReference:
+        m_TableCollectionName: GUID:602608e91bdd6c64ba6c49e21bc3ad0f
+      m_TableEntryReference:
+        m_KeyId: 8403685494784
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - speaker:
-      name: Kuba Vons
-      image: {fileID: -1899033494, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
-    line: How do I pass the test ?
+      localizedName:
+        m_TableReference:
+          m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+        m_TableEntryReference:
+          m_KeyId: 11940155392
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      name: player
+      image: {fileID: 0}
+    localizedLine:
+      m_TableReference:
+        m_TableCollectionName: GUID:602608e91bdd6c64ba6c49e21bc3ad0f
+      m_TableEntryReference:
+        m_KeyId: 8437743243264
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - speaker:
-      name: Guardian of the Tomb
+      localizedName:
+        m_TableReference:
+          m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+        m_TableEntryReference:
+          m_KeyId: 32085397504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      name: npc
       image: {fileID: -1639226507, guid: 70e33c3485c65da42b957971612386e7, type: 3}
-    line: "Go through all the traps and avoid the terrible fate of being caught by
-      a mummy, \r\ncollect as many treasures as possible and we will agree that you
-      deserve the title of Treasure Hunter."
+    localizedLine:
+      m_TableReference:
+        m_TableCollectionName: GUID:602608e91bdd6c64ba6c49e21bc3ad0f
+      m_TableEntryReference:
+        m_KeyId: 8473541627904
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - speaker:
-      name: Guardian of the Tomb
+      localizedName:
+        m_TableReference:
+          m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+        m_TableEntryReference:
+          m_KeyId: 32085397504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      name: npc
       image: {fileID: -1639226507, guid: 70e33c3485c65da42b957971612386e7, type: 3}
-    line: Take the items that are in this room, they will help you cope with the
-      test.
+    localizedLine:
+      m_TableReference:
+        m_TableCollectionName: GUID:602608e91bdd6c64ba6c49e21bc3ad0f
+      m_TableEntryReference:
+        m_KeyId: 8497088450560
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - speaker:
-      name: Kuba Vons
-      image: {fileID: -1899033494, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
-    line: 'Thank you, goodbye. '
+      localizedName:
+        m_TableReference:
+          m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+        m_TableEntryReference:
+          m_KeyId: 11940155392
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      name: player
+      image: {fileID: 0}
+    localizedLine:
+      m_TableReference:
+        m_TableCollectionName: GUID:602608e91bdd6c64ba6c49e21bc3ad0f
+      m_TableEntryReference:
+        m_KeyId: 8516541632512
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
   - speaker:
-      name: Guardian of the Tomb
+      localizedName:
+        m_TableReference:
+          m_TableCollectionName: GUID:32508ea593ee4674ba323282c66fd6e8
+        m_TableEntryReference:
+          m_KeyId: 32085397504
+          m_Key: 
+        m_FallbackState: 0
+        m_WaitForCompletion: 0
+        m_LocalVariables: []
+      name: npc
       image: {fileID: -1639226507, guid: 70e33c3485c65da42b957971612386e7, type: 3}
-    line: 'Good luck ! '
+    localizedLine:
+      m_TableReference:
+        m_TableCollectionName: GUID:602608e91bdd6c64ba6c49e21bc3ad0f
+      m_TableEntryReference:
+        m_KeyId: 8552906248192
+        m_Key: 
+      m_FallbackState: 0
+      m_WaitForCompletion: 0
+      m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

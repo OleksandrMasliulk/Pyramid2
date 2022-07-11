@@ -44,6 +44,16 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-uk-UA
     - Preload
+  - m_GUID: 393960f34099af44b8d5e3fc45da10da
+    m_Address: NPCNames_uk-UA
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-uk-UA
+  - m_GUID: 0dcda51da55b15740853e563658d9094
+    m_Address: TutorialDialogue_uk-UA
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-uk-UA
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
   m_SchemaSet:

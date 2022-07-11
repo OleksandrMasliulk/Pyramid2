@@ -10,63 +10,65 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: UI Shared Data
+  m_Name: TutorialDialogue Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: UIButtons
-  m_TableCollectionNameGuidString: e6f3ba487a0d2444da9e699ee0958a76
+  m_TableCollectionName: TutorialDialogue
+  m_TableCollectionNameGuidString: 602608e91bdd6c64ba6c49e21bc3ad0f
   m_Entries:
-  - m_Id: 98204405760
-    m_Key: APPLY
+  - m_Id: 6975671783424
+    m_Key: PLAYER_LINE1
     m_Metadata:
       m_Items: []
-  - m_Id: 143712604160
-    m_Key: PLAY
+  - m_Id: 8249624514560
+    m_Key: NPC_LINE1
     m_Metadata:
       m_Items: []
-  - m_Id: 220959100928
-    m_Key: MAIN_MENU
+  - m_Id: 8280981131264
+    m_Key: 'PLAYER_LINE2
+
+'
     m_Metadata:
       m_Items: []
-  - m_Id: 246422720512
-    m_Key: QUIT
+  - m_Id: 8305643638784
+    m_Key: NPC_LINE2
     m_Metadata:
       m_Items: []
-  - m_Id: 269415895040
-    m_Key: SETTINGS
+  - m_Id: 8356931588096
+    m_Key: PLAYER_LINE3
     m_Metadata:
       m_Items: []
-  - m_Id: 2419088969728
-    m_Key: BACK
+  - m_Id: 8403685494784
+    m_Key: NPC_LINE3
     m_Metadata:
       m_Items: []
-  - m_Id: 2490392137728
-    m_Key: REVERT
+  - m_Id: 8437743243264
+    m_Key: PLAYER_LINE4
     m_Metadata:
       m_Items: []
-  - m_Id: 743428655697920
-    m_Key: CLOSE
+  - m_Id: 8473541627904
+    m_Key: NPC_LINE4
     m_Metadata:
       m_Items: []
-  - m_Id: 743465548795904
-    m_Key: GHOST
+  - m_Id: 8497088450560
+    m_Key: NPC_LINE5
     m_Metadata:
       m_Items: []
-  - m_Id: 746109923250176
-    m_Key: RESURRECT
+  - m_Id: 8516541632512
+    m_Key: PLAYER_LINE5
     m_Metadata:
       m_Items: []
-  - m_Id: 1417305513807872
-    m_Key: DIALOGUE_CONTINUE
+  - m_Id: 8552906248192
+    m_Key: NPC_LINE6
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 3370741082550960169
+    rid: 3370741170951684099
   references:
     version: 2
     RefIds:
-    - rid: 3370741082550960169
+    - rid: 3370741170951684099
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1657203442332
+        m_CustomEpoch: 1657538042181
