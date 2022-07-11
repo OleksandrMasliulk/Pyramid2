@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tutorial_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: 106c4da7bd16a0540b752007b3dd3e5a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 144790540288
+    m_Localized: Gratulacje!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 215070298112
+    m_Localized: "UMAR\u0141E\u015A"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 234464759808
+    m_Localized: "Teraz mo\u017Cna nazwa\u0107\r\n\"Poszukiwacz Skarb\xF3w\""
+    m_Metadata:
+      m_Items: []
+  - m_Id: 309114982400
+    m_Localized: "Ostro\u017Cnie!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339964088320
+    m_Localized: "\nStrza\u0142y s\u0105 wyzwalane przez p\u0142yty dociskowe\r\nje\u015Bli
+      stoisz na takim nie spiesz si\u0119, aby biec do przodu.\r\n\nStaraj si\u0119
+      nie nadepn\u0105\u0107 na kolce na pod\u0142odze."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417437077504
+    m_Localized: "Poka\u017C porady"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441260724224
+    m_Localized: Porady
+    m_Metadata:
+      m_Items: []
+  - m_Id: 641740066816
+    m_Localized: "Z przyciskami W A S D,\r\ngracz mo\u017Ce si\u0119 porusza\u0107\n\n\nAby
+      wybra\u0107 element,\r\nwykorzystanie 1 2 3 4\r\naby u\u017Cy\u0107 elementu,
+      naci\u015Bnij klawisz F,\r\nAby rzuci\u0107 przedmiot u\u017Cyj G\r\n"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 684744265728
+    m_Localized: 'Ruch
+
+      
+
+      Przedmioty'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

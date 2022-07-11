@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tutorial_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 106c4da7bd16a0540b752007b3dd3e5a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 144790540288
+    m_Localized: "Herzlichen Gl\xFCckwunsch!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 215070298112
+    m_Localized: DU BIST GESTORBEN
+    m_Metadata:
+      m_Items: []
+  - m_Id: 234464759808
+    m_Localized: 'Jetzt kannst du a genannt werden
+
+      "Schatzsucher"'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 309114982400
+    m_Localized: Sei vorsichtig!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 339964088320
+    m_Localized: "\nPfeile werden von den Druckplatten ausgel\xF6st\nwenn Sie auf
+      einem solchen stehen, beeilen Sie sich nicht, vorw\xE4rts zu rennen.\n\nVersuche
+      nicht auf die Stacheln auf dem Boden zu treten."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 417437077504
+    m_Localized: Tipps anzeigen
+    m_Metadata:
+      m_Items: []
+  - m_Id: 441260724224
+    m_Localized: TIPP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 641740066816
+    m_Localized: "Mit den W A S D-Tasten,\r\nder Spieler kann sich bewegen\n\n\nSo
+      w\xE4hlen Sie ein Element aus,\r\nverwendung 1 2 3 4\r\num das Element zu verwenden,
+      dr\xFCcken Sie F,\r\nUm Gegenst\xE4nde zu werfen, benutze G"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 684744265728
+    m_Localized: "\rBewegung\r\n\r\nGegenst"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

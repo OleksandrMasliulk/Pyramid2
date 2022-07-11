@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Localization-String-Tables-Ukrainian (Ukraine) (uk-UA)
+  m_EditorClassIdentifier: 
+  m_GroupName: Localization-String-Tables-Ukrainian (Ukraine) (uk-UA)
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 3a6db2ec232d399408439ca49c891cff
+  m_SerializeEntries:
+  - m_GUID: e4c6b0084e163f944bbe93fc7aa28965
+    m_Address: UIButtons_uk-UA
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-uk-UA
+  - m_GUID: 74f6304eef2440940a6f470796699b79
+    m_Address: SettingsWindow_uk-UA
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-uk-UA
+  - m_GUID: d297aec8bebe056468ad6b27f39b28f7
+    m_Address: Tooltips_uk-UA
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-uk-UA
+  - m_GUID: 04a59cb188ce922419f2f887f15d339c
+    m_Address: MessagePanels_uk-UA
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-uk-UA
+    - Preload
+  - m_GUID: 684db4e6526b5d24b9741eea81725e09
+    m_Address: Tutorial_uk-UA
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-uk-UA
+    - Preload
+  m_ReadOnly: 1
+  m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 147180469a9650242866d318748a2aad, type: 2}
+    - {fileID: 11400000, guid: 450c8a7babc8ae040966f1f3b47bd85a, type: 2}

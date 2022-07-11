@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tooltips_de
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: de
+  m_SharedData: {fileID: 11400000, guid: 21690e526c863f140b96c0182feccec5, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 9268383744
+    m_Localized: "Dr\xFCcken Sie E, um zu interagieren"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 42403385344
+    m_Localized: "Dr\xFCcken Sie E, um zu w\xE4hlen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 232363413504
+    m_Localized: "Dr\xFCcken Sie E, um zu \xF6ffnen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 279314452480
+    m_Localized: "Dr\xFCcken Sie E, um sich zu verstecken"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 308297093120
+    m_Localized: "Dr\xFCcken Sie E, um das Versteck zu verlassen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 994313261056
+    m_Localized: "Dr\xFCcken Sie E, um zu schlie\xDFen"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1567821418496
+    m_Localized: "Dr\xFCcken Sie E, um zu sprechen"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

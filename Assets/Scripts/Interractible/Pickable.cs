@@ -12,7 +12,7 @@ public class Pickable : MonoBehaviour, IInterractible
 
     private void Awake()
     {
-        tooltip = "Press E to PickUp";
+        tooltip = "PICK_UP";
 
         Init();
     }

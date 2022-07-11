@@ -6,7 +6,7 @@ TextureImporter:
   serializedVersion: 11
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 0
+    enableMipMap: 1
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -66,10 +66,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 512
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -1481,8 +1481,8 @@ TextureImporter:
       IndianaRunSF6: -1442886585
       IndianaDeath2: 281287619
       IndianaRunSB3: 1467774478
-      IndianaWalkSF2: -241346728
       IndianaDeath5: -876860316
+      IndianaWalkSF2: -241346728
       IndianaRunF3: -214714682
       IndianaWalkB1: 1702750141
       IndianaRunB5: -194874288

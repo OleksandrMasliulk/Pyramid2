@@ -13,7 +13,7 @@ public class Lever : MonoBehaviour, IInterractible
 
     private void Start()
     {
-        tooltip = "Press E to Interract";
+        tooltip = "INTERRACT";
         isOn = false;
         anim.SetBool("On", isOn);
     }
