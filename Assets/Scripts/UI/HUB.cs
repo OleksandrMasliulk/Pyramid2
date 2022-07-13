@@ -2,23 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.AddressableAssets;
 
 public class HUB : MonoBehaviour
 {
-    private int chosenMap;
+    private AssetReference chosenMap;
 
     private void Start()
     {
-        chosenMap = 1;
+        chosenMap = LevelLoader.Instance._tutorialSceneReference;
     }
 
     public void StartGame()
     {
-        LevelManager.Instance.LoadLevel(chosenMap);
+        LevelLoader.Instance.LoadLevel(chosenMap);
     }
 
-    public void ChoseMap(int index)
+    public void ChoseMap(AssetReference reference)
     {
-        chosenMap = index;
+        chosenMap = reference;
     }
 }

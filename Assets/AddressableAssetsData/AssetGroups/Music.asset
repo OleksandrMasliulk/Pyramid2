@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Music
+  m_EditorClassIdentifier: 
+  m_GroupName: Music
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 7e6448e67a090cc40a587bc226413be5
+  m_SerializeEntries:
+  - m_GUID: 999e0232b018b324291a0d0caf0a3ee7
+    m_Address: Assets/Audio/New sound/Bezymstwo.ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ca409dba6d0cf1e459d838d4193075d9
+    m_Address: Assets/Audio/mummy_chase_trance (online-audio-converter.com).ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eb485786d043a3e4c85a0e132680cf0d
+    m_Address: Assets/Audio/egypt_loop_93bpm (online-audio-converter.com).ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ac315cbbf25d501488744e7b409a12aa
+    m_Address: Assets/Audio/egypt_try_2 (online-audio-converter.com).ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 8249da8f86de7a045b7e2b3d04611d75, type: 2}
+    - {fileID: 11400000, guid: 4cfc3c8b547594b48af9801eb16a8e41, type: 2}

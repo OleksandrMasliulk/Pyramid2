@@ -1,0 +1,485 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Duplicate Asset Isolation
+  m_EditorClassIdentifier: 
+  m_GroupName: Duplicate Asset Isolation
+  m_Data:
+    m_SerializedData: []
+  m_GUID: e787c9d8663873e4f9003eb0c4dd0ad7
+  m_SerializeEntries:
+  - m_GUID: 652f7165b7c30ab46af6c4aad90a639b
+    m_Address: Assets/Imported Pacakges/Thaleah_PixelFont/ThaleahFat.fontsettings
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dc4d336e170462e4d898100acfba22ee
+    m_Address: Assets/Graphics/Sprites/UI/GUI.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e31671f7584c1854987b5fec05ae551a
+    m_Address: Assets/Scripts/Controllers/Audio/AudioMixer.mixer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fe393ace9b354375a9cb14cdbbc28be4
+    m_Address: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e3265ab4bf004d28a9537516768c1c75
+    m_Address: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4e37780224bf09547bedea9b8518d85e
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure5_2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1ee8ac740c0c65b47b7a4da840176de8
+    m_Address: Assets/Resources_moved/Usable Items/Flare.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b12f350dc256ad146bc81e97130afbee
+    m_Address: Assets/Resources_moved/Usable Items/Default Flashlight.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a97c105638bdf8b4a8650670310a4cd3
+    m_Address: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e2ba41f6f2ab23c4ca92c67144f262d7
+    m_Address: Assets/Graphics/Shaders/Flame.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 02f7b617efaa0ce468915b18b6e1b1f2
+    m_Address: Assets/Graphics/Materials/Lights.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4083a62c9c2440a408f13ba504161dc9
+    m_Address: Assets/Graphics/Materials/Glow.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 844ef2dc465115341b7c2aabd020e148
+    m_Address: Assets/Animations/UI/Tutorial/Hide.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 62ffcb6f344c9554d8cc5d34710363ec
+    m_Address: Assets/Animations/UI/Tutorial/Show.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f29cab01cfd1d17478902f3fd5effd83
+    m_Address: Assets/Animations/Traps/Spike/Graphics.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 92ebc933d89822d4fb3495c2eb5f19dd
+    m_Address: Assets/Animations/Interractible/Door/Door.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d6d1cf55f649b674aa5161011ffed018
+    m_Address: Assets/Animations/Traps/Flamethrower/Flame.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ec835d26f9268e04ebdc119c3f055eb8
+    m_Address: Assets/Animations/Interractible/Lever/Lever.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 68bee476d2b015f46a393c7a644cbf30
+    m_Address: Assets/Animations/Lights/TorchSide.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a24939d67a7cade4b94bdb67fe6f1915
+    m_Address: Assets/Animations/Lights/CandleStick.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 243a2f6707dd2b346afe72db4242cc37
+    m_Address: Assets/Animations/Lights/Torch.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 10fed1ddf5f45c74691bab8b7faa6ad9
+    m_Address: Assets/Animations/Interractible/Cover/Graphics.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 585188cdc4600544eb408bee749e4b3a
+    m_Address: Assets/Imported Pacakges/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d61235c04c40a0c418485b2d4d3e5062
+    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/HideSpot.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 534cc15203b238f4fa7daf98c2ad339e
+    m_Address: Assets/Graphics/Sprites/Traps/Traps.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5df3de94f49e50b43b7e55eca4f60378
+    m_Address: Assets/Graphics/Sprites/Tileset/Egyptian/PiramidTails.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4c1c73b52194a4746be68d53b6930b4b
+    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/Interactable.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d9c469667bec14c45a384ccb63a83ab3
+    m_Address: Assets/Graphics/Sprites/Light&FX/FireAnim.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b90707f6bf76ed74b9cc3fbde634189e
+    m_Address: Assets/Graphics/Sprites/Light&FX/Particles.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2c9dd65abfbb1fd499eb95b6288c7962
+    m_Address: Assets/Graphics/Sprites/Light&FX/FlameAnim.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 658d8bdd4f501b24faa02c07f7752b08
+    m_Address: Assets/Graphics/Sprites/Light&FX/LightAssets.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 14299cdda61b85e4bbe27b7758b51cc8
+    m_Address: Assets/Graphics/Sprites/Light&FX/Scarabaeus.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7ae2d849ea41d824ca973bbdae620b7b
+    m_Address: Assets/Prefabs/Particles/Cover Dust.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b82070ba07908f449ba081b5672e6045
+    m_Address: Assets/Prefabs/Particles/Beetles/Beetles Run.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c1d66410a7c6883499eca8acd5915532
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_39.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3b7f9b2043e2e1d498322fd4b7f09472
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_76.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4d64bc70a369c964bbdf02e8df86ffba
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_99.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6cc203c19a4a10241bce2c0e83e59b56
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_74.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d31787e123913dd45aa36b023b0b363b
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_38.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e2bffbf21a60d4b4b9b547429bea53f1
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_73.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ae6804e3518cce244bb02d53f610da8e
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_15.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 95ad00f3a27770f4d8716eb3215e9873
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_0.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8b42751488a057c4ca0587fd8214b478
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_112.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5bacc554bd181144fa79338ae6c26ab9
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_69.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a8b77764f26a61a44ade9c204a9024e4
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_32.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b7f26575ce22c7449a361a988eee2633
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_47.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5e064b9502c278c49912c343554b9ccb
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_12.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9bf51d956cc5c934f961bfc931843fed
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_96.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e3def4d53815c7844b55519749b263eb
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_94.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4756c92607bfbb34d8c6b0d6923ce93c
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_53.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3ae8915609e4fc345acae0f6e878c1b2
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_35.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 42a3ee568d61d2b409d6ccccce2647ea
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_36.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 54313da65a856f74a919585adc54b9de
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_16.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 14b82be62ba5c8f46a06be03e24f8421
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_89.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b67f09171fd591b4caa426e8223210dc
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_54.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fadc92379d02b1b41bac11c452e615d7
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_50.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b76f224749edaae4093f90921f54bbb6
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_88.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8fed60c791f69164482bdc86e704e70b
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_101.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c4e13f08734947b41ae34d6ae12efcfb
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_24.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3cca8118455eb7d40be4bb673f10e4a2
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_107.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c20acb28eee77c242832931c2f63e325
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_18.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 256b54382ff35404dba8e929a648388d
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_91.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 52f9cb48f205a784e8b96d0e148789e5
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_106.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 55fbf968c3f3e1e43b1872436ce7a7cc
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_10.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 768dc379bf0148d4e9dc22785dcbed81
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_97.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3417f29925f53df48ae38515afa8773d
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_92.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d46cec99ea645ef4c96988fa27133d24
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_86.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c50e420a477c41d44b4e3df645ecd97f
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_19.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4a5cb22a3e5a306459df0412cfd41e8f
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_75.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5922f78abb1fe6a4abeee7dd3fba5ad3
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_25.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 02b87ada9d9abd24fa2fe39522800bf6
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_90.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0e37bceaaf7407542b9c63e1b0f82398
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_29.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e540de3bb60c9614ca4e8ce9251d30c6
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_68.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fcf7d37bbb1aade439c6e5b3c05b15d3
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_5.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 0101089bdbc4e334dbcade93495a1eb5
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_70.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d2c0399b37d381046909b70c27f0af96
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_45.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 28f2ecbbf6a326644a3a8a43ee43c9cc
+    m_Address: Assets/Scenes/Piramid (v 0 1)/Global Volume Profile.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3a27af1cfb47f0940bbeabc0f720f3af
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_98.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d837a86c9667b6942abafae638a6a144
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_109.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ed870c8ccfb1245438cd1de7a70d63e8
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_77.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 965f9f8c1726a014cab02250fd6c696e
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_87.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: df283e9cf640f8147bd6481b893e00e0
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_4.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3c4e650ddc4fc804bb756973b15b22d7
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_102.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5d41421db7a6cde49b51a87d4ea09fc9
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_108.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6d2684ed72419e641a027e36c4f54cf5
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_95.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a0f39ced8c76fa549a623737084c3188
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_100.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2f8f300e5e2071c4d8bbcade3070b728
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_93.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8ccf206eaac0cfd4d9f0075463a9f2be
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_111.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 826a8f8ed1cec7a479e7a0d66eb74190
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_3.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6d7b2b4f2ec64884db82182303693f03
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_56.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b6c44daf37dcbe14d89204f7fec87b41
+    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_103.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 84fdc382284727b43b43bb43942b1d3b
+    m_Address: Assets/Animations/Interractible/Cover/Cover_Closed.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c3673e6455091724fad1ff6b25a9cc7f
+    m_Address: Assets/Animations/Interractible/Cover/Cover_Opened.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 296baabe43a57ea408a527ce884d0fe2
+    m_Address: Assets/Animations/Items/Flare.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 70e33c3485c65da42b957971612386e7
+    m_Address: Assets/Graphics/Sprites/Player/Archeologist2.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e260cfa7296ee7642b167f1eb5be5023
+    m_Address: Packages/com.unity.render-pipelines.universal/Shaders/2D/Sprite-Lit-Default.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b9e463112a966804bacb3892d6df016d
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Flashlight.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: df6d36516b218f741b0e4aebcc9e7186
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a77f7d61efb44744bbc0ef33646f26d1
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Flare.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1c7dcf614be375a40ba8a412ece057db
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure10_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c8349ac169d928a4f869c06310c031cf
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Paint.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7f0e54153fb925d4a8470b4e73856c58
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure10_2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: eb398cd73696e0e4abc855e51bb7ed5c
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Medicine.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d0e3a87b5f4c92642b85a3669397b2a2
+    m_Address: Assets/Prefabs/Characters/Mummy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fbce028d41cec6b449a05726ffda213e
+    m_Address: Assets/Prefabs/Characters/Player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8c7d8e0ba47473940965e2a8c20372a9
+    m_Address: Assets/Graphics/Sprites/Player/Indiana.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aae4a91eb19c0be44a85959ebab41819
+    m_Address: Assets/Graphics/Sprites/Mummy/Mummy.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 46ffd640c95149c47b163493d2255987
+    m_Address: Assets/PostProcessing/SanityFX/Sanity25-50.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ac0043312053d664c98fee18a0f317f2
+    m_Address: Assets/PostProcessing/SanityFX/Sanity0-25.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 59c6b73a8f4365246bba170b73f42acc
+    m_Address: Assets/PostProcessing/SanityFX/Sanity75-100.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: dcdb9bed0d6cdda4b9ed07261aaf6b70
+    m_Address: Assets/PostProcessing/SanityFX/Sanity50-75.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 65c31fbfbd3aad84b8c3d3542dfeac07
+    m_Address: Assets/PostProcessing/SanityFX/Sanity100.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4331e9274afe6e94690888112f285da9
+    m_Address: Assets/Graphics/Sprites/Player/Tentacles.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: efc2d046806ea2f41b94463556e004e2
+    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/Icons.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8155bf13792b1ad41be22ba0fd3adf76
+    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/TreasureStuffN.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: d037c3d9de49ee043b7720faf9fe8552, type: 2}
+    - {fileID: 11400000, guid: d91f6d9f65e13e34ea0a598289b847cb, type: 2}

@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: DataSO
+  m_EditorClassIdentifier: 
+  m_GroupName: DataSO
+  m_Data:
+    m_SerializedData: []
+  m_GUID: da0ae7327b8e17b4ba781d53a29ccbf8
+  m_SerializeEntries:
+  - m_GUID: e0dd82ca8e242d04bb2f23e37a6760c0
+    m_Address: Assets/Resources_moved/Audio/Soundboards/GameActions Soundboard.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 22341318154536c42a7424a8fbbc242c
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Interractible Soundboard.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 50eca973b29a48345a6436d0d904495c
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Items Soundboard.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 55a7c233620508645b574e45dac58f0b
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Mummy Soundboard.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b1e09a5f6bb8f7f4a84f21be14609e16
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Music Soundboard.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 87f438540b0e1934ebef4e6228e5bdad
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Player1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 573828bce5ab930449160fd73991c03c
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Traps Soundboard.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a3a33aefeb903cb4fb54457c85e083b9
+    m_Address: Assets/Resources_moved/Audio/Soundboards/UI Soundboard.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2071302c424afff41a171c34f65c6039
+    m_Address: Assets/Resources_moved/Characters/Enemies/Default Mummy.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4b4ade3531fb54e41ab259984e9a702c
+    m_Address: Assets/Resources_moved/Characters/AllyNPC/Dialogue NPC.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b1e67627e95eb2e439b987ea28839c3c
+    m_Address: Assets/Resources_moved/Characters/Player/Player1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f2c1b314ecdb70d4ca9449301e837465
+    m_Address: Assets/Resources_moved/Dialogues/Dialog Tutorial.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e5379bd69eb16a94b999b5ff41f15b3a
+    m_Address: Assets/Resources_moved/ItemsSO/Default Flare.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a7e9baed6dd3ad144adb2fcf24111c39
+    m_Address: Assets/Resources_moved/ItemsSO/Default Flashlight.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a9070a22f4b9f6448948b0c0f30ad31e
+    m_Address: Assets/Resources_moved/ItemsSO/Default Medkit.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e5ff4fc0504476944acd98a9b7d087d0
+    m_Address: Assets/Resources_moved/ItemsSO/Default Paint.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 44ccbdf5fc19e09478319c8a065be235
+    m_Address: Assets/Resources_moved/ItemsSO/Treasure5_1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 50721e65ab278ef4990e1e018fce4857
+    m_Address: Assets/Resources_moved/ItemsSO/Treasure5_2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a3c0d49ae815d44478c66a53737dda0f
+    m_Address: Assets/Resources_moved/ItemsSO/Treasure10_1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f22fc26dc9a088145865c0a3024a1e9f
+    m_Address: Assets/Resources_moved/ItemsSO/Treasure10_2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 151d040c8a288514f87952792d50d969, type: 2}
+    - {fileID: 11400000, guid: 62e6f57f7c5818d4b8a94fdf32940594, type: 2}

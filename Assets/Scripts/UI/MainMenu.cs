@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
 
     private IEnumerator InitializationChain()
     {
-        yield return LocalizationHandler.Instance.InitLocales();
+        yield return null; //LocalizationHandler.Instance.InitLocales();
 
         _settings.LoadSettings();
     }

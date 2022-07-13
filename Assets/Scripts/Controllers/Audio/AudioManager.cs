@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using System.Threading.Tasks;
 
 public class AudioManager : MonoBehaviour
 {
@@ -68,7 +69,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioSource PlaySound(SoundAudioClip sound)
     {
-        AudioClip clip = sound.clip;
+        AudioClip clip = sound.clip; //await LoadAudioClip(sound);
         AudioSource audioSource = null;
         if (clip != null && sound.CanPlay())
         {
@@ -280,4 +281,12 @@ public class AudioManager : MonoBehaviour
             Destroy(source.gameObject);
         }
     }
+
+    //private async Task<AudioClip> LoadAudioClip(SoundAudioClip sound)
+    //{
+    //    var op = sound.clip.LoadAssetAsync<AudioClip>();
+
+    //    await op.Task;
+    //    return op.Result;
+    //}
 }
