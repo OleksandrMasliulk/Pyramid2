@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using System.Threading.Tasks;
 
 public class SettingsWindow : MonoBehaviour
 {
@@ -45,7 +46,10 @@ public class SettingsWindow : MonoBehaviour
             _settings = new Settings();
             SaveLoad.Save<Settings>(_settings, SaveLoad.settingsProfilePath);
         }
-        
+
+        //Language
+        _languageDropdown.value = _settings.Language;
+
         //Resolution options setup
         _resolutionDropdown.ClearOptions();
         List<string> resOptions = new List<string>(); 
@@ -56,30 +60,10 @@ public class SettingsWindow : MonoBehaviour
         _resolutionDropdown.AddOptions(resOptions);
         _resolutionDropdown.value = FindResIndex(_settings.Resolution);
 
-        //Quality options setup
-        _qualityDropdown.ClearOptions();
-        List<string> qualityOptions = new List<string>();
-        for (int i = 0; i < _qualityLevels.Length; i++)
-        {
-            qualityOptions.Add(_qualityLevels[i]);
-            
-        }
-        _qualityDropdown.AddOptions(qualityOptions);
-        _qualityDropdown.value = _settings.GraphicsQuality;
-
-        //Window mode setup
-        //foreach (var opt in _windowDropdown.options)
-        //{
-        //}
-        _windowDropdown.value = (int)_settings.Mode - 1;
-
         //Audio
         SetSliderParameters(_masterVolumeSlider, _masterVolumeText, _settings.MasterVolume, true);
         SetSliderParameters(_soundVolumeSlider, _soundVolumeText, _settings.SoundVolume, true);
         SetSliderParameters(_musicVolumeSlider, _musicVolumeText, _settings.MusicVolume, true);
-
-        //Language
-        _languageDropdown.value = _settings.Language;
 
         LocalizeSettingsDropdowns();
         SetDirty(false);
@@ -222,18 +206,34 @@ public class SettingsWindow : MonoBehaviour
         LocalizationHandler.Instance.SetLocale(settings.Language);
     }
 
-    public void LocalizeSettingsDropdowns()
+    public async void LocalizeSettingsDropdowns()
     {
+        List<Task> dropdownsLocalizationTasks = new List<Task>();
+
+        List<string> newQualityOptions = new List<string>();
+        _qualityDropdown.ClearOptions();
         for (int i = 0; i < _qualityLevels.Length; i++)
         {
-            _qualityDropdown.options[i].text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, _qualityLevels[i]);
+            var op = LocalizationHandler.Instance.GetLocalizedTextAsync(LocalizationHandler.Tables.SETTINGS, _qualityLevels[i]);
+            op.Completed += (op) => newQualityOptions.Add(op.Result);
+            dropdownsLocalizationTasks.Add(op.Task);
+            //_qualityDropdown.options[i].text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, _qualityLevels[i]);
         }
-        _qualityDropdown.RefreshShownValue();
-
+        
+        List<string> newWindowOptions = new List<string>();
+        _windowDropdown.ClearOptions();
         for (int i = 0; i < _windowModeOptions.Length; i++)
         {
-            _windowDropdown.options[i].text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, _windowModeOptions[i]);
+            var op = LocalizationHandler.Instance.GetLocalizedTextAsync(LocalizationHandler.Tables.SETTINGS, _windowModeOptions[i]);
+            op.Completed += (op) => newWindowOptions.Add(op.Result);
+            dropdownsLocalizationTasks.Add(op.Task);
+            //_windowDropdown.options[i].text = LocalizationHandler.Instance.GetTextLocalized(LocalizationHandler.Tables.SETTINGS, _windowModeOptions[i]);
         }
-        _windowDropdown.RefreshShownValue();
+
+        await Task.WhenAll(dropdownsLocalizationTasks);
+        _qualityDropdown.AddOptions(newQualityOptions);
+        _qualityDropdown.value = _settings.GraphicsQuality;
+        _windowDropdown.AddOptions(newWindowOptions);
+        _windowDropdown.value = (int)_settings.Mode - 1;
     }
 }

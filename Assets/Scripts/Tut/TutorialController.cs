@@ -67,6 +67,6 @@ public class TutorialController : GameController
 
     public void MainMenu()
     {
-        SceneManager.LoadScene(0);
+        LevelLoader.Instance.MainMenu();
     }
 }

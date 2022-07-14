@@ -63,8 +63,18 @@ public class DialogueManager : MonoBehaviour
 
         DialogueLine dLine = currentLines.Dequeue();
         speakerIcon.sprite = dLine.speaker.image;
-        speakerName.text = dLine.speaker.name;
-        line.text = dLine.line;
+        speakerName.enabled = false;
+        LocalizationHandler.Instance.GetLocalizedTextAsync(dLine.speaker.localizedName).Completed += (op) => 
+        { 
+            speakerName.text = op.Result;
+            speakerName.enabled = true;
+        };
+        line.enabled = false;
+        LocalizationHandler.Instance.GetLocalizedTextAsync(dLine.localizedLine).Completed += (op) => 
+        { 
+            line.text = op.Result;
+            line.enabled = true;
+        };
     }
 
     public void EndDialogue()

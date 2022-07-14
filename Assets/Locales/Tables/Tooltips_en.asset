@@ -46,6 +46,10 @@ MonoBehaviour:
     m_Localized: Press E to Speak
     m_Metadata:
       m_Items: []
+  - m_Id: 1846584202514432
+    m_Localized: Press E to Resurrect
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

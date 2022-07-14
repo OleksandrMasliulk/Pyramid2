@@ -37,6 +37,14 @@ MonoBehaviour:
     m_Address: Assets/Locales/Tables/Tutorial Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
+  - m_GUID: 32508ea593ee4674ba323282c66fd6e8
+    m_Address: Assets/Locales/Tables/NPCNames Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+  - m_GUID: 602608e91bdd6c64ba6c49e21bc3ad0f
+    m_Address: Assets/Locales/Tables/TutorialDialogue Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
   m_SchemaSet:

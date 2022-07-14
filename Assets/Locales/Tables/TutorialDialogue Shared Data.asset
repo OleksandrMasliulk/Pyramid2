@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: TutorialDialogue Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: TutorialDialogue
+  m_TableCollectionNameGuidString: 602608e91bdd6c64ba6c49e21bc3ad0f
+  m_Entries:
+  - m_Id: 6975671783424
+    m_Key: PLAYER_LINE1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8249624514560
+    m_Key: NPC_LINE1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8280981131264
+    m_Key: 'PLAYER_LINE2
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8305643638784
+    m_Key: NPC_LINE2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8356931588096
+    m_Key: PLAYER_LINE3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8403685494784
+    m_Key: NPC_LINE3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8437743243264
+    m_Key: PLAYER_LINE4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8473541627904
+    m_Key: NPC_LINE4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8497088450560
+    m_Key: NPC_LINE5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8516541632512
+    m_Key: PLAYER_LINE5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8552906248192
+    m_Key: NPC_LINE6
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3370741170951684099
+  references:
+    version: 2
+    RefIds:
+    - rid: 3370741170951684099
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1657538042181

@@ -48,7 +48,7 @@ public class IngameUIController : MonoBehaviour
 
     public void MainMenu()
     {
-        LevelManager.Instance.MainMenu();
+        LevelLoader.Instance.MainMenu();
     }
 
     private void OnDisable()

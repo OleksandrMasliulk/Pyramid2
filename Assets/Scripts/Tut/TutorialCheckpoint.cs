@@ -10,7 +10,7 @@ public class TutorialCheckpoint : MonoBehaviour, IInterractible
 
     private void Start()
     {
-        tooltip = "Press E to Resurrect";
+        tooltip = "RESURRECT";
     }
 
     public void Interract(PlayerController user)

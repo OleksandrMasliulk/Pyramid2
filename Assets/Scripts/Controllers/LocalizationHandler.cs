@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
-using System.Threading.Tasks;
+using UnityEngine.Localization;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class LocalizationHandler : MonoBehaviour
 {
@@ -12,7 +13,8 @@ public class LocalizationHandler : MonoBehaviour
     {
         BUTTONS,
         SETTINGS,
-        TOOLTIPS
+        TOOLTIPS,
+        NPCs
     }
 
     private void Awake()
@@ -26,29 +28,56 @@ public class LocalizationHandler : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
-    public string GetTextLocalized(Tables table, string key)
+    
+    public AsyncOperationHandle<string> GetLocalizedTextAsync(Tables table, string key)
     {
         string tableName = GetTableName(table);
-        if (tableName == null)
+
+        var op = LocalizationSettings.StringDatabase.GetLocalizedStringAsync(tableName, key);
+        op.Completed += (op) =>
         {
-            Debug.Log("Invalid table!");
-            return null;
-        }
+            Debug.LogWarning($"{tableName}/{key}: {op.Result}");
+        };
 
-        //var op = LocalizationSettings.StringDatabase.GetLocalizedStringAsync(tableName, key);
-        return LocalizationSettings.StringDatabase.GetLocalizedString(tableName, key);
-        //if (op.IsDone)
-        //{
-        //    return op.Result;
-        //}
-        //else
-        //{
-        //    op.Completed += (op) => Debug.Log(op.Result);
-        //}
-
-        return null;
+        return op;
     }
+    
+    public AsyncOperationHandle<string> GetLocalizedTextAsync(LocalizedString reference)
+    {
+        var op = LocalizationSettings.StringDatabase.GetLocalizedStringAsync(reference.TableReference, reference.TableEntryReference);
+        op.Completed += (op) =>
+        {
+            Debug.LogWarning($"{reference.TableReference}/{reference.TableEntryReference}: {op.Result}");
+        };
+
+        return op;
+    }
+
+    //public string GetTextLocalized(Tables table, string key)
+    //{
+    //    string tableName = GetTableName(table);
+    //    if (tableName == null)
+    //    {
+    //        Debug.Log("Invalid table!");
+    //        return null;
+    //    }
+
+    //    //var op = LocalizationSettings.StringDatabase.GetLocalizedStringAsync(tableName, key);
+    //    return LocalizationSettings.StringDatabase.GetLocalizedString(tableName, key);
+    //    //if (op.IsDone)
+    //    //{
+    //    //    return op.Result;
+    //    //}
+    //    //else
+    //    //{
+    //    //    op.Completed += (op) => Debug.Log(op.Result);
+    //    //}
+    //}
+
+    //public string GetTextLocalized(LocalizedString reference)
+    //{
+    //    return LocalizationSettings.StringDatabase.GetLocalizedString(reference.TableReference, reference.TableEntryReference);
+    //}
 
     private string GetTableName(Tables table)
     {
@@ -60,6 +89,8 @@ public class LocalizationHandler : MonoBehaviour
                 return "SettingsWindow";
             case Tables.TOOLTIPS:
                 return "Tooltips";
+            case Tables.NPCs:
+                return "NPCNames";
             default:
                 return null;
         }
@@ -70,8 +101,9 @@ public class LocalizationHandler : MonoBehaviour
         LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[locale];
     }
 
-    public IEnumerator InitLocales()
+    public AsyncOperationHandle InitLocales()
     {
-        yield return LocalizationSettings.InitializationOperation;
+        var op = LocalizationSettings.InitializationOperation;
+        return op;
     }
 }

@@ -55,6 +55,10 @@ MonoBehaviour:
     m_Key: RESURRECT
     m_Metadata:
       m_Items: []
+  - m_Id: 1417305513807872
+    m_Key: DIALOGUE_CONTINUE
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

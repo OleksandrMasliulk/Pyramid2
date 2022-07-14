@@ -6,14 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 88f325a4e24cdc4478c4d7061ac88e3b
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
-    guid: a7ed56e681692cb41906e05454502e01
-  - enabled: 1
-    path: Assets/Scenes/Piramid v.1.1 fixed.unity
-    guid: a1665209e3b620840928b2904d0c22f8
+    path: Assets/Scenes/InitializationScene.unity
+    guid: 49414422db9fa3a49a11e37a07da3900
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 69d3d05d9935f27499c18b24a0096986, type: 2}
     com.unity.localization.settings: {fileID: 11400000, guid: 52e7193ad4edb52479b2be2d31c2475b, type: 2}
