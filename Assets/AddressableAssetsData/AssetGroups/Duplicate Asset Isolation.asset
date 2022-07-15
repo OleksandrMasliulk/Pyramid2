@@ -105,10 +105,6 @@ MonoBehaviour:
     m_Address: Assets/Animations/Interractible/Cover/Graphics.controller
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 585188cdc4600544eb408bee749e4b3a
-    m_Address: Assets/Imported Pacakges/Thaleah_PixelFont/Materials/ThaleahFat_TTF.ttf
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: d61235c04c40a0c418485b2d4d3e5062
     m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/HideSpot.png
     m_ReadOnly: 0
