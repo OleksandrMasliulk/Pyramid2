@@ -9,11 +9,11 @@ public class Lever : MonoBehaviour, IInterractible
     [SerializeField] private Animator anim;
     private bool isOn;
 
-    public string tooltip { get; set; }
+    public string Tooltip { get; set; }
 
     private void Start()
     {
-        tooltip = "INTERRACT";
+        Tooltip = "INTERRACT";
         isOn = false;
         anim.SetBool("On", isOn);
     }

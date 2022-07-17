@@ -10,7 +10,7 @@ public class ArrowTrap : Trap, IInterractible
     private bool canShoot;
     private float timeToRearm;
 
-    public string tooltip { get; set; }
+    public string Tooltip { get; set; }
 
     private void Start()
     {

@@ -15,13 +15,21 @@ MonoBehaviour:
   _soundBoard:
     walk:
       type: 0
-      clip: {fileID: 8300000, guid: 0f93834a275145049bf4adba3742df6b, type: 3}
+      clip:
+        m_AssetGUID: 0f93834a275145049bf4adba3742df6b
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       volume: 1
       repeatPlayeDelay: 0.2
       maxRange: 15
     die:
       type: 0
-      clip: {fileID: 8300000, guid: e199b34c7a3b5f94e9003279ed956886, type: 3}
+      clip:
+        m_AssetGUID: e199b34c7a3b5f94e9003279ed956886
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       volume: 0.65
       repeatPlayeDelay: 0
       maxRange: 15

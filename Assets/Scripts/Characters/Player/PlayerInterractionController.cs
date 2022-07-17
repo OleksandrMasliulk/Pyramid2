@@ -20,7 +20,7 @@ public class PlayerInterractionController : MonoBehaviour
     {
         objectsToInterract.Add(objectToInterract);
 
-        playerController.HUDController.SetTooltipText(objectToInterract.GetComponent<IInterractible>().tooltip);
+        playerController.HUDController.SetTooltipText(objectToInterract.GetComponent<IInterractible>().Tooltip);
         playerController.HUDController.ShowTooltip();
     }
     
@@ -34,7 +34,7 @@ public class PlayerInterractionController : MonoBehaviour
         }
         else
         {
-            playerController.HUDController.SetTooltipText(objectsToInterract[0].GetComponent<IInterractible>().tooltip);
+            playerController.HUDController.SetTooltipText(objectsToInterract[0].GetComponent<IInterractible>().Tooltip);
         }
     } 
 

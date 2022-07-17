@@ -10,11 +10,11 @@ public class Cover : MonoBehaviour, IInterractible
 
     private PlayerController _palyerHidingIn;
 
-    public string tooltip { get; set; }
+    public string Tooltip { get; set; }
 
     private void Start()
     {
-        tooltip = "COVER";
+        Tooltip = "COVER";
     }
 
     public void Interract(PlayerController user)
@@ -45,7 +45,7 @@ public class Cover : MonoBehaviour, IInterractible
         user.CoverController.SetCover(this);
 
         //gameObject.layer = 10;
-        tooltip = "UNCOVER";
+        Tooltip = "UNCOVER";
         if (graphics != null)
             graphics.SetBool("isOpened", false);
     }
@@ -59,7 +59,7 @@ public class Cover : MonoBehaviour, IInterractible
         user.CoverController.SetCover(null);
 
         //gameObject.layer = 12;
-        tooltip = "COVER";
+        Tooltip = "COVER";
         Instantiate(dustPS, respawnPos.position, Quaternion.identity);
         if (graphics != null)
             graphics.SetBool("isOpened", true);

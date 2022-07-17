@@ -15,7 +15,11 @@ MonoBehaviour:
   _soundBoard:
     walk:
       type: 0
-      clip: {fileID: 8300000, guid: 92e295168f274734ba1f24c644416ec1, type: 3}
+      clip:
+        m_AssetGUID: 92e295168f274734ba1f24c644416ec1
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       volume: 1
       repeatPlayeDelay: 0.5
       maxRange: 25
