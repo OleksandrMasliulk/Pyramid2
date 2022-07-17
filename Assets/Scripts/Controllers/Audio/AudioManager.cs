@@ -124,7 +124,7 @@ public class AudioManager : MonoBehaviour
 
         float duration = clip.length;
         await Task.Delay((int)(duration * 1000));
-        Addressables.ReleaseInstance(go);
+        Destroy(go);
         sound.clip.ReleaseAsset();
 
     }
@@ -142,7 +142,7 @@ public class AudioManager : MonoBehaviour
         audioSource.PlayOneShot(clip);
 
         await Task.Delay((int)(playbackTime * 1000));
-        Addressables.ReleaseInstance(go);
+        Destroy(go);
         sound.clip.ReleaseAsset();
     }
     
@@ -166,7 +166,7 @@ public class AudioManager : MonoBehaviour
         audioSource.Play();
 
         await Task.Delay((int)(playbackTime * 1000));
-        Addressables.ReleaseInstance(go);
+        Destroy(go);
         sound.clip.ReleaseAsset();
     }
 

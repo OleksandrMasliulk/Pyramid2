@@ -37,6 +37,14 @@ MonoBehaviour:
     m_Address: Assets/Scripts/_R/SO/R_New Flare.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 3f109e34b09dc1c4f8180b2650660755
+    m_Address: Assets/Scripts/_R/SO/R_New Player Character.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5281d8d789c507b4e82e2fba0ddeca0c
+    m_Address: Assets/_R/Prefabs/UI/Slot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
   m_SchemaSet:
