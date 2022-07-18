@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.AddressableAssets;
 
 public abstract class ItemSO : ScriptableObject
 {
@@ -17,7 +18,6 @@ public abstract class ItemSO : ScriptableObject
     public bool isStackable;
     public int maxStack;
     public bool isConsumable;
-    public bool useOnRelease;
     public GameObject dropPrefab;
 
     private List<int> GetItemsIDs()
@@ -108,8 +108,6 @@ public class ItemEditor : Editor
         }
         //Is Item consumable
         so.isConsumable = EditorGUILayout.Toggle("Is Consumable", so.isConsumable);
-        //Use on release
-        so.useOnRelease = EditorGUILayout.Toggle("Use On Release", so.useOnRelease);
         //Item drop prefab
         so.dropPrefab = (GameObject)EditorGUILayout.ObjectField("Item drop prefab", so.dropPrefab, typeof(GameObject), allowSceneObjects: false);
         #endregion

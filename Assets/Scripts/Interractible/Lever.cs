@@ -18,7 +18,7 @@ public class Lever : MonoBehaviour, IInterractible
         anim.SetBool("On", isOn);
     }
 
-    public void Interract(PlayerController user)
+    public void Interract(CharacterBase user)
     {
         objToInterract.Interract(user);
         isOn = !isOn;

@@ -1,0 +1,32 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.AddressableAssets;
+using System.Threading.Tasks;
+
+public class PlayerVFXHandler : CharacterVFXHandler
+{
+    [SerializeField] private GameObject _ghostParticles;
+    [SerializeField] private AssetReference _corpseSprite;
+
+    public void EnableGhostParticles()
+    {
+        _ghostParticles.SetActive(true);
+    }
+
+    public void DisableGhostParticles()
+    {
+        _ghostParticles.SetActive(false);
+    }
+
+    public async void SpawnCorpse()
+    {
+        Sprite corpseSprite = await _corpseSprite.LoadAssetAsyncSafe<Sprite>();
+
+        GameObject corpse = Instantiate(new GameObject(), transform.position, Quaternion.identity);
+        SpriteRenderer sr = corpse.AddComponent<SpriteRenderer>();
+        corpse.transform.localScale *= 2;
+        sr.sprite = corpseSprite;
+        sr.sortingLayerName = "Characters";
+    }
+}

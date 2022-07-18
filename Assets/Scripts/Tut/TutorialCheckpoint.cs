@@ -6,15 +6,16 @@ public class TutorialCheckpoint : MonoBehaviour, IInterractible
 {
     public TutorialController tutController;
 
-    public string Tooltip { get; set; }
+    [SerializeField] private string _tooltip;
+    public string Tooltip => _tooltip;
 
-    private void Start()
-    {
-        Tooltip = "RESURRECT";
-    }
-
-    public void Interract(PlayerController user)
+    public void Interract(PlayerDrivenCharacter user)
     {
         tutController.ResurrectPlayer(this.transform);
+    }
+
+    public void Interract(CharacterBase user)
+    {
+        throw new System.NotImplementedException();
     }
 }

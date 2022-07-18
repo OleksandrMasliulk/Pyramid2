@@ -35,24 +35,24 @@ public class TutorialController : GameController
 
     public void ResurrectPlayer(Transform pos)
     {
-        UnitManager.Instance.PlayerList[0].Stats.IsAlive = true;
-        UnitManager.Instance.PlayerList[0].Stats.IsGhost = false;
-        UnitManager.Instance.PlayerList[0].Stats.IsCovered = false;
-        UnitManager.Instance.PlayerList[0].SetPlayerLayer(6);
-        UnitManager.Instance.PlayerList[0].HUDController.ShowHUD();
-        UnitManager.Instance.PlayerList[0].GraphicsController.SetAliveGraphics();
-        UnitManager.Instance.PlayerList[0].SetState(UnitManager.Instance.PlayerList[0].aliveState);
-        UnitManager.Instance.PlayerList[0].SanityController.UpdateSanity(100);
+        //UnitManager.Instance.PlayerList[0].Stats.IsAlive = true;
+        //UnitManager.Instance.PlayerList[0].Stats.IsGhost = false;
+        //UnitManager.Instance.PlayerList[0].Stats.IsCovered = false;
+        //UnitManager.Instance.PlayerList[0].SetPlayerLayer(6);
+        //UnitManager.Instance.PlayerList[0].HUDController.ShowHUD();
+        //UnitManager.Instance.PlayerList[0].GraphicsController.SetAliveGraphics();
+        //UnitManager.Instance.PlayerList[0].SetState(UnitManager.Instance.PlayerList[0].aliveState);
+        //UnitManager.Instance.PlayerList[0].SanityController.UpdateSanity(100);
 
-        UnitManager.Instance.PlayerList[0].transform.position = pos.position;
+        //UnitManager.Instance.PlayerList[0].transform.position = pos.position;
     }
 
     public void SetGhost()
     {
-        UnitManager.Instance.PlayerList[0].GraphicsController.SetGhostGraphics();
-        UnitManager.Instance.PlayerList[0].SetPlayerLayer(11);
-        UnitManager.Instance.PlayerList[0].Stats.IsGhost = true;
-        UnitManager.Instance.PlayerList[0].SetState(UnitManager.Instance.PlayerList[0].ghostState);
+        //UnitManager.Instance.PlayerList[0].GraphicsController.SetGhostGraphics();
+        //UnitManager.Instance.PlayerList[0].SetPlayerLayer(11);
+        //UnitManager.Instance.PlayerList[0].Stats.IsGhost = true;
+        //UnitManager.Instance.PlayerList[0].SetState(UnitManager.Instance.PlayerList[0].ghostState);
     }
 
     public void ShowDiePanel()

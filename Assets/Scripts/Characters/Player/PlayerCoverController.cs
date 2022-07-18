@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(PlayerDrivenCharacter))]
 public class PlayerCoverController : MonoBehaviour
 {
     public delegate void OnPlayerCoveredDelegate();

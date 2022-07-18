@@ -1,56 +1,46 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public abstract class Item
 {
-    [System.Serializable]
     public enum ItemType
     {
-        Flare,
-        Medkit,
         Flashlight,
+        Medkit,
+        Flare,
         Paint,
         Treasure
     }
 
-    private int _id;
-    public int ID => _id;
     private ItemType _type;
     public ItemType Type => _type;
+    private int _id;
+    public int ID => _id;
+    private string _name;
+    public string Name => _name;
+    private Sprite _icon;
+    public Sprite Icon => _icon;
+    private GameObject _itemDropPrefab;
+    public GameObject ItemDropPrefab => _itemDropPrefab;
 
-    private Sprite _inventoryIcon;
-    public Sprite InventoryIcon => _inventoryIcon;
-
-    private bool _isConsumable;
-    public bool IsConsumable => _isConsumable;
     private bool _isStackable;
     public bool IsStackable => _isStackable;
     private int _maxStack;
     public int MaxStack => _maxStack;
-    private bool _useOnRelease;
-    public bool UseOnRelease => _useOnRelease;
+    private bool _isConsumable;
+    public bool IsConsumable => _isConsumable;
 
-    public Item(ItemSO so /*GameObject prefab*/)
+    public Item(ItemSO so)
     {
-        _type = so.type;
-        _id = so.itemID;
-        //_dropPrefab = prefab;
-
-        _inventoryIcon = so.inventoryIcon;
-
-        _isStackable = so.isStackable;
-        _maxStack = so.maxStack;
-        _isConsumable = so.isConsumable;
-        _useOnRelease = so.useOnRelease;
+        this._type = so.type;
+        this._id = so.itemID;
+        //this._name = so
+        this._icon = so.inventoryIcon;
+        this._itemDropPrefab = so.dropPrefab;
+        this._isStackable = so.isStackable;
+        this._maxStack = so.maxStack;
+        this._isConsumable = so.isConsumable;
     }
-
-    public virtual void OnPickUp(PlayerController player)
-    {
-        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<ItemsSoundboard>().pickUp, 1f);
-    }
-    public abstract void OnDrop(PlayerController user);
-    public abstract void Use(PlayerController user);
-    public abstract bool OnButtonPressed(PlayerController user);
-    public abstract bool OnButtonReleased(PlayerController user);
 }

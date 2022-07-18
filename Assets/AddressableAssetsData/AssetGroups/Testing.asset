@@ -17,30 +17,6 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: fbe486429a593ad43bc5ae49e7b3a2d6
   m_SerializeEntries:
-  - m_GUID: 88c0d9de9f11497419efd06c41bf292e
-    m_Address: Assets/Scripts/_R/SO/R_New Treasure.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 785b32ecd20e33f4cb181963e456cb1d
-    m_Address: Assets/Scripts/_R/SO/R_New Paint.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: f3e6617f0ce638948a3e3bee900699dc
-    m_Address: Assets/Scripts/_R/SO/R_New Medkit.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: a3f8945943943d34eb226bb885f34cd7
-    m_Address: Assets/Scripts/_R/SO/R_New Flashlight.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 2b23068a90361654084644c38b739346
-    m_Address: Assets/Scripts/_R/SO/R_New Flare.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 3f109e34b09dc1c4f8180b2650660755
-    m_Address: Assets/Scripts/_R/SO/R_New Player Character.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 5281d8d789c507b4e82e2fba0ddeca0c
     m_Address: Assets/_R/Prefabs/UI/Slot.prefab
     m_ReadOnly: 0

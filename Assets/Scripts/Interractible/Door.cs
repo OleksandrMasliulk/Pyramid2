@@ -9,17 +9,20 @@ public class Door : MonoBehaviour, IInterractible
     [SerializeField] private Collider2D door;
     [SerializeField] private Animator anim;
 
-    public string Tooltip { get; set; }
+    [SerializeField] private string _closedTooltip;
+    [SerializeField] private string _openedTooltip;
+    private string _currentTooltip;
+    public string Tooltip => _currentTooltip;
 
     private void Start()
     {
         isClosed = true;
         door.enabled = true;
 
-        Tooltip = "OPEN";
+        _currentTooltip = _closedTooltip;
     }
 
-    public void Interract(PlayerController user)
+    public void Interract(CharacterBase user)
     {
         if (isClosed)
         {
@@ -48,7 +51,7 @@ public class Door : MonoBehaviour, IInterractible
         isClosed = false;
         door.enabled = false;
 
-        Tooltip = "CLOSE";
+        _currentTooltip = _openedTooltip;
         anim.SetBool("Opened", true);
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorOpen, transform.position, 1f);
     }
@@ -58,7 +61,7 @@ public class Door : MonoBehaviour, IInterractible
         isClosed = true;
         door.enabled = true;
 
-        Tooltip = "OPEN";
+        _currentTooltip = _closedTooltip;
         anim.SetBool("Opened", false);
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorClose, transform.position, 1f);
     }

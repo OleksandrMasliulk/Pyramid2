@@ -57,10 +57,6 @@ MonoBehaviour:
     m_Address: Assets/Resources_moved/Characters/AllyNPC/Dialogue NPC.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: b1e67627e95eb2e439b987ea28839c3c
-    m_Address: Assets/Resources_moved/Characters/Player/Player1.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: f2c1b314ecdb70d4ca9449301e837465
     m_Address: Assets/Resources_moved/Dialogues/Dialog Tutorial.asset
     m_ReadOnly: 0

@@ -59,13 +59,13 @@ public class ArrowTrap : Trap, IInterractible
         Shoot();
     }
 
-    public void Interract(PlayerController user)
+    public void Interract(CharacterBase user)
     {
         if (canShoot)
         {
             if (user != null)
             {
-                ReduceSanity(user);
+                ReduceSanity((PlayerDrivenCharacter)user);
             }
 
             Activate(null);

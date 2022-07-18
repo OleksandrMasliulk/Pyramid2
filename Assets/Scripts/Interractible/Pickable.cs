@@ -1,94 +1,77 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Item;
+using System.Threading.Tasks;
+using UnityEngine.AddressableAssets;
 
 public class Pickable : MonoBehaviour, IInterractible
 {
-    [SerializeField] private ItemSO itemSO;
-    private Item item;
-    [SerializeField] private int count;
-    public string Tooltip { get; set; }
+    [SerializeField] private string _tooltip;
+    public string Tooltip => _tooltip;
+
+    [SerializeField] private AssetReference _itemSORef;
+    private Item _itemToPickUp;
+
+    [SerializeField]private int _count;
 
     private void Awake()
     {
-        Tooltip = "PICK_UP";
-
-        Init();
+        Init(_itemSORef);
     }
 
-    public void Init()
+    private async void Init(AssetReference itemSORef)
     {
-        if (itemSO.itemID == -1)
-        {
-            Debug.LogWarning(name + ": Inavlid ID, object destroyed!");
-            Destroy(this.gameObject);
-            return;
-        }
+        ItemSO itemSO = await itemSORef.LoadAssetAsyncSafe<ItemSO>();
 
         switch (itemSO.type) 
         {
-            //default:
-            //    Destroy(this.gameObject);
-            //    break;
-            case ItemType.Flare:
-                item = new Flare((FlareSO)itemSO/*, dropPrefab*/);
+            case Item.ItemType.Flashlight:
+                _itemToPickUp = new Flashlight((FlashlightSO)itemSO);
                 break;
-            case ItemType.Medkit:
-                item = new Medkit((MedkitSO)itemSO/*, dropPrefab*/);
+            case Item.ItemType.Flare:
+                _itemToPickUp = new Flare((FlareSO)itemSO);
                 break;
-            case ItemType.Flashlight:
-                item = new Flashlight((FlashlightSO)itemSO/*, dropPrefab*/);
+            case Item.ItemType.Medkit:
+                _itemToPickUp = new Medkit((MedkitSO)itemSO);
                 break;
-            case ItemType.Paint:
-                item = new Paint((PaintSO)itemSO/*, dropPrefab*/);
+            case Item.ItemType.Paint:
+                _itemToPickUp = new Paint((PaintSO)itemSO);
                 break;
-            case ItemType.Treasure:
-                item = new Treasure((TreasureSO)itemSO/*, dropPrefab*/);
+            case Item.ItemType.Treasure:
+                _itemToPickUp = new Treasure((TreasureSO)itemSO);
                 break;
         }
 
-        if (!item.IsStackable)
-        {
-            count = 1;
-        }
-
-        if (count > item.MaxStack)
-        {
-            count = item.MaxStack;
-        }
-    }
-
-    private bool PickUp(PlayerController user)
-    {
-        PlayerInventoryController inventory = user.InventoryController;
-
-        if (inventory == null)
-        {
-            Debug.Log("No INVENTORY CONTROLLER found");
-            return false;
-        }
-        else
-        {
-            return inventory.AddToInventory(item, count, itemSO.dropPrefab);
-        }
-    }
-
-    public void Interract(PlayerController user)
-    {
-        if (PickUp(user))
-        {
-            item.OnPickUp(user);
-            Destroy(this.gameObject);
-        }
+        itemSORef.ReleaseAsset();
     }
 
     public void SetCount(int count)
     {
-        this.count = count;
-        if (this.count > item.MaxStack)
+        _count = count;
+    }
+
+    public void Interract(CharacterBase user)
+    {
+        PlayerDrivenCharacter player = (PlayerDrivenCharacter)user;
+
+        AddItemCallback callback =  player.InventoryHandler.AddItem(_itemToPickUp, _count);
+
+        switch (callback.Result)
         {
-            this.count = item.MaxStack;
+            case AddItemCallback.ResultType.Success:
+                Destroy(this.gameObject);
+                break;
+            case AddItemCallback.ResultType.Partially:
+                _count = callback.NotAddedCount;
+                break;
+            case AddItemCallback.ResultType.Failed:
+                break;
         }
+    }
+
+    private void OnValidate()
+    {
+        if (_count <= 0)
+            _count = 1;
     }
 }

@@ -16,7 +16,15 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 59396376da886d74bb0d2a868f25f522
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 78f9d329b52d20e4898bb8c9669c97c1
+    m_Address: Assets/Resources_moved/Characters/Player/R_New Player Character.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 458aa0e194cd7ff4cbe1d686c975f5bc
+    m_Address: Assets/Prefabs/Particles/StepsPS.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
   m_SchemaSet:

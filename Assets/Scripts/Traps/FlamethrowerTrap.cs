@@ -64,17 +64,17 @@ public class FlamethrowerTrap : Trap
         StartCoroutine(ThrowFire());
     }
 
-    public override void ReduceSanity(PlayerController target)
+    public override void ReduceSanity(PlayerDrivenCharacter target)
     {
         Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, sanityLossRadius, damageLayer);
 
-        PlayerController player;
+        PlayerDrivenCharacter player;
         foreach (Collider2D col in cols)
         {
-            player = col.GetComponent<PlayerController>();
+            player = col.GetComponent <PlayerDrivenCharacter>();
             if (player != null)
             {
-                player.SanityController.UpdateSanity(-sanityLoss);
+                //player.SanityController.UpdateSanity(-sanityLoss);
                 return;
             }
         }

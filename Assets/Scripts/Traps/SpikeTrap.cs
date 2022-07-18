@@ -48,7 +48,7 @@ public class SpikeTrap : Trap
 
         if (target != null)
         {
-            PlayerController player = collision.GetComponent<PlayerController>();
+            PlayerDrivenCharacter player = collision.GetComponent<PlayerDrivenCharacter>();
             if (player != null)
             {
                 ReduceSanity(player);

@@ -4936,6 +4936,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   door: {fileID: 7150386146887711719}
   anim: {fileID: 2776576625361405874}
+  _closedTooltip: OPEN
+  _openedTooltip: CLOSE
 --- !u!114 &4872912323143698898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5081,4 +5083,4 @@ MonoBehaviour:
   - {x: 0.9367938, y: 2.717229, z: 0}
   m_ShapePathHash: 1382908045
   m_Mesh: {fileID: 0}
-  m_InstanceId: 47832
+  m_InstanceId: 39824

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RemoteInterractComponent : MonoBehaviour
 {
-    public void Interract(PlayerController user)
+    public void Interract(CharacterBase user)
     {
         IInterractible objToInterract = GetComponent<IInterractible>();
         if (objToInterract == null)

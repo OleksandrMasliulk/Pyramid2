@@ -8,9 +8,9 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerController player = collision.GetComponent<PlayerController>();
+        CharacterBase character = collision.GetComponent<CharacterBase>();
 
         foreach (RemoteInterractComponent obj in objectsToInterract)
-            obj.Interract(player);
+            obj.Interract(character);
     }
 }

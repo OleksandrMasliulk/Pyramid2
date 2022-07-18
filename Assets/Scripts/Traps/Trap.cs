@@ -7,9 +7,9 @@ public abstract class Trap : MonoBehaviour
     [SerializeField] protected int sanityLoss;
 
     public abstract void Activate(IDamageable target);
-    public virtual void ReduceSanity(PlayerController target)
+    public virtual void ReduceSanity(PlayerDrivenCharacter target)
     {
-        if (target != null)
-            target.SanityController.UpdateSanity(-sanityLoss);
+        //if (target != null)
+        //    target.SanityController.UpdateSanity(-sanityLoss);
     }
 }

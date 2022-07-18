@@ -3,53 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Paint : Item
+public class Paint : Item, IUseOnPress, IUseOnRelease
 {
-    private Vector3 mousePosTemp;
+    private Vector3 _mousePosTemp;
 
-    public Paint(PaintSO so/*, GameObject prefab*/) : base(so/*, prefab*/)
+    public Paint(PaintSO so) : base(so)
     {
     }
 
-    public override void Use(PlayerController user)
+    private void SpawnArrow(string direction, CharacterBase user)
     {
-        SpawnArrow(MouseUtils.GetMouseDragDirectionString(mousePosTemp, Input.mousePosition), user);
+        //if (direction == null)
+        //{
+        //    direction = "Up";
+        //}
+
+        //GameObject prefab = (GameObject)Resources.Load("Usable Items/Arrow " + direction);
+        //if (prefab == null)
+        //{
+        //    Debug.Log("No RESOURCE found");
+        //    return;
+        //}
+
         Debug.Log("Paint used");
+        //MonoBehaviour.Instantiate((GameObject)prefab, user.transform.position, Quaternion.identity);
     }
 
-    public override bool OnButtonPressed(PlayerController user)
+    public UseItemCallback UseOnRelease(CharacterBase user)
     {
-        user.HUDController.ShowPaintDirection();
-        mousePosTemp = Input.mousePosition;
+        if (user.TryGetComponent<PlayerDrivenCharacter>(out var player))
+            player.HUDHandler.ArrowDirection.gameObject.SetActive(false);
 
-        return !UseOnRelease;
+        return Use(user);
     }
 
-    public override bool OnButtonReleased(PlayerController user)
+    public UseItemCallback Use(CharacterBase user)
     {
-        user.HUDController.HidePaintDirection();
-        Use(user);
+        SpawnArrow(MouseUtils.GetMouseDragDirectionString(_mousePosTemp, Input.mousePosition), user);
 
-        return UseOnRelease;
-    }
-    private void SpawnArrow(string direction, PlayerController user)
-    {
-        if (direction == null)
-        {
-            direction = "Up";
-        }
-
-        GameObject prefab = (GameObject)Resources.Load("Usable Items/Arrow " + direction);
-        if (prefab == null)
-        {
-            Debug.Log("No RESOURCE found");
-            return;
-        }
-
-        MonoBehaviour.Instantiate((GameObject)prefab, user.transform.position, Quaternion.identity);
+        return new UseItemCallback(UseItemCallback.ResultType.Success);
     }
 
-    public override void OnDrop(PlayerController user)
+    public UseItemCallback UseOnPress(CharacterBase user)
     {
+        if (user.TryGetComponent<PlayerDrivenCharacter>(out var player))
+            player.HUDHandler.ArrowDirection.gameObject.SetActive(true);
+        _mousePosTemp = Input.mousePosition;
+
+        return new UseItemCallback(UseItemCallback.ResultType.Failed);
     }
 }
