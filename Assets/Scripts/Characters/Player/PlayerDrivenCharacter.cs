@@ -6,31 +6,31 @@ using System.Threading.Tasks;
 
 public class PlayerDrivenCharacter : CharacterBase
 {
-    public AssetReference _stats;
 
-    [SerializeField]private InputMovementHandler _movementHandler;
+    [SerializeField] private InputMovementHandler _movementHandler;
     public InputMovementHandler MovementHandler => _movementHandler;
-    [SerializeField]private PlayerInputHandler _inputHandler;
-    //public RPlayerInputHandler InputHandler => _inputHandler;
-    [SerializeField]private PlayerInterractionHandler _interractionHandler;
+    [SerializeField] private PlayerInputHandler _inputHandler;
+    [SerializeField] private PlayerInterractionHandler _interractionHandler;
     public PlayerInterractionHandler InterractionHandler => _interractionHandler;
     [SerializeField] private PlayerInventoryHandler _inventoryHandler;
     public PlayerInventoryHandler InventoryHandler => _inventoryHandler;
     [SerializeField] private PlayerHUDHandler _hudHandler;
     public PlayerHUDHandler HUDHandler => _hudHandler;
+    public new PlayerHealthHandler HealthHandler => (PlayerHealthHandler)_healthHandler;
     [SerializeField] private PlayerSanityHandler _sanityHandler;
     public PlayerSanityHandler SanityHandler => _sanityHandler;
     public new PlayerAnimationHandler AnimationHandler => (PlayerAnimationHandler)_animationHandler;
     public new PlayerVFXHandler VFXHandler => (PlayerVFXHandler)_vfxHandler;
-    //FOR TEST ONLY
-    private void Awake()
-    {
-        InitCharacter(_stats);
-    }
+
+    private PlayerPhysicalStateMachine _physicalStateMachine;
+    private PlayerSanityStateMachine _sanityStateMachine;
+
+    [SerializeField] private Camera _ghostCamera;
+    public Camera GhostCamera => _ghostCamera;
 
     public async override void InitCharacter(AssetReference stats)
     {
-        PlayerCharacterStatsSO playerStats = await stats.LoadAssetAsyncSafe<PlayerCharacterStatsSO>();
+        PlayerCharacterStatsSO playerStats = await stats.LoadAssetAsyncSafe<CharacterBaseStatsSO>() as PlayerCharacterStatsSO;
 
         _movementHandler?.Init(_inputHandler, playerStats.MovementSpeed);
         _inventoryHandler?.Init(_inputHandler, playerStats.SlotCount);
@@ -38,5 +38,8 @@ public class PlayerDrivenCharacter : CharacterBase
         _sanityHandler?.Init(playerStats);
 
         _hudHandler.InitHUD(this, playerStats);
+
+        _physicalStateMachine = new PlayerPhysicalStateMachine(this);
+        //_sanityStateMachine = new PlayerSanityStateMachine(this);
     }
 }

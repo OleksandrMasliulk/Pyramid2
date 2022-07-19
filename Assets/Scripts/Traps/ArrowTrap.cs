@@ -2,44 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArrowTrap : Trap, IInterractible
+public class ArrowTrap : Trap, ISwitchable
 {
     public ParticleSystem arrows;
 
-    [SerializeField] private float rearmTime;
-    private bool canShoot;
-    private float timeToRearm;
+    [SerializeField] private float _rearmTime;
+    private float _lastTimeShooted;
 
     public string Tooltip { get; set; }
 
-    private void Start()
+    [SerializeField] private bool _isActive;
+    public bool IsActive => _isActive;
+
+    private void Awake()
     {
-        canShoot = true;
-        timeToRearm = 0;
+        _lastTimeShooted = Time.time;
     }
 
     private void Shoot()
     {
+        if (Time.time + _rearmTime < _lastTimeShooted)
+            return;
+
         arrows.Play();
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<TrapsSoundBoard>().arrowTrapShoot, transform.position, .3f);
 
-        canShoot = false;
-        timeToRearm = rearmTime;
-    }
-
-    private void Update()
-    {
-        if (!canShoot)
-        {
-            if (timeToRearm <= 0)
-            {
-                canShoot = true;
-            }
-            else
-            {
-                timeToRearm -= Time.deltaTime;
-            }
-        }
+        _lastTimeShooted = Time.time;
     }
 
     private void OnParticleCollision(GameObject other)
@@ -54,21 +42,21 @@ public class ArrowTrap : Trap, IInterractible
         }
     }
 
-    public override void Activate(IDamageable target)
+    public override void Trigger()
     {
+        if (!IsActive)
+            return;
+
         Shoot();
     }
 
-    public void Interract(CharacterBase user)
+    public void Activate()
     {
-        if (canShoot)
-        {
-            if (user != null)
-            {
-                ReduceSanity((PlayerDrivenCharacter)user);
-            }
+        _isActive = true;
+    }
 
-            Activate(null);
-        }
+    public void Disable()
+    {
+        _isActive = false;
     }
 }

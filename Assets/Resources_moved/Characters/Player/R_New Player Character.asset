@@ -19,10 +19,10 @@ MonoBehaviour:
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _spawnPrefab:
-    m_AssetGUID: 
+    m_AssetGUID: fbce028d41cec6b449a05726ffda213e
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
   _movementSpeed: 5
   _maxSanity: 100
-  _slotCount: 8
+  _slotCount: 4

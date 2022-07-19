@@ -1,28 +1,44 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [System.Serializable]
 public class Lever : MonoBehaviour, IInterractible
 {
-    [SerializeField]private RemoteInterractComponent objToInterract;
-    [SerializeField] private Animator anim;
+    [SerializeField] private UnityEvent _toggleOnAction;
+    [SerializeField] private UnityEvent _toggleOffAction;
+    [SerializeField] private Animator _anim;
     private bool isOn;
 
-    public string Tooltip { get; set; }
+    [SerializeField] private string _tooltip;
+    public string Tooltip => _tooltip;
 
     private void Start()
     {
-        Tooltip = "INTERRACT";
         isOn = false;
-        anim.SetBool("On", isOn);
+        _anim.SetBool("On", isOn);
+    }
+
+    private void On()
+    {
+        _toggleOnAction?.Invoke();
+        isOn = true;
+    }
+
+    private void Off()
+    {
+        _toggleOffAction?.Invoke();
+        isOn = false;
     }
 
     public void Interract(CharacterBase user)
     {
-        objToInterract.Interract(user);
-        isOn = !isOn;
-        anim.SetBool("On", isOn);
+        if (isOn)
+            Off();
+        else
+            On();
+        _anim.SetBool("On", isOn);
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().lever, transform.position, 1f);
     }
 }

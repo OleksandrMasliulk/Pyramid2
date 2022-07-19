@@ -4825,7 +4825,6 @@ GameObject:
   - component: {fileID: 3390704383070389236}
   - component: {fileID: 7150386146887711719}
   - component: {fileID: 3443260999579358680}
-  - component: {fileID: 4872912323143698898}
   m_Layer: 12
   m_Name: Door
   m_TagString: Untagged
@@ -4934,22 +4933,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f38c1fe2c9e29e04b8379df92dfbb85b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  door: {fileID: 7150386146887711719}
-  anim: {fileID: 2776576625361405874}
+  _door: {fileID: 7150386146887711719}
+  _trigger: {fileID: 4191890092050399838}
+  _anim: {fileID: 2776576625361405874}
   _closedTooltip: OPEN
   _openedTooltip: CLOSE
---- !u!114 &4872912323143698898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096992095639496621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e03dc33d1e38514580ad0933500444f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _isActive: 1
 --- !u!1 &3538150012702055913
 GameObject:
   m_ObjectHideFlags: 0
@@ -5083,4 +5072,4 @@ MonoBehaviour:
   - {x: 0.9367938, y: 2.717229, z: 0}
   m_ShapePathHash: 1382908045
   m_Mesh: {fileID: 0}
-  m_InstanceId: 39824
+  m_InstanceId: 45476

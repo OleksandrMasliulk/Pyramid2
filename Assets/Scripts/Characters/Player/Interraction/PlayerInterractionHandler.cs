@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerInterractionHandler : MonoBehaviour
 {
     private PlayerDrivenCharacter _character;
-    [SerializeField] private InterractibleSeeker _seeker;
+    [SerializeField] private Seeker_InterractibleTriggerCircle _seeker;
 
     private IActionsInput _inputHandler;
 

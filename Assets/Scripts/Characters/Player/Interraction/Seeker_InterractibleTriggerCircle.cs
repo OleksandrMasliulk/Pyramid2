@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System;
 
-public class InterractibleSeeker : MonoBehaviour, ISeeker<IInterractible>
+public class Seeker_InterractibleTriggerCircle : MonoBehaviour, ISeeker<IInterractible>
 {
     private List<IInterractible> _objectsSeeked;
     public List<IInterractible> ObjectsSeeked => _objectsSeeked;
+
+    [SerializeField] private LayerMask _layer;
+    public LayerMask Layer => _layer;
 
     public event Action OnSeeked;
     public event Action OnLost;

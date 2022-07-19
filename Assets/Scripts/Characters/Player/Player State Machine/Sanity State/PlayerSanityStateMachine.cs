@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSanityStateMachine : MonoBehaviour
+public class PlayerSanityStateMachine
 {
     private PlayerDrivenCharacter _character;
 
@@ -13,14 +13,15 @@ public class PlayerSanityStateMachine : MonoBehaviour
 
     private PlayerSanityState _currentState;
 
-    private void Awake()
+    public PlayerSanityStateMachine(PlayerDrivenCharacter character)
     {
-        _character = GetComponent<PlayerDrivenCharacter>();
+        this._character = character;
+        SetState(FullSanity);
     }
 
     public void SetState(PlayerSanityState state)
     {
-        _currentState.OnStateExit(_character);
+        _currentState?.OnStateExit(_character);
         _currentState = state;
         _currentState.OnStateEnter(_character);
     }

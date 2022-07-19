@@ -6,11 +6,11 @@ public class PlayerAliveState : PlayerPhysicalState
 {
     public override void OnStateEnter(PlayerDrivenCharacter player)
     {
-        //player.Stats.IsAlive = true;
-        //player.GraphicsController.SetAliveGraphics();
-        //player.SetPlayerLayer(6);
-        //player.GhostCamera.gameObject.SetActive(false);
-        //player.HUDController.ShowHUD();
+        player.AnimationHandler.SetAliveAniationHandler();
+        player.gameObject.layer = 6;
+        player.SanityHandler.ModifySanity(100);
+        player.GhostCamera.gameObject.SetActive(false);
+        player.HUDHandler.HUD.SetActive(true);
     }
 
     public override void OnStateExit(PlayerDrivenCharacter player)

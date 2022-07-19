@@ -4823,7 +4823,6 @@ GameObject:
   - component: {fileID: 4912227362184404429}
   - component: {fileID: 4191890092050399838}
   - component: {fileID: 3390704383070389236}
-  - component: {fileID: 6302731743925719626}
   - component: {fileID: 1062784679045839}
   m_Layer: 12
   m_Name: Pickable Treasure5
@@ -4895,18 +4894,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6302731743925719626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096992095639496621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f5d032e3eb7c94a836f2024abb4c30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1062784679045839
 MonoBehaviour:
   m_ObjectHideFlags: 0

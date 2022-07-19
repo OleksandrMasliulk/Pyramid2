@@ -164,7 +164,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -423,7 +423,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8808382186864291332
 Transform:
   m_ObjectHideFlags: 0
@@ -6447,7 +6447,6 @@ GameObject:
   - component: {fileID: 9143180252275882782}
   - component: {fileID: 7436931511462268197}
   - component: {fileID: 9143180252275882780}
-  - component: {fileID: 2047880730019068929}
   - component: {fileID: 1203298881391588945}
   - component: {fileID: 2780555764842823777}
   - component: {fileID: 4382072383125966571}
@@ -6455,6 +6454,7 @@ GameObject:
   - component: {fileID: 1977327981771376193}
   - component: {fileID: 1497907718482069713}
   - component: {fileID: 2888616897817763344}
+  - component: {fileID: 7235399539421040370}
   - component: {fileID: 5266739786438730416}
   - component: {fileID: 3061842483062600639}
   - component: {fileID: 8768105069340167569}
@@ -6522,28 +6522,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2047880730019068929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9143180252275882768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 402b94482bf0e844d96bfeb4fc850448, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 8137129383538938291}
-  _renderer: {fileID: 5339026552842488741}
-  stepsPS: {fileID: 6702818121481829852}
-  ghostPS: {fileID: 7795068515394533906}
-  aliveController: {fileID: 9100000, guid: cd05d04332b5daf4581f391afb6442c0, type: 2}
-  ghostController: {fileID: 22100000, guid: 80ddb485576e9a64594df54bfb2b0763, type: 2}
-  sanityPostFX: {fileID: 2211487673375293157}
-  tentaclesAnim: {fileID: 9066238875283368206}
-  corpseSprite: {fileID: 1415096508, guid: 8c7d8e0ba47473940965e2a8c20372a9, type: 3}
-  _flashlightSocket: {fileID: 740500158659639890}
 --- !u!114 &1203298881391588945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6556,19 +6534,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec46112b6e28a3040a98c33ad803f1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _healthHandler: {fileID: 7235399539421040370}
   _vfxHandler: {fileID: 8768105069340167569}
-  _animationHandler: {fileID: 2047880730019068929}
-  _stats:
-    m_AssetGUID: 78f9d329b52d20e4898bb8c9669c97c1
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
+  _animationHandler: {fileID: 3061842483062600639}
   _movementHandler: {fileID: 7528118247852416724}
   _inputHandler: {fileID: 4382072383125966571}
   _interractionHandler: {fileID: 1977327981771376193}
   _inventoryHandler: {fileID: 1497907718482069713}
   _hudHandler: {fileID: 2780555764842823777}
   _sanityHandler: {fileID: 2888616897817763344}
+  _ghostCamera: {fileID: 1571034266721049532}
 --- !u!114 &2780555764842823777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6647,6 +6622,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6925550683ae9e34999b198c34702ea6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7235399539421040370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9143180252275882768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e53258ce0b96c145bd4b53c271a57e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &5266739786438730416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6673,14 +6660,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 8137129383538938291}
   _renderer: {fileID: 5339026552842488741}
-  stepsPS: {fileID: 0}
-  ghostPS: {fileID: 0}
   aliveController: {fileID: 9100000, guid: cd05d04332b5daf4581f391afb6442c0, type: 2}
   ghostController: {fileID: 22100000, guid: 80ddb485576e9a64594df54bfb2b0763, type: 2}
-  sanityPostFX: {fileID: 0}
-  tentaclesAnim: {fileID: 0}
-  corpseSprite: {fileID: 0}
-  _flashlightSocket: {fileID: 0}
+  _flashlightSocket: {fileID: 740500158659639890}
 --- !u!114 &8768105069340167569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7324,10 +7306,5 @@ PrefabInstance:
 --- !u!4 &6105961999825495912 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8666089059824211720, guid: 458aa0e194cd7ff4cbe1d686c975f5bc, type: 3}
-  m_PrefabInstance: {fileID: 3240513668841566304}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6702818121481829852 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 8213914340447800764, guid: 458aa0e194cd7ff4cbe1d686c975f5bc, type: 3}
   m_PrefabInstance: {fileID: 3240513668841566304}
   m_PrefabAsset: {fileID: 0}

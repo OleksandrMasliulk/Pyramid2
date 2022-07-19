@@ -4,17 +4,8 @@ using UnityEngine;
 
 public class PlayerAnimationHandler : CharacterAnimationHandler
 {
-    [SerializeField] private ParticleSystem stepsPS;
-    [SerializeField] private ParticleSystem ghostPS;
-
     [SerializeField] private RuntimeAnimatorController aliveController;
     [SerializeField] private AnimatorOverrideController ghostController;
-
-    [SerializeField] private SanityFX sanityPostFX;
-    private bool tentaclesEnabled = false;
-    [SerializeField] private Animation tentaclesAnim; 
-
-    [SerializeField] private Sprite corpseSprite;
 
     [Header("Sockets")]
     [SerializeField] private Transform _flashlightSocket;
@@ -37,26 +28,14 @@ public class PlayerAnimationHandler : CharacterAnimationHandler
         _renderer.enabled = true;
     }
 
-    public void SetGhostGraphics()
+    public void SetGhostAnimationHandler()
     {
-        ghostPS.Play();
-        stepsPS.Stop();
-
-        GameObject corpse = Instantiate(new GameObject(), transform.position, Quaternion.identity);
-        SpriteRenderer sr = corpse.AddComponent<SpriteRenderer>();
-        corpse.transform.localScale *= 2;
-        sr.sprite = corpseSprite;
-        sr.sortingLayerName = "Characters";
-
         _animator.runtimeAnimatorController = ghostController;
-        //_animator.SetTrigger("Ghost");
         _animator.Rebind();
     }
 
-    public void SetAliveGraphics()
+    public void SetAliveAniationHandler()
     {
-        ghostPS.Stop();
-        stepsPS.Play();
         _animator.runtimeAnimatorController = aliveController;
         _animator.Rebind();
     }

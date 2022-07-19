@@ -21,6 +21,6 @@ public class CharacterVFXHandler : MonoBehaviour
         particles.lastTimeSpawned = Time.time;
 
         await Task.Delay((int)(ps.main.duration * 1000));
-        particles.particlesReferece.ReleaseAsset();
+        Addressables.ReleaseInstance(go);
     }
 }

@@ -6,7 +6,7 @@ public abstract class Trap : MonoBehaviour
 {
     [SerializeField] protected int sanityLoss;
 
-    public abstract void Activate(IDamageable target);
+    public abstract void Trigger();
     public virtual void ReduceSanity(PlayerDrivenCharacter target)
     {
         //if (target != null)

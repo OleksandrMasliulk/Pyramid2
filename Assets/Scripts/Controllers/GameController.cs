@@ -20,8 +20,6 @@ public class GameController : MonoBehaviour
     }
     private GameState _gameState;
 
-    private AudioSource _levelTheme;
-
     private List<PlayerDrivenCharacter> _alivePlayersList;
     public List<PlayerDrivenCharacter> AlivePlayersList => _alivePlayersList;
 
@@ -49,7 +47,6 @@ public class GameController : MonoBehaviour
         switch (_gameState)
         {
             case GameState.Init:
-                PlayLevelTheme();
                 _alivePlayersList = new List<PlayerDrivenCharacter>();
                 //PlayerHealthController.OnPlayerDied += RemovePlayerFromAlive;
                 SetGameState(GameState.SpawningCharacters);
@@ -94,6 +91,13 @@ public class GameController : MonoBehaviour
         OnLoseEvent?.Invoke();
     }
 
+    public void AddPlayerToList(PlayerDrivenCharacter player)
+    {
+        _alivePlayersList.Add(player);
+        player.HealthHandler.OnCharacterDie += (player) => RemovePlayerFromAlive((PlayerDrivenCharacter)player);
+    }
+
+
     private void RemovePlayerFromAlive(PlayerDrivenCharacter player)
     {
         _alivePlayersList.Remove(player);
@@ -120,22 +124,5 @@ public class GameController : MonoBehaviour
         //    data = new PlayerData(_alivePlayersList[0].InventoryController.CalculateInventoryValue());
         //}
         //SaveLoad.Save(data, SaveLoad.playerDataPath);
-    }
-
-    public void PlayLevelTheme()
-    {
-        //if (_levelTheme == null)
-        //{
-        //    _levelTheme = AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
-        //}
-        //else
-        //{
-        //    _levelTheme.UnPause();
-        //}
-    }
-
-    public void PauseLevelTheme()
-    {
-        //_levelTheme.Pause();
     }
 }

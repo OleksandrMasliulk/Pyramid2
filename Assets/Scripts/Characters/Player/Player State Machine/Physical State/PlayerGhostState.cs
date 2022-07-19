@@ -6,13 +6,23 @@ public class PlayerGhostState : PlayerPhysicalState
 {
     public override void OnStateEnter(PlayerDrivenCharacter player)
     {
-        //player.Stats.IsGhost = true;
-        //player.GraphicsController.SetGhostGraphics();
-        //player.GhostCamera.gameObject.SetActive(true);
-        //player.SetPlayerLayer(11);
+        player.AnimationHandler.SetGhostAnimationHandler();
+        player.GhostCamera.gameObject.SetActive(true);
+        player.gameObject.layer = 13;
+        player.VFXHandler.SpawnCorpse();
+        player.VFXHandler.EnableGhostParticles();
+
+        player.InventoryHandler.enabled = false;
+        player.SanityHandler.enabled = false;
+        player.HealthHandler.enabled = false;
     }
 
     public override void OnStateExit(PlayerDrivenCharacter player)
     {
+        player.VFXHandler.DisableGhostParticles();
+
+        player.InventoryHandler.enabled = true;
+        player.SanityHandler.enabled = true;
+        player.HealthHandler.enabled = true;
     }
 }

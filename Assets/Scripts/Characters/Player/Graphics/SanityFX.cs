@@ -49,37 +49,37 @@ public class SanityFX : MonoBehaviour
 
     public void SetSanity100Volume()
     {
-        AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
-        AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().lowSanitySFX);
+        //AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
+        //AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().lowSanitySFX);
         taskList.Add(BlendVolumes(sanity100));
     }
     public void SetSanity75Volume()
     {
-        AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
-        AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().lowSanitySFX);
-        GameController.Instance.PlayLevelTheme();
+        //AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
+        //AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().lowSanitySFX);
+        //GameController.Instance.PlayLevelTheme();
 
         BlendVolumes(sanity75);
     }
     public void SetSanity50Volume()
     {
-        AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
-        AudioManager.Instance.PlayOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().lowSanitySFX);
-        GameController.Instance.PlayLevelTheme();
+        //AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
+        //AudioManager.Instance.PlayOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().lowSanitySFX);
+        //GameController.Instance.PlayLevelTheme();
 
         BlendVolumes(sanity50);
     }
     public void SetSanity25Volume()
     {
-        AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
-        GameController.Instance.PlayLevelTheme();
+        //AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
+        //GameController.Instance.PlayLevelTheme();
 
         BlendVolumes(sanity25);
     }
     public void SetSanity0Volume()
     {
-        AudioManager.Instance.PlayOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
-        GameController.Instance.PauseLevelTheme();
+        //AudioManager.Instance.PlayOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
+        //GameController.Instance.PauseLevelTheme();
 
         BlendVolumes(sanity0);
     }

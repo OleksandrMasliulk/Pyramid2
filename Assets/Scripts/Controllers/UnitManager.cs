@@ -57,7 +57,7 @@ public class UnitManager : MonoBehaviour
         {
             CharacterBase player = await SpawnCharacter(s.character, s.position);
             _playerList.Add((PlayerDrivenCharacter)player);
-            //GameController.Instance.AlivePlayersList.Add(player);
+            GameController.Instance.AddPlayerToList((PlayerDrivenCharacter)player);
         }
     }
 
