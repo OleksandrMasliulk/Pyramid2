@@ -3,85 +3,55 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
-using System.Threading.Tasks;
 
 public class SanityFX : MonoBehaviour
 {
     [SerializeField] private float blendTime;
 
-    [SerializeField] private Volume sanity100;
-    [SerializeField] private Volume sanity75;
-    [SerializeField] private Volume sanity50;
-    [SerializeField] private Volume sanity25;
-    [SerializeField] private Volume sanity0;
+    [SerializeField]private Volume _volume;
 
-    private Volume currentVolume;
-
-    private List<Task> taskList;
+    private Queue<IEnumerator> _blendQueue;
+    private bool _isBusy;
 
     private void Awake()
     {
-        currentVolume = sanity100;
-        taskList = new List<Task>();
+        _blendQueue = new Queue<IEnumerator>();
+        _isBusy = false;
     }
 
-    private async Task BlendVolumes(Volume newVolume)
+    private void Update()
     {
-        if (newVolume == currentVolume)
+        if (_blendQueue.Count <= 0 || _isBusy)
             return;
 
-        if (taskList.Count > 0)
-            await taskList[taskList.Count - 1];
+        IEnumerator blend = _blendQueue.Dequeue();
+        StartCoroutine(blend);
+    }
 
-        Volume oldVolume = currentVolume;
-        currentVolume = newVolume;
-
-        float time = 0f;
-        while(time <= blendTime)
+    private IEnumerator SetVignetteCoroutine(float newValue)
+    {
+        Vignette vignette = null;
+        if (_volume.profile.TryGet<Vignette>(out Vignette v)) 
         {
-            currentVolume.weight = Mathf.Lerp(0f, 1f, time / blendTime);
-            oldVolume.weight = Mathf.Lerp(1f, 0f, time / blendTime);
-
-            time += Time.deltaTime;
-            await Task.Yield();
+            vignette = v;
         }
+
+        _isBusy = true;
+        float time = 0f;
+        float currentIntensity = vignette.intensity.value;
+        while (time <= blendTime)
+        {
+            vignette.intensity.value = Mathf.Lerp(currentIntensity, newValue, time / blendTime);
+            time += Time.deltaTime;
+            yield return new WaitForSeconds(Time.deltaTime);
+        }
+
+        vignette.intensity.value = newValue;
+        _isBusy = false;
     }
 
-    public void SetSanity100Volume()
+    public void SetVignette(float value)
     {
-        //AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
-        //AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().lowSanitySFX);
-        taskList.Add(BlendVolumes(sanity100));
+        _blendQueue.Enqueue(SetVignetteCoroutine(value));
     }
-    public void SetSanity75Volume()
-    {
-        //AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
-        //AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().lowSanitySFX);
-        //GameController.Instance.PlayLevelTheme();
-
-        BlendVolumes(sanity75);
-    }
-    public void SetSanity50Volume()
-    {
-        //AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
-        //AudioManager.Instance.PlayOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().lowSanitySFX);
-        //GameController.Instance.PlayLevelTheme();
-
-        BlendVolumes(sanity50);
-    }
-    public void SetSanity25Volume()
-    {
-        //AudioManager.Instance.RemoveOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
-        //GameController.Instance.PlayLevelTheme();
-
-        BlendVolumes(sanity25);
-    }
-    public void SetSanity0Volume()
-    {
-        //AudioManager.Instance.PlayOverlapTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().noSanitySFX);
-        //GameController.Instance.PauseLevelTheme();
-
-        BlendVolumes(sanity0);
-    }
-
 }

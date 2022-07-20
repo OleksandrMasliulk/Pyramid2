@@ -8,6 +8,6 @@ public interface ISeeker<T>
     public LayerMask Layer { get; }
     public List<T> ObjectsSeeked { get; }
 
-    public event Action OnSeeked;
-    public event Action OnLost;
+    public event Action<T> OnSeeked;
+    public event Action<T> OnLost;
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,11 +7,10 @@ using UnityEngine;
 public class PlayerSanityHandler : MonoBehaviour, IHaveSanity
 {
     private PlayerDrivenCharacter _character;
-
-    public delegate void OnLowSanityDelegate(IHaveSanity player);
-    public event OnLowSanityDelegate OnLowSanity;
-
     private int _currentSanity;
+
+    public event Action<int> OnSanityChanged;
+
     public int CurrentSanity => _currentSanity;
     public int MaxSanity { get; private set; }
 
@@ -39,10 +39,7 @@ public class PlayerSanityHandler : MonoBehaviour, IHaveSanity
             _currentSanity = MaxSanity;
         }
 
-        if (_currentSanity <= MaxSanity * .25f)
-        {
-            OnLowSanity?.Invoke(this);
-        }
+        OnSanityChanged?.Invoke(_currentSanity);
 
         _character.HUDHandler.SanitySlider.ModifySlider(_currentSanity);
         //playerController.GraphicsController.SetSanityFX(_currentSanity);

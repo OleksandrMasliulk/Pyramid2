@@ -11,8 +11,8 @@ public class Seeker_DamageableScanSquare : MonoBehaviour, ISeeker<IDamageable>
     [SerializeField] private LayerMask _layer;
     public LayerMask Layer => _layer;
 
-    public event Action OnSeeked;
-    public event Action OnLost;
+    public event Action<IDamageable> OnSeeked;
+    public event Action<IDamageable> OnLost;
 
     public List<IDamageable> ScanObjectsSquare()
     {

@@ -6,11 +6,11 @@ public class MediumSanityState : PlayerSanityState
 {
     public override void OnStateEnter(PlayerDrivenCharacter character)
     {
-        throw new System.NotImplementedException();
+        character.VFXHandler.SanityFX.SetVignette(.3f);
     }
 
     public override void OnStateExit(PlayerDrivenCharacter character)
     {
-        throw new System.NotImplementedException();
+        //throw new System.NotImplementedException();
     }
 }

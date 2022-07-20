@@ -28,15 +28,15 @@ public class PlayerInterractionHandler : MonoBehaviour
         _seeker.ObjectsSeeked[_seeker.ObjectsSeeked.Count - 1].Interract(_character);
     }
 
-    private void OnLost()
+    private void OnLost(IInterractible obj)
     {
         _character.HUDHandler.Tooltip.Hide();
        Debug.Log("Interractible Lost");
     }
 
-    private void OnSeeked()
+    private void OnSeeked(IInterractible obj)
     {
-        _character.HUDHandler.Tooltip.ShowTooltip(_seeker.ObjectsSeeked[_seeker.ObjectsSeeked.Count - 1].Tooltip);
+        _character.HUDHandler.Tooltip.ShowTooltip(obj.Tooltip);
         Debug.Log("Interractible Seeked");
     }
 

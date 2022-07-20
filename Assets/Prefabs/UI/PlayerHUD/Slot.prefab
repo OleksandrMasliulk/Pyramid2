@@ -273,6 +273,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 5467727590076563625}
   countText: {fileID: 233884647786724957}
+  indexText: {fileID: 5375726961452231829}
 --- !u!114 &6510472232964335508
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,8 +10,8 @@ public class Seeker_InterractibleTriggerCircle : MonoBehaviour, ISeeker<IInterra
     [SerializeField] private LayerMask _layer;
     public LayerMask Layer => _layer;
 
-    public event Action OnSeeked;
-    public event Action OnLost;
+    public event Action<IInterractible> OnSeeked;
+    public event Action<IInterractible> OnLost;
 
     private void Awake()
     {
@@ -23,7 +23,7 @@ public class Seeker_InterractibleTriggerCircle : MonoBehaviour, ISeeker<IInterra
         if (collision.TryGetComponent<IInterractible>(out IInterractible component))
         {
             _objectsSeeked.Add(component);
-            OnSeeked?.Invoke();
+            OnSeeked?.Invoke(component);
         }
     }
 
@@ -32,7 +32,7 @@ public class Seeker_InterractibleTriggerCircle : MonoBehaviour, ISeeker<IInterra
         if (collision.TryGetComponent<IInterractible>(out IInterractible component))
         {
             _objectsSeeked.Remove(component);
-            OnLost?.Invoke();
+            OnLost?.Invoke(component);
         }
     }
 }

@@ -6,6 +6,7 @@ public class HUDInventorySlot : MonoBehaviour
 {
     public Image icon;
     public TMP_Text countText;
+    public TMP_Text indexText;
 
     public void SetupSlot(InventorySlot slot)
     {

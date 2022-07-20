@@ -11,8 +11,8 @@ public class Seeker_SanityScanCircle : MonoBehaviour, ISeeker<IHaveSanity>
     [SerializeField] private LayerMask _layer;
     public LayerMask Layer => _layer;
 
-    public event Action OnSeeked;
-    public event Action OnLost;
+    public event Action<IHaveSanity> OnSeeked;
+    public event Action<IHaveSanity> OnLost;
 
     public List<IHaveSanity> ScanObjectsCircle()
     {

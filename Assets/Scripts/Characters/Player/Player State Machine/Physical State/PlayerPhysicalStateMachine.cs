@@ -23,18 +23,25 @@ public class PlayerPhysicalStateMachine
         CoveredState = new PlayerCoveredState();
 
         SetState(AliveState);
-        _character.HealthHandler.OnCharacterDie += (character) => SetDeadState();
+        _character.HealthHandler.OnCharacterDie += (character) => SetState(DeadState);
+        _character.HealthHandler.OnResurrect += Resurrect;
+        IngameUIController.OnResurrectClick += () => SetState(GhostState);
     }
 
     public void SetState(PlayerPhysicalState state)
     {
+        if (_currentState == state)
+            return;
+
         _currentState?.OnStateExit(_character);
         _currentState = state;
         _currentState.OnStateEnter(_character);
     }
 
-    private void SetDeadState()
+    private void Resurrect()
     {
-        SetState(DeadState);
+        SetState(AliveState);
+        GameController.Instance.AddPlayerToList(_character);
     }
+
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-public class CharacterBaseStatsSO : ScriptableObject, ICanMove
+public class CharacterBaseStatsSO : ScriptableObject
 {
     [SerializeField] private string _name;
     public string Name => _name;

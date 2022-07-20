@@ -42,32 +42,27 @@ public class SpikeTrap : Trap, ISwitchable
         }
     }
 
-    private void Update()
-    {
-        if (_isPopped )
-        {
-            foreach (IDamageable d in _damageSeeker.ObjectsSeeked)
-            {
-                d.TakeDamage(1);
-            }
-        }
-    }
-
     IEnumerator PopSpikes()
     {
         yield return new WaitForSeconds(_triggerDelay);
         _anim.SetBool("isActive", true);
         _isPopped = true;
-        foreach (IDamageable d in _damageSeeker.ObjectsSeeked)
+
+        float startTime = Time.time;
+        while (startTime + _spikeDuration > Time.time && IsActive)
         {
-            d.TakeDamage(1);
+            foreach (IDamageable d in _damageSeeker.ObjectsSeeked)
+            {
+                d.TakeDamage(1);
+            }
+            yield return new WaitForSeconds(DefaultTickTime);
         }
-        StartCoroutine(HideSpikes());
+
+        HideSpikes();
     }
 
-    private IEnumerator HideSpikes()
+    private void HideSpikes()
     {
-        yield return new WaitForSeconds(_spikeDuration);
         _anim.SetBool("isActive", false);
         _isPopped = false;
     }
@@ -89,17 +84,16 @@ public class SpikeTrap : Trap, ISwitchable
 
     public void Disable()
     {
-        if (_spikesCoroutine != null)
-            StopCoroutine(_spikesCoroutine);
-
         _isActive = false;
+        if (_spikesCoroutine != null)
+        {
+            StopCoroutine(_spikesCoroutine);
+            HideSpikes();
+        }
     }
 
     public void Activate()
     {
         _isActive = true;
-
-        if (_isPopped)
-            StartCoroutine(HideSpikes());
     }
 }

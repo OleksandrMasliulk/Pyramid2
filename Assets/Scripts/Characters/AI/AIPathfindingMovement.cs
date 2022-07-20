@@ -9,9 +9,8 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
     [SerializeField] private AIPath _aiPath;
     [SerializeField] private Seeker _seeker;
     [SerializeField] private AIDestinationSetter _destSetter;
-
-    [SerializeField] private float _movementSpeed;
-    public float MovementSpeed => _movementSpeed;
+    public float MovementSpeed { get; private set; }
+    public bool ReachedTarget => _aiPath.reachedDestination;
 
     private void Awake()
     {
@@ -20,8 +19,17 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
         _destSetter = GetComponent<AIDestinationSetter>();
     }
 
+    private void Init(float moveSpeed)
+    {
+        MovementSpeed = moveSpeed;
+        _aiPath.maxSpeed = MovementSpeed;
+    }
+
     public void RemoveTarget()
     {
+        if (_destSetter.target == null)
+            return;
+
         Destroy(_destSetter.target.gameObject);
         _destSetter.target = null;
     }
@@ -39,5 +47,15 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
 
         GameObject go = new GameObject("AI Pathfinding Target");
         _destSetter.target = go.transform;
+    }
+
+    public void SetSpeed(float value)
+    {
+        MovementSpeed = value;
+        _aiPath.maxSpeed = MovementSpeed;
+    }
+
+    public void Move()
+    {
     }
 }

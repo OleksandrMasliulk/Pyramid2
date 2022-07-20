@@ -4933,9 +4933,8 @@ GameObject:
   - component: {fileID: 7593516654742392270}
   - component: {fileID: 7593516654742392267}
   - component: {fileID: 7593516654742392264}
-  - component: {fileID: 7593516654742392265}
   m_Layer: 13
-  m_Name: Checkpoint
+  m_Name: Resurrect Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4948,7 +4947,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7593516654742392271}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 10.64, y: -1.2, z: 0.06645371}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4970,7 +4969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0df8960e6d293684db3ff325d6f9cdf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tutController: {fileID: 0}
+  _tooltip: RESURRECT
 --- !u!61 &7593516654742392264
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4997,15 +4996,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
---- !u!114 &7593516654742392265
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7593516654742392271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f5d032e3eb7c94a836f2024abb4c30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

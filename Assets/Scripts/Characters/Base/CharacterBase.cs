@@ -5,6 +5,8 @@ using UnityEngine.AddressableAssets;
 
 public abstract class CharacterBase : MonoBehaviour
 {
+    protected CharacterBaseStatsSO _stats;
+    public CharacterBaseStatsSO Stats => _stats;
     [SerializeField] protected CharacterHealthHandler _healthHandler;
     public CharacterHealthHandler HealthHandler => _healthHandler;
     [SerializeField] protected CharacterVFXHandler _vfxHandler;

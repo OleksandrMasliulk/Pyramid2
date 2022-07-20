@@ -8,7 +8,8 @@ public class PlayerVFXHandler : CharacterVFXHandler
 {
     [SerializeField] private GameObject _ghostParticles;
     [SerializeField] private AssetReference _corpseSprite;
-
+    [SerializeField] private SanityFX _sanityFX;
+    public SanityFX SanityFX => _sanityFX;
     public void EnableGhostParticles()
     {
         _ghostParticles.SetActive(true);

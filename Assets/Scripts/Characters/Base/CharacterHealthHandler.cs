@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class CharacterHealthHandler : MonoBehaviour, IDamageable
 
     public delegate void CharacterDieDelegate(CharacterBase character);
     public event CharacterDieDelegate OnCharacterDie;
+    public event Action OnTakeDamage;
 
     private void Awake()
     {
@@ -17,6 +19,7 @@ public class CharacterHealthHandler : MonoBehaviour, IDamageable
     public virtual void TakeDamage(int damage)
     {
         Debug.Log($"{gameObject.name} got hit for {damage} damage");
+        OnTakeDamage?.Invoke();
     }
 
     public virtual void Die()

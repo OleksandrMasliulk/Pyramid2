@@ -5,6 +5,6 @@ using UnityEngine;
 
 public abstract class EnemyBase : CharacterBase
 {
-    [SerializeField] protected AIPathfindingMovement _movementController;
-    public AIPathfindingMovement MovementController => _movementController;
+    [SerializeField] protected AIPathfindingMovement _movementHandler;
+    public AIPathfindingMovement MovementHandler => _movementHandler;
 }

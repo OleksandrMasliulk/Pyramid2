@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MummyStunnedState : MummyState
+public class MummyStunnedState : MummyBehaviourState
 {
     private float timeToStunEnd;
-    private MummyState lastState;
-    private MummyExitStateArgs saveArgs;
+    private MummyBehaviourState lastState;
 
-    public override void EnterState(Mummy mummy, MummyExitStateArgs args)
+    public override void EnterState(Mummy mummy)
     {
         //Debug.LogWarning("Mummy entered Stunned State");
 
@@ -37,10 +36,5 @@ public class MummyStunnedState : MummyState
         //{
         //    timeToStunEnd -= Time.deltaTime;
         //}
-    }
-
-    public override void OnTakeDamage(Mummy mummy)
-    {
-        //timeToStunEnd = mummy.Stats.StunDuration;
     }
 }

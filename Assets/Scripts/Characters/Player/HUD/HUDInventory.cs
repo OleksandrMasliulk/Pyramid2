@@ -23,13 +23,22 @@ public class HUDInventory : MonoBehaviour
             op.Completed += (op) =>
             {
                 GameObject slot = op.Result;
-                _inventory.Add(slot.GetComponent<HUDInventorySlot>());
+                HUDInventorySlot hudSlot = slot.GetComponent<HUDInventorySlot>();
+                _inventory.Add(hudSlot);
             };
         }
 
         await Task.WhenAll(inventoryInit);
-
+        SetupInventoryIndecies(slotCount);
         HighlightSlot(0);
+    }
+
+    private void SetupInventoryIndecies(int slotCount)
+    {
+        for(int i = 0; i < slotCount; i++)
+        {
+            _inventory[i].indexText.text = (i + 1).ToString();
+        }
     }
 
     public void RefreshInventoryHUD(CharacterInventory inv)

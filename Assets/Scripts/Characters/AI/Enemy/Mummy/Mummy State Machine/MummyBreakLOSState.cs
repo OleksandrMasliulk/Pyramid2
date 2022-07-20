@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MummyBreakLOSState : MummyState
+public class MummyBreakLOSState : MummyBehaviourState, ICanRoam
 {
-    private Transform destinationPoint;
+    public float RoamRadius { get; private set; }
 
-    private Vector3 lastSeenPosition;
+    private Vector3 _pos;
 
-    private float timeToRoamState;
-    private float timeToNextSenseTick;
-
-
-
-    public override void EnterState(Mummy mummy, MummyExitStateArgs args)
+    public MummyBreakLOSState(MummyStatsSO stats, Vector3 lastPos)
     {
-        //Debug.LogWarning("Mummy entered Break LOS state");
+        RoamRadius = stats.RoamRadius;
+        _pos = lastPos;
+    }
+
+    public override void EnterState(Mummy mummy)
+    {
+        Debug.LogWarning("Mummy entered Break LOS state");
 
         //mummy.MovementController.SetSpeed(mummy.Stats.MoveSpeed);
         //lastSeenPosition = args.lastSeenPosition;
@@ -104,9 +105,4 @@ public class MummyBreakLOSState : MummyState
 
     ////    Roam(mummy, GetRandomPosition(lastSeenPosition, mummy.Stats.BreakLoSRoamRadius));
     ////}
-
-    public override void OnTakeDamage(Mummy mummy)
-    {
-        //mummy.SetState(mummy.stunnedState, new MummyExitStateArgs(null, lastSeenPosition, mummy.breakLOSState));
-    }
 }

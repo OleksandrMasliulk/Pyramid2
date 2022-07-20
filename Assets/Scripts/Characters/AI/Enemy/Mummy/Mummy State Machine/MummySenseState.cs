@@ -2,42 +2,50 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MummySenseState : MummyState
+public class MummySenseState : MummyBehaviourState, ICanSense
 {
-    //private PlayerController player;
-    public override void EnterState(Mummy mummy, MummyExitStateArgs args)
-    {
-        //Debug.LogWarning("Mummy entered Sense State");
-        //player = args.playerSeeked;
+    private MummyBehavoiuStateMachine _stateMachine;
 
-        //mummy.MovementController.SetSpeed(mummy.Stats.SenseMoveSpeed);
-        //mummy.MovementController.SetTarget(player.transform);
+    public float SenseMoveSpeed { get; private set; }
+
+    public CharacterBase Target { get; private set; }
+
+    public MummySenseState(MummyStatsSO stats, CharacterBase target)
+    {
+        SenseMoveSpeed = stats.SenseMoveSpeed;
+        Target = target;
+    }
+
+    public override void EnterState(Mummy mummy)
+    {
+        Debug.LogWarning("Mummy entered Sense State");
+
+        mummy.MovementHandler.SetSpeed(SenseMoveSpeed);
+        mummy.MovementHandler.SetTarget(Target.transform);
+
+        Target.GetComponent<IHaveSanity>().OnSanityChanged += SanityChangerd;
+    }
+
+    private void SanityChangerd(int value)
+    {
+        if (value > 25)
+            _stateMachine.SetState(_stateMachine.RoamState);
+
     }
 
     public override void ExitState(Mummy mummy)
     {
-        //player = null;
+        Target.GetComponent<IHaveSanity>().OnSanityChanged -= SanityChangerd;
     }
 
     public override void StateTick(Mummy mummy)
     {
-        //float distance = Vector3.Distance(mummy.transform.position, player.transform.position);
+        float distance = Vector3.Distance(mummy.transform.position, Target.transform.position);
 
-        //if (distance <= mummy.Stats.AttackDistance)
-        //{
-        //    mummy.SetState(mummy.attackState, new MummyExitStateArgs(player, player.transform.position, mummy.senseState));
-        //    return;
-        //}
-
-        //if (player.SanityController.CurrentSanity > 25)
-        //{
-        //    mummy.SetState(mummy.roamState, null);
-        //    return;
-        //}
-    }
-
-    public override void OnTakeDamage(Mummy mummy)
-    {
-        //mummy.SetState(mummy.stunnedState, new MummyExitStateArgs(player, player.transform.position, mummy.senseState));
+        if (distance <= mummy.Stats.AttackDistance)
+        {
+            _stateMachine.SetState(_stateMachine.AttackState);
+            return;
+        }
     }
 }

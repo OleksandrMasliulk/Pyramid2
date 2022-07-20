@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public class PlayerDrivenCharacter : CharacterBase
 {
-
+    public new PlayerCharacterStatsSO Stats => (PlayerCharacterStatsSO)_stats;
     [SerializeField] private InputMovementHandler _movementHandler;
     public InputMovementHandler MovementHandler => _movementHandler;
     [SerializeField] private PlayerInputHandler _inputHandler;
@@ -30,16 +30,16 @@ public class PlayerDrivenCharacter : CharacterBase
 
     public async override void InitCharacter(AssetReference stats)
     {
-        PlayerCharacterStatsSO playerStats = await stats.LoadAssetAsyncSafe<CharacterBaseStatsSO>() as PlayerCharacterStatsSO;
+        _stats = await stats.LoadAssetAsyncSafe<CharacterBaseStatsSO>() as PlayerCharacterStatsSO;
 
-        _movementHandler?.Init(_inputHandler, playerStats.MovementSpeed);
-        _inventoryHandler?.Init(_inputHandler, playerStats.SlotCount);
+        _movementHandler?.Init(_inputHandler, _stats.MovementSpeed);
+        _inventoryHandler?.Init(_inputHandler, Stats.SlotCount);
         _interractionHandler?.Init(_inputHandler);
-        _sanityHandler?.Init(playerStats);
+        _sanityHandler?.Init(Stats);
 
-        _hudHandler.InitHUD(this, playerStats);
+        _hudHandler.InitHUD(this, Stats);
 
         _physicalStateMachine = new PlayerPhysicalStateMachine(this);
-        //_sanityStateMachine = new PlayerSanityStateMachine(this);
+        _sanityStateMachine = new PlayerSanityStateMachine(this);
     }
 }

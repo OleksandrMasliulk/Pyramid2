@@ -82,7 +82,7 @@ public class UnitManager : MonoBehaviour
     public async Task<CharacterBase> SpawnCharacter(AssetReference reference, Transform position)
     {
         CharacterBaseStatsSO so = await reference.LoadAssetAsyncSafe<CharacterBaseStatsSO>();
-        var op = so.SpawnPrefab.InstantiateAsync();
+        var op = so.SpawnPrefab.InstantiateAsync(position);
         CharacterBase character = null;
         op.Completed += (op) =>
         {

@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InputMovementHandler : MonoBehaviour, IMovement
+public class InputMovementHandler : MonoBehaviour, ICanMove
 {
     private CharacterBase _character;
-
-    private float _movementSpeed;
-    public float MovementSpeed => _movementSpeed;
+    public float MovementSpeed { get; private set; }
 
     private IListenAxisInput _inputHandler;
 
@@ -22,7 +20,7 @@ public class InputMovementHandler : MonoBehaviour, IMovement
     public void Init(IListenAxisInput inputHandler, float speed)
     {
         _inputHandler = inputHandler;
-        _movementSpeed = speed;
+        MovementSpeed = speed;
     }
 
     private void FixedUpdate()
@@ -42,7 +40,7 @@ public class InputMovementHandler : MonoBehaviour, IMovement
             return;
         }
 
-        _rigidbody.MovePosition(transform.position + (Vector3)direction.normalized * _movementSpeed * Time.fixedDeltaTime);
+        _rigidbody.MovePosition(transform.position + (Vector3)direction.normalized * MovementSpeed * Time.fixedDeltaTime);
         _character.AnimationHandler.SetMoving();
         _character.AnimationHandler.SetMovementDirection(direction);
         _character.VFXHandler.SpawnParticles(_character.VFXHandler.StepParticles);
@@ -51,6 +49,6 @@ public class InputMovementHandler : MonoBehaviour, IMovement
 
     public void SetSpeed(float speed)
     {
-        _movementSpeed = speed;
+        MovementSpeed = speed;
     }
 }

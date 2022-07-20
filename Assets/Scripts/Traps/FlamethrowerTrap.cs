@@ -50,7 +50,7 @@ public class FlamethrowerTrap : Trap, ISwitchable
                 d.TakeDamage(1);
                 Debug.Log("Flamethrower trap hit");
             }
-            yield return new WaitForSeconds(Time.deltaTime);
+            yield return new WaitForSeconds(DefaultTickTime);
         }
 
         if (IsActive)
