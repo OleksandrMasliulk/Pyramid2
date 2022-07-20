@@ -4,6 +4,6 @@ using UnityEngine;
 
 public interface IInterractible
 {
-    public string tooltip { get; set; }
+    public string Tooltip { get; }
     public void Interract(PlayerController user);
 }

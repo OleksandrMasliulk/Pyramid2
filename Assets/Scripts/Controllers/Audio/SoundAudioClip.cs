@@ -14,7 +14,7 @@ public class SoundAudioClip
 
     [Header("General parameters")]
     public SoundType type;
-    public AudioClip clip;
+    public AssetReference clip;
     [Range(0f, 1f)]
     public float volume;
     public float repeatPlayeDelay;

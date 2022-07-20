@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using System.Threading.Tasks;
+using UnityEngine.AddressableAssets;
 
 public class AudioManager : MonoBehaviour
 {
@@ -67,131 +68,153 @@ public class AudioManager : MonoBehaviour
         return null;
     }
 
-    public AudioSource PlaySound(SoundAudioClip sound)
+    public async void PlaySound(SoundAudioClip sound)
     {
-        AudioClip clip = sound.clip; //await LoadAudioClip(sound);
-        AudioSource audioSource = null;
-        if (clip != null && sound.CanPlay())
-        {
-            GameObject go = new GameObject("Sound");
-            audioSource = go.AddComponent<AudioSource>();
-            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
-            audioSource.volume = sound.volume;
-            audioSource.PlayOneShot(clip);
-            float duration = clip.length;
-            Destroy(audioSource.gameObject, duration);
-        }
+        AudioClip clip = await sound.clip.LoadAssetAsyncSafe<AudioClip>();
 
-        return audioSource;
+        if (clip == null || !sound.CanPlay())
+            return;
+
+        GameObject go = new GameObject("Sound");
+        AudioSource audioSource = go.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
+        audioSource.volume = sound.volume;
+        audioSource.PlayOneShot(clip);
+
+        float duration = clip.length;
+        await Task.Delay((int)(duration * 1000));
+        Addressables.ReleaseInstance(go);
+        sound.clip.ReleaseAsset();
     }
 
-    public AudioSource PlaySound(SoundAudioClip sound, bool looped)
+    public async void PlaySound(SoundAudioClip sound, bool looped)
     {
-        AudioClip clip = sound.clip;
-        AudioSource audioSource = null;
-        if (clip != null && sound.CanPlay())
-        {
-            GameObject go = new GameObject("Sound");
-            audioSource = go.AddComponent<AudioSource>();
-            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
-            audioSource.clip = clip;
-            audioSource.loop = looped;
-            audioSource.volume = sound.volume;
-            audioSource.Play();
-        }
+        AudioClip clip = await sound.clip.LoadAssetAsyncSafe<AudioClip>();
 
-        return audioSource;
+        if (clip == null || !sound.CanPlay())
+            return;
+
+        GameObject go = new GameObject("Sound");
+        AudioSource audioSource = go.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
+        audioSource.clip = clip;
+        audioSource.loop = looped;
+        audioSource.volume = sound.volume;
+        audioSource.Play();
     }
 
-    public AudioClip PlayeSound3D(SoundAudioClip sound, Vector3 position)
+    public async void PlayeSound3D(SoundAudioClip sound, Vector3 position)
     {
-        AudioClip clip = sound.clip;
-        if (clip != null && sound.CanPlay())
-        {
-            GameObject go = new GameObject("Sound");
-            go.transform.position = position;
-            AudioSource audioSource = go.AddComponent<AudioSource>();
-            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
-            audioSource.clip = clip;
-            audioSource.volume = sound.volume;
-            audioSource.spatialBlend = 1;
-            audioSource.minDistance = .05f;
-            audioSource.maxDistance = sound.maxRange;
-            audioSource.rolloffMode = AudioRolloffMode.Linear;
-            audioSource.Play();
-        }
+        AudioClip clip = await sound.clip.LoadAssetAsyncSafe<AudioClip>();
 
-        return clip;
+        if (clip == null || !sound.CanPlay())
+            return;
+
+        GameObject go = new GameObject("Sound");
+        go.transform.position = position;
+        AudioSource audioSource = go.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
+        audioSource.clip = clip;
+        audioSource.volume = sound.volume;
+        audioSource.spatialBlend = 1;
+        audioSource.minDistance = .05f;
+        audioSource.maxDistance = sound.maxRange;
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
+        audioSource.Play();
+
+        float duration = clip.length;
+        await Task.Delay((int)(duration * 1000));
+        Destroy(go);
+        sound.clip.ReleaseAsset();
+
     }
-    public AudioSource PlaySound(SoundAudioClip sound, float playbackTime)
+    public async void PlaySound(SoundAudioClip sound, float playbackTime)
     {
-        AudioClip clip = sound.clip;
-        AudioSource audioSource = null;
-        if (clip != null && sound.CanPlay())
-        {
-            GameObject go = new GameObject("Sound");
-            audioSource = go.AddComponent<AudioSource>();
-            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
-            audioSource.volume = sound.volume;
-            audioSource.PlayOneShot(clip);
+        AudioClip clip = await sound.clip.LoadAssetAsyncSafe<AudioClip>();
 
-            MonoBehaviour.Destroy(audioSource.gameObject, playbackTime);
-        }
+        if (clip == null || !sound.CanPlay())
+            return;
 
-        return audioSource;
+        GameObject go = new GameObject("Sound");
+        AudioSource audioSource = go.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
+        audioSource.volume = sound.volume;
+        audioSource.PlayOneShot(clip);
+
+        await Task.Delay((int)(playbackTime * 1000));
+        Destroy(go);
+        sound.clip.ReleaseAsset();
     }
     
-    public AudioSource PlayerSound3D(SoundAudioClip sound, Vector3 position, float playbackTime)
+    public async void PlayerSound3D(SoundAudioClip sound, Vector3 position, float playbackTime)
     {
-        AudioClip clip = sound.clip;
-        AudioSource audioSource = null;
-        if (clip != null && sound.CanPlay())
-        {
-            GameObject go = new GameObject("Sound");
-            go.transform.position = position;
-            audioSource = go.AddComponent<AudioSource>();
-            audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
-            audioSource.clip = clip;
-            audioSource.volume = sound.volume;
-            audioSource.spatialBlend = 1;
-            audioSource.minDistance = .05f;
-            audioSource.maxDistance = sound.maxRange;
-            audioSource.rolloffMode = AudioRolloffMode.Linear;
-            audioSource.Play();
+        AudioClip clip = await sound.clip.LoadAssetAsyncSafe<AudioClip>();
 
-            MonoBehaviour.Destroy(audioSource.gameObject, playbackTime);
-        }
+        if (clip == null || !sound.CanPlay())
+            return;
+
+        GameObject go = new GameObject("Sound");
+        go.transform.position = position;
+        AudioSource audioSource = go.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
+        audioSource.clip = clip;
+        audioSource.volume = sound.volume;
+        audioSource.spatialBlend = 1;
+        audioSource.minDistance = .05f;
+        audioSource.maxDistance = sound.maxRange;
+        audioSource.rolloffMode = AudioRolloffMode.Linear;
+        audioSource.Play();
+
+        await Task.Delay((int)(playbackTime * 1000));
+        Destroy(go);
+        sound.clip.ReleaseAsset();
+    }
+
+    private async Task<AudioSource> PlayMusicLooped(SoundAudioClip sound)
+    {
+        AudioClip clip = await sound.clip.LoadAssetAsyncSafe<AudioClip>();
+
+        if (clip == null || !sound.CanPlay())
+            return null;
+
+        GameObject go = new GameObject("Sound");
+        AudioSource audioSource = go.AddComponent<AudioSource>();
+        audioSource.outputAudioMixerGroup = sound.type == SoundAudioClip.SoundType.Sound ? _soundOutput : _musicOutput;
+        audioSource.clip = clip;
+        audioSource.loop = true;
+        audioSource.volume = sound.volume;
+        audioSource.Play();
 
         return audioSource;
     }
 
-    public void PlayLevelTheme(SoundAudioClip sound)
+    public async void PlayLevelTheme(SoundAudioClip sound)
     {
         //StopAllCoroutines();
 
         if (_levelThemePlaying.source == null)
         {
-            _levelThemePlaying = new MusicTheme(PlaySound(sound, true), sound.volume);
+            _levelThemePlaying = new MusicTheme(await PlayMusicLooped(sound), sound.volume);
             StartCoroutine(FadeIn(_levelThemePlaying));
         }
         else
         {
             AudioSource oldTheme = _levelThemePlaying.source;
-            _levelThemePlaying = new MusicTheme(PlaySound(sound, true), sound.volume);
+            _levelThemePlaying = new MusicTheme(await PlayMusicLooped(sound), sound.volume);
             StartCoroutine(FadeOut(oldTheme, true));
             StartCoroutine(FadeIn(_levelThemePlaying));
         }
 
     }
 
-    public void PlayOverlapTheme(SoundAudioClip sound)
+    public async void PlayOverlapTheme(SoundAudioClip sound)
     {
-        if (FindThemeByClip(sound.clip).source != null)
+        if (FindThemeByClip(await sound.clip.LoadAssetAsyncSafe<AudioClip>()).source != null)
             return;
 
         //StopAllCoroutines();
 
-        _overlapThemeList.Add(new MusicTheme(PlaySound(sound, true), sound.volume));
+        _overlapThemeList.Add(new MusicTheme(await PlayMusicLooped(sound), sound.volume));
         if (_overlapThemeList.Count <= 1)
         {
             StartCoroutine(FadeIn(_overlapThemeList[_overlapThemeList.Count - 1]));
@@ -204,9 +227,9 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void RemoveOverlapTheme(SoundAudioClip sound)
+    public async void RemoveOverlapTheme(SoundAudioClip sound)
     {
-        MusicTheme source = FindThemeByClip(sound.clip);
+        MusicTheme source = FindThemeByClip(await sound.clip.LoadAssetAsyncSafe<AudioClip>());
         if (source.source == null)
             return;
 
@@ -230,12 +253,14 @@ public class AudioManager : MonoBehaviour
         else
         {
             _overlapThemeList.Remove(source);
-            Destroy(source.source.gameObject);
         }
     }
 
     private MusicTheme FindThemeByClip(AudioClip clip)
     {
+        if (_levelThemePlaying.source.clip == clip)
+            return _levelThemePlaying;
+
         foreach(MusicTheme theme in _overlapThemeList)
         {
             if (theme.source.clip == clip)
@@ -278,15 +303,8 @@ public class AudioManager : MonoBehaviour
 
         if (destroyFaded)
         {
-            Destroy(source.gameObject);
+            Addressables.Release<AudioClip>(source.clip);
+            Addressables.ReleaseInstance(source.gameObject);
         }
     }
-
-    //private async Task<AudioClip> LoadAudioClip(SoundAudioClip sound)
-    //{
-    //    var op = sound.clip.LoadAssetAsync<AudioClip>();
-
-    //    await op.Task;
-    //    return op.Result;
-    //}
 }

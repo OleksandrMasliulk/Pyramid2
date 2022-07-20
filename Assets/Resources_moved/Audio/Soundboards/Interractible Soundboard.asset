@@ -15,19 +15,31 @@ MonoBehaviour:
   _soundBoard:
     doorOpen:
       type: 0
-      clip: {fileID: 8300000, guid: e5014e7322f9adb438618b168be4a7c0, type: 3}
+      clip:
+        m_AssetGUID: e5014e7322f9adb438618b168be4a7c0
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       volume: 1
       repeatPlayeDelay: 0
       maxRange: 25
     doorClose:
       type: 0
-      clip: {fileID: 8300000, guid: 3aae7ac7d33d7da4fba950bec0b7c59b, type: 3}
+      clip:
+        m_AssetGUID: 3aae7ac7d33d7da4fba950bec0b7c59b
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       volume: 1
       repeatPlayeDelay: 0
       maxRange: 25
     lever:
       type: 0
-      clip: {fileID: 8300000, guid: 3965d897ace17104d81da2aef17cc448, type: 3}
+      clip:
+        m_AssetGUID: 3965d897ace17104d81da2aef17cc448
+        m_SubObjectName: 
+        m_SubObjectType: 
+        m_EditorAssetChanged: 0
       volume: 1
       repeatPlayeDelay: 0
       maxRange: 15

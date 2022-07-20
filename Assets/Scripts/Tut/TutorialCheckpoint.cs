@@ -6,11 +6,11 @@ public class TutorialCheckpoint : MonoBehaviour, IInterractible
 {
     public TutorialController tutController;
 
-    public string tooltip { get; set; }
+    public string Tooltip { get; set; }
 
     private void Start()
     {
-        tooltip = "RESURRECT";
+        Tooltip = "RESURRECT";
     }
 
     public void Interract(PlayerController user)

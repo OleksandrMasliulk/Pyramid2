@@ -8,11 +8,11 @@ public class Pickable : MonoBehaviour, IInterractible
     [SerializeField] private ItemSO itemSO;
     private Item item;
     [SerializeField] private int count;
-    public string tooltip { get; set; }
+    public string Tooltip { get; set; }
 
     private void Awake()
     {
-        tooltip = "PICK_UP";
+        Tooltip = "PICK_UP";
 
         Init();
     }

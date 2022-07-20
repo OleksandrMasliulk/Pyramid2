@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class DialogueNPC : NPCBase, IInterractible
 {
-    public string tooltip { get; set; }
+    public string Tooltip { get; set; }
 
     [SerializeField] private Dialogue currentDialogue;
 
     private void Awake()
     {
-        tooltip = "SPEAK";
+        Tooltip = "SPEAK";
     }
 
     public void Interract(PlayerController user)
