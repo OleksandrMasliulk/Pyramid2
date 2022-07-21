@@ -17,7 +17,15 @@ MonoBehaviour:
   m_SharedData: {fileID: 11400000, guid: 32508ea593ee4674ba323282c66fd6e8, type: 2}
   m_Metadata:
     m_Items: []
-  m_TableData: []
+  m_TableData:
+  - m_Id: 11940155392
+    m_Localized: Kuba Vons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 32085397504
+    m_Localized: "W\xE4chter des Grabes"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

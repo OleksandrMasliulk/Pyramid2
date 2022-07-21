@@ -46,6 +46,10 @@ MonoBehaviour:
     m_Localized: "Naci\u015Bnij klawisz E, aby przem\xF3wi\u0107"
     m_Metadata:
       m_Items: []
+  - m_Id: 1846584202514432
+    m_Localized: "Naci\u015Bnij E, aby wskrzesi\u0107"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

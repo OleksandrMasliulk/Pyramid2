@@ -46,6 +46,10 @@ MonoBehaviour:
     m_Localized: Presione E para hablar
     m_Metadata:
       m_Items: []
+  - m_Id: 1846584202514432
+    m_Localized: Presione E para resucitar
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
