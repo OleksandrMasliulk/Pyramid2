@@ -17,6 +17,38 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: da0ae7327b8e17b4ba781d53a29ccbf8
   m_SerializeEntries:
+  - m_GUID: a3c0d49ae815d44478c66a53737dda0f
+    m_Address: Assets/Resources_moved/ItemsSO/Treasure10_1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 50721e65ab278ef4990e1e018fce4857
+    m_Address: Assets/Resources_moved/ItemsSO/Treasure5_2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 44ccbdf5fc19e09478319c8a065be235
+    m_Address: Assets/Resources_moved/ItemsSO/Treasure5_1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e5ff4fc0504476944acd98a9b7d087d0
+    m_Address: Assets/Resources_moved/ItemsSO/Default Paint.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a9070a22f4b9f6448948b0c0f30ad31e
+    m_Address: Assets/Resources_moved/ItemsSO/Default Medkit.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a7e9baed6dd3ad144adb2fcf24111c39
+    m_Address: Assets/Resources_moved/ItemsSO/Default Flashlight.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e5379bd69eb16a94b999b5ff41f15b3a
+    m_Address: Assets/Resources_moved/ItemsSO/Default Flare.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f2c1b314ecdb70d4ca9449301e837465
+    m_Address: Assets/Resources_moved/Dialogues/Dialog Tutorial.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   - m_GUID: e0dd82ca8e242d04bb2f23e37a6760c0
     m_Address: Assets/Resources_moved/Audio/Soundboards/GameActions Soundboard.asset
     m_ReadOnly: 0
@@ -49,40 +81,12 @@ MonoBehaviour:
     m_Address: Assets/Resources_moved/Audio/Soundboards/UI Soundboard.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 4b4ade3531fb54e41ab259984e9a702c
-    m_Address: Assets/Resources_moved/Characters/AllyNPC/Dialogue NPC.asset
+  - m_GUID: 179db9ce1d019f740af8d220ee029c97
+    m_Address: Assets/Resources_moved/Characters/Enemies/New Mummy.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: f2c1b314ecdb70d4ca9449301e837465
-    m_Address: Assets/Resources_moved/Dialogues/Dialog Tutorial.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: e5379bd69eb16a94b999b5ff41f15b3a
-    m_Address: Assets/Resources_moved/ItemsSO/Default Flare.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: a7e9baed6dd3ad144adb2fcf24111c39
-    m_Address: Assets/Resources_moved/ItemsSO/Default Flashlight.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: a9070a22f4b9f6448948b0c0f30ad31e
-    m_Address: Assets/Resources_moved/ItemsSO/Default Medkit.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: e5ff4fc0504476944acd98a9b7d087d0
-    m_Address: Assets/Resources_moved/ItemsSO/Default Paint.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 44ccbdf5fc19e09478319c8a065be235
-    m_Address: Assets/Resources_moved/ItemsSO/Treasure5_1.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 50721e65ab278ef4990e1e018fce4857
-    m_Address: Assets/Resources_moved/ItemsSO/Treasure5_2.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: a3c0d49ae815d44478c66a53737dda0f
-    m_Address: Assets/Resources_moved/ItemsSO/Treasure10_1.asset
+  - m_GUID: 78f9d329b52d20e4898bb8c9669c97c1
+    m_Address: Assets/Resources_moved/Characters/Player/R_New Player Character.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: f22fc26dc9a088145865c0a3024a1e9f

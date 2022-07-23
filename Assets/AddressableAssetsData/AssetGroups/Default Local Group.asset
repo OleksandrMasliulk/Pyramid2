@@ -17,32 +17,52 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 59396376da886d74bb0d2a868f25f522
   m_SerializeEntries:
-  - m_GUID: 78f9d329b52d20e4898bb8c9669c97c1
-    m_Address: Assets/Resources_moved/Characters/Player/R_New Player Character.asset
+  - m_GUID: d0e3a87b5f4c92642b85a3669397b2a2
+    m_Address: Assets/Prefabs/Characters/Mummy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fbce028d41cec6b449a05726ffda213e
+    m_Address: Assets/Prefabs/Characters/Player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5281d8d789c507b4e82e2fba0ddeca0c
+    m_Address: Assets/Prefabs/UI/PlayerHUD/Slot.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 458aa0e194cd7ff4cbe1d686c975f5bc
     m_Address: Assets/Prefabs/Particles/StepsPS.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 179db9ce1d019f740af8d220ee029c97
-    m_Address: Assets/Resources_moved/Characters/Enemies/New Mummy.asset
+  - m_GUID: a77f7d61efb44744bbc0ef33646f26d1
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Flare.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 786198f5df0983b43bc52c76b0fc8369
-    m_Address: Assets/Resources_moved/Usable Items/Arrow Down.prefab
+  - m_GUID: b9e463112a966804bacb3892d6df016d
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Flashlight.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 49925648968aaff4abf8a2f0f74e069d
-    m_Address: Assets/Resources_moved/Usable Items/Arrow Left.prefab
+  - m_GUID: eb398cd73696e0e4abc855e51bb7ed5c
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Medicine.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: b90722a2d0aeca74788c915583cb25d9
-    m_Address: Assets/Resources_moved/Usable Items/Arrow Right.prefab
+  - m_GUID: c8349ac169d928a4f869c06310c031cf
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Paint.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 7e571513877af3d4fb2bdd2549487f26
-    m_Address: Assets/Resources_moved/Usable Items/Arrow Up.prefab
+  - m_GUID: df6d36516b218f741b0e4aebcc9e7186
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure5.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4e37780224bf09547bedea9b8518d85e
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure5_2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1c7dcf614be375a40ba8a412ece057db
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure10_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7f0e54153fb925d4a8470b4e73856c58
+    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure10_2.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
