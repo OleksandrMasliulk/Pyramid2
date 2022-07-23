@@ -441,22 +441,6 @@ MonoBehaviour:
     m_Address: Assets/Graphics/Sprites/Mummy/Mummy.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 46ffd640c95149c47b163493d2255987
-    m_Address: Assets/PostProcessing/SanityFX/Sanity25-50.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: ac0043312053d664c98fee18a0f317f2
-    m_Address: Assets/PostProcessing/SanityFX/Sanity0-25.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 59c6b73a8f4365246bba170b73f42acc
-    m_Address: Assets/PostProcessing/SanityFX/Sanity75-100.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: dcdb9bed0d6cdda4b9ed07261aaf6b70
-    m_Address: Assets/PostProcessing/SanityFX/Sanity50-75.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 65c31fbfbd3aad84b8c3d3542dfeac07
     m_Address: Assets/PostProcessing/SanityFX/Sanity100.asset
     m_ReadOnly: 0

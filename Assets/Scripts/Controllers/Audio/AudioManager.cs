@@ -9,24 +9,24 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance { get; private set; }
 
-    [System.Serializable]
-    private struct MusicTheme 
-    {
-        public AudioSource source;
-        public float volume;
+    //[System.Serializable]
+    //private struct MusicTheme 
+    //{
+    //    public AudioSource source;
+    //    public float volume;
 
-        public MusicTheme(AudioSource _source, float _volume)
-        {
-            source = _source;
-            volume = _volume;
-        }
-    }
+    //    public MusicTheme(AudioSource _source, float _volume)
+    //    {
+    //        source = _source;
+    //        volume = _volume;
+    //    }
+    //}
 
     [SerializeField] private SoundBoardSO[] _soundBoards;
 
     [SerializeField] private float _fadeTime;
-    [SerializeField]private MusicTheme _levelThemePlaying;
-    [SerializeField]private List<MusicTheme> _overlapThemeList;
+    //[SerializeField]private MusicTheme _levelThemePlaying;
+    //[SerializeField]private List<MusicTheme> _overlapThemeList;
 
     [SerializeField] private AudioMixerGroup _musicOutput;
     [SerializeField] private AudioMixerGroup _soundOutput;
@@ -42,7 +42,7 @@ public class AudioManager : MonoBehaviour
             Destroy(this.gameObject);
         }
         InitSoundBoards();
-        _overlapThemeList = new List<MusicTheme>();
+        //_overlapThemeList = new List<MusicTheme>();
     }
 
     private void InitSoundBoards()
@@ -188,123 +188,123 @@ public class AudioManager : MonoBehaviour
         return audioSource;
     }
 
-    public async void PlayLevelTheme(SoundAudioClip sound)
-    {
-        //StopAllCoroutines();
+    //public async void PlayLevelTheme(SoundAudioClip sound)
+    //{
+    //    //StopAllCoroutines();
 
-        if (_levelThemePlaying.source == null)
-        {
-            _levelThemePlaying = new MusicTheme(await PlayMusicLooped(sound), sound.volume);
-            StartCoroutine(FadeIn(_levelThemePlaying));
-        }
-        else
-        {
-            AudioSource oldTheme = _levelThemePlaying.source;
-            _levelThemePlaying = new MusicTheme(await PlayMusicLooped(sound), sound.volume);
-            StartCoroutine(FadeOut(oldTheme, true));
-            StartCoroutine(FadeIn(_levelThemePlaying));
-        }
+    //    if (_levelThemePlaying.source == null)
+    //    {
+    //        _levelThemePlaying = new MusicTheme(await PlayMusicLooped(sound), sound.volume);
+    //        StartCoroutine(FadeIn(_levelThemePlaying));
+    //    }
+    //    else
+    //    {
+    //        AudioSource oldTheme = _levelThemePlaying.source;
+    //        _levelThemePlaying = new MusicTheme(await PlayMusicLooped(sound), sound.volume);
+    //        StartCoroutine(FadeOut(oldTheme, true));
+    //        StartCoroutine(FadeIn(_levelThemePlaying));
+    //    }
 
-    }
+    //}
 
-    public async void PlayOverlapTheme(SoundAudioClip sound)
-    {
-        if (FindThemeByClip(await sound.clip.LoadAssetAsyncSafe<AudioClip>()).source != null)
-            return;
+    //public async void PlayOverlapTheme(SoundAudioClip sound)
+    //{
+    //    if (FindThemeByClip(await sound.clip.LoadAssetAsyncSafe<AudioClip>()).source != null)
+    //        return;
 
-        //StopAllCoroutines();
+    //    //StopAllCoroutines();
 
-        _overlapThemeList.Add(new MusicTheme(await PlayMusicLooped(sound), sound.volume));
-        if (_overlapThemeList.Count <= 1)
-        {
-            StartCoroutine(FadeIn(_overlapThemeList[_overlapThemeList.Count - 1]));
-            StartCoroutine(FadeOut(_levelThemePlaying.source, false));
-        }
-        else
-        {
-            StartCoroutine(FadeIn(_overlapThemeList[_overlapThemeList.Count - 1]));
-            StartCoroutine(FadeOut(_overlapThemeList[_overlapThemeList.Count - 2].source, false));
-        }
-    }
+    //    _overlapThemeList.Add(new MusicTheme(await PlayMusicLooped(sound), sound.volume));
+    //    if (_overlapThemeList.Count <= 1)
+    //    {
+    //        StartCoroutine(FadeIn(_overlapThemeList[_overlapThemeList.Count - 1]));
+    //        StartCoroutine(FadeOut(_levelThemePlaying.source, false));
+    //    }
+    //    else
+    //    {
+    //        StartCoroutine(FadeIn(_overlapThemeList[_overlapThemeList.Count - 1]));
+    //        StartCoroutine(FadeOut(_overlapThemeList[_overlapThemeList.Count - 2].source, false));
+    //    }
+    //}
 
-    public async void RemoveOverlapTheme(SoundAudioClip sound)
-    {
-        MusicTheme source = FindThemeByClip(await sound.clip.LoadAssetAsyncSafe<AudioClip>());
-        if (source.source == null)
-            return;
+    //public async void RemoveOverlapTheme(SoundAudioClip sound)
+    //{
+    //    MusicTheme source = FindThemeByClip(await sound.clip.LoadAssetAsyncSafe<AudioClip>());
+    //    if (source.source == null)
+    //        return;
 
-        //StopAllCoroutines();
+    //    //StopAllCoroutines();
 
-        if (source.source.isPlaying)
-        {
-            if (_overlapThemeList.Count >= 2)
-            {
-                StartCoroutine(FadeIn(_overlapThemeList[_overlapThemeList.Count - 2]));
-                StartCoroutine(FadeOut(source.source, true));
-            }
-            else
-            {
-                StartCoroutine(FadeIn(_levelThemePlaying));
-                StartCoroutine(FadeOut(source.source, true));
-            }
+    //    if (source.source.isPlaying)
+    //    {
+    //        if (_overlapThemeList.Count >= 2)
+    //        {
+    //            StartCoroutine(FadeIn(_overlapThemeList[_overlapThemeList.Count - 2]));
+    //            StartCoroutine(FadeOut(source.source, true));
+    //        }
+    //        else
+    //        {
+    //            StartCoroutine(FadeIn(_levelThemePlaying));
+    //            StartCoroutine(FadeOut(source.source, true));
+    //        }
 
-            _overlapThemeList.Remove(source);
-        }
-        else
-        {
-            _overlapThemeList.Remove(source);
-        }
-    }
+    //        _overlapThemeList.Remove(source);
+    //    }
+    //    else
+    //    {
+    //        _overlapThemeList.Remove(source);
+    //    }
+    //}
 
-    private MusicTheme FindThemeByClip(AudioClip clip)
-    {
-        if (_levelThemePlaying.source.clip == clip)
-            return _levelThemePlaying;
+    //private MusicTheme FindThemeByClip(AudioClip clip)
+    //{
+    //    if (_levelThemePlaying.source.clip == clip)
+    //        return _levelThemePlaying;
 
-        foreach(MusicTheme theme in _overlapThemeList)
-        {
-            if (theme.source.clip == clip)
-            {
-                return theme;
-            }
-        }
+    //    foreach(MusicTheme theme in _overlapThemeList)
+    //    {
+    //        if (theme.source.clip == clip)
+    //        {
+    //            return theme;
+    //        }
+    //    }
 
-        Debug.Log("No Source found!");
-        return default;
-    }
+    //    Debug.Log("No Source found!");
+    //    return default;
+    //}
 
-    private IEnumerator FadeIn(MusicTheme source)
-    {
-        if (!source.source.isPlaying)
-            source.source.UnPause();
+    //private IEnumerator FadeIn(MusicTheme source)
+    //{
+    //    if (!source.source.isPlaying)
+    //        source.source.UnPause();
 
-        float initialVolume = source.volume;
-        float time = 0;
-        while (time <= _fadeTime)
-        {
-            source.source.volume = Mathf.Lerp(0f, initialVolume, time / _fadeTime);
-            time += Time.deltaTime;
-            yield return new WaitForSeconds(Time.deltaTime);
-        }
-    }
+    //    float initialVolume = source.volume;
+    //    float time = 0;
+    //    while (time <= _fadeTime)
+    //    {
+    //        source.source.volume = Mathf.Lerp(0f, initialVolume, time / _fadeTime);
+    //        time += Time.deltaTime;
+    //        yield return new WaitForSeconds(Time.deltaTime);
+    //    }
+    //}
 
-    private IEnumerator FadeOut(AudioSource source, bool destroyFaded)
-    {
-        float initialVolume = source.volume;
-        float time = 0;
-        while (time <= _fadeTime)
-        {
-            source.volume = Mathf.Lerp(initialVolume, 0f, time / _fadeTime);
-            time += Time.deltaTime;
-            yield return new WaitForSeconds(Time.deltaTime);
-        }
+    //private IEnumerator FadeOut(AudioSource source, bool destroyFaded)
+    //{
+    //    float initialVolume = source.volume;
+    //    float time = 0;
+    //    while (time <= _fadeTime)
+    //    {
+    //        source.volume = Mathf.Lerp(initialVolume, 0f, time / _fadeTime);
+    //        time += Time.deltaTime;
+    //        yield return new WaitForSeconds(Time.deltaTime);
+    //    }
 
-        source.Pause();
+    //    source.Pause();
 
-        if (destroyFaded)
-        {
-            Addressables.Release<AudioClip>(source.clip);
-            Addressables.ReleaseInstance(source.gameObject);
-        }
-    }
+    //    if (destroyFaded)
+    //    {
+    //        Addressables.Release<AudioClip>(source.clip);
+    //        Addressables.ReleaseInstance(source.gameObject);
+    //    }
+    //}
 }

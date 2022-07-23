@@ -16,7 +16,35 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 59396376da886d74bb0d2a868f25f522
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 78f9d329b52d20e4898bb8c9669c97c1
+    m_Address: Assets/Resources_moved/Characters/Player/R_New Player Character.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 458aa0e194cd7ff4cbe1d686c975f5bc
+    m_Address: Assets/Prefabs/Particles/StepsPS.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 179db9ce1d019f740af8d220ee029c97
+    m_Address: Assets/Resources_moved/Characters/Enemies/New Mummy.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 786198f5df0983b43bc52c76b0fc8369
+    m_Address: Assets/Resources_moved/Usable Items/Arrow Down.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 49925648968aaff4abf8a2f0f74e069d
+    m_Address: Assets/Resources_moved/Usable Items/Arrow Left.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b90722a2d0aeca74788c915583cb25d9
+    m_Address: Assets/Resources_moved/Usable Items/Arrow Right.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7e571513877af3d4fb2bdd2549487f26
+    m_Address: Assets/Resources_moved/Usable Items/Arrow Up.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
   m_SchemaSet:

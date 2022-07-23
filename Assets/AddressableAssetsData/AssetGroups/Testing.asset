@@ -16,7 +16,15 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: fbe486429a593ad43bc5ae49e7b3a2d6
+<<<<<<< HEAD
   m_SerializeEntries: []
+=======
+  m_SerializeEntries:
+  - m_GUID: 5281d8d789c507b4e82e2fba0ddeca0c
+    m_Address: Assets/_R/Prefabs/UI/Slot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+>>>>>>> origin/OM
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
   m_SchemaSet:

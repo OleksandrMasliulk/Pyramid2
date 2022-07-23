@@ -38,4 +38,13 @@ public static class Extensions
 
         return returnAsset;
     }
+
+    public static void ChangeTreeLayer(this GameObject go, int layer)
+    {
+        go.layer = layer;
+        foreach (Transform obj in go.GetComponentsInChildren<Transform>())
+        {
+            obj.gameObject.layer = layer;
+        }
+    }
 }

@@ -6,10 +6,10 @@ public class WinTrigger : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerController player = collision.GetComponent<PlayerController>();
+        PlayerDrivenCharacter player = collision.GetComponent<PlayerDrivenCharacter>();
         if (player != null)
         {
-            player.SetState(player.coveredState);
+            //player.SetState(player.coveredState);
             GameController.Instance.Win();
         }
     }
