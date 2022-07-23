@@ -9,7 +9,7 @@ public class PlayerAliveState : PlayerPhysicalState
         player.AnimationHandler.SetAliveAniationHandler();
         player.gameObject.ChangeTreeLayer(6);
         player.SanityHandler.ModifySanity(100);
-        player.GhostCamera.gameObject.SetActive(false);
+        player.CameraHandler.SetAlliveCamera();
         player.HUDHandler.HUD.SetActive(true);
     }
 

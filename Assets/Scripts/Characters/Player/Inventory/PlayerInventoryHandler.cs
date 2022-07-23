@@ -7,21 +7,20 @@ public class PlayerInventoryHandler : MonoBehaviour
 {
     private PlayerDrivenCharacter _character;
     private CharacterInventory _inventory;
-    private PlayerInputHandler _inputHandler;
+    [SerializeField] private IInventoryInput _inputHandler;
 
     private int _selectedSlot;
 
     private void Awake()
     {
         _character = GetComponent<PlayerDrivenCharacter>();
+        _inputHandler = GetComponent<IInventoryInput>();
     }
 
-    public void Init(PlayerInputHandler inputHandler, int slotCount)
+    public void Init(int slotCount)
     {
         _inventory = new CharacterInventory(slotCount);
         _selectedSlot = 0;
-
-        this._inputHandler = inputHandler;
 
         _inputHandler.OnSlot1 += SelectSlot0;
         _inputHandler.OnSlot2 += SelectSlot1;
@@ -43,7 +42,11 @@ public class PlayerInventoryHandler : MonoBehaviour
             Debug.LogWarning("Inventory is FULL");
 
         if (callback.Result != AddItemCallback.ResultType.Failed)
+        {
+            if (item is IItemPickUp pickUp)
+                pickUp.OnPickUp(_character);
             _character.HUDHandler.Inventory.RefreshInventoryHUD(_inventory);
+        }
 
         return callback;
     }
@@ -53,8 +56,11 @@ public class PlayerInventoryHandler : MonoBehaviour
         if (_inventory.Inventory[_selectedSlot].Item == null)
             return;
 
+        if (_inventory.Inventory[_selectedSlot].Item is IItemDrop drop)
+            drop.OnDrop(_character);
+
         GameObject go = Instantiate(_inventory.Inventory[_selectedSlot].Item.ItemDropPrefab, transform.position, Quaternion.identity);
-        go.GetComponent<Pickable>().SetCount(_inventory.Inventory[_selectedSlot].Count);
+        go.GetComponent<Pickable>().Init(_inventory.Inventory[_selectedSlot].Item, _inventory.Inventory[_selectedSlot].Count); //SetCount(_inventory.Inventory[_selectedSlot].Count);
         _inventory.RemoveItem(_selectedSlot);
         _character.HUDHandler.Inventory.RefreshInventoryHUD(_inventory);
     }

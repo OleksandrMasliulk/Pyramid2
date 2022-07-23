@@ -26,6 +26,9 @@ public class SpikeTrap : Trap, ISwitchable
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (_spikesCoroutine != null)
+            return;
+
         if (collision.GetComponent<CharacterBase>())
             Trigger();
     }
@@ -56,13 +59,15 @@ public class SpikeTrap : Trap, ISwitchable
                 d.TakeDamage(1);
             }
             yield return new WaitForSeconds(DefaultTickTime);
+            Debug.Log("Spike Trap tick");
         }
-
+        Debug.Log("Spike Trap done");
         HideSpikes();
     }
 
     private void HideSpikes()
     {
+        _spikesCoroutine = null;
         _anim.SetBool("isActive", false);
         _isPopped = false;
     }

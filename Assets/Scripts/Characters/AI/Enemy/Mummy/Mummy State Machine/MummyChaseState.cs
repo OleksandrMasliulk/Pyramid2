@@ -26,6 +26,7 @@ public class MummyChaseState : MummyBehaviourState, ICanChase
         mummy.MovementHandler.SetSpeed(ChaseSpeed);
         mummy.MovementHandler.SetTarget(Target.transform);
         mummy.PlayerSeeker.OnLost += PlayerLost;
+        Target.HealthHandler.OnCharacterDie += (character) => PlayerLost((PlayerDrivenCharacter)character);
     }
 
     private void PlayerLost(PlayerDrivenCharacter player)

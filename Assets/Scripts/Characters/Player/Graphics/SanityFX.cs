@@ -54,4 +54,14 @@ public class SanityFX : MonoBehaviour
     {
         _blendQueue.Enqueue(SetVignetteCoroutine(value));
     }
+
+    public void ShowTentacles()
+    {
+
+    }
+
+    public void HideTentacles()
+    {
+
+    }
 }

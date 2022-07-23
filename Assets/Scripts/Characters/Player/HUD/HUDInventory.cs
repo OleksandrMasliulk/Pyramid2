@@ -56,7 +56,7 @@ public class HUDInventory : MonoBehaviour
         _higlightedSlot = slot;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         foreach(HUDInventorySlot slot in _inventory)
         {

@@ -7,7 +7,7 @@ public class PlayerGhostState : PlayerPhysicalState
     public override void OnStateEnter(PlayerDrivenCharacter player)
     {
         player.AnimationHandler.SetGhostAnimationHandler();
-        player.GhostCamera.gameObject.SetActive(true);
+        player.CameraHandler.SetGhostCamera();
         player.gameObject.ChangeTreeLayer(13);
         player.VFXHandler.SpawnCorpse();
         player.VFXHandler.EnableGhostParticles();

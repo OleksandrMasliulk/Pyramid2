@@ -49,10 +49,6 @@ MonoBehaviour:
     m_Address: Assets/Resources_moved/Audio/Soundboards/UI Soundboard.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 2071302c424afff41a171c34f65c6039
-    m_Address: Assets/Resources_moved/Characters/Enemies/Default Mummy.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 4b4ade3531fb54e41ab259984e9a702c
     m_Address: Assets/Resources_moved/Characters/AllyNPC/Dialogue NPC.asset
     m_ReadOnly: 0

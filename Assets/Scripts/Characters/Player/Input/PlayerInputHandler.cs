@@ -6,7 +6,6 @@ using UnityEngine;
 public class PlayerInputHandler : MonoBehaviour, IListenAxisInput, IInventoryInput, IActionsInput
 {
     public float Horizontal { get; private set; }
-
     public float Vertical { get; private set; }
 
     public event Action OnSlot1;

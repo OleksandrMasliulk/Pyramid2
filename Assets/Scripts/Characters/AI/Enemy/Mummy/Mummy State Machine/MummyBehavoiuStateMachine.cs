@@ -6,10 +6,7 @@ public class MummyBehavoiuStateMachine
 {
     private Mummy _mummy;
 
-    public MummyAttackState AttackState;
     public MummyRoamState RoamState;
-    public MummySenseState SenseState;
-    public MummyBreakLOSState BreakLOSState;
     private MummyBehaviourState _currentState;
 
     public MummyBehavoiuStateMachine(Mummy mummy)

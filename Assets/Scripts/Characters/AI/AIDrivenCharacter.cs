@@ -5,7 +5,7 @@ using UnityEngine.AddressableAssets;
 
 public class AIDrivenCharacter : CharacterBase
 {
-    [SerializeField] protected IPathfindingMovement _movementHandler;
+    protected IPathfindingMovement _movementHandler;
     public IPathfindingMovement MovementHandler => _movementHandler;
 
     public override void InitCharacter(AssetReference stats)

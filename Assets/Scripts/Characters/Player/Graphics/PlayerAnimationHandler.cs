@@ -7,15 +7,9 @@ public class PlayerAnimationHandler : CharacterAnimationHandler
     [SerializeField] private RuntimeAnimatorController aliveController;
     [SerializeField] private AnimatorOverrideController ghostController;
 
-    [Header("Sockets")]
-    [SerializeField] private Transform _flashlightSocket;
-    public Transform FlashlightSocket => _flashlightSocket;
-
     public override void SetMovementDirection(Vector2 direction)
     {
         base.SetMovementDirection(direction);
-
-        SetFlashlightDirection(direction);
     }
 
     public void DisableRenderer()
@@ -40,17 +34,7 @@ public class PlayerAnimationHandler : CharacterAnimationHandler
         _animator.Rebind();
     }
 
-    public void SetFlashlightDirection(Vector3 dir)
-    {
-        float m = 90;
-        if (dir.x == 0 && dir.y == 0)
-        {
-            m = 180;
-        }
-
-        float rot_z = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        _flashlightSocket.rotation = Quaternion.Euler(0f, 0f, rot_z - m);
-    }
+    
 
     //public void SetSanityFX(int sanityLevel)
     //{

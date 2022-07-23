@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MummyGraphicsController : CharacterAnimationHandler
+public class MummyAnimationHandler : CharacterAnimationHandler
 {
     private Mummy _mummy;
 

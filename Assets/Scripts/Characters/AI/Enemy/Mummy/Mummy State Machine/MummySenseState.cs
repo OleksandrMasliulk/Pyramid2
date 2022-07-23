@@ -24,6 +24,7 @@ public class MummySenseState : MummyBehaviourState, ICanSense
         mummy.MovementHandler.SetTarget(Target.transform);
 
         Target.GetComponent<IHaveSanity>().OnSanityChanged += SanityChangerd;
+        Target.HealthHandler.OnCharacterDie += (character) => { _stateMachine.SetState(_stateMachine.RoamState); };
     }
 
     private void SanityChangerd(int value)
@@ -44,7 +45,7 @@ public class MummySenseState : MummyBehaviourState, ICanSense
 
         if (distance <= mummy.Stats.AttackDistance)
         {
-            _stateMachine.SetState(_stateMachine.AttackState);
+            _stateMachine.SetState(new MummyAttackState(mummy.Stats, Target.GetComponent<IDamageable>(), _stateMachine));
             return;
         }
     }

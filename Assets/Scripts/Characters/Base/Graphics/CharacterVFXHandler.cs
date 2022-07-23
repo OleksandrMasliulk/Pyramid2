@@ -13,6 +13,9 @@ public class CharacterVFXHandler : MonoBehaviour
 
     public async void SpawnParticles(ParticleVFX particles)
     {
+        if (particles == null)
+            return;
+
         if (!particles.CanBeSpawned)
             return;
 

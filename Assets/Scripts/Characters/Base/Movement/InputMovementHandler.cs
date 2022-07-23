@@ -15,11 +15,11 @@ public class InputMovementHandler : MonoBehaviour, ICanMove
     {
         _character = GetComponent<CharacterBase>();
         _rigidbody = GetComponent<Rigidbody2D>();
+        _inputHandler = GetComponent<IListenAxisInput>();
     }
     
-    public void Init(IListenAxisInput inputHandler, float speed)
+    public void Init(float speed)
     {
-        _inputHandler = inputHandler;
         MovementSpeed = speed;
     }
 

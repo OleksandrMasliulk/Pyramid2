@@ -23,7 +23,7 @@ MonoBehaviour:
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
-  _movementSpeed: 4
+  _movementSpeed: 2.5
   _senseLayer:
     serializedVersion: 2
     m_Bits: 64

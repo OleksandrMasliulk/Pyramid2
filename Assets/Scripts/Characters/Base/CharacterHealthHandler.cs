@@ -18,13 +18,13 @@ public class CharacterHealthHandler : MonoBehaviour, IDamageable
 
     public virtual void TakeDamage(int damage)
     {
-        Debug.Log($"{gameObject.name} got hit for {damage} damage");
+        Debug.Log($"{_character.Stats.Name} got hit for {damage} damage");
         OnTakeDamage?.Invoke();
     }
 
     public virtual void Die()
     {
-        Debug.Log($"!!! {gameObject.name} died !!!");
+        Debug.Log($"!!! {_character.Stats.Name} died !!!");
         OnCharacterDie?.Invoke(_character);
     }
 }

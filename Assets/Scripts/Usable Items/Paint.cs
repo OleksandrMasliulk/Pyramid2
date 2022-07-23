@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using System.Threading.Tasks;
 
 [System.Serializable]
 public class Paint : Item, IUseOnPress, IUseOnRelease
@@ -13,20 +15,17 @@ public class Paint : Item, IUseOnPress, IUseOnRelease
 
     private void SpawnArrow(string direction, CharacterBase user)
     {
-        //if (direction == null)
-        //{
-        //    direction = "Up";
-        //}
+        if (direction == null)
+        {
+            direction = "Up";
+        }
 
-        //GameObject prefab = (GameObject)Resources.Load("Usable Items/Arrow " + direction);
-        //if (prefab == null)
-        //{
-        //    Debug.Log("No RESOURCE found");
-        //    return;
-        //}
-
-        Debug.Log("Paint used");
-        //MonoBehaviour.Instantiate((GameObject)prefab, user.transform.position, Quaternion.identity);
+        var op = Addressables.LoadAssetAsync<GameObject>("Assets/Resources_moved/Usable Items/Arrow " + direction + ".prefab");
+        op.Completed += (op) =>
+        {
+            Debug.Log("Paint Used");
+            MonoBehaviour.Instantiate(op.Result, user.transform.position, Quaternion.identity);
+        };
     }
 
     public UseItemCallback UseOnRelease(CharacterBase user)

@@ -7,11 +7,11 @@ public abstract class CharacterBase : MonoBehaviour
 {
     protected CharacterBaseStatsSO _stats;
     public CharacterBaseStatsSO Stats => _stats;
-    [SerializeField] protected CharacterHealthHandler _healthHandler;
+    protected CharacterHealthHandler _healthHandler;
     public CharacterHealthHandler HealthHandler => _healthHandler;
-    [SerializeField] protected CharacterVFXHandler _vfxHandler;
+    protected CharacterVFXHandler _vfxHandler;
     public CharacterVFXHandler VFXHandler => _vfxHandler;
-    [SerializeField] protected CharacterAnimationHandler _animationHandler;
+    protected CharacterAnimationHandler _animationHandler;
     public CharacterAnimationHandler AnimationHandler => _animationHandler;
     public abstract void InitCharacter(AssetReference stats);
 }

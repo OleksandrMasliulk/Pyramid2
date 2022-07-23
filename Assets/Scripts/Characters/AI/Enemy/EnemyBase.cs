@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public abstract class EnemyBase : CharacterBase
+public abstract class EnemyBase : AIDrivenCharacter
 {
-    [SerializeField] protected AIPathfindingMovement _movementHandler;
-    public AIPathfindingMovement MovementHandler => _movementHandler;
 }

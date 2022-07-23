@@ -7,17 +7,12 @@ public class PlayerInterractionHandler : MonoBehaviour
     private PlayerDrivenCharacter _character;
     [SerializeField] private Seeker_InterractibleTriggerCircle _seeker;
 
-    private IActionsInput _inputHandler;
+    [SerializeField] private IActionsInput _inputHandler;
 
     private void Awake()
     {
         _character = GetComponent<PlayerDrivenCharacter>();
-    }
-
-    public void Init(IActionsInput inputHandler)
-    {
-        _inputHandler = inputHandler;
-        _inputHandler.OnInterract += Interract;
+        _inputHandler = GetComponent<IActionsInput>();
     }
 
     public void Interract()
@@ -43,6 +38,8 @@ public class PlayerInterractionHandler : MonoBehaviour
 
     private void OnEnable()
     {
+        _inputHandler.OnInterract += Interract;
+
         _seeker.OnSeeked += OnSeeked;
         _seeker.OnLost += OnLost;
     }

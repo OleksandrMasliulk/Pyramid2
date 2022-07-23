@@ -4,7 +4,7 @@ using System;
 
 public class Seeker_InterractibleTriggerCircle : MonoBehaviour, ISeeker<IInterractible>
 {
-    private List<IInterractible> _objectsSeeked;
+    [SerializeField]private List<IInterractible> _objectsSeeked;
     public List<IInterractible> ObjectsSeeked => _objectsSeeked;
 
     [SerializeField] private LayerMask _layer;

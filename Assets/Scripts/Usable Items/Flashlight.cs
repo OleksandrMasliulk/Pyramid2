@@ -15,7 +15,7 @@ public class Flashlight : Item, IItemPickUp, IItemDrop, IUseOnPress
         _prefab = so.flashlightPrefab;
     }
 
-    private void TurnOn(PlayerDrivenCharacter user)
+    private void TurnOn()
     {
         _isActive = true;
         Debug.Log("Flashlight turned ON");
@@ -23,7 +23,7 @@ public class Flashlight : Item, IItemPickUp, IItemDrop, IUseOnPress
         _flashlight.SetActive(true);
     }
 
-    private void TurnOff(PlayerDrivenCharacter user)
+    private void TurnOff()
     {
         _isActive = false;
         Debug.Log("Flashlight turned OFF");
@@ -42,11 +42,11 @@ public class Flashlight : Item, IItemPickUp, IItemDrop, IUseOnPress
 
         if (_isActive)
         {
-            TurnOff((PlayerDrivenCharacter)user);
+            TurnOff();
         }
         else
         {
-            TurnOn((PlayerDrivenCharacter)user);
+            TurnOn();
         }
 
         return new UseItemCallback(UseItemCallback.ResultType.Success);
@@ -54,12 +54,12 @@ public class Flashlight : Item, IItemPickUp, IItemDrop, IUseOnPress
 
     public void OnDrop(CharacterBase user)
     {
-        TurnOff((PlayerDrivenCharacter)user);
+        TurnOff();
         MonoBehaviour.Destroy(_flashlight);
     }
 
     public void OnPickUp(CharacterBase user)
     {
-       // _flashlight = MonoBehaviour.Instantiate(_prefab, player.GraphicsController.FlashlightSocket);
+        _flashlight = MonoBehaviour.Instantiate(_prefab, user.AnimationHandler.Sockets);
     }
 }

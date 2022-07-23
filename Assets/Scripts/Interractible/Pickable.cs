@@ -12,18 +12,13 @@ public class Pickable : MonoBehaviour, IInterractible
     [SerializeField] private AssetReference _itemSORef;
     private Item _itemToPickUp;
 
-    [SerializeField]private int _count;
+    [SerializeField] private int _count;
 
-    private void Awake()
+    public async void Init()
     {
-        Init(_itemSORef);
-    }
+        ItemSO itemSO = await _itemSORef.LoadAssetAsyncSafe<ItemSO>();
 
-    private async void Init(AssetReference itemSORef)
-    {
-        ItemSO itemSO = await itemSORef.LoadAssetAsyncSafe<ItemSO>();
-
-        switch (itemSO.type) 
+        switch (itemSO.type)
         {
             case Item.ItemType.Flashlight:
                 _itemToPickUp = new Flashlight((FlashlightSO)itemSO);
@@ -42,12 +37,25 @@ public class Pickable : MonoBehaviour, IInterractible
                 break;
         }
 
-        itemSORef.ReleaseAsset();
+        if (!_itemToPickUp.IsStackable)
+            _count = 1;
+        else if (_count > _itemToPickUp.MaxStack)
+            _count = _itemToPickUp.MaxStack;
+
+        _itemSORef.ReleaseAsset();
     }
 
-    public void SetCount(int count)
+    public void Init(Item item, int count)
     {
+        _itemToPickUp = item;
         _count = count;
+
+        if (!_itemToPickUp.IsStackable)
+            _count = 1;
+        else if (_count > _itemToPickUp.MaxStack)
+            _count = _itemToPickUp.MaxStack;
+
+        PickableManager.Instance.AddToList(this);
     }
 
     public void Interract(CharacterBase user)
@@ -59,6 +67,7 @@ public class Pickable : MonoBehaviour, IInterractible
         switch (callback.Result)
         {
             case AddItemCallback.ResultType.Success:
+                PickableManager.Instance.RemoveFromList(this);
                 Destroy(this.gameObject);
                 break;
             case AddItemCallback.ResultType.Partially:
