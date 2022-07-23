@@ -4823,8 +4823,7 @@ GameObject:
   - component: {fileID: 4912227362184404429}
   - component: {fileID: 4191890092050399838}
   - component: {fileID: 3390704383070389236}
-  - component: {fileID: 8058539301012381398}
-  - component: {fileID: 5143512018849003985}
+  - component: {fileID: 1581035735916759274}
   m_Layer: 12
   m_Name: Pickable Treasure10_1
   m_TagString: Untagged
@@ -4895,7 +4894,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &8058539301012381398
+--- !u!114 &1581035735916759274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4904,24 +4903,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2096992095639496621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afee8c17349050b4987b639ef0eab1e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 106ca7e1d5e6d334a80168754bbb46c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSO: {fileID: 11400000, guid: a3c0d49ae815d44478c66a53737dda0f, type: 2}
-  count: 1
-  dropPrefab: {fileID: 2096992095639496621}
---- !u!114 &5143512018849003985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096992095639496621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f5d032e3eb7c94a836f2024abb4c30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _tooltip: PICK_UP
+  _itemSORef:
+    m_AssetGUID: a3c0d49ae815d44478c66a53737dda0f
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _count: 1
 --- !u!1 &3127504920535371024
 GameObject:
   m_ObjectHideFlags: 0

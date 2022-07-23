@@ -1,5 +1,54 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1048579429054623386
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385411822863384798}
+  - component: {fileID: 3296561453814576526}
+  m_Layer: 0
+  m_Name: DamageSeeker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &385411822863384798
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048579429054623386}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.63, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6541389082959575530}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3296561453814576526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048579429054623386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d16afcf869567d042aab086c284b9063, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bounds: {x: 1, y: 4}
+  _layer:
+    serializedVersion: 2
+    m_Bits: 64
+  _gizmosColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &1079581309210326095
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +281,7 @@ GameObject:
   m_Layer: 0
   m_Name: Flamethrower trap
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -249,9 +298,10 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2771713320268502427}
-  - {fileID: 4906973382749216431}
   - {fileID: 3118732065965666879}
   - {fileID: 8162041044648985598}
+  - {fileID: 385411822863384798}
+  - {fileID: 8651693277029915404}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -320,16 +370,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sanityLoss: 20
-  fireGraphics: {fileID: 1079581309210326095}
-  ps: {fileID: 329312453224422327}
-  ps2: {fileID: 5587666800503811589}
-  damageBox: {fileID: 5350894472875860244}
-  damageLayer:
-    serializedVersion: 2
-    m_Bits: 576
-  sanityLossRadius: 4.29
-  rearmTime: 3
-  flameThrowingDuration: 2
+  _fireGraphics: {fileID: 1079581309210326095}
+  _ps: {fileID: 329312453224422327}
+  _ps2: {fileID: 5587666800503811589}
+  _rearmTime: 3
+  _flameThrowingDuration: 1.5
+  _isActive: 1
 --- !u!1 &2072975315939791431
 GameObject:
   m_ObjectHideFlags: 0
@@ -361,7 +407,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6541389082959575530}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &5587666800503811589
 ParticleSystem:
@@ -5182,7 +5228,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6541389082959575530}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &329312453224422327
 ParticleSystem:
@@ -10082,7 +10128,7 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
---- !u!1 &4616370190741940016
+--- !u!1 &7467619125543296680
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10090,56 +10136,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4906973382749216431}
-  - component: {fileID: 5350894472875860244}
+  - component: {fileID: 8651693277029915404}
+  - component: {fileID: 7531410497382822669}
   m_Layer: 0
-  m_Name: Damage Box
+  m_Name: SanitySeeker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4906973382749216431
+--- !u!4 &8651693277029915404
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4616370190741940016}
+  m_GameObject: {fileID: 7467619125543296680}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.029, y: 1.75, z: 0}
-  m_LocalScale: {x: 0.4625, y: 1.0346875, z: 1}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6541389082959575530}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &5350894472875860244
-BoxCollider2D:
+--- !u!114 &7531410497382822669
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4616370190741940016}
+  m_GameObject: {fileID: 7467619125543296680}
   m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.85, y: 3.37}
-  m_EdgeRadius: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e16aef7d90f484189c8ca22ccf389a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _radius: 5
+  _layer:
+    serializedVersion: 2
+    m_Bits: 64
+  _gizmosColor: {r: 0.427451, g: 0, b: 1, a: 1}
 --- !u!1 &8432235304835437741
 GameObject:
   m_ObjectHideFlags: 0

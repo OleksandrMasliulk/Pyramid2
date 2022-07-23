@@ -206,8 +206,7 @@ GameObject:
   - component: {fileID: 2262196111597928556}
   - component: {fileID: 2671686913426511123}
   - component: {fileID: 5113099986545515935}
-  - component: {fileID: 7160664307262152201}
-  - component: {fileID: 7290139181156941003}
+  - component: {fileID: 166084403748843902}
   m_Layer: 12
   m_Name: Pickable Flashlight
   m_TagString: Untagged
@@ -278,7 +277,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 2}
   m_EdgeRadius: 0
---- !u!114 &7160664307262152201
+--- !u!114 &166084403748843902
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,21 +286,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7923633346994375038}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afee8c17349050b4987b639ef0eab1e0, type: 3}
+  m_Script: {fileID: 11500000, guid: 106ca7e1d5e6d334a80168754bbb46c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSO: {fileID: 11400000, guid: a7e9baed6dd3ad144adb2fcf24111c39, type: 2}
-  count: 1
-  dropPrefab: {fileID: 7923633346994375038}
---- !u!114 &7290139181156941003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7923633346994375038}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f5d032e3eb7c94a836f2024abb4c30, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _tooltip: PICK_UP
+  _itemSORef:
+    m_AssetGUID: a7e9baed6dd3ad144adb2fcf24111c39
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _count: 1

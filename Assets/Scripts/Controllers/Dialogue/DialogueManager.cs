@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static DialogueSO;
 using UnityEngine.UI;
-using UnityEngine.Events;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -18,9 +18,9 @@ public class DialogueManager : MonoBehaviour
     private Dialogue currentDialogue;
 
     public GameObject dialogueWindow;
-    public Text speakerName;
+    public TMP_Text speakerName;
     public Image speakerIcon;
-    public Text line;
+    public TMP_Text line;
 
     private void Awake()
     {

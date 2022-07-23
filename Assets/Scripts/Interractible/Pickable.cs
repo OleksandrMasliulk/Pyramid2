@@ -1,94 +1,86 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Item;
+using System.Threading.Tasks;
+using UnityEngine.AddressableAssets;
 
 public class Pickable : MonoBehaviour, IInterractible
 {
-    [SerializeField] private ItemSO itemSO;
-    private Item item;
-    [SerializeField] private int count;
-    public string Tooltip { get; set; }
+    [SerializeField] private string _tooltip;
+    public string Tooltip => _tooltip;
 
-    private void Awake()
+    [SerializeField] private AssetReference _itemSORef;
+    private Item _itemToPickUp;
+
+    [SerializeField] private int _count;
+
+    public async void Init()
     {
-        Tooltip = "PICK_UP";
+        ItemSO itemSO = await _itemSORef.LoadAssetAsyncSafe<ItemSO>();
 
-        Init();
+        switch (itemSO.type)
+        {
+            case Item.ItemType.Flashlight:
+                _itemToPickUp = new Flashlight((FlashlightSO)itemSO);
+                break;
+            case Item.ItemType.Flare:
+                _itemToPickUp = new Flare((FlareSO)itemSO);
+                break;
+            case Item.ItemType.Medkit:
+                _itemToPickUp = new Medkit((MedkitSO)itemSO);
+                break;
+            case Item.ItemType.Paint:
+                _itemToPickUp = new Paint((PaintSO)itemSO);
+                break;
+            case Item.ItemType.Treasure:
+                _itemToPickUp = new Treasure((TreasureSO)itemSO);
+                break;
+        }
+
+        if (!_itemToPickUp.IsStackable)
+            _count = 1;
+        else if (_count > _itemToPickUp.MaxStack)
+            _count = _itemToPickUp.MaxStack;
+
+        _itemSORef.ReleaseAsset();
     }
 
-    public void Init()
+    public void Init(Item item, int count)
     {
-        if (itemSO.itemID == -1)
-        {
-            Debug.LogWarning(name + ": Inavlid ID, object destroyed!");
-            Destroy(this.gameObject);
-            return;
-        }
+        _itemToPickUp = item;
+        _count = count;
 
-        switch (itemSO.type) 
-        {
-            //default:
-            //    Destroy(this.gameObject);
-            //    break;
-            case ItemType.Flare:
-                item = new Flare((FlareSO)itemSO/*, dropPrefab*/);
-                break;
-            case ItemType.Medkit:
-                item = new Medkit((MedkitSO)itemSO/*, dropPrefab*/);
-                break;
-            case ItemType.Flashlight:
-                item = new Flashlight((FlashlightSO)itemSO/*, dropPrefab*/);
-                break;
-            case ItemType.Paint:
-                item = new Paint((PaintSO)itemSO/*, dropPrefab*/);
-                break;
-            case ItemType.Treasure:
-                item = new Treasure((TreasureSO)itemSO/*, dropPrefab*/);
-                break;
-        }
+        if (!_itemToPickUp.IsStackable)
+            _count = 1;
+        else if (_count > _itemToPickUp.MaxStack)
+            _count = _itemToPickUp.MaxStack;
 
-        if (!item.IsStackable)
-        {
-            count = 1;
-        }
-
-        if (count > item.MaxStack)
-        {
-            count = item.MaxStack;
-        }
+        PickableManager.Instance.AddToList(this);
     }
 
-    private bool PickUp(PlayerController user)
+    public void Interract(CharacterBase user)
     {
-        PlayerInventoryController inventory = user.InventoryController;
+        PlayerDrivenCharacter player = (PlayerDrivenCharacter)user;
 
-        if (inventory == null)
-        {
-            Debug.Log("No INVENTORY CONTROLLER found");
-            return false;
-        }
-        else
-        {
-            return inventory.AddToInventory(item, count, itemSO.dropPrefab);
-        }
-    }
+        AddItemCallback callback =  player.InventoryHandler.AddItem(_itemToPickUp, _count);
 
-    public void Interract(PlayerController user)
-    {
-        if (PickUp(user))
+        switch (callback.Result)
         {
-            item.OnPickUp(user);
-            Destroy(this.gameObject);
+            case AddItemCallback.ResultType.Success:
+                PickableManager.Instance.RemoveFromList(this);
+                Destroy(this.gameObject);
+                break;
+            case AddItemCallback.ResultType.Partially:
+                _count = callback.NotAddedCount;
+                break;
+            case AddItemCallback.ResultType.Failed:
+                break;
         }
     }
 
-    public void SetCount(int count)
+    private void OnValidate()
     {
-        this.count = count;
-        if (this.count > item.MaxStack)
-        {
-            this.count = item.MaxStack;
-        }
+        if (_count <= 0)
+            _count = 1;
     }
 }

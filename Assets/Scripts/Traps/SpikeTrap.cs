@@ -2,84 +2,103 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpikeTrap : Trap
+public class SpikeTrap : Trap, ISwitchable
 {
-    [SerializeField] private float spikeDuration;
-    private float timeToDisable;
+    [SerializeField] private float _spikeDuration;
+    [SerializeField] private float _triggerDelay;
+    private bool _isPopped = false;
 
-    [SerializeField] private float triggerDelay;
-    private bool isTriggered;
+    [SerializeField] private Animator _anim;
 
-    [SerializeField] private Animator anim;
+    private ISeeker<IHaveSanity> _sanitySeeker;
+    private ISeeker<IDamageable> _damageSeeker;
 
-    private void Start()
+    private Coroutine _spikesCoroutine;
+
+    [SerializeField] private bool _isActive;
+    public bool IsActive => _isActive;
+
+    private void Awake()
     {
-        isTriggered = false;
-        timeToDisable = 0;
-    }
-
-    private void Update()
-    {
-        if (isTriggered)
-        {
-            if (timeToDisable <= 0)
-            {
-                Disable();
-            }
-            else
-            {
-                timeToDisable -= Time.deltaTime;
-            }
-        }
-    }
-
-    IEnumerator TrapTriggered(IDamageable target)
-    {
-        yield return new WaitForSeconds(triggerDelay);
-
-        isTriggered = true;
-        timeToDisable = spikeDuration;
-        Activate(target);
+        _sanitySeeker = GetComponent<ISeeker<IHaveSanity>>();
+        _damageSeeker = GetComponent<ISeeker<IDamageable>>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        IDamageable target = collision.GetComponent<IDamageable>();
+        if (_spikesCoroutine != null)
+            return;
 
-        if (target != null)
-        {
-            PlayerController player = collision.GetComponent<PlayerController>();
-            if (player != null)
-            {
-                ReduceSanity(player);
-            }
-
-            StartCoroutine(TrapTriggered(target));
-        }
+        if (collision.GetComponent<CharacterBase>())
+            Trigger();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        IDamageable target = collision.GetComponent<IDamageable>();
+        if (_spikesCoroutine == null)
+            return;
 
-        if (target != null)
+        if (collision.GetComponent<CharacterBase>())
         {
-            StopAllCoroutines();
+            StopCoroutine(_spikesCoroutine);
+            _spikesCoroutine = null;
         }
     }
 
-    public override void Activate(IDamageable target)
+    IEnumerator PopSpikes()
     {
-        target.TakeDamage(1);
+        yield return new WaitForSeconds(_triggerDelay);
+        _anim.SetBool("isActive", true);
+        _isPopped = true;
 
-        anim.SetBool("isActive", true);
+        float startTime = Time.time;
+        while (startTime + _spikeDuration > Time.time && IsActive)
+        {
+            foreach (IDamageable d in _damageSeeker.ObjectsSeeked)
+            {
+                d.TakeDamage(1);
+            }
+            yield return new WaitForSeconds(DefaultTickTime);
+            Debug.Log("Spike Trap tick");
+        }
+        Debug.Log("Spike Trap done");
+        HideSpikes();
     }
 
-    private void Disable()
+    private void HideSpikes()
     {
-        isTriggered = false;
-        timeToDisable = spikeDuration;
+        _spikesCoroutine = null;
+        _anim.SetBool("isActive", false);
+        _isPopped = false;
+    }
 
-        anim.SetBool("isActive", false);
+    public override void Trigger()
+    {
+        if (!IsActive)
+            return;
+
+        if (_spikesCoroutine != null)
+            return;
+
+        _spikesCoroutine = StartCoroutine(PopSpikes());
+        foreach (IHaveSanity s in _sanitySeeker.ObjectsSeeked)
+        {
+            s.ModifySanity(-sanityLoss);
+        }
+    }
+
+    public void Disable()
+    {
+        _isActive = false;
+        if (_spikesCoroutine != null)
+        {
+            StopCoroutine(_spikesCoroutine);
+            HideSpikes();
+        }
+    }
+
+    public void Activate()
+    {
+        _isActive = true;
     }
 }
