@@ -15,6 +15,8 @@ public class Cover : MonoBehaviour, IInterractible
     private string _currentTooltip;
     public string Tooltip => _currentTooltip;
 
+    public Transform ObjectReference => transform;
+
     private void Start()
     {
         _currentTooltip = _coverTooltip;

@@ -9,6 +9,8 @@ public class Pickable : MonoBehaviour, IInterractible
     [SerializeField] private string _tooltip;
     public string Tooltip => _tooltip;
 
+    public Transform ObjectReference => transform;
+
     [SerializeField] private AssetReference _itemSORef;
     private Item _itemToPickUp;
 

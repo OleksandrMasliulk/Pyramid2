@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour, IInterractible, ISwitchable
+public class Door : MonoBehaviour, /*IInterractible,*/ ISwitchable
 {
     private bool isClosed;
 
@@ -16,6 +16,8 @@ public class Door : MonoBehaviour, IInterractible, ISwitchable
 
     [SerializeField] private bool _isActive;
     public bool IsActive => _isActive;
+
+    public Transform ObjectReference => transform;
 
     private void Start()
     {

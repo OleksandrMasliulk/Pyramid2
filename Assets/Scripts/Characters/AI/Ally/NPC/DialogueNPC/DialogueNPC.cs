@@ -8,6 +8,8 @@ public class DialogueNPC : NPCBase, IInterractible
     [SerializeField] private string _tooltip;
     public string Tooltip => _tooltip;
 
+    public Transform ObjectReference => transform;
+
     [SerializeField] private Dialogue currentDialogue;
 
     public override void InitCharacter(AssetReference stats)

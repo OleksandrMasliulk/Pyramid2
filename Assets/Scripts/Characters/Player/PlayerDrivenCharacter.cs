@@ -26,6 +26,8 @@ public class PlayerDrivenCharacter : CharacterBase
 
     [SerializeField] private PlayerCameraHandler _cameraHandler;
     public PlayerCameraHandler CameraHandler => _cameraHandler;
+    [SerializeField] private PlayerSelector _selector;
+    public PlayerSelector Selector => _selector;
 
     public async override void InitCharacter(AssetReference stats)
     {
@@ -40,6 +42,7 @@ public class PlayerDrivenCharacter : CharacterBase
         _vfxHandler = GetComponent<CharacterVFXHandler>();
         _sanityHandler = GetComponent<IHaveSanity>();
         _hudHandler = GetComponent<PlayerHUDHandler>();
+        _selector = GetComponent<PlayerSelector>();
 
         MovementHandler?.Init(_stats.MovementSpeed);
         InventoryHandler?.Init(Stats.SlotCount);

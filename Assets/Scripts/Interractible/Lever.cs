@@ -14,6 +14,8 @@ public class Lever : MonoBehaviour, IInterractible
     [SerializeField] private string _tooltip;
     public string Tooltip => _tooltip;
 
+    public Transform ObjectReference => transform;
+
     private void Start()
     {
         isOn = false;

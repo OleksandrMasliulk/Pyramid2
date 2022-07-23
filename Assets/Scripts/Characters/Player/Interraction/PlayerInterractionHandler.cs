@@ -20,7 +20,8 @@ public class PlayerInterractionHandler : MonoBehaviour
         if (_seeker.ObjectsSeeked.Count <= 0)
             return;
 
-        _seeker.ObjectsSeeked[_seeker.ObjectsSeeked.Count - 1].Interract(_character);
+        _character.Selector.SelectedItem.Interract(_character);
+        //_seeker.ObjectsSeeked[_seeker.ObjectsSeeked.Count - 1].Interract(_character);
     }
 
     private void OnLost(IInterractible obj)
@@ -40,15 +41,15 @@ public class PlayerInterractionHandler : MonoBehaviour
     {
         _inputHandler.OnInterract += Interract;
 
-        _seeker.OnSeeked += OnSeeked;
-        _seeker.OnLost += OnLost;
+        //_seeker.OnSeeked += OnSeeked;
+        //_seeker.OnLost += OnLost;
     }
 
     private void OnDisable()
     {
         _inputHandler.OnInterract -= Interract;
 
-        _seeker.OnSeeked -= OnSeeked;
-        _seeker.OnLost -= OnLost;
+        //_seeker.OnSeeked -= OnSeeked;
+        //_seeker.OnLost -= OnLost;
     }
 }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4191890092050399838}
   - component: {fileID: 3390704383070389236}
   - component: {fileID: 3177086615106689477}
+  - component: {fileID: 7939328364585909102}
   m_Layer: 12
   m_Name: Lever
   m_TagString: Untagged
@@ -102,6 +103,19 @@ MonoBehaviour:
       m_Calls: []
   _anim: {fileID: 1850027928842862484}
   _tooltip: INTERRACT
+--- !u!114 &7939328364585909102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096992095639496621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 560c8ad12f589da4d8269b091ba83b64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _highlightScaleMod: 1.5
 --- !u!1 &8215911537830184490
 GameObject:
   m_ObjectHideFlags: 0
