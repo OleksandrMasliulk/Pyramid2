@@ -31,7 +31,7 @@ public class MummyAttackState : MummyBehaviourState, ICanAttack
 
     public override void ExitState(Mummy mummy)
     {
-
+        Debug.Log("Exit attack state");
     }
 
     public override void StateTick(Mummy mummy)

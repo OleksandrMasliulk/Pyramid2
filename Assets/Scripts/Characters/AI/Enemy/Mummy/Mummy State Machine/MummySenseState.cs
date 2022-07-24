@@ -10,10 +10,11 @@ public class MummySenseState : MummyBehaviourState, ICanSense
 
     public CharacterBase Target { get; private set; }
 
-    public MummySenseState(MummyStatsSO stats, CharacterBase target)
+    public MummySenseState(MummyStatsSO stats, CharacterBase target, MummyBehavoiuStateMachine machine)
     {
         SenseMoveSpeed = stats.SenseMoveSpeed;
         Target = target;
+        _stateMachine = machine;
     }
 
     public override void EnterState(Mummy mummy)
@@ -37,6 +38,7 @@ public class MummySenseState : MummyBehaviourState, ICanSense
     public override void ExitState(Mummy mummy)
     {
         Target.GetComponent<IHaveSanity>().OnSanityChanged -= SanityChangerd;
+        Target.HealthHandler.OnCharacterDie -= (character) => { _stateMachine.SetState(_stateMachine.RoamState); };
     }
 
     public override void StateTick(Mummy mummy)
