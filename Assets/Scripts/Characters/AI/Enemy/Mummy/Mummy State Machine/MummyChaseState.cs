@@ -37,10 +37,14 @@ public class MummyChaseState : MummyBehaviourState, ICanChase
     public override void ExitState(Mummy mummy)
     {
         mummy.PlayerSeeker.OnLost -= PlayerLost;
+        Target.HealthHandler.OnCharacterDie -= (character) => PlayerLost((PlayerDrivenCharacter)character);
     }
 
     public override void StateTick(Mummy mummy)
     {
+        if (Target == null)
+            return;
+
         float distance = Vector3.Distance(mummy.transform.position, Target.transform.position);
 
         if (distance <= mummy.Stats.AttackDistance)

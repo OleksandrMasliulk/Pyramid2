@@ -30,7 +30,9 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
         if (_destSetter.target == null)
             return;
 
-        Destroy(_destSetter.target.gameObject);
+        if (_destSetter.target.GetComponent<CharacterBase>() == null)
+            Destroy(_destSetter.target.gameObject);
+
         _destSetter.target = null;
     }
 

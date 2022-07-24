@@ -30,7 +30,7 @@ public class MummyBreakLOSState : MummyBehaviourState, ICanRoam
 
     public override void ExitState(Mummy mummy)
     {
-        //mummy.MovementController.CancelMoveTask();
+        Debug.Log("Exit break los state");
     }
 
     public override void StateTick(Mummy mummy)
