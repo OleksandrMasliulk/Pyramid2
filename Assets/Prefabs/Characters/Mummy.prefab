@@ -254,7 +254,7 @@ MonoBehaviour:
   endReachedDistance: 0.5
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 1
+  whenCloseToDestination: 0
   constrainInsideGraph: 0
 --- !u!114 &5915695406194743718
 MonoBehaviour:
@@ -282,10 +282,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9a536213cd00da4ab5fc25dceb92dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthHandler: {fileID: 3359797182029126156}
-  _vfxHandler: {fileID: 2145846321976322118}
-  _animationHandler: {fileID: 8188615310844081723}
-  _movementHandler: {fileID: 1406932048919778457}
 --- !u!114 &8188615310844081723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _animator: {fileID: 8137129383538938291}
   _renderer: {fileID: 5339026552842488741}
+  _itemSockets: {fileID: 0}
 --- !u!114 &1406932048919778457
 MonoBehaviour:
   m_ObjectHideFlags: 0

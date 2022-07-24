@@ -37,6 +37,13 @@ public class MummySenseState : MummyBehaviourState, ICanSense
 
     public override void ExitState(Mummy mummy)
     {
+        foreach(PlayerDrivenCharacter p in GameController.Instance.AlivePlayersList)
+        if (p.SanityHandler.CurrentSanity <= 25)
+        {
+            _stateMachine.SetState(new MummySenseState(mummy.Stats, p, _stateMachine));
+            break;
+        }
+
         Target.GetComponent<IHaveSanity>().OnSanityChanged -= SanityChangerd;
         Target.HealthHandler.OnCharacterDie -= (character) => { _stateMachine.SetState(_stateMachine.RoamState); };
     }

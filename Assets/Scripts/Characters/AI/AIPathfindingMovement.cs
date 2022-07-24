@@ -10,7 +10,7 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
     [SerializeField] private Seeker _seeker;
     [SerializeField] private AIDestinationSetter _destSetter;
     public float MovementSpeed { get; private set; }
-    public bool ReachedTarget => _aiPath.reachedDestination;
+    public bool ReachedTarget => _aiPath.reachedEndOfPath;
 
     private void Awake()
     {
@@ -30,7 +30,7 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
         if (_destSetter.target == null)
             return;
 
-        if (_destSetter.target.GetComponent<CharacterBase>() == null)
+        if (_destSetter.target.name.Contains("AI Pathfinding Target"))
             Destroy(_destSetter.target.gameObject);
 
         _destSetter.target = null;
@@ -48,6 +48,7 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
         RemoveTarget();
 
         GameObject go = new GameObject("AI Pathfinding Target");
+        go.transform.position = target;
         _destSetter.target = go.transform;
     }
 

@@ -4,9 +4,10 @@ using UnityEngine;
 
 public static class Helpers
 {
-    public static Vector3 GetRandomPositionInRadius(Vector3 center, float radius)
+    public static Vector3 GetRandomPositionInRadius2D(Vector2 center, float radius)
     {
-        Vector3 randomDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0f).normalized;
-        return center + randomDirection * radius;
+        Vector2 randomDirection = new Vector3(Random.Range(-radius, radius), Random.Range(-radius, radius));
+        Debug.DrawLine(center, center + randomDirection, Color.red, 10f);
+        return center + randomDirection;
     }
 }

@@ -25,19 +25,19 @@ public class MummyChaseState : MummyBehaviourState, ICanChase
 
         mummy.MovementHandler.SetSpeed(ChaseSpeed);
         mummy.MovementHandler.SetTarget(Target.transform);
-        mummy.PlayerSeeker.OnLost += PlayerLost;
-        Target.HealthHandler.OnCharacterDie += (character) => PlayerLost((PlayerDrivenCharacter)character);
+        mummy.PlayerSeeker.OnLost += (character) => PlayerLost((PlayerDrivenCharacter)character, mummy);
+        Target.HealthHandler.OnCharacterDie += (character) => PlayerLost((PlayerDrivenCharacter)character, mummy);
     }
 
-    private void PlayerLost(PlayerDrivenCharacter player)
+    private void PlayerLost(PlayerDrivenCharacter player, Mummy mummy)
     {
-        _stateMachine.SetState(_stateMachine.RoamState);
+        _stateMachine.SetState(new MummyBreakLOSState(mummy.Stats, Target.transform.position, _stateMachine));
     }
 
     public override void ExitState(Mummy mummy)
     {
-        mummy.PlayerSeeker.OnLost -= PlayerLost;
-        Target.HealthHandler.OnCharacterDie -= (character) => PlayerLost((PlayerDrivenCharacter)character);
+        mummy.PlayerSeeker.OnLost -= (character) => PlayerLost((PlayerDrivenCharacter)character, mummy);
+        Target.HealthHandler.OnCharacterDie -= (character) => PlayerLost((PlayerDrivenCharacter)character, mummy);
     }
 
     public override void StateTick(Mummy mummy)

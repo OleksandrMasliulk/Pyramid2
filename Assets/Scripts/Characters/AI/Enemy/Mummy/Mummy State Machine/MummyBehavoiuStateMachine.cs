@@ -15,7 +15,18 @@ public class MummyBehavoiuStateMachine
 
         RoamState = new MummyRoamState(_mummy.Stats, this);
         SetState(RoamState);
-}
+
+        foreach(PlayerDrivenCharacter p in GameController.Instance.AlivePlayersList)
+        {
+            p.SanityHandler.OnSanityChanged += (san) => { SanityChanged(p, san); };
+        }
+    }
+
+    private void SanityChanged(PlayerDrivenCharacter p, int sanity)
+    {
+        if (sanity <= 25)
+            SetState(new MummySenseState(_mummy.Stats, p, this));
+    }
 
     public void SetState(MummyBehaviourState state)
     {

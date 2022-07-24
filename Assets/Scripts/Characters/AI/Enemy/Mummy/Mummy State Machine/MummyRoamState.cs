@@ -36,25 +36,27 @@ public class MummyRoamState : MummyBehaviourState, ICanRoam
 
     public override void StateTick(Mummy mummy)
     {
+        //Debug.Log("Roam Tick");
         if (mummy.MovementHandler.ReachedTarget)
             mummy.MovementHandler.SetTarget(GetRoamPosition(mummy));
     }
 
     public Vector3 GetRoamPosition(Mummy mummy)
     {
-        Vector3 target = mummy.transform.position;
+        Vector2 target = mummy.transform.position;
 
         PlayerDrivenCharacter pc = GetPlayer();
         if (pc != null)
             target = pc.transform.position;
 
-        Vector3 pos = Helpers.GetRandomPositionInRadius(target, mummy.Stats.RoamRadius);
+        Vector2 pos = Helpers.GetRandomPositionInRadius2D(target, RoamRadius);
 
         while (!Map.Instance.IsPointWalkable(pos))
         {
-            pos = Helpers.GetRandomPositionInRadius(target, mummy.Stats.RoamRadius);
+            pos = Helpers.GetRandomPositionInRadius2D(target, RoamRadius);
         }
 
+        Debug.Log(pos);
         return pos;
     }
 
@@ -62,6 +64,9 @@ public class MummyRoamState : MummyBehaviourState, ICanRoam
     {
         if (GameController.Instance.AlivePlayersList.Count > 0)
         {
+            if (GameController.Instance.AlivePlayersList.Count == 1)
+                return GameController.Instance.AlivePlayersList[0];
+
             int rand = Random.Range(0, GameController.Instance.AlivePlayersList.Count);
             PlayerDrivenCharacter pc = GameController.Instance.AlivePlayersList[rand];
             return pc;
