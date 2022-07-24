@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3390704383070389236}
   - component: {fileID: 7150386146887711719}
   - component: {fileID: 555357770471774907}
-  - component: {fileID: 4587136787527470001}
+  - component: {fileID: 7469463715537877091}
   m_Layer: 12
   m_Name: Cover
   m_TagString: Untagged
@@ -126,7 +126,9 @@ MonoBehaviour:
   respawnPos: {fileID: 6002796483879193953}
   graphics: {fileID: 705695634669293294}
   dustPS: {fileID: 6691001445476703100, guid: 7ae2d849ea41d824ca973bbdae620b7b, type: 3}
---- !u!114 &4587136787527470001
+  _coverTooltip: COVER
+  _uncoverTooltip: UNCOVER
+--- !u!114 &7469463715537877091
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,9 +137,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2096992095639496621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14f5d032e3eb7c94a836f2024abb4c30, type: 3}
+  m_Script: {fileID: 11500000, guid: 560c8ad12f589da4d8269b091ba83b64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _highlightScaleMod: 1.5
 --- !u!1 &2982184756185167022
 GameObject:
   m_ObjectHideFlags: 0

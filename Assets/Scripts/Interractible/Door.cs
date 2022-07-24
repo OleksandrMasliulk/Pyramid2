@@ -2,64 +2,75 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour, IInterractible
+public class Door : MonoBehaviour, /*IInterractible,*/ ISwitchable
 {
     private bool isClosed;
 
-    [SerializeField] private Collider2D door;
-    [SerializeField] private Animator anim;
+    [SerializeField] private Collider2D _door;
+    [SerializeField] private Animator _anim;
 
-    public string Tooltip { get; set; }
+    [SerializeField] private string _closedTooltip;
+    [SerializeField] private string _openedTooltip;
+    private string _currentTooltip;
+    public string Tooltip => _currentTooltip;
+
+    [SerializeField] private bool _isActive;
+    public bool IsActive => _isActive;
+
+    public Transform ObjectReference => transform;
 
     private void Start()
     {
         isClosed = true;
-        door.enabled = true;
+        _door.enabled = true;
 
-        Tooltip = "OPEN";
+        _currentTooltip = _closedTooltip;
     }
 
-    public void Interract(PlayerController user)
+    public void Interract(CharacterBase user)
     {
+        if (!IsActive)
+            return;
+
         if (isClosed)
-        {
             Open();
-        }
         else
-        {
             Close();
-        }
     }
     
-    public void Interract()
+    public void Open()
     {
-        if (isClosed)
-        {
-            Open();
-        }
-        else
-        {
-            Close();
-        }
-    }
+        if (!isClosed)
+            return;
 
-    private void Open()
-    {
         isClosed = false;
-        door.enabled = false;
+        _door.enabled = false;
 
-        Tooltip = "CLOSE";
-        anim.SetBool("Opened", true);
+        _currentTooltip = _openedTooltip;
+        _anim.SetBool("Opened", true);
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorOpen, transform.position, 1f);
     }
 
-    private void Close()
+    public void Close()
     {
-        isClosed = true;
-        door.enabled = true;
+        if (isClosed)
+            return;
 
-        Tooltip = "OPEN";
-        anim.SetBool("Opened", false);
+        isClosed = true;
+        _door.enabled = true;
+
+        _currentTooltip = _closedTooltip;
+        _anim.SetBool("Opened", false);
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorClose, transform.position, 1f);
+    }
+
+    public void Activate()
+    {
+        _isActive = true;
+    }
+
+    public void Disable()
+    {
+        _isActive = false;
     }
 }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using System.Threading.Tasks;
 
 public class UnitManager : MonoBehaviour
 {
@@ -9,7 +11,7 @@ public class UnitManager : MonoBehaviour
     [System.Serializable]
     private struct Spawn
     {
-        public CharacterBaseSO character;
+        public AssetReference character;
         public Transform position;
     }
 
@@ -21,8 +23,8 @@ public class UnitManager : MonoBehaviour
 
     private List<EnemyBase> _enemyList;
     public List<EnemyBase> EnemyList => _enemyList;
-    private List<PlayerController> _playerList;
-    public List<PlayerController> PlayerList => _playerList;
+    private List<PlayerDrivenCharacter> _playerList;
+    public List<PlayerDrivenCharacter> PlayerList => _playerList;
     private List<NPCBase> _npcList;
     public List<NPCBase> NPCList => _npcList;
 
@@ -38,7 +40,7 @@ public class UnitManager : MonoBehaviour
         }
 
         _enemyList = new List<EnemyBase>();
-        _playerList = new List<PlayerController>();
+        _playerList = new List<PlayerDrivenCharacter>();
         _npcList = new List<NPCBase>();
     }
 
@@ -49,40 +51,47 @@ public class UnitManager : MonoBehaviour
         SpawnEnemies();
     }
 
-    private void SpawnPlayers()
+    private async void SpawnPlayers()
     {
         foreach(Spawn s in initialPlayerSpawnList)
         {
-            PlayerController player = (PlayerController)SpawnCharacter(s.character, s.position);
-            _playerList.Add(player);
-            GameController.Instance.AlivePlayersList.Add(player);
+            CharacterBase player = await SpawnCharacter(s.character, s.position);
+            _playerList.Add((PlayerDrivenCharacter)player);
+            GameController.Instance.AddPlayerToList((PlayerDrivenCharacter)player);
         }
     }
 
-    private void SpawnNPCs()
+    private async void SpawnNPCs()
     {
         foreach (Spawn s in initialNPCSpawnList)
         {
-            NPCBase npc = (NPCBase)SpawnCharacter(s.character, s.position);
-            _npcList.Add(npc);
+            CharacterBase npc = await SpawnCharacter(s.character, s.position);
+            _npcList.Add((NPCBase)npc);
         }
     }
 
-    private void SpawnEnemies()
+    private async void SpawnEnemies()
     {
         foreach (Spawn s in initialEnemySpawnList)
         {
-            EnemyBase enemy = (EnemyBase)SpawnCharacter(s.character, s.position);
-            _enemyList.Add(enemy);
+            CharacterBase enemy = await SpawnCharacter(s.character, s.position);
+            _enemyList.Add((EnemyBase)enemy);
         }
     }
 
-    public CharacterBase SpawnCharacter(CharacterBaseSO so, Transform position)
+    public async Task<CharacterBase> SpawnCharacter(AssetReference reference, Transform position)
     {
-        CharacterBase character = Instantiate(so.prefab, position.position, Quaternion.identity);
-        character.transform.SetParent(parent);
-        character.InitCharacter(so.Stats);
+        CharacterBaseStatsSO so = await reference.LoadAssetAsyncSafe<CharacterBaseStatsSO>();
+        var op = so.SpawnPrefab.InstantiateAsync(position);
+        CharacterBase character = null;
+        op.Completed += (op) =>
+        {
+            character = op.Result.GetComponent<CharacterBase>();
+            character.transform.SetParent(parent);
+            character.InitCharacter(reference);
+        };
 
+        await op.Task;
         return character;
     }
 }

@@ -2,91 +2,116 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlamethrowerTrap : Trap
+public class FlamethrowerTrap : Trap, ISwitchable
 {
-    public GameObject fireGraphics;
-    public ParticleSystem ps; 
-    public ParticleSystem ps2;
+    [SerializeField] private GameObject _fireGraphics;
+    [SerializeField] private ParticleSystem _ps;
+    [SerializeField] private ParticleSystem _ps2;
 
-    public BoxCollider2D damageBox;
-    public LayerMask damageLayer;
+    [SerializeField] private ISeeker<IHaveSanity> _sanitySeeker;
+    [SerializeField] private ISeeker<IDamageable> _damageSeeker;
 
-    public float sanityLossRadius;
+    [SerializeField] private float _rearmTime;
+    [SerializeField] private float _flameThrowingDuration;
+    private bool _isReady;
 
-    public float rearmTime;
+    [SerializeField] private bool _isActive;
+    public bool IsActive => _isActive;
 
-    public float flameThrowingDuration;
+    private Coroutine _rearmCoroutine;
+    private Coroutine _flamethrowingCoroutine;
+
+    private void Awake()
+    {
+        _sanitySeeker = GetComponentInChildren<ISeeker<IHaveSanity>>();
+        _damageSeeker = GetComponentInChildren<ISeeker<IDamageable>>();
+    }
 
     private void Start()
     {
-        StartCoroutine(RearmCoroutine());
+        _flamethrowingCoroutine = StartCoroutine(ThrowFireCoroutine());
     }
 
-    IEnumerator ThrowFire()
+    IEnumerator ThrowFireCoroutine()
     {
-        float time = flameThrowingDuration;
+        AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<TrapsSoundBoard>().flamethrowerTrap, transform.position, _flameThrowingDuration);
 
-        ps.Play(); 
-        ps2.Play();
-        fireGraphics.SetActive(true);
-        ReduceSanity(null);
-        AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<TrapsSoundBoard>().flamethrowerTrap, transform.position, flameThrowingDuration);
-
-        while (time > 0)
+        foreach (IHaveSanity s in _sanitySeeker.ObjectsSeeked)
         {
-            Collider2D[] cols = Physics2D.OverlapBoxAll(damageBox.transform.position, damageBox.bounds.size, 0f, damageLayer);
-
-            foreach (Collider2D col in cols)
-            {
-                IDamageable target = col.GetComponent<IDamageable>();
-                if (target != null)
-                {
-                    target.TakeDamage(1);
-                }
-            }
-
-            yield return new WaitForSeconds(Time.deltaTime);
-            time -= Time.deltaTime;
+            s.ModifySanity(-sanityLoss);
         }
 
-        fireGraphics.SetActive(false);
+        EnableGraphics();
+        float startThrowingTime = Time.time;
+        while (startThrowingTime + _flameThrowingDuration >= Time.time && IsActive)
+        {
+            foreach(IDamageable d in _damageSeeker.ObjectsSeeked)
+            {
+                d.TakeDamage(1);
+                Debug.Log("Flamethrower trap hit");
+            }
+            yield return new WaitForSeconds(DefaultTickTime);
+        }
 
-        StartCoroutine(RearmCoroutine());
+        if (IsActive)
+            _rearmCoroutine = StartCoroutine(RearmCoroutine());
     }
 
     IEnumerator RearmCoroutine()
     {
-        ps.Stop();
-        ps2.Stop();
+        DisableGraphics();
 
-        yield return new WaitForSeconds(rearmTime);
+        _isReady = false;
+        yield return new WaitForSeconds(_rearmTime);
+        _isReady = true;
 
-        StartCoroutine(ThrowFire());
+        if (IsActive)
+            _flamethrowingCoroutine = StartCoroutine(ThrowFireCoroutine());
     }
 
-    public override void ReduceSanity(PlayerController target)
+    private void EnableGraphics()
     {
-        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, sanityLossRadius, damageLayer);
+        _fireGraphics.SetActive(true);
+        _ps.Play();
+        _ps2.Play(); 
+    }
 
-        PlayerController player;
-        foreach (Collider2D col in cols)
+    private void DisableGraphics()
+    {
+        _fireGraphics.SetActive(false);
+        _ps.Stop();
+        _ps2.Stop();
+    }
+
+    public override void Trigger()
+    {
+    }
+
+    public void Activate()
+    {
+        _isActive = true;
+
+        if (_isReady)
         {
-            player = col.GetComponent<PlayerController>();
-            if (player != null)
-            {
-                player.SanityController.UpdateSanity(-sanityLoss);
-                return;
-            }
+            if (_rearmCoroutine != null)
+                StopCoroutine(_rearmCoroutine);
+            _flamethrowingCoroutine = StartCoroutine(ThrowFireCoroutine());
         }
+        else
+        {
+            if (_rearmCoroutine == null)
+                _rearmCoroutine = StartCoroutine(RearmCoroutine());
+        }
+            
     }
 
-    private void OnDrawGizmos()
+    public void Disable()
     {
-        Gizmos.DrawWireCube(damageBox.transform.position, damageBox.bounds.size);
-        Gizmos.DrawWireSphere(transform.position, sanityLossRadius);
-    }
+        _isActive = false;
 
-    public override void Activate(IDamageable target)
-    {
+        if (_flamethrowingCoroutine != null)
+            StopCoroutine(_flamethrowingCoroutine);
+
+        DisableGraphics();
     }
 }

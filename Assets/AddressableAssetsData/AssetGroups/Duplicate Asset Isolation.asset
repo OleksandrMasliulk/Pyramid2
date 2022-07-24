@@ -15,10 +15,38 @@ MonoBehaviour:
   m_GroupName: Duplicate Asset Isolation
   m_Data:
     m_SerializedData: []
-  m_GUID: e787c9d8663873e4f9003eb0c4dd0ad7
+  m_GUID: d74e9d0df778fe442a1d5d1ab964f0a7
   m_SerializeEntries:
-  - m_GUID: 652f7165b7c30ab46af6c4aad90a639b
-    m_Address: Assets/Imported Pacakges/Thaleah_PixelFont/ThaleahFat.fontsettings
+  - m_GUID: 01b9bc1d1c67fb24f8ec0edd14446896
+    m_Address: Assets/Fonts/NowItsMyFont/Materials/Pixelart Font SDF.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 99f941267fd30d049afdd49f0bae096d
+    m_Address: Assets/Animations/Loading Screen/Archeologist.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 571ad5e7af978b344bf5bc882aa6558b
+    m_Address: Assets/Animations/Loading Screen/Mummy.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 41b24ac2400681c48912d74fb369deb9
+    m_Address: Assets/Animations/Loading Screen/Archeologist.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 68e6db2ebdc24f95958faec2be5558d6
+    m_Address: Assets/Imported Pacakges/TextMesh Pro/Shaders/TMP_SDF.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 86b6d5cfd2f478e488e1fdbd8d1b6404
+    m_Address: Assets/Animations/Loading Screen/Mummy.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8c7d8e0ba47473940965e2a8c20372a9
+    m_Address: Assets/Graphics/Sprites/Player/Indiana.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: aae4a91eb19c0be44a85959ebab41819
+    m_Address: Assets/Graphics/Sprites/Mummy/Mummy.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: dc4d336e170462e4d898100acfba22ee
@@ -30,23 +58,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: fe393ace9b354375a9cb14cdbbc28be4
-    m_Address: Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
+    m_Address: Assets/Imported Pacakges/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: e3265ab4bf004d28a9537516768c1c75
-    m_Address: Assets/TextMesh Pro/Fonts/LiberationSans.ttf
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 4e37780224bf09547bedea9b8518d85e
-    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure5_2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 1ee8ac740c0c65b47b7a4da840176de8
-    m_Address: Assets/Resources_moved/Usable Items/Flare.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: b12f350dc256ad146bc81e97130afbee
-    m_Address: Assets/Resources_moved/Usable Items/Default Flashlight.prefab
+  - m_GUID: 80ed2ef49a06a47459e20f3c4a82b94e
+    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/TreasureStuff.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: a97c105638bdf8b4a8650670310a4cd3
@@ -119,6 +135,10 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 4c1c73b52194a4746be68d53b6930b4b
     m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/Interactable.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: efc2d046806ea2f41b94463556e004e2
+    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/Icons.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: d9c469667bec14c45a384ccb63a83ab3
@@ -377,100 +397,12 @@ MonoBehaviour:
     m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_103.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 84fdc382284727b43b43bb43942b1d3b
-    m_Address: Assets/Animations/Interractible/Cover/Cover_Closed.anim
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: c3673e6455091724fad1ff6b25a9cc7f
-    m_Address: Assets/Animations/Interractible/Cover/Cover_Opened.anim
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 296baabe43a57ea408a527ce884d0fe2
-    m_Address: Assets/Animations/Items/Flare.controller
+  - m_GUID: 8155bf13792b1ad41be22ba0fd3adf76
+    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/TreasureStuffN.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 70e33c3485c65da42b957971612386e7
     m_Address: Assets/Graphics/Sprites/Player/Archeologist2.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: e260cfa7296ee7642b167f1eb5be5023
-    m_Address: Packages/com.unity.render-pipelines.universal/Shaders/2D/Sprite-Lit-Default.shader
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: b9e463112a966804bacb3892d6df016d
-    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Flashlight.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: df6d36516b218f741b0e4aebcc9e7186
-    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure5.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: a77f7d61efb44744bbc0ef33646f26d1
-    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Flare.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 1c7dcf614be375a40ba8a412ece057db
-    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure10_1.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: c8349ac169d928a4f869c06310c031cf
-    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Paint.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 7f0e54153fb925d4a8470b4e73856c58
-    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure10_2.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: eb398cd73696e0e4abc855e51bb7ed5c
-    m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Medicine.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: d0e3a87b5f4c92642b85a3669397b2a2
-    m_Address: Assets/Prefabs/Characters/Mummy.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: fbce028d41cec6b449a05726ffda213e
-    m_Address: Assets/Prefabs/Characters/Player.prefab
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 8c7d8e0ba47473940965e2a8c20372a9
-    m_Address: Assets/Graphics/Sprites/Player/Indiana.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: aae4a91eb19c0be44a85959ebab41819
-    m_Address: Assets/Graphics/Sprites/Mummy/Mummy.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 46ffd640c95149c47b163493d2255987
-    m_Address: Assets/PostProcessing/SanityFX/Sanity25-50.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: ac0043312053d664c98fee18a0f317f2
-    m_Address: Assets/PostProcessing/SanityFX/Sanity0-25.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 59c6b73a8f4365246bba170b73f42acc
-    m_Address: Assets/PostProcessing/SanityFX/Sanity75-100.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: dcdb9bed0d6cdda4b9ed07261aaf6b70
-    m_Address: Assets/PostProcessing/SanityFX/Sanity50-75.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 65c31fbfbd3aad84b8c3d3542dfeac07
-    m_Address: Assets/PostProcessing/SanityFX/Sanity100.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 4331e9274afe6e94690888112f285da9
-    m_Address: Assets/Graphics/Sprites/Player/Tentacles.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: efc2d046806ea2f41b94463556e004e2
-    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/Icons.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 8155bf13792b1ad41be22ba0fd3adf76
-    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/TreasureStuffN.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

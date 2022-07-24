@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using System;
 
 public class IngameUIController : MonoBehaviour
 {
+    public static event Action OnResurrectClick;
+
     public GameObject loseScreen;
     public GameObject winScreen;
     public SidePanel menu;
@@ -43,7 +45,7 @@ public class IngameUIController : MonoBehaviour
 
     public void ContinueAsGhost()
     {
-        UnitManager.Instance.PlayerList[0].SetState(UnitManager.Instance.PlayerList[0].ghostState);
+        OnResurrectClick?.Invoke();
     }
 
     public void MainMenu()

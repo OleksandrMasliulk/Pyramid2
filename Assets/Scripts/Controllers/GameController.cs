@@ -20,10 +20,8 @@ public class GameController : MonoBehaviour
     }
     private GameState _gameState;
 
-    private AudioSource _levelTheme;
-
-    private List<PlayerController> _alivePlayersList;
-    public List<PlayerController> AlivePlayersList => _alivePlayersList;
+    private List<PlayerDrivenCharacter> _alivePlayersList;
+    public List<PlayerDrivenCharacter> AlivePlayersList => _alivePlayersList;
 
     private void Awake()
     {
@@ -49,9 +47,8 @@ public class GameController : MonoBehaviour
         switch (_gameState)
         {
             case GameState.Init:
-                PlayLevelTheme();
-                _alivePlayersList = new List<PlayerController>();
-                PlayerHealthController.OnPlayerDied += RemovePlayerFromAlive;
+                _alivePlayersList = new List<PlayerDrivenCharacter>();
+                //PlayerHealthController.OnPlayerDied += RemovePlayerFromAlive;
                 SetGameState(GameState.SpawningCharacters);
                 break;
 
@@ -94,7 +91,14 @@ public class GameController : MonoBehaviour
         OnLoseEvent?.Invoke();
     }
 
-    private void RemovePlayerFromAlive(PlayerController player)
+    public void AddPlayerToList(PlayerDrivenCharacter player)
+    {
+        _alivePlayersList.Add(player);
+        player.HealthHandler.OnCharacterDie += (player) => RemovePlayerFromAlive((PlayerDrivenCharacter)player);
+    }
+
+
+    private void RemovePlayerFromAlive(PlayerDrivenCharacter player)
     {
         _alivePlayersList.Remove(player);
         CheckPlayers();
@@ -110,32 +114,15 @@ public class GameController : MonoBehaviour
 
     private void Save()
     {
-        PlayerData data = SaveLoad.Load<PlayerData>(SaveLoad.playerDataPath);
-        if (data != null)
-        {
-            data.gold += _alivePlayersList[0].InventoryController.CalculateInventoryValue();
-        }
-        else
-        {
-            data = new PlayerData(_alivePlayersList[0].InventoryController.CalculateInventoryValue());
-        }
-        SaveLoad.Save(data, SaveLoad.playerDataPath);
-    }
-
-    public void PlayLevelTheme()
-    {
-        //if (_levelTheme == null)
+        //PlayerData data = SaveLoad.Load<PlayerData>(SaveLoad.playerDataPath);
+        //if (data != null)
         //{
-        //    _levelTheme = AudioManager.PlaySound(AudioManager.Sound.LevelTheme, true);
+        //    data.gold += _alivePlayersList[0].InventoryController.CalculateInventoryValue();
         //}
         //else
         //{
-        //    _levelTheme.UnPause();
+        //    data = new PlayerData(_alivePlayersList[0].InventoryController.CalculateInventoryValue());
         //}
-    }
-
-    public void PauseLevelTheme()
-    {
-        //_levelTheme.Pause();
+        //SaveLoad.Save(data, SaveLoad.playerDataPath);
     }
 }

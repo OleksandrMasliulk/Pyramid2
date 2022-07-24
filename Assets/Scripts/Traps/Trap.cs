@@ -4,12 +4,9 @@ using UnityEngine;
 
 public abstract class Trap : MonoBehaviour
 {
+    public const float DefaultTickTime = .25f;
+
     [SerializeField] protected int sanityLoss;
 
-    public abstract void Activate(IDamageable target);
-    public virtual void ReduceSanity(PlayerController target)
-    {
-        if (target != null)
-            target.SanityController.UpdateSanity(-sanityLoss);
-    }
+    public abstract void Trigger();
 }

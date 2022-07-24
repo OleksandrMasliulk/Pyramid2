@@ -3,40 +3,39 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Medkit : Item
+public class Medkit : Item, IUseOnPress
 {
-    private int sanityRestoreValue;
+    private int _sanityRestoreValue;
 
-    public Medkit(MedkitSO so/*, GameObject prefab*/) : base(so/*, prefab*/)
+    public Medkit(MedkitSO so) : base(so)
     {
-        sanityRestoreValue = so.restoreAmount;
+        _sanityRestoreValue = so.restoreAmount;
     }
 
-    public override void Use(PlayerController user)
+    private void Heal(IHaveSanity user)
     {
+        user.ModifySanity(_sanityRestoreValue);
         Debug.Log("MEDKIT USED");
 
-        Heal(user);
     }
 
-    private void Heal(PlayerController user)
+    public UseItemCallback UseOnPress(CharacterBase user)
     {
-        user.SanityController.UpdateSanity(sanityRestoreValue);
+        return Use(user);
     }
 
-    public override bool OnButtonPressed(PlayerController user)
+    public UseItemCallback Use(CharacterBase user)
     {
-        Use(user);
-
-        return !UseOnRelease;
+        if (user.TryGetComponent<IHaveSanity>(out var sanityCharacter))
+        {
+            Heal(sanityCharacter);
+            return new UseItemCallback(UseItemCallback.ResultType.Success);
+        }
+        else
+        {
+            Debug.Log("Character has no sanity parameter");
+            return new UseItemCallback(UseItemCallback.ResultType.Failed);
+        }
     }
 
-    public override bool OnButtonReleased(PlayerController user)
-    {
-        return UseOnRelease;
-    }
-
-    public override void OnDrop(PlayerController user)
-    {
-    }
 }

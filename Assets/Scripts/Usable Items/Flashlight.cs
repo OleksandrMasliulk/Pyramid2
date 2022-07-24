@@ -3,33 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Flashlight : Item
+public class Flashlight : Item, IItemPickUp, IItemDrop, IUseOnPress
 {
     private bool _isActive;
     private GameObject _flashlight;
     private GameObject _prefab;
 
-    public Flashlight(FlashlightSO so/*, GameObject prefab*/) : base(so/*, prefab*/)
+    public Flashlight(FlashlightSO so) : base(so)
     {
         _isActive = false;
         _prefab = so.flashlightPrefab;
     }
 
-    public override void Use(PlayerController user)
-    {
-        Debug.Log("Flashlight USED");
-
-        if (_isActive)
-        {
-            TurnOff(user);
-        }
-        else
-        {
-            TurnOn(user);
-        }
-    }
-
-    private void TurnOn(PlayerController user)
+    private void TurnOn()
     {
         _isActive = true;
         Debug.Log("Flashlight turned ON");
@@ -37,7 +23,7 @@ public class Flashlight : Item
         _flashlight.SetActive(true);
     }
 
-    private void TurnOff(PlayerController user)
+    private void TurnOff()
     {
         _isActive = false;
         Debug.Log("Flashlight turned OFF");
@@ -45,27 +31,35 @@ public class Flashlight : Item
         _flashlight.SetActive(false);
     }
 
-    public override void OnPickUp(PlayerController player)
+    public UseItemCallback UseOnPress(CharacterBase user)
     {
-        base.OnPickUp(player);
-        _flashlight = MonoBehaviour.Instantiate(_prefab, player.GraphicsController.FlashlightSocket);
+        return Use(user);
     }
 
-    public override void OnDrop(PlayerController user)
+    public UseItemCallback Use(CharacterBase user)
     {
-        TurnOff(user);
+        Debug.Log("Flashlight USED");
+
+        if (_isActive)
+        {
+            TurnOff();
+        }
+        else
+        {
+            TurnOn();
+        }
+
+        return new UseItemCallback(UseItemCallback.ResultType.Success);
+    }
+
+    public void OnDrop(CharacterBase user)
+    {
+        TurnOff();
         MonoBehaviour.Destroy(_flashlight);
     }
 
-    public override bool OnButtonPressed(PlayerController user)
+    public void OnPickUp(CharacterBase user)
     {
-        Use(user);
-
-        return !UseOnRelease;
-    }
-
-    public override bool OnButtonReleased(PlayerController user)
-    {
-        return UseOnRelease;
+        _flashlight = MonoBehaviour.Instantiate(_prefab, user.AnimationHandler.Sockets);
     }
 }

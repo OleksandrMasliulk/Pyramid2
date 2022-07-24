@@ -11,7 +11,7 @@ public class MainMenu : MonoBehaviour
         yield return null; //LocalizationHandler.Instance.InitLocales();
 
         _settings.LoadSettings();
-        AudioManager.Instance.PlayLevelTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().mainMenuTheme);
+        //AudioManager.Instance.PlayLevelTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().mainMenuTheme);
     }
 
     private void Start()

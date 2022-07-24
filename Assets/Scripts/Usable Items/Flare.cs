@@ -2,38 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flare : Item
+public class Flare : Item, IUseOnPress
 {
-    private GameObject flarePrefab;
+    private GameObject _flarePrefab;
 
-    public Flare(FlareSO so/*, GameObject prefab*/) : base(so/*, prefab*/)
+    public Flare(FlareSO so) : base(so)
     {
-        flarePrefab = so.flareToDropPb;
+        _flarePrefab = so.flareToDropPb;
     }
 
-    public override void Use(PlayerController user)
+    private void Throw(CharacterBase user)
+    {
+        Debug.Log("FLARE used");
+        MonoBehaviour.Instantiate(_flarePrefab, user.transform.position, Quaternion.identity);
+    }
+
+    public UseItemCallback UseOnPress(CharacterBase user)
+    {
+        return Use(user);
+    }
+
+    public UseItemCallback Use(CharacterBase user)
     {
         Throw(user);
-    }
-
-    private void Throw(PlayerController user)
-    {
-        MonoBehaviour.Instantiate(flarePrefab, user.transform.position, Quaternion.identity);
-    }
-
-    public override bool OnButtonPressed(PlayerController user)
-    {
-        Use(user);
-
-        return !UseOnRelease;
-    }
-
-    public override bool OnButtonReleased(PlayerController user)
-    {
-        return UseOnRelease;
-    }
-
-    public override void OnDrop(PlayerController user)
-    {
+        return new UseItemCallback(UseItemCallback.ResultType.Success);
     }
 }
