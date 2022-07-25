@@ -20,13 +20,16 @@ public class PlayerDrivenCharacter : CharacterBase
     public PlayerSanityHandler SanityHandler => (PlayerSanityHandler)_sanityHandler;
     public new PlayerAnimationHandler AnimationHandler => (PlayerAnimationHandler)_animationHandler;
     public new PlayerVFXHandler VFXHandler => (PlayerVFXHandler)_vfxHandler;
+    private PlayerCoverHandler _coverHandler;
+    public PlayerCoverHandler CoverHandler => _coverHandler;
+
 
     private PlayerPhysicalStateMachine _physicalStateMachine;
     private PlayerSanityStateMachine _sanityStateMachine;
 
     [SerializeField] private PlayerCameraHandler _cameraHandler;
     public PlayerCameraHandler CameraHandler => _cameraHandler;
-    [SerializeField] private PlayerSelector _selector;
+    private PlayerSelector _selector;
     public PlayerSelector Selector => _selector;
 
     public async override void InitCharacter(AssetReference stats)
@@ -43,6 +46,7 @@ public class PlayerDrivenCharacter : CharacterBase
         _sanityHandler = GetComponent<IHaveSanity>();
         _hudHandler = GetComponent<PlayerHUDHandler>();
         _selector = GetComponent<PlayerSelector>();
+        _coverHandler = GetComponent<PlayerCoverHandler>();
 
         MovementHandler?.Init(_stats.MovementSpeed);
         InventoryHandler?.Init(Stats.SlotCount);

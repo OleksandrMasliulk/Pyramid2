@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class Cover : MonoBehaviour, IInterractible
 {
     [SerializeField] private Transform respawnPos;
     [SerializeField] private Animator graphics;
-    [SerializeField] private GameObject dustPS;
+    [SerializeField] private AssetReference dustPS;
 
-    //private PlayerController _palyerHidingIn;
+    private PlayerDrivenCharacter _palyerHidingIn;
 
     [SerializeField] private string _coverTooltip;
     [SerializeField] private string _uncoverTooltip;
@@ -22,56 +23,42 @@ public class Cover : MonoBehaviour, IInterractible
         _currentTooltip = _coverTooltip;
     }
 
-    public void Interract(PlayerDrivenCharacter user)
-    {
-        //if (_palyerHidingIn == null)
-        //{
-        //    CoverIn(user);
-        //}
-        //else
-        //{
-        //    if (user == _palyerHidingIn)
-        //    {
-        //        Uncover(user);
-        //    }
-        //    else
-        //    {
-        //        return;
-        //    }
-        //}
-    }
-
     private void CoverIn(PlayerDrivenCharacter user)
     {
-        //_palyerHidingIn = user;
+        _palyerHidingIn = user;
 
-        //user.SetState(user.coveredState);
-        //user.transform.position = transform.position;
-        //user.CoverController.SetCover(this);
+        user.transform.position = transform.position;
+        user.CoverHandler.Cover();
 
-        //gameObject.layer = 10;
         _currentTooltip = _uncoverTooltip;
-        //if (graphics != null)
-        //    graphics.SetBool("isOpened", false);
+        if (graphics != null)
+            graphics.SetBool("isOpened", false);
     }
 
     private void Uncover(PlayerDrivenCharacter user)
     {
-        //_palyerHidingIn = null;
+        _palyerHidingIn = null;
 
-        //user.SetState(user.aliveState);
-        //user.transform.position = respawnPos.position;
-        //user.CoverController.SetCover(null);
+        user.transform.position = respawnPos.position;
+        user.CoverHandler.Uncover();
 
-        //gameObject.layer = 12;
-        _currentTooltip = _uncoverTooltip;
+        _currentTooltip = _coverTooltip;
         //Instantiate(dustPS, respawnPos.position, Quaternion.identity);
-        //if (graphics != null)
-        //    graphics.SetBool("isOpened", true);
+
+        if (graphics != null)
+            graphics.SetBool("isOpened", true);
     }
 
     public void Interract(CharacterBase user)
     {
-        
+        if (user is PlayerDrivenCharacter player)
+            if (_palyerHidingIn == null)
+                CoverIn(player);
+            else
+                if (player == _palyerHidingIn)
+                    Uncover(player);
+                else
+                    return;
+
     }
 }
