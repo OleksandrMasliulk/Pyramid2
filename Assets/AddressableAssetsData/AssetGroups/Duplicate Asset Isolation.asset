@@ -337,10 +337,6 @@ MonoBehaviour:
     m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_45.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 28f2ecbbf6a326644a3a8a43ee43c9cc
-    m_Address: Assets/Scenes/Piramid (v 0 1)/Global Volume Profile.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 3a27af1cfb47f0940bbeabc0f720f3af
     m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_98.asset
     m_ReadOnly: 0
