@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7150386146887711719}
   - component: {fileID: 555357770471774907}
   - component: {fileID: 2631428065379049829}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Cover 2
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -152,7 +152,7 @@ GameObject:
   - component: {fileID: 1872934142252807407}
   - component: {fileID: 6465008199505977542}
   - component: {fileID: 705695634669293294}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -255,7 +255,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6002796483879193953}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Respawn pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}

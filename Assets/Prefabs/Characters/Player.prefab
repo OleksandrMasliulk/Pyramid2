@@ -136,10 +136,10 @@ MonoBehaviour:
   _camera: {fileID: 519420031}
   _aliveMask:
     serializedVersion: 2
-    m_Bits: 24567
+    m_Bits: 63991
   _ghostMask:
     serializedVersion: 2
-    m_Bits: 32759
+    m_Bits: 64503
 --- !u!1 &306133840171769845
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +684,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 32768
+    m_Bits: 1024
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -716,7 +716,7 @@ MonoBehaviour:
   m_RendererIndex: -1
   m_VolumeLayerMask:
     serializedVersion: 2
-    m_Bits: 32769
+    m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
   m_RenderPostProcessing: 0
@@ -6448,6 +6448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cameraHandler: {fileID: 1846171477307180953}
+  _selector: {fileID: 0}
 --- !u!114 &2780555764842823777
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4806800379820035631}
   - component: {fileID: 2126131190691106560}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 3390704383070389236}
   - component: {fileID: 2593701103971239754}
   - component: {fileID: 971133768868731481}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Pickable Treasure5_2
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 6134854004859901922}
   - component: {fileID: 1151357182395546128}
   - component: {fileID: 1487061713030917710}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5047,7 +5047,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2297385528285323079}
   - component: {fileID: 5005168164556834078}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}

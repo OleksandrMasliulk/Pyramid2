@@ -23,7 +23,8 @@ public class CharacterAnimationHandler : MonoBehaviour
         _animator.SetFloat("Horizontal", direction.x);
         _animator.SetFloat("Vertical", direction.y);
 
-        SetSocketsDirection(direction);
+        if (_itemSockets != null)
+            SetSocketsDirection(direction);
     }
 
     public void SetMoving()

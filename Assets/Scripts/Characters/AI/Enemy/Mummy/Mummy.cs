@@ -13,6 +13,7 @@ public class Mummy : EnemyBase
     [SerializeField] private ISeeker<PlayerDrivenCharacter> _playerSeeker;
     public ISeeker<PlayerDrivenCharacter> PlayerSeeker => _playerSeeker;
     private MummyBehavoiuStateMachine _behavoiurStateMachine;
+    private MummyPhysicalStateMachine _physicalStateMachine;
 
     public override async void InitCharacter(AssetReference stats)
     {
@@ -23,8 +24,9 @@ public class Mummy : EnemyBase
         _vfxHandler = GetComponent<CharacterVFXHandler>();
         _healthHandler = GetComponent<CharacterHealthHandler>();
 
-        _playerSeeker = GetComponent<ISeeker<PlayerDrivenCharacter>>();
+        _playerSeeker = GetComponentInChildren<ISeeker<PlayerDrivenCharacter>>();
         _behavoiurStateMachine = new MummyBehavoiuStateMachine(this);
+        _physicalStateMachine = new MummyPhysicalStateMachine(this);
     }
 
     private void Update()

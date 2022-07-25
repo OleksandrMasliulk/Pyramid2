@@ -21,7 +21,7 @@ public class ArrowTrap : Trap, ISwitchable
 
     private void Shoot()
     {
-        if (Time.time + _rearmTime < _lastTimeShooted)
+        if (_lastTimeShooted + _rearmTime > Time.time)
             return;
 
         arrows.Play();

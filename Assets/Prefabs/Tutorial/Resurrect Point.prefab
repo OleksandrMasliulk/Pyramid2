@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 76607064331249850}
   - component: {fileID: 482145167093492370}
   - component: {fileID: 1628838633488718922}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: PS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4822,7 +4822,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7593516654320579521}
   - component: {fileID: 7593516654320579520}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4933,7 +4933,7 @@ GameObject:
   - component: {fileID: 7593516654742392270}
   - component: {fileID: 7593516654742392267}
   - component: {fileID: 7593516654742392264}
-  m_Layer: 13
+  m_Layer: 9
   m_Name: Resurrect Point
   m_TagString: Untagged
   m_Icon: {fileID: 0}

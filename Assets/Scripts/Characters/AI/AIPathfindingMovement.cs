@@ -6,14 +6,30 @@ using Pathfinding;
 
 public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
 {
+    private CharacterBase _character;
+
     [SerializeField] private AIPath _aiPath;
     [SerializeField] private Seeker _seeker;
     [SerializeField] private AIDestinationSetter _destSetter;
     public float MovementSpeed { get; private set; }
     public bool ReachedTarget => _aiPath.reachedEndOfPath;
 
+    public bool CanMove
+    {
+        get
+        {
+            return _aiPath.canMove;
+        }
+        set
+        {
+            _aiPath.canMove = value;
+        }
+    }
+
     private void Awake()
     {
+        _character = GetComponent<CharacterBase>();
+
         _aiPath = GetComponent<AIPath>();
         _seeker = GetComponent<Seeker>();
         _destSetter = GetComponent<AIDestinationSetter>();
@@ -23,6 +39,17 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
     {
         MovementSpeed = moveSpeed;
         _aiPath.maxSpeed = MovementSpeed;
+    }
+
+    private void Update()
+    {
+        if (_aiPath.desiredVelocity.magnitude > 0f)
+        {
+            _character.AnimationHandler.SetMoving();
+            _character.AnimationHandler.SetMovementDirection(_aiPath.desiredVelocity.normalized);
+        }
+        else
+            _character.AnimationHandler.SetIdle();
     }
 
     public void RemoveTarget()

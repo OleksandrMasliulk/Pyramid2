@@ -24,27 +24,31 @@ public class MummySenseState : MummyBehaviourState, ICanSense
         mummy.MovementHandler.SetSpeed(SenseMoveSpeed);
         mummy.MovementHandler.SetTarget(Target.transform);
 
-        Target.GetComponent<IHaveSanity>().OnSanityChanged += SanityChangerd;
-        Target.HealthHandler.OnCharacterDie += (character) => { _stateMachine.SetState(_stateMachine.RoamState); };
+        Target.GetComponent<IHaveSanity>().OnSanityChanged += (val) => { SanityChangerd(val, mummy); };
+        Target.HealthHandler.OnCharacterDie += (character) => { CheckForAnother(mummy); };
     }
 
-    private void SanityChangerd(int value)
+    private void SanityChangerd(int value, Mummy mummy)
     {
         if (value > 25)
-            _stateMachine.SetState(_stateMachine.RoamState);
+            CheckForAnother(mummy);
 
+    }
+
+    private void CheckForAnother(Mummy mummy)
+    {
+        foreach (PlayerDrivenCharacter p in GameController.Instance.AlivePlayersList)
+            if (p.SanityHandler.CurrentSanity <= 25)
+            {
+                _stateMachine.SetState(new MummySenseState(mummy.Stats, p, _stateMachine));
+                return;
+            }
+        _stateMachine.SetState(_stateMachine.RoamState);
     }
 
     public override void ExitState(Mummy mummy)
     {
-        foreach(PlayerDrivenCharacter p in GameController.Instance.AlivePlayersList)
-        if (p.SanityHandler.CurrentSanity <= 25)
-        {
-            _stateMachine.SetState(new MummySenseState(mummy.Stats, p, _stateMachine));
-            break;
-        }
-
-        Target.GetComponent<IHaveSanity>().OnSanityChanged -= SanityChangerd;
+        Target.GetComponent<IHaveSanity>().OnSanityChanged -= (val) => { SanityChangerd(val, mummy); };
         Target.HealthHandler.OnCharacterDie -= (character) => { _stateMachine.SetState(_stateMachine.RoamState); };
     }
 

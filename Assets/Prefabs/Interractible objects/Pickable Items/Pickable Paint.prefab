@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4894894230044363911}
   - component: {fileID: 3977325831122543688}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5347880622944455333}
   - component: {fileID: 35714636201947615}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 5113099986545515935}
   - component: {fileID: 8420132546280801863}
   - component: {fileID: -5686217709477256338}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Pickable Paint
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}

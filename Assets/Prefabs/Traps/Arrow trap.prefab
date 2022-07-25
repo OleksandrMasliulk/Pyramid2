@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6774639647927349272}
   - component: {fileID: 4587457723380486517}
   - component: {fileID: 1741391158043211792}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Arrow trap
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -4007,7 +4007,7 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 8256
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5

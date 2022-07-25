@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 634775463538745778}
   - component: {fileID: 929977077021382164}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7790072493390214076}
   - component: {fileID: 9166994266046696282}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 5113099986545515935}
   - component: {fileID: 6752286774128924310}
   - component: {fileID: 7196000855153346324}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Pickable Medicine
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
