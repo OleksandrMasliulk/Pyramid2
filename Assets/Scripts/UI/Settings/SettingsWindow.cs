@@ -4,24 +4,25 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
 using System.Threading.Tasks;
+using TMPro;
 
 public class SettingsWindow : MonoBehaviour
 {
     //Graphics settings
-    [SerializeField] private Dropdown _resolutionDropdown;
-    [SerializeField] private Dropdown _qualityDropdown;
-    [SerializeField] private Dropdown _windowDropdown;
+    [SerializeField] private TMP_Dropdown _resolutionDropdown;
+    [SerializeField] private TMP_Dropdown _qualityDropdown;
+    [SerializeField] private TMP_Dropdown _windowDropdown;
 
     //Audio settings
     [SerializeField] private Slider _masterVolumeSlider;
-    [SerializeField] private Text _masterVolumeText;
+    [SerializeField] private TMP_Text _masterVolumeText;
     [SerializeField] private Slider _soundVolumeSlider;
-    [SerializeField] private Text _soundVolumeText;
+    [SerializeField] private TMP_Text _soundVolumeText;
     [SerializeField] private Slider _musicVolumeSlider;
-    [SerializeField] private Text _musicVolumeText;
+    [SerializeField] private TMP_Text _musicVolumeText;
 
     //Game settings
-    [SerializeField] private Dropdown _languageDropdown;
+    [SerializeField] private TMP_Dropdown _languageDropdown;
 
     [SerializeField] private Button _applyButton;
     [SerializeField] private Button _revertButton;
@@ -178,7 +179,7 @@ public class SettingsWindow : MonoBehaviour
         SetDirty(true);
     }
 
-    private void SetSliderParameters(Slider slider, Text text, float value, bool maxIsMin)
+    private void SetSliderParameters(Slider slider, TMP_Text text, float value, bool maxIsMin)
     {
         slider.value = value;
 
