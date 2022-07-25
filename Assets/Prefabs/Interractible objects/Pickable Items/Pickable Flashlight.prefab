@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1264145073464412976}
   - component: {fileID: 706243391842945546}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8310070364673962745}
   - component: {fileID: 6979959805333303842}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 5113099986545515935}
   - component: {fileID: 166084403748843902}
   - component: {fileID: 1970165455385801956}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Pickable Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}

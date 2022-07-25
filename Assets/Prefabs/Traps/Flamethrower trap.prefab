@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 385411822863384798}
   - component: {fileID: 3296561453814576526}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: DamageSeeker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 2771713320268502427}
   - component: {fileID: 6395372269920274541}
   - component: {fileID: 4536684077473360342}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7948468808533321797}
   - component: {fileID: 4282353622827655683}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Light 2D (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 6541389082959575530}
   - component: {fileID: 4312758970903793212}
   - component: {fileID: 1296017744125886062}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Flamethrower trap
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 8162041044648985598}
   - component: {fileID: 5587666800503811589}
   - component: {fileID: 8462926935949827990}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Particles (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5208,7 +5208,7 @@ GameObject:
   - component: {fileID: 3118732065965666879}
   - component: {fileID: 329312453224422327}
   - component: {fileID: 7380421267603034610}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10028,7 +10028,7 @@ GameObject:
   m_Component:
   - component: {fileID: 575975269476440062}
   - component: {fileID: 6114229676011898896}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Light 2D (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10138,7 +10138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8651693277029915404}
   - component: {fileID: 7531410497382822669}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SanitySeeker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10187,7 +10187,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7173631026340689388}
   - component: {fileID: 7859209166356752427}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}

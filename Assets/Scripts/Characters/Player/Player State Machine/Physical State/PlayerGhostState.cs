@@ -8,7 +8,7 @@ public class PlayerGhostState : PlayerPhysicalState
     {
         player.AnimationHandler.SetGhostAnimationHandler();
         player.CameraHandler.SetGhostCamera();
-        player.gameObject.ChangeTreeLayer(13);
+        player.gameObject.ChangeTreeLayer(9);
         player.VFXHandler.SpawnCorpse();
         player.VFXHandler.EnableGhostParticles();
 

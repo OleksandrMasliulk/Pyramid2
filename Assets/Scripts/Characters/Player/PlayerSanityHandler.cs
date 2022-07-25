@@ -10,6 +10,7 @@ public class PlayerSanityHandler : MonoBehaviour, IHaveSanity
     private int _currentSanity;
 
     public event Action<int> OnSanityChanged;
+    public static event Action<PlayerDrivenCharacter> OnLowSanity;
 
     public int CurrentSanity => _currentSanity;
     public int MaxSanity { get; private set; }
@@ -40,6 +41,8 @@ public class PlayerSanityHandler : MonoBehaviour, IHaveSanity
         }
 
         OnSanityChanged?.Invoke(_currentSanity);
+        if (_currentSanity <= 25)
+            OnLowSanity?.Invoke(_character);
 
         _character.HUDHandler.SanitySlider.ModifySlider(_currentSanity);
         //playerController.GraphicsController.SetSanityFX(_currentSanity);

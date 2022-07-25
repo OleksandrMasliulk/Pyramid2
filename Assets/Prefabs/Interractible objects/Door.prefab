@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5496256391791799478}
   - component: {fileID: 8135894729066121176}
   - component: {fileID: 1065918385079412652}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: PS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4826,7 +4826,7 @@ GameObject:
   - component: {fileID: 7150386146887711719}
   - component: {fileID: 3443260999579358680}
   - component: {fileID: 289983717823801814}
-  m_Layer: 12
+  m_Layer: 14
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
@@ -4964,7 +4964,7 @@ GameObject:
   - component: {fileID: 7860022768368007244}
   - component: {fileID: 2776576625361405874}
   - component: {fileID: 7415323351405331519}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}

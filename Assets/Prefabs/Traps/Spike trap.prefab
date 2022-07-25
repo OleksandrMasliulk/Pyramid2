@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 346878414662322414}
   - component: {fileID: 4089125994472224769}
   - component: {fileID: 9140295448927937365}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Spike trap
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
@@ -146,7 +146,7 @@ GameObject:
   - component: {fileID: 1097875904108663306}
   - component: {fileID: 5145342949566909568}
   - component: {fileID: 8604743775951118615}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}

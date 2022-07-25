@@ -17,24 +17,24 @@ public class PlayerInterractionHandler : MonoBehaviour
 
     public void Interract()
     {
-        if (_seeker.ObjectsSeeked.Count <= 0)
+        if (_character.Selector.SelectedItem == null)
             return;
 
         _character.Selector.SelectedItem.Interract(_character);
         //_seeker.ObjectsSeeked[_seeker.ObjectsSeeked.Count - 1].Interract(_character);
     }
 
-    private void OnLost(IInterractible obj)
-    {
-        _character.HUDHandler.Tooltip.Hide();
-       Debug.Log("Interractible Lost");
-    }
+    //private void OnLost(IInterractible obj)
+    //{
+    //    _character.HUDHandler.Tooltip.Hide();
+    //   Debug.Log("Interractible Lost");
+    //}
 
-    private void OnSeeked(IInterractible obj)
-    {
-        _character.HUDHandler.Tooltip.ShowTooltip(obj.Tooltip);
-        Debug.Log("Interractible Seeked");
-    }
+    //private void OnSeeked(IInterractible obj)
+    //{
+    //    _character.HUDHandler.Tooltip.ShowTooltip(obj.Tooltip);
+    //    Debug.Log("Interractible Seeked");
+    //}
 
 
     private void OnEnable()
