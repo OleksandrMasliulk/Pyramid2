@@ -59,6 +59,18 @@ MonoBehaviour:
     m_Key: DIALOGUE_CONTINUE
     m_Metadata:
       m_Items: []
+  - m_Id: 6868457722236928
+    m_Key: GAME
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6869051555991552
+    m_Key: AUDIO
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6869063748833280
+    m_Key: GRAPHICS
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

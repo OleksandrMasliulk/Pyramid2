@@ -5,6 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public class Settings
 {
+    //public Settings () { }
+    //public abstract void LoadProjectSettings();
+    //public abstract void ApplySettings();
     //Graphics settings
     public SerializableResolution Resolution { get; set; }
     public int GraphicsQuality { get; set; }
