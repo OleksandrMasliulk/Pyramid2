@@ -13,9 +13,15 @@ public class HUDSanitySlider : MonoBehaviour
     [SerializeField] private Color _color50;
     [SerializeField] private Color _color25;
 
-    private void Awake()
+    private PlayerDrivenCharacter _player;
+
+    public void InitSanityHUD(PlayerDrivenCharacter player)
     {
+        _player = player;
+
         ModifySlider(100);
+
+        player.SanityHandler.OnSanityChanged += ModifySlider;
     }
 
     public void ModifySlider(int amount)
@@ -41,5 +47,10 @@ public class HUDSanitySlider : MonoBehaviour
             _fill.color = _color50;
         else if (amount <= sliderRange * .25f)
             _fill.color = _color25;
+    }
+
+    private void OnDisable()
+    {
+        _player.SanityHandler.OnSanityChanged -= ModifySlider;
     }
 }

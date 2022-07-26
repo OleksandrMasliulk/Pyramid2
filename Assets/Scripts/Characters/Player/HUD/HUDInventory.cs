@@ -12,11 +12,15 @@ public class HUDInventory : MonoBehaviour
 
     private int _higlightedSlot;
 
-    public async void Init(int slotCount)
+    private PlayerDrivenCharacter _player;
+
+    public async void Init(PlayerDrivenCharacter player)
     {
+        _player = player;
+
         _inventory = new List<HUDInventorySlot>();
         List<Task> inventoryInit = new List<Task>();
-        for (int i = 0; i < slotCount; i++)
+        for (int i = 0; i < player.Stats.SlotCount; i++)
         {
             var op = _slotPrefab.InstantiateAsync(_slotParent);
             inventoryInit.Add(op.Task);
@@ -29,8 +33,11 @@ public class HUDInventory : MonoBehaviour
         }
 
         await Task.WhenAll(inventoryInit);
-        SetupInventoryIndecies(slotCount);
+        SetupInventoryIndecies(player.Stats.SlotCount);
         HighlightSlot(0);
+
+        player.InventoryHandler.OnInventoryChanged += RefreshInventoryHUD;
+        player.InventoryHandler.OnSlotSelected += HighlightSlot;
     }
 
     private void SetupInventoryIndecies(int slotCount)
@@ -58,10 +65,16 @@ public class HUDInventory : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (_inventory == null)
+            return;
+
         foreach(HUDInventorySlot slot in _inventory)
         {
             Addressables.ReleaseInstance(slot.gameObject);
         }
         _inventory.Clear();
+
+        _player.InventoryHandler.OnInventoryChanged -= RefreshInventoryHUD;
+        _player.InventoryHandler.OnSlotSelected -= HighlightSlot;
     }
 }

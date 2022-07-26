@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using System.Threading.Tasks;
+using System;
 
 public class UnitManager : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class UnitManager : MonoBehaviour
         public AssetReference character;
         public Transform position;
     }
+
+    public static event Action<PlayerDrivenCharacter> OnPlayerSpawned;
 
     [SerializeField] private Transform parent;
 
@@ -57,7 +60,7 @@ public class UnitManager : MonoBehaviour
         {
             CharacterBase player = await SpawnCharacter(s.character, s.position);
             _playerList.Add((PlayerDrivenCharacter)player);
-            GameController.Instance.AddPlayerToList((PlayerDrivenCharacter)player);
+            OnPlayerSpawned?.Invoke((PlayerDrivenCharacter)player);
         }
     }
 

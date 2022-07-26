@@ -15,9 +15,16 @@ public class PlayerSanityHandler : MonoBehaviour, IHaveSanity
     public int CurrentSanity => _currentSanity;
     public int MaxSanity { get; private set; }
 
+    private PlayerSanityStateMachine _stateMachine;
+
     private void Awake()
     {
         _character = GetComponent<PlayerDrivenCharacter>();
+    }
+
+    private void Start()
+    {
+        _stateMachine = new PlayerSanityStateMachine(_character);
     }
 
     public void Init(PlayerCharacterStatsSO stats)
@@ -43,8 +50,5 @@ public class PlayerSanityHandler : MonoBehaviour, IHaveSanity
         OnSanityChanged?.Invoke(_currentSanity);
         if (_currentSanity <= 25)
             OnLowSanity?.Invoke(_character);
-
-        _character.HUDHandler.SanitySlider.ModifySlider(_currentSanity);
-        //playerController.GraphicsController.SetSanityFX(_currentSanity);
     }
 }

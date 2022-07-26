@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class CharacterHealthHandler : MonoBehaviour, IDamageable
 {
-    private CharacterBase _character;
+    protected CharacterBase _character;
 
     public delegate void CharacterDieDelegate(CharacterBase character);
     public event CharacterDieDelegate OnCharacterDie;

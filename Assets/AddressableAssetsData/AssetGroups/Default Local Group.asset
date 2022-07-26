@@ -65,6 +65,14 @@ MonoBehaviour:
     m_Address: Assets/Prefabs/Interractible objects/Pickable Items/Pickable Treasure10_2.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 3b029492cf35e1c46b56b5a451844235
+    m_Address: Assets/Prefabs/Characters/HUB_Player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 799beed8194e042408054cc50d6b49ec
+    m_Address: Assets/Resources_moved/Characters/Player/HUB Player.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
   m_SchemaSet:

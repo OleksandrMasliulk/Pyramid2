@@ -23,10 +23,6 @@ public class PlayerDrivenCharacter : CharacterBase
     private PlayerCoverHandler _coverHandler;
     public PlayerCoverHandler CoverHandler => _coverHandler;
 
-
-    private PlayerPhysicalStateMachine _physicalStateMachine;
-    private PlayerSanityStateMachine _sanityStateMachine;
-
     [SerializeField] private PlayerCameraHandler _cameraHandler;
     public PlayerCameraHandler CameraHandler => _cameraHandler;
     private PlayerSelector _selector;
@@ -48,13 +44,10 @@ public class PlayerDrivenCharacter : CharacterBase
         _selector = GetComponent<PlayerSelector>();
         _coverHandler = GetComponent<PlayerCoverHandler>();
 
-        MovementHandler?.Init(_stats.MovementSpeed);
+        MovementHandler?.Init(Stats.MovementSpeed);
         InventoryHandler?.Init(Stats.SlotCount);
         SanityHandler?.Init(Stats);
 
-        HUDHandler.InitHUD(this, Stats);
-
-        _physicalStateMachine = new PlayerPhysicalStateMachine(this);
-        _sanityStateMachine = new PlayerSanityStateMachine(this);
+        HUDHandler.InitHUD(this);
     }
 }
