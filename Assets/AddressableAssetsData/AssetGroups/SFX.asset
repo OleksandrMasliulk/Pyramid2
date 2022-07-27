@@ -21,10 +21,6 @@ MonoBehaviour:
     m_Address: Assets/Audio/Fakel.ogg
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: e199b34c7a3b5f94e9003279ed956886
-    m_Address: Assets/Audio/Death_Player.ogg
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 7cb8d08b790048d45b86e8aee878b3e4
     m_Address: Assets/Audio/Death....ogg
     m_ReadOnly: 0
