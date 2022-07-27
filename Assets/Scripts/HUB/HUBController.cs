@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class HUBController : MonoBehaviour
 {
-    [SerializeField]private List<PlayerDrivenCharacter> _playersInHUB;
+    [SerializeField] private HUBMapManager _mapManager;
+
+    private List<PlayerDrivenCharacter> _playersInHUB;
 
     private void Awake()
     {
@@ -25,5 +27,15 @@ public class HUBController : MonoBehaviour
     private void RemovePlayer(PlayerDrivenCharacter player)
     {
         _playersInHUB.Remove(player);
+    }
+
+    public void StartGame()
+    {
+        LevelLoader.Instance.LoadLevel(_mapManager.SelectedMap);
+    }
+
+    public void MainMenu()
+    {
+        LevelLoader.Instance.MainMenu();
     }
 }

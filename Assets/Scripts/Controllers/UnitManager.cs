@@ -95,6 +95,7 @@ public class UnitManager : MonoBehaviour
         };
 
         await op.Task;
+        reference.ReleaseAsset();
         return character;
     }
 }

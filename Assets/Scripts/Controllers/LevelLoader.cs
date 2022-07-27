@@ -13,8 +13,6 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] private GameObject _loadingScreen;
 
     public AssetReference _menuSceneReference;
-    public AssetReference _tutorialSceneReference;
-    public AssetReference _pyramid1SceneReference;
 
     private AssetReference _currentSceneReference;
 
