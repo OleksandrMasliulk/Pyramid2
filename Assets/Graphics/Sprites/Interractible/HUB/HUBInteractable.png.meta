@@ -210,7 +210,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HUBInteractable_7: 1703495950
+      HUBInteractable_Phone: 20509772
       HUBInteractable_9: 1253523779
       HUBInteractable_4: -1279273650
       HUBInteractable_16: -586512676
@@ -241,7 +241,7 @@ TextureImporter:
       HUBInteractable_Shelf: -1488166176
       HUBInteractable_6: 1825754657
       HUBInteractable_27: -900197680
-      HUBInteractable_Phone: 20509772
+      HUBInteractable_7: 1703495950
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

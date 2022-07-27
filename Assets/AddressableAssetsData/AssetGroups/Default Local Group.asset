@@ -73,6 +73,10 @@ MonoBehaviour:
     m_Address: Assets/Resources_moved/Characters/Player/HUB Player.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 89fa65e6f5c6cb247b333f585f3c1c69
+    m_Address: Assets/Scenes/Hub level.unity
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
   m_SchemaSet:

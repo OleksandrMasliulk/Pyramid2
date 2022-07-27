@@ -43,14 +43,14 @@ public class IngameUIController : MonoBehaviour
         winScreen.SetActive(true);
     }
 
-    public void ContinueAsGhost()
-    {
-        OnResurrectClick?.Invoke();
-    }
-
     public void MainMenu()
     {
         LevelLoader.Instance.MainMenu();
+    }
+
+    public void ContinueAsGhost()
+    {
+        OnResurrectClick?.Invoke();
     }
 
     private void OnDisable()

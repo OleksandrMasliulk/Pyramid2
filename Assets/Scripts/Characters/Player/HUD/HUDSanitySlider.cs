@@ -49,7 +49,7 @@ public class HUDSanitySlider : MonoBehaviour
             _fill.color = _color25;
     }
 
-    private void OnDisable()
+    private void OnDestroy()
     {
         _player.SanityHandler.OnSanityChanged -= ModifySlider;
     }
