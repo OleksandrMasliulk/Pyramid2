@@ -16,12 +16,12 @@ MonoBehaviour:
     buttonOverlap:
       type: 0
       clip:
-        m_AssetGUID: 
+        m_AssetGUID: 606d6fd598eeebb40baec76c0374a6e4
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0
-      volume: 0
-      repeatPlayeDelay: 0
+      volume: 0.242
+      repeatPlayeDelay: 0.1
       maxRange: 0
     buttonClick:
       type: 0

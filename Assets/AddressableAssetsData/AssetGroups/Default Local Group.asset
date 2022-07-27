@@ -77,6 +77,10 @@ MonoBehaviour:
     m_Address: Assets/Scenes/Hub level.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 606d6fd598eeebb40baec76c0374a6e4
+    m_Address: Assets/Audio/UI/Navedenie na knopku.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
   m_SchemaSet:
