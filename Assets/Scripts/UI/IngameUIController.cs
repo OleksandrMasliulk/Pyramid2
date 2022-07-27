@@ -13,7 +13,7 @@ public class IngameUIController : MonoBehaviour
 
     private void Start()
     {
-        GameController.Instance.OnLoseEvent += ShowLoseScrren;
+        //GameController.Instance.OnLoseEvent += ShowLoseScrren;
         GameController.Instance.OnWinEvent += ShowWinScreen;
     }
 
@@ -55,7 +55,7 @@ public class IngameUIController : MonoBehaviour
 
     private void OnDisable()
     {
-        GameController.Instance.OnLoseEvent -= ShowLoseScrren;
+        //GameController.Instance.OnLoseEvent -= ShowLoseScrren;
         GameController.Instance.OnWinEvent -= ShowWinScreen;
     }
 }

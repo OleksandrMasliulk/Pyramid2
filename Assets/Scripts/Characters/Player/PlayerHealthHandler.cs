@@ -6,6 +6,8 @@ public class PlayerHealthHandler : CharacterHealthHandler, IResurrectible
 {
     public delegate void PlayerResurrectDelegate();
     public event PlayerResurrectDelegate OnResurrect;
+    [SerializeField] private GameEvent OnPlayerDied;
+
 
     private PlayerPhysicalStateMachine _stateMachine;
 
@@ -19,6 +21,7 @@ public class PlayerHealthHandler : CharacterHealthHandler, IResurrectible
         base.TakeDamage(damage);
 
         Die();
+        OnPlayerDied?.Invoke();
     }
 
     public void Resurrect()

@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
         currentDialogue = dialogue;
         currentLines.Clear();
 
-        foreach (DialogueLine line in dialogue.dialogueSO.dialogue)
+        foreach (DialogueLine line in dialogue.dialogueSO.Dialogue)
         {
             currentLines.Enqueue(line);
         }
@@ -82,6 +82,6 @@ public class DialogueManager : MonoBehaviour
         Time.timeScale = 1;
         dialogueWindow.SetActive(false);
         OnEndDialogue?.Invoke();
-        currentDialogue.OnDialogueEndEvent?.Invoke();
+        currentDialogue.dialogueSO.OnDialogueEndEvent?.Invoke();
     }
 }

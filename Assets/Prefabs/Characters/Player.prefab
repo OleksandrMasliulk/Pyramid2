@@ -6538,6 +6538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e53258ce0b96c145bd4b53c271a57e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPlayerDied: {fileID: 11400000, guid: 7a5b8002c4f94f3409bf3e1b1953b363, type: 2}
 --- !u!114 &5266739786438730416
 MonoBehaviour:
   m_ObjectHideFlags: 0

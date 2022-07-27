@@ -7,5 +7,4 @@ using UnityEngine.Events;
 public class Dialogue
 {
     public DialogueSO dialogueSO;
-    public UnityEvent OnDialogueEndEvent;
 }
