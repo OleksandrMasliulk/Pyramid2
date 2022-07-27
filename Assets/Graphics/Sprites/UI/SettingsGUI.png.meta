@@ -325,6 +325,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: SettingsGUI_0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 6
+        width: 3
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 1, y: 1, z: 1, w: 1}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964979b1270d12242b235111c8238a37
+      internalID: 872106425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -343,6 +364,7 @@ TextureImporter:
       SettingsGUI_Handle: 85246944
       SettingsGUI_ArrowDown: -1121323412
       SettingsGUI_Check: -1745992816
+      SettingsGUI_0: 872106425
       SettingsGUI_ArrowLeft: 1977875377
       SettingsGUI_ScrollBar: -1256446196
       SettingsGUI_ArrowRight: 383328086

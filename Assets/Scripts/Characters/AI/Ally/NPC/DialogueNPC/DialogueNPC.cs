@@ -10,7 +10,7 @@ public class DialogueNPC : NPCBase, IInterractible
 
     public Transform ObjectReference => transform;
 
-    [SerializeField] private Dialogue currentDialogue;
+    [SerializeField] private Dialogue _currentDialogue;
 
     public override void InitCharacter(AssetReference stats)
     {
@@ -19,6 +19,6 @@ public class DialogueNPC : NPCBase, IInterractible
 
     public void Interract(CharacterBase user)
     {
-        DialogueManager.Instance.StartDialogue(currentDialogue);
+        DialogueManager.Instance.StartDialogue(_currentDialogue);
     }
 }

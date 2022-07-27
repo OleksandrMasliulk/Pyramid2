@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
+using System;
 
 public class PlayerInventoryHandler : MonoBehaviour
 {
@@ -10,6 +11,9 @@ public class PlayerInventoryHandler : MonoBehaviour
     [SerializeField] private IInventoryInput _inputHandler;
 
     private int _selectedSlot;
+
+    public event Action<CharacterInventory> OnInventoryChanged;
+    public event Action<int> OnSlotSelected;
 
     private void Awake()
     {
@@ -45,7 +49,7 @@ public class PlayerInventoryHandler : MonoBehaviour
         {
             if (item is IItemPickUp pickUp)
                 pickUp.OnPickUp(_character);
-            _character.HUDHandler.Inventory.RefreshInventoryHUD(_inventory);
+            OnInventoryChanged?.Invoke(_inventory);
         }
 
         return callback;
@@ -62,7 +66,7 @@ public class PlayerInventoryHandler : MonoBehaviour
         GameObject go = Instantiate(_inventory.Inventory[_selectedSlot].Item.ItemDropPrefab, transform.position, Quaternion.identity);
         go.GetComponent<Pickable>().Init(_inventory.Inventory[_selectedSlot].Item, _inventory.Inventory[_selectedSlot].Count); //SetCount(_inventory.Inventory[_selectedSlot].Count);
         _inventory.RemoveItem(_selectedSlot);
-        _character.HUDHandler.Inventory.RefreshInventoryHUD(_inventory);
+        OnInventoryChanged?.Invoke(_inventory);
     }
 
     private void UseItemPress()
@@ -77,7 +81,7 @@ public class PlayerInventoryHandler : MonoBehaviour
 
             if (_inventory.Inventory[_selectedSlot].Item.IsConsumable)
                 _inventory.ConsumeItem(_selectedSlot);
-            _character.HUDHandler.Inventory.RefreshInventoryHUD(_inventory);
+            OnInventoryChanged?.Invoke(_inventory);
         }
     }
     
@@ -93,28 +97,28 @@ public class PlayerInventoryHandler : MonoBehaviour
 
             if (_inventory.Inventory[_selectedSlot].Item.IsConsumable)
                 _inventory.ConsumeItem(_selectedSlot);
-            _character.HUDHandler.Inventory.RefreshInventoryHUD(_inventory);
+            OnInventoryChanged?.Invoke(_inventory);
         }
     }
 
     private void SelectSlot0()
     {
         _selectedSlot = 0;
-        _character.HUDHandler.Inventory.HighlightSlot(_selectedSlot);
+        OnSlotSelected?.Invoke(_selectedSlot);
     }
     private void SelectSlot1()
     {
         _selectedSlot = 1;
-        _character.HUDHandler.Inventory.HighlightSlot(_selectedSlot);
+        OnSlotSelected?.Invoke(_selectedSlot);
     }
     private void SelectSlot2()
     {
         _selectedSlot = 2;
-        _character.HUDHandler.Inventory.HighlightSlot(_selectedSlot);
+        OnSlotSelected?.Invoke(_selectedSlot);
     }
     private void SelectSlot3()
     {
         _selectedSlot = 3;
-        _character.HUDHandler.Inventory.HighlightSlot(_selectedSlot);
+        OnSlotSelected?.Invoke(_selectedSlot);
     }
 }

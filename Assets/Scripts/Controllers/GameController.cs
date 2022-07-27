@@ -33,6 +33,9 @@ public class GameController : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+
+        _alivePlayersList = new List<PlayerDrivenCharacter>();
+        UnitManager.OnPlayerSpawned += AddPlayerToList;
     }
 
     private void Start()
@@ -46,9 +49,7 @@ public class GameController : MonoBehaviour
 
         switch (_gameState)
         {
-            case GameState.Init:
-                _alivePlayersList = new List<PlayerDrivenCharacter>();
-                //PlayerHealthController.OnPlayerDied += RemovePlayerFromAlive;
+            case GameState.Init: 
                 SetGameState(GameState.SpawningCharacters);
                 break;
 
@@ -110,6 +111,11 @@ public class GameController : MonoBehaviour
         {
             Lose();
         }
+    }
+
+    private void OnDisable()
+    {
+        UnitManager.OnPlayerSpawned -= AddPlayerToList;
     }
 
     private void Save()

@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 6975671783424
-    m_Localized: 'Hallow ? Where am I? '
+    m_Localized: 'Hello? Where am I? '
     m_Metadata:
       m_Items: []
   - m_Id: 8249624514560

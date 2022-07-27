@@ -13,7 +13,7 @@ public class IngameUIController : MonoBehaviour
 
     private void Start()
     {
-        GameController.Instance.OnLoseEvent += ShowLoseScrren;
+        //GameController.Instance.OnLoseEvent += ShowLoseScrren;
         GameController.Instance.OnWinEvent += ShowWinScreen;
     }
 
@@ -43,19 +43,19 @@ public class IngameUIController : MonoBehaviour
         winScreen.SetActive(true);
     }
 
-    public void ContinueAsGhost()
-    {
-        OnResurrectClick?.Invoke();
-    }
-
     public void MainMenu()
     {
         LevelLoader.Instance.MainMenu();
     }
 
+    public void ContinueAsGhost()
+    {
+        OnResurrectClick?.Invoke();
+    }
+
     private void OnDisable()
     {
-        GameController.Instance.OnLoseEvent -= ShowLoseScrren;
+        //GameController.Instance.OnLoseEvent -= ShowLoseScrren;
         GameController.Instance.OnWinEvent -= ShowWinScreen;
     }
 }

@@ -7,13 +7,17 @@ using UnityEngine.Localization.Settings;
 [CreateAssetMenu(fileName ="New Dialogue", menuName = "Dialogues/New Dialogue")]
 public class DialogueSO : ScriptableObject
 {
-    [SerializeField] public DialogueMember[] dialogueMembers;
-    [SerializeField] public DialogueLine[] dialogue;
+    [SerializeField] private DialogueMember[] _dialogueMembers;
+    public DialogueMember[] Members => _dialogueMembers;
+    [SerializeField] private DialogueLine[] _dialogue;
+    public DialogueLine[] Dialogue => _dialogue;
+    [SerializeField] private GameEvent _dialogueEndEvent;
+    public GameEvent OnDialogueEndEvent => _dialogueEndEvent;
 
     [System.Serializable]
     public class DialogueLine 
     {
-        [Dropdown("dialogueMembers", "name")]
+        [Dropdown("_dialogueMembers", "name")]
         public DialogueMember speaker;
         public LocalizedString localizedLine;
         //[TextArea(2, 10)]

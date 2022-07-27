@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using UnityEngine.AddressableAssets;
+using TMPro;
 
 public static class Extensions
 {
@@ -46,5 +47,23 @@ public static class Extensions
         {
             obj.gameObject.layer = layer;
         }
+    }
+
+    public static async void SetOptionsLocalized(this TMP_Dropdown dropdown, LocalizationHandler.Tables localizationTable, List<string> optionsKeys)
+    {
+        List<Task> dropdownsLocalizationTasks = new List<Task>();
+        List<string> newQualityOptions = new List<string>();
+
+        dropdown.ClearOptions();
+        for (int i = 0; i < optionsKeys.Count; i++)
+        {
+            var op = LocalizationHandler.Instance.GetLocalizedTextAsync(localizationTable, optionsKeys[i]);
+            op.Completed += (op) => newQualityOptions.Add(op.Result);
+            dropdownsLocalizationTasks.Add(op.Task);
+        }
+
+        await Task.WhenAll(dropdownsLocalizationTasks);
+        dropdown.AddOptions(newQualityOptions);
+        dropdown.RefreshShownValue();
     }
 }

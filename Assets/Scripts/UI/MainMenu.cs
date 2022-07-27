@@ -19,6 +19,11 @@ public class MainMenu : MonoBehaviour
         StartCoroutine(InitializationChain());
     }
 
+    public void StartGame(MapSO so)
+    {
+        LevelLoader.Instance.LoadLevel(so.SceneReference);
+    }
+
     public void Quit()
     {
 #if UNITY_EDITOR

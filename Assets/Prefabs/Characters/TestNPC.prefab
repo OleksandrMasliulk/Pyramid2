@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3336946564759758531}
   - component: {fileID: 3336946564759758528}
   - component: {fileID: 3336946564759758558}
+  - component: {fileID: 813860163}
   m_Layer: 12
   m_Name: TestNPC
   m_TagString: Untagged
@@ -114,25 +115,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c63542abcca953c428c5c344c801a793, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _healthHandler: {fileID: 0}
-  _vfxHandler: {fileID: 0}
-  _animationHandler: {fileID: 0}
   _movementController: {fileID: 0}
   _tooltip: SPEAK
-  currentDialogue:
+  _currentDialogue:
     dialogueSO: {fileID: 11400000, guid: f2c1b314ecdb70d4ca9449301e837465, type: 2}
-    OnDialogueEndEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: Door, Assembly-CSharp
-          m_MethodName: Open
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+--- !u!114 &813860163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3336946564759758559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6887d570e1254349b152ddf7c5e3c90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 90cceff545f8f9e4c942d6c4d7471fc3, type: 2}
+  _event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3336946564759758558}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
