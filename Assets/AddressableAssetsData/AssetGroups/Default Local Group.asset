@@ -73,10 +73,6 @@ MonoBehaviour:
     m_Address: Assets/Resources_moved/Characters/Player/HUB Player.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 89fa65e6f5c6cb247b333f585f3c1c69
-    m_Address: Assets/Scenes/Hub level.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 606d6fd598eeebb40baec76c0374a6e4
     m_Address: Assets/Audio/UI/Navedenie na knopku.mp3
     m_ReadOnly: 0
