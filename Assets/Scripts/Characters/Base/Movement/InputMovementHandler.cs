@@ -37,13 +37,14 @@ public class InputMovementHandler : MonoBehaviour, ICanMove
         if (direction.magnitude <= 0f)
         {
             _character.AnimationHandler.SetIdle();
+            _character.VFXHandler.DisableStepParticles();
             return;
         }
 
         _rigidbody.MovePosition(transform.position + (Vector3)direction.normalized * MovementSpeed * Time.fixedDeltaTime);
         _character.AnimationHandler.SetMoving();
         _character.AnimationHandler.SetMovementDirection(direction);
-        _character.VFXHandler.SpawnParticles(_character.VFXHandler.StepParticles);
+        _character.VFXHandler.EnableStepParticles();
 
     }
 

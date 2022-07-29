@@ -47,6 +47,10 @@ MonoBehaviour:
     m_Key: RESURRECT
     m_Metadata:
       m_Items: []
+  - m_Id: 6940781641224192
+    m_Key: EXIT
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
