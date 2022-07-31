@@ -50,5 +50,6 @@ public class PlayerInputController : MonoBehaviour
     {
         UIController.OnUISessionStarted -= SwitchToUI;
         UIController.OnUISessionEnded -= SwitchToCharacterControl;
+        CharacterActions.ShowMenu.performed -= CallUI;
     }
 }
