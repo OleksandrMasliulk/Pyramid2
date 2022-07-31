@@ -58,7 +58,7 @@ public class UIController : MonoBehaviour
         if (_panelsOpened.Count == 0)
             EndUISession();
     }
-
+    
     private void StartUISession()
     {
         if (_isRunningSession)
