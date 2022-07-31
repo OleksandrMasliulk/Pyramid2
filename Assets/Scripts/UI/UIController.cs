@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class UIController : MonoBehaviour
 {
-    private static bool _activeSession = false;
+    private static bool _isRunningSession = false;
     public static Action OnUISessionStarted;
     public static Action OnUISessionEnded;
 
@@ -61,12 +61,12 @@ public class UIController : MonoBehaviour
 
     private void StartUISession()
     {
-        if (_activeSession)
+        if (_isRunningSession)
             return;
 
         Debug.LogWarning("UI Session started");
 
-        _activeSession = true;
+        _isRunningSession = true;
         _controls.UI.Enable();
 
         OnUISessionStarted?.Invoke();
@@ -74,12 +74,12 @@ public class UIController : MonoBehaviour
 
     private  void EndUISession()
     {
-        if (!_activeSession)
+        if (!_isRunningSession)
             return;
 
         Debug.LogWarning("UI Session ended");
 
-        _activeSession = false;
+        _isRunningSession = false;
         _controls.UI.Disable();
         _panelsOpened.Clear();
 
@@ -104,5 +104,10 @@ public class UIController : MonoBehaviour
         UIPanel.OnDisabled -= DisablePanel;
         //PlayerInputController.OnCallUI -= StartUISession;
         _controls.UI.Cancel.performed -= CloseCurrentPanel;
+    }
+
+    private void OnLevelWasLoaded(int index) 
+    {
+        _panelsOpened.Clear();
     }
 }

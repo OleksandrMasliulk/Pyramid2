@@ -6,7 +6,7 @@ using UnityEngine.AddressableAssets;
 
 public class HUBMapManager : MonoBehaviour
 {
-    [SerializeField] private GameObject _infoPanel;
+    [SerializeField] private UIPanel _infoPanel;
     [SerializeField] private TMP_Text _nameText;
     [SerializeField] private TMP_Text _locationText;
     [SerializeField] private TMP_Text _infoText;
@@ -18,7 +18,6 @@ public class HUBMapManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _infoPanel.SetActive(false);
         _nameText.text = "";
         _locationText.text = "";
         _infoText.text = "";
@@ -31,7 +30,7 @@ public class HUBMapManager : MonoBehaviour
         _locationText.text = so.Lcation;
         _infoText.text = so.Info;
         _highlightedMap = so.SceneReference;
-        _infoPanel.SetActive(true);
+        _infoPanel.EnablePanel();
     }
 
     public void SelectMap()

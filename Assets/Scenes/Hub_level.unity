@@ -347,11 +347,17 @@ Transform:
   m_Father: {fileID: 1623313480}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &132110461 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2358358772188459194, guid: 65aa2298641f4b3479f36c7d4d696f36, type: 3}
+--- !u!114 &132110465 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4893316945985949331, guid: 65aa2298641f4b3479f36c7d4d696f36, type: 3}
   m_PrefabInstance: {fileID: 2358358772149643463}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a9490acc54f0341a63e2590b448ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &164422311
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,17 +442,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &199940861 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2358358772252750394, guid: 65aa2298641f4b3479f36c7d4d696f36, type: 3}
-  m_PrefabInstance: {fileID: 2358358772149643463}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &199940865 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2358358772252750790, guid: 65aa2298641f4b3479f36c7d4d696f36, type: 3}
   m_PrefabInstance: {fileID: 2358358772149643463}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199940861}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aff0a827827801c4d8d1e5cb8d8a8351, type: 3}
@@ -826,11 +827,17 @@ Transform:
   m_Father: {fileID: 1724295852}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &553158158 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2358358771599634121, guid: 65aa2298641f4b3479f36c7d4d696f36, type: 3}
+--- !u!114 &553158162 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 338341815259578984, guid: 65aa2298641f4b3479f36c7d4d696f36, type: 3}
   m_PrefabInstance: {fileID: 2358358772149643463}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a9490acc54f0341a63e2590b448ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &613011818
 GameObject:
   m_ObjectHideFlags: 0
@@ -2729,11 +2736,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &791798693 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2358358771796151138, guid: 65aa2298641f4b3479f36c7d4d696f36, type: 3}
+--- !u!114 &791798697 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3386895682438300534, guid: 65aa2298641f4b3479f36c7d4d696f36, type: 3}
   m_PrefabInstance: {fileID: 2358358772149643463}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a9490acc54f0341a63e2590b448ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1004915526
 GameObject:
   m_ObjectHideFlags: 0
@@ -5103,10 +5116,10 @@ MonoBehaviour:
   OnShop:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 553158158}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 553158162}
+        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
+        m_MethodName: EnablePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5391,10 +5404,10 @@ MonoBehaviour:
   OnPhoneEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 132110461}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 132110465}
+        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
+        m_MethodName: EnablePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6494,10 +6507,10 @@ MonoBehaviour:
   OnAchievments:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 791798693}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 791798697}
+        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
+        m_MethodName: EnablePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -22643,10 +22656,10 @@ MonoBehaviour:
   OnMapUsed:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 199940861}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 2358358772149643464}
+        m_TargetAssemblyTypeName: UIPanel, Assembly-CSharp
+        m_MethodName: EnablePanel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -22813,3 +22826,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 65aa2298641f4b3479f36c7d4d696f36, type: 3}
+--- !u!114 &2358358772149643464 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1787843036624355324, guid: 65aa2298641f4b3479f36c7d4d696f36, type: 3}
+  m_PrefabInstance: {fileID: 2358358772149643463}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6a9490acc54f0341a63e2590b448ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
