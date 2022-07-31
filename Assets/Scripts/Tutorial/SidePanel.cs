@@ -2,17 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SidePanel : MonoBehaviour
+public class SidePanel : UIPanel
 {
     public Animation anim;
 
-    public void ShowPanel()
+    public override void EnablePanel()
     {
-        gameObject.SetActive(true);
+        base.EnablePanel();
         anim.Play("Show");
     }
 
-    public void HidePanel()
+    public override void DisablePanel()
     {
         StartCoroutine(HidePanelCoroutine());
     }
@@ -22,6 +22,6 @@ public class SidePanel : MonoBehaviour
         anim.Play("Hide");
         yield return new WaitForSeconds(anim["Hide"].length * anim["Hide"].speed);
 
-        gameObject.SetActive(false);
+        base.DisablePanel();
     }
 }

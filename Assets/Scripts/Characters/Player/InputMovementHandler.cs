@@ -7,7 +7,7 @@ public class InputMovementHandler : MonoBehaviour, ICanMove
     private CharacterBase _character;
     public float MovementSpeed { get; private set; }
 
-    private IListenAxisInput _inputHandler;
+    private PlayerInputController _inputHandler;
 
     private Rigidbody2D _rigidbody;
 
@@ -15,7 +15,7 @@ public class InputMovementHandler : MonoBehaviour, ICanMove
     {
         _character = GetComponent<CharacterBase>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        _inputHandler = GetComponent<IListenAxisInput>();
+        _inputHandler = GetComponent<PlayerInputController>();
     }
     
     public void Init(float speed)
@@ -33,7 +33,7 @@ public class InputMovementHandler : MonoBehaviour, ICanMove
 
     public void Move()
     {
-        Vector2 direction = new Vector2(_inputHandler.Horizontal, _inputHandler.Vertical);
+        Vector2 direction = _inputHandler.CharacterActions.Move.ReadValue<Vector2>();
         if (direction.magnitude <= 0f)
         {
             _character.AnimationHandler.SetIdle();

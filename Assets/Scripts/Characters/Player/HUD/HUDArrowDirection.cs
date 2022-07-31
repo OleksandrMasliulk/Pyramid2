@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class HUDArrowDirection : MonoBehaviour
 {
+    [SerializeField] private PlayerInputController _input;
+
     [SerializeField] private Image leftSegment;
     [SerializeField] private Image rightSegment;
     [SerializeField] private Image upSegment;
@@ -20,7 +22,7 @@ public class HUDArrowDirection : MonoBehaviour
     private void OnEnable()
     {
         circleStartpos = circle.position;
-        mousePosTemp = Input.mousePosition;
+        mousePosTemp = _input.CharacterActions.Pointer.ReadValue<Vector2>();
 
         UnhighlightSegment();
         highlightedSegment = null;
@@ -28,9 +30,9 @@ public class HUDArrowDirection : MonoBehaviour
 
     private void Update()
     {
-        circle.position = circleStartpos + (MouseUtils.GetMouseDragDirection(mousePosTemp, Input.mousePosition) * circleOffsetDistance);
+        circle.position = circleStartpos + (MouseUtils.GetMouseDragDirection(mousePosTemp, _input.CharacterActions.Pointer.ReadValue<Vector2>()) * circleOffsetDistance);
 
-        string mouseDragDirection = MouseUtils.GetMouseDragDirectionString(mousePosTemp, Input.mousePosition);
+        string mouseDragDirection = MouseUtils.GetMouseDragDirectionString(mousePosTemp, _input.CharacterActions.Pointer.ReadValue<Vector2>());
         if (mouseDragDirection == "Left")
         {
             HighlightSegment(leftSegment);

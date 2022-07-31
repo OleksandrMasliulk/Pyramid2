@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class GameController : MonoBehaviour
 {
     public static GameController Instance { get; private set; }
 
-    public delegate void OnWinDelegate();
-    public event OnWinDelegate OnWinEvent;
-    public delegate void OnLoseDelegate();
-    public event OnWinDelegate OnLoseEvent;
+    public event Action OnWinEvent;
+    public event Action OnLoseEvent;
 
     public enum GameState
     {
@@ -35,7 +34,6 @@ public class GameController : MonoBehaviour
         }
 
         _alivePlayersList = new List<PlayerDrivenCharacter>();
-        UnitManager.OnPlayerSpawned += AddPlayerToList;
     }
 
     private void Start()
@@ -111,6 +109,11 @@ public class GameController : MonoBehaviour
         {
             Lose();
         }
+    }
+
+    private void OnEnable()
+    {
+        UnitManager.OnPlayerSpawned += AddPlayerToList;
     }
 
     private void OnDisable()

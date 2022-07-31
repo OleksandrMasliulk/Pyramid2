@@ -2,45 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem;
 
 public class IngameUIController : MonoBehaviour
 {
     public static event Action OnResurrectClick;
 
-    public GameObject loseScreen;
-    public GameObject winScreen;
-    public SidePanel menu;
+    [SerializeField] private UIPanel _loseScreen;
+    [SerializeField] private UIPanel _winScreen;
+    [SerializeField] private UIPanel _menu;
 
-    private void Start()
+    private void OnEnable()
     {
-        //GameController.Instance.OnLoseEvent += ShowLoseScrren;
+        PlayerInputController.OnCallUI += ShowMenu;
+
         GameController.Instance.OnWinEvent += ShowWinScreen;
     }
 
-    private void Update()
+    private void ShowMenu()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            if (Input.GetKeyDown(KeyCode.Tab))
-            {
-                if (!menu.isActiveAndEnabled)
-                    menu.ShowPanel();
-                else
-                {
-                    menu.HidePanel();
-                }
-            }
-        }
+        _menu.EnablePanel();
     }
 
     private void ShowLoseScrren()
     {
-        loseScreen.SetActive(true);
+        _loseScreen.EnablePanel();
     }
 
     private void ShowWinScreen()
     {
-        winScreen.SetActive(true);
+        _winScreen.EnablePanel();
     }
 
     public void MainMenu()
@@ -55,7 +46,6 @@ public class IngameUIController : MonoBehaviour
 
     private void OnDisable()
     {
-        //GameController.Instance.OnLoseEvent -= ShowLoseScrren;
         GameController.Instance.OnWinEvent -= ShowWinScreen;
     }
 }

@@ -56,6 +56,6 @@ Material:
     m_Floats:
     - _HasBodyClothes: 1
     - _HasHeadClothes: 1
-    - _HasInTopHands: 1
+    - _HasInTopHands: 0
     m_Colors: []
   m_BuildTextureStacks: []

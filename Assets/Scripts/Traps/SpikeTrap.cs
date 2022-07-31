@@ -6,7 +6,7 @@ public class SpikeTrap : Trap, ISwitchable
 {
     [SerializeField] private float _spikeDuration;
     [SerializeField] private float _triggerDelay;
-    private bool _isPopped = false;
+    //private bool _isPopped = false;
 
     [SerializeField] private Animator _anim;
 
@@ -49,7 +49,7 @@ public class SpikeTrap : Trap, ISwitchable
     {
         yield return new WaitForSeconds(_triggerDelay);
         _anim.SetBool("isActive", true);
-        _isPopped = true;
+        //_isPopped = true;
 
         float startTime = Time.time;
         while (startTime + _spikeDuration > Time.time && IsActive)
@@ -69,7 +69,7 @@ public class SpikeTrap : Trap, ISwitchable
     {
         _spikesCoroutine = null;
         _anim.SetBool("isActive", false);
-        _isPopped = false;
+        //_isPopped = false;
     }
 
     public override void Trigger()
