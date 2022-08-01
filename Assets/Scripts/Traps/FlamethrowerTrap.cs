@@ -1,52 +1,43 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class FlamethrowerTrap : Trap, ISwitchable
-{
+public class FlamethrowerTrap : Trap, ISwitchable {
+    [Header("Graphics")]
     [SerializeField] private GameObject _fireGraphics;
     [SerializeField] private ParticleSystem _ps;
     [SerializeField] private ParticleSystem _ps2;
 
+    [Header("Areas of effect")]
     [SerializeField] private ISeeker<IHaveSanity> _sanitySeeker;
     [SerializeField] private ISeeker<IDamageable> _damageSeeker;
 
+    [Header("Trap settings")]
     [SerializeField] private float _rearmTime;
     [SerializeField] private float _flameThrowingDuration;
     private bool _isReady;
-
-    [SerializeField] private bool _isActive;
+    [SerializeField]private bool _isActive;
     public bool IsActive => _isActive;
 
     private Coroutine _rearmCoroutine;
     private Coroutine _flamethrowingCoroutine;
 
-    private void Awake()
-    {
+    private void Awake() {
         _sanitySeeker = GetComponentInChildren<ISeeker<IHaveSanity>>();
         _damageSeeker = GetComponentInChildren<ISeeker<IDamageable>>();
     }
 
-    private void Start()
-    {
-        _flamethrowingCoroutine = StartCoroutine(ThrowFireCoroutine());
-    }
+    private void Start() => _flamethrowingCoroutine = StartCoroutine(ThrowFireCoroutine());
 
-    IEnumerator ThrowFireCoroutine()
-    {
+    IEnumerator ThrowFireCoroutine() {
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<TrapsSoundBoard>().flamethrowerTrap, transform.position, _flameThrowingDuration);
 
         foreach (IHaveSanity s in _sanitySeeker.ObjectsSeeked)
-        {
             s.ModifySanity(-sanityLoss);
-        }
 
         EnableGraphics();
         float startThrowingTime = Time.time;
-        while (startThrowingTime + _flameThrowingDuration >= Time.time && IsActive)
-        {
-            foreach(IDamageable d in _damageSeeker.ObjectsSeeked)
-            {
+        while (startThrowingTime + _flameThrowingDuration >= Time.time && IsActive) {
+            foreach(IDamageable d in _damageSeeker.ObjectsSeeked) {
                 d.TakeDamage(1);
                 Debug.Log("Flamethrower trap hit");
             }
@@ -57,8 +48,7 @@ public class FlamethrowerTrap : Trap, ISwitchable
             _rearmCoroutine = StartCoroutine(RearmCoroutine());
     }
 
-    IEnumerator RearmCoroutine()
-    {
+    IEnumerator RearmCoroutine() {
         DisableGraphics();
 
         _isReady = false;
@@ -69,44 +59,37 @@ public class FlamethrowerTrap : Trap, ISwitchable
             _flamethrowingCoroutine = StartCoroutine(ThrowFireCoroutine());
     }
 
-    private void EnableGraphics()
-    {
+    private void EnableGraphics() {
         _fireGraphics.SetActive(true);
         _ps.Play();
         _ps2.Play(); 
     }
 
-    private void DisableGraphics()
-    {
+    private void DisableGraphics() {
         _fireGraphics.SetActive(false);
         _ps.Stop();
         _ps2.Stop();
     }
 
-    public override void Trigger()
-    {
+    public override void Trigger() {
     }
 
-    public void Activate()
-    {
+    public void Activate() {
         _isActive = true;
 
-        if (_isReady)
-        {
+        if (_isReady) {
             if (_rearmCoroutine != null)
                 StopCoroutine(_rearmCoroutine);
             _flamethrowingCoroutine = StartCoroutine(ThrowFireCoroutine());
         }
-        else
-        {
+        else {
             if (_rearmCoroutine == null)
                 _rearmCoroutine = StartCoroutine(RearmCoroutine());
         }
             
     }
 
-    public void Disable()
-    {
+    public void Disable() {
         _isActive = false;
 
         if (_flamethrowingCoroutine != null)

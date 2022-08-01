@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 [System.Serializable]
-public class Lever : MonoBehaviour, IInterractible
-{
+public class Lever : MonoBehaviour, IInterractible {
+    public Transform ObjectReference => transform;
+
     [SerializeField] private UnityEvent _toggleOnAction;
     [SerializeField] private UnityEvent _toggleOffAction;
     [SerializeField] private Animator _anim;
@@ -14,28 +13,22 @@ public class Lever : MonoBehaviour, IInterractible
     [SerializeField] private string _tooltip;
     public string Tooltip => _tooltip;
 
-    public Transform ObjectReference => transform;
-
-    private void Start()
-    {
+    private void Start() {
         isOn = false;
         _anim.SetBool("On", isOn);
     }
 
-    private void On()
-    {
+    private void On() {
         _toggleOnAction?.Invoke();
         isOn = true;
     }
 
-    private void Off()
-    {
+    private void Off() {
         _toggleOffAction?.Invoke();
         isOn = false;
     }
 
-    public void Interract(CharacterBase user)
-    {
+    public void Interract(CharacterBase user) {
         if (isOn)
             Off();
         else

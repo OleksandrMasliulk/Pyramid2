@@ -1,28 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private SettingsWindow _settings;
 
-    private IEnumerator InitializationChain()
-    {
+    private IEnumerator InitializationChain() {
         Debug.LogWarning("Main menu init");
         GetComponent<UIPanel>().EnablePanel();
         _settings.LoadSettings();
         yield return null;
     }
 
-    private void Start()
-    {
-        StartCoroutine(InitializationChain());
-    }
+    private void Start() => StartCoroutine(InitializationChain());
 
-    public void StartGame(MapSO so)
-    {
-        LevelLoader.Instance.LoadLevel(so.SceneReference);
-    }
+    public void StartGame(MapSO so) => LevelLoader.Instance.LoadLevel(so.SceneReference);
 
     public void Quit()
     {

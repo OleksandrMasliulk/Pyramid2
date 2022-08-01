@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New Mummy", menuName = "Characters/New Mummy")]
-public class MummyStatsSO : CharacterBaseStatsSO
-{
+public class MummyStatsSO : CharacterBaseStatsSO {
     [Header("General")]
     [SerializeField] private LayerMask _senseLayer;
     public LayerMask SenseLayer => _senseLayer;

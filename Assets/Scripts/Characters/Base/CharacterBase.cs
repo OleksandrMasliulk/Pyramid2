@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-public abstract class CharacterBase : MonoBehaviour
-{
+public abstract class CharacterBase : MonoBehaviour {
     protected CharacterBaseStatsSO _stats;
     public CharacterBaseStatsSO Stats => _stats;
     protected CharacterHealthHandler _healthHandler;

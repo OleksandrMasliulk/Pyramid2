@@ -1,27 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using System.Threading.Tasks;
 
-public class PlayerVFXHandler : CharacterVFXHandler
-{
+public class PlayerVFXHandler : CharacterVFXHandler  {
     [SerializeField] private GameObject _ghostParticles;
     [SerializeField] private AssetReference _corpseSprite;
     [SerializeField] private SanityFX _sanityFX;
     public SanityFX SanityFX => _sanityFX;
-    public void EnableGhostParticles()
-    {
-        _ghostParticles.SetActive(true);
-    }
 
-    public void DisableGhostParticles()
-    {
-        _ghostParticles.SetActive(false);
-    }
+    public void EnableGhostParticles() => _ghostParticles.SetActive(true);
 
-    public async void SpawnCorpse()
-    {
+    public void DisableGhostParticles() => _ghostParticles.SetActive(false);
+
+    public async void SpawnCorpse() {
         Sprite corpseSprite = await _corpseSprite.LoadAssetAsyncSafe<Sprite>();
 
         GameObject corpse = Instantiate(new GameObject(), transform.position, Quaternion.identity);

@@ -1,11 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
-using System.Threading.Tasks;
 
-public class Mummy : EnemyBase
-{
+public class Mummy : EnemyBase {
     public new MummyStatsSO Stats => (MummyStatsSO)_stats;
     public new MummyAnimationHandler AnimationHandler => (MummyAnimationHandler)_animationHandler;
     public new AIPathfindingMovement MovementHandler => (AIPathfindingMovement)_movementHandler;
@@ -15,8 +11,7 @@ public class Mummy : EnemyBase
     private MummyBehavoiuStateMachine _behavoiurStateMachine;
     private MummyPhysicalStateMachine _physicalStateMachine;
 
-    public override async void InitCharacter(AssetReference stats)
-    {
+    public override async void InitCharacter(AssetReference stats) {
         _stats = await stats.LoadAssetAsyncSafe<CharacterBaseStatsSO>() as MummyStatsSO;
 
         _movementHandler = GetComponent<IPathfindingMovement>();
@@ -29,8 +24,5 @@ public class Mummy : EnemyBase
         _physicalStateMachine = new MummyPhysicalStateMachine(this);
     }
 
-    private void Update()
-    {
-        _behavoiurStateMachine.Tick();
-    }
+    private void Update() => _behavoiurStateMachine.Tick();
 }

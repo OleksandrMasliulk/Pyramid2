@@ -1,11 +1,8 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerSelector : MonoBehaviour
-{
-    public enum SelectType
-    {
+public class PlayerSelector : MonoBehaviour {
+    public enum SelectType {
         Nearest,
         Farest,
         LastSeeked,
@@ -20,17 +17,13 @@ public class PlayerSelector : MonoBehaviour
     private IInterractible _selectedItem;
     public IInterractible SelectedItem => _selectedItem;
 
-
-    private void Awake()
-    {
+    private void Awake() {
         _player = GetComponent<PlayerDrivenCharacter>();
         _selectedItem = null;
     }
 
-    private void Update()
-    {
-        if (_seeker.ObjectsSeeked.Count <= 0)
-        {
+    private void Update() {
+        if (_seeker.ObjectsSeeked.Count <= 0) {
             Reset();
             return;
         }
@@ -38,10 +31,8 @@ public class PlayerSelector : MonoBehaviour
         Select();
     }
 
-    private IInterractible GetSelectedItem()
-    {
-        switch (_type)
-        {
+    private IInterractible GetSelectedItem() {
+        switch (_type) {
             case SelectType.Nearest:
                 return GetNearest(_seeker.ObjectsSeeked);
             case SelectType.Farest:
@@ -55,13 +46,11 @@ public class PlayerSelector : MonoBehaviour
         }
     }
 
-    private IInterractible GetNearest(List<IInterractible> list)
-    {
+    private IInterractible GetNearest(List<IInterractible> list) {
         int nearest = 0;
         float nearestDistance = Vector3.Distance(transform.position, list[0].ObjectReference.position);
 
-        for (int i = 1; i < list.Count; i++)
-        {
+        for (int i = 1; i < list.Count; i++) {
             float dist = Vector3.Distance(transform.position, list[i].ObjectReference.position);
             if (dist < nearestDistance)
                 nearest = i;
@@ -70,13 +59,11 @@ public class PlayerSelector : MonoBehaviour
         return list[nearest];
     }
 
-    private IInterractible GetFarest(List<IInterractible> list)
-    {
+    private IInterractible GetFarest(List<IInterractible> list) {
         int farest = 0;
         float farestDistance = Vector3.Distance(transform.position, list[0].ObjectReference.position);
 
-        for (int i = 1; i < list.Count; i++)
-        {
+        for (int i = 1; i < list.Count; i++) {
             float dist = Vector3.Distance(transform.position, list[i].ObjectReference.position);
             if (dist > farestDistance)
                 farest = i;
@@ -85,35 +72,28 @@ public class PlayerSelector : MonoBehaviour
         return list[farest];
     } 
 
-    private void Select()
-    {
+    private void Select() {
         IInterractible selectedItem = GetSelectedItem();
         if (selectedItem == _selectedItem)
             return;
 
         if(_selectedItem != null && _selectedItem.ObjectReference.TryGetComponent<IHighlight>(out IHighlight h)) 
-        {
             h.UnHighlight();
-        }
         if(selectedItem.ObjectReference.TryGetComponent<IHighlight>(out IHighlight s)) 
-        {
             s.Highlight();
-        }
 
         _selectedItem = selectedItem;
         _player.HUDHandler.Tooltip.ShowTooltip(_selectedItem.Tooltip);
     }
 
-    private void Reset()
-    {
+    private void Reset() {
         if (_selectedItem == null)
             return;
 
         if (_selectedItem.ObjectReference.TryGetComponent<IHighlight>(out IHighlight s))
-        {
             s.UnHighlight();
-        }
-        _player.HUDHandler.Tooltip.Hide();
+
         _selectedItem = null;
+        _player.HUDHandler.Tooltip.Hide();
     }
 }

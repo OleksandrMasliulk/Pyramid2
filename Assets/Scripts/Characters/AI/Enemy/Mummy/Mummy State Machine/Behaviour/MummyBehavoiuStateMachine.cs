@@ -1,16 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class MummyBehavoiuStateMachine
-{
-    private Mummy _mummy;
-
+public class MummyBehavoiuStateMachine {
     public MummyRoamState RoamState;
+
+    private Mummy _mummy;
     private MummyBehaviourState _currentState;
 
-    public MummyBehavoiuStateMachine(Mummy mummy)
-    {
+    public MummyBehavoiuStateMachine(Mummy mummy) {
         this._mummy = mummy;
 
         RoamState = new MummyRoamState(_mummy.Stats, this);
@@ -18,8 +12,7 @@ public class MummyBehavoiuStateMachine
         PlayerSanityHandler.OnLowSanity += (player) => { SetState(new MummySenseState(_mummy.Stats, player, this)); };
     }
 
-    public void SetState(MummyBehaviourState state)
-    {
+    public void SetState(MummyBehaviourState state) {
         if (_currentState == state)
             return;
 
@@ -28,8 +21,5 @@ public class MummyBehavoiuStateMachine
         _currentState.EnterState(_mummy);
     }
 
-    public void Tick()
-    {
-        _currentState.StateTick(_mummy);
-    }
+    public void Tick() => _currentState.StateTick(_mummy);
 }

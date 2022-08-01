@@ -1,11 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerAliveState : PlayerPhysicalState
-{
-    public override void OnStateEnter(PlayerDrivenCharacter player)
-    {
+public class PlayerAliveState : PlayerPhysicalState {
+    public override void OnStateEnter(PlayerDrivenCharacter player) {
         player.AnimationHandler.SetAliveAniationHandler();
         player.gameObject.ChangeTreeLayer(6);
         player.SanityHandler?.ModifySanity(100);
@@ -13,7 +7,6 @@ public class PlayerAliveState : PlayerPhysicalState
         player.HUDHandler.HUD.SetActive(true);
     }
 
-    public override void OnStateExit(PlayerDrivenCharacter player)
-    {
+    public override void OnStateExit(PlayerDrivenCharacter player) {
     }
 }

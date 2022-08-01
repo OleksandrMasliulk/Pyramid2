@@ -1,20 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerInterractionHandler : MonoBehaviour
-{
+public class PlayerInterractionHandler : MonoBehaviour {
     private PlayerDrivenCharacter _character;
     //[SerializeField] private Seeker_InterractibleTriggerCircle _seeker;
 
-    private void Awake()
-    {
-        _character = GetComponent<PlayerDrivenCharacter>();
-    }
+    private void Awake() => _character = GetComponent<PlayerDrivenCharacter>();
 
-    public void Interract(InputAction.CallbackContext context)
-    {
+    public void Interract(InputAction.CallbackContext context) {
         if (_character.Selector.SelectedItem == null)
             return;
 
@@ -22,13 +15,7 @@ public class PlayerInterractionHandler : MonoBehaviour
     }
 
 
-    private void OnEnable()
-    {
-        _character.InputController.CharacterActions.Interract.performed += Interract;
-    }
+    private void OnEnable() => _character.InputController.CharacterActions.Interract.performed += Interract;
 
-    private void OnDisable()
-    {
-        _character.InputController.CharacterActions.Interract.performed -= Interract;
-    }
+    private void OnDisable() => _character.InputController.CharacterActions.Interract.performed -= Interract;
 }

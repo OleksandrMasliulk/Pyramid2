@@ -1,22 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerSanityStateMachine
-{
-    private PlayerDrivenCharacter _character;
-
+public class PlayerSanityStateMachine {
     public FullSanityState FullSanity { get; private set; }
     public HighSanityState HighSanity { get; private set; }
     public MediumSanityState MediumSanity { get; private set; }
     public LowSanityState LowSanity { get; private set; }
     public NoSanityState NoSanity { get; private set; }
 
+    private PlayerDrivenCharacter _character;
     private PlayerSanityState _currentState;
 
-    public PlayerSanityStateMachine(PlayerDrivenCharacter character)
-    {
-        this._character = character;
+    public PlayerSanityStateMachine(PlayerDrivenCharacter character) {
+        _character = character;
 
         FullSanity = new FullSanityState();
         HighSanity = new HighSanityState();
@@ -29,10 +22,8 @@ public class PlayerSanityStateMachine
         SetState(FullSanity);
     }
 
-    private void SanityChanged(int value)
-    {
-        switch (value)
-        {
+    private void SanityChanged(int value) {
+        switch (value) {
             case 100:
                 SetState(FullSanity);
                 break;
@@ -51,8 +42,7 @@ public class PlayerSanityStateMachine
         }
     }
 
-    public void SetState(PlayerSanityState state)
-    {
+    public void SetState(PlayerSanityState state) {
         if (_currentState == state)
             return;
 

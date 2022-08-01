@@ -1,51 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using System;
-using UnityEngine.InputSystem;
 
-public class IngameUIController : MonoBehaviour
-{
+public class IngameUIController : MonoBehaviour {
     public static event Action OnResurrectClick;
 
     [SerializeField] private UIPanel _loseScreen;
     [SerializeField] private UIPanel _winScreen;
     [SerializeField] private UIPanel _menu;
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         PlayerInputController.OnCallUI += ShowMenu;
-
         GameController.Instance.OnWinEvent += ShowWinScreen;
     }
 
-    private void ShowMenu()
-    {
-        _menu.EnablePanel();
-    }
+    private void ShowMenu() => _menu.EnablePanel();
 
-    private void ShowLoseScrren()
-    {
-        _loseScreen.EnablePanel();
-    }
+    private void ShowLoseScrren() => _loseScreen.EnablePanel();
 
-    private void ShowWinScreen()
-    {
-        _winScreen.EnablePanel();
-    }
+    private void ShowWinScreen() => _winScreen.EnablePanel();
 
-    public void MainMenu()
-    {
-        LevelLoader.Instance.MainMenu();
-    }
+    public void MainMenu() => LevelLoader.Instance.MainMenu();
 
-    public void ContinueAsGhost()
-    {
-        OnResurrectClick?.Invoke();
-    }
+    public void ContinueAsGhost() => OnResurrectClick?.Invoke();
 
-    private void OnDisable()
-    {
+    private void OnDisable() {
+        PlayerInputController.OnCallUI -= ShowMenu;
         GameController.Instance.OnWinEvent -= ShowWinScreen;
     }
 }

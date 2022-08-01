@@ -1,24 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
 using UnityEngine.AddressableAssets;
 
 public class RoamNPC : NPCBase
 {
     [SerializeField] private Transform _target;
 
-    private void Update()
-    {
+    private void Update() {
         //GraphicsController.SetMovementDirection(MovementController.GetMovementDirection());
     }
 
-    private void ReachTarget()
-    {
-        Destroy(this.gameObject);
-    }
+    private void ReachTarget() => Destroy(this.gameObject);
 
-    public override void InitCharacter(AssetReference stats)
-    {
+    public override void InitCharacter(AssetReference stats) {
     }
 }

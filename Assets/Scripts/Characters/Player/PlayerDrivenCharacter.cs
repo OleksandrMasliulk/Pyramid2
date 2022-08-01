@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
-public class PlayerDrivenCharacter : CharacterBase
-{
+public class PlayerDrivenCharacter : CharacterBase {
     public new PlayerCharacterStatsSO Stats => (PlayerCharacterStatsSO)_stats;
     private ICanMove _movementHandler;
     public InputMovementHandler MovementHandler => (InputMovementHandler)_movementHandler;
@@ -29,8 +26,7 @@ public class PlayerDrivenCharacter : CharacterBase
     private PlayerSelector _selector;
     public PlayerSelector Selector => _selector;
 
-    private void Awake()
-    {
+    private void Awake() {
         _movementHandler = GetComponent<ICanMove>();
         _healthHandler = GetComponent<CharacterHealthHandler>();
         _inputController = GetComponent<PlayerInputController>();
@@ -44,14 +40,12 @@ public class PlayerDrivenCharacter : CharacterBase
         _coverHandler = GetComponent<PlayerCoverHandler>();
     }
 
-    public async override void InitCharacter(AssetReference stats)
-    {
+    public async override void InitCharacter(AssetReference stats) {
         _stats = await stats.LoadAssetAsyncSafe<CharacterBaseStatsSO>() as PlayerCharacterStatsSO;
 
         MovementHandler?.Init(Stats.MovementSpeed);
         InventoryHandler?.Init(Stats.SlotCount);
         SanityHandler?.Init(Stats);
-
         HUDHandler.InitHUD(this);
     }
 }

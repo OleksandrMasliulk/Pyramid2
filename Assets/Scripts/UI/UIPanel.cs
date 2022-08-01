@@ -12,19 +12,12 @@ public class UIPanel : MonoBehaviour
     [SerializeField] private GameObject _firstSelected;
     public GameObject FirstSelected => _firstSelected;
 
-    public virtual void EnablePanel()
-    {
+    public virtual void EnablePanel() {
         gameObject.SetActive(true);
         OnEnabled?.Invoke(this);
     }
 
-    public virtual void DisablePanel()
-    {
-        OnDisable?.Invoke();
-    }
+    public virtual void DisablePanel() => OnDisable?.Invoke();
 
-    public void ThrowDisabledAction() 
-    {
-        OnDisabled?.Invoke(this);
-    }
+    public void ThrowDisabledAction() => OnDisabled?.Invoke(this);
 }

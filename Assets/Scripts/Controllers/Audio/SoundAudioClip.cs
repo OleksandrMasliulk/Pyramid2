@@ -1,13 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 [System.Serializable]
 public class SoundAudioClip
 {
-    public enum SoundType 
-    {
+    public enum SoundType  {
         Sound,
         Music
     }
@@ -24,26 +21,17 @@ public class SoundAudioClip
     [Range(1f, 100f)]
     public float maxRange;
 
-    public void Init() 
-    {
-        lastTimePlayed = Time.time;
-    }
+    public void Init() => lastTimePlayed = Time.time;
 
-    public bool CanPlay()
-    {
+    public bool CanPlay() {
         if (repeatPlayeDelay == 0)
-        {
             return true;
-        }
 
-        if (lastTimePlayed + repeatPlayeDelay < Time.time)
-        {
+        if (lastTimePlayed + repeatPlayeDelay < Time.time) {
             lastTimePlayed = Time.time;
             return true;
         }
         else
-        {
             return false;
-        }
     }
 }
