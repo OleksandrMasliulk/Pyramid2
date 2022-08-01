@@ -8,10 +8,10 @@ public class MainMenu : MonoBehaviour
 
     private IEnumerator InitializationChain()
     {
-        yield return null; //LocalizationHandler.Instance.InitLocales();
-
+        Debug.LogWarning("Main menu init");
+        GetComponent<UIPanel>().EnablePanel();
         _settings.LoadSettings();
-        //AudioManager.Instance.PlayLevelTheme(AudioManager.Instance.GetSoundBoard<MusicSoundBoard>().mainMenuTheme);
+        yield return null;
     }
 
     private void Start()

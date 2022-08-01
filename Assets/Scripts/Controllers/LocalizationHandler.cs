@@ -36,7 +36,7 @@ public class LocalizationHandler : MonoBehaviour
         var op = LocalizationSettings.StringDatabase.GetLocalizedStringAsync(tableName, key);
         op.Completed += (op) =>
         {
-            Debug.LogWarning($"{tableName}/{key}: {op.Result}");
+            //Debug.LogWarning($"{tableName}/{key}: {op.Result}");
         };
 
         return op;

@@ -15,7 +15,7 @@ public class ButtonSoundAssigner : MonoBehaviour, IPointerEnterHandler, ISelectH
 
     public void OnSelect(BaseEventData eventData)
     {
-        //AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<UISoundBoard>().buttonOverlap, 1f);
+        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<UISoundBoard>().buttonOverlap, 1f);
     }
 
     private void Awake()

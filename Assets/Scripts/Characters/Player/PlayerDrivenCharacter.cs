@@ -8,7 +8,8 @@ public class PlayerDrivenCharacter : CharacterBase
     public new PlayerCharacterStatsSO Stats => (PlayerCharacterStatsSO)_stats;
     private ICanMove _movementHandler;
     public InputMovementHandler MovementHandler => (InputMovementHandler)_movementHandler;
-    private PlayerInputHandler _inputHandler;
+    private PlayerInputController _inputController;
+    public PlayerInputController InputController => _inputController;
     private PlayerInterractionHandler _interractionHandler;
     public PlayerInterractionHandler InterractionHandler => _interractionHandler;
     private PlayerInventoryHandler _inventoryHandler;
@@ -28,13 +29,11 @@ public class PlayerDrivenCharacter : CharacterBase
     private PlayerSelector _selector;
     public PlayerSelector Selector => _selector;
 
-    public async override void InitCharacter(AssetReference stats)
+    private void Awake()
     {
-        _stats = await stats.LoadAssetAsyncSafe<CharacterBaseStatsSO>() as PlayerCharacterStatsSO;
-
         _movementHandler = GetComponent<ICanMove>();
         _healthHandler = GetComponent<CharacterHealthHandler>();
-        _inputHandler = GetComponent<PlayerInputHandler>();
+        _inputController = GetComponent<PlayerInputController>();
         _interractionHandler = GetComponent<PlayerInterractionHandler>();
         _inventoryHandler = GetComponent<PlayerInventoryHandler>();
         _animationHandler = GetComponent<CharacterAnimationHandler>();
@@ -43,6 +42,11 @@ public class PlayerDrivenCharacter : CharacterBase
         _hudHandler = GetComponent<PlayerHUDHandler>();
         _selector = GetComponent<PlayerSelector>();
         _coverHandler = GetComponent<PlayerCoverHandler>();
+    }
+
+    public async override void InitCharacter(AssetReference stats)
+    {
+        _stats = await stats.LoadAssetAsyncSafe<CharacterBaseStatsSO>() as PlayerCharacterStatsSO;
 
         MovementHandler?.Init(Stats.MovementSpeed);
         InventoryHandler?.Init(Stats.SlotCount);

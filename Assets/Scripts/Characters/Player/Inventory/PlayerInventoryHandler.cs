@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using System;
+using UnityEngine.InputSystem;
 
 public class PlayerInventoryHandler : MonoBehaviour
 {
     private PlayerDrivenCharacter _character;
     private CharacterInventory _inventory;
-    [SerializeField] private IInventoryInput _inputHandler;
 
     private int _selectedSlot;
 
@@ -18,22 +18,12 @@ public class PlayerInventoryHandler : MonoBehaviour
     private void Awake()
     {
         _character = GetComponent<PlayerDrivenCharacter>();
-        _inputHandler = GetComponent<IInventoryInput>();
     }
 
     public void Init(int slotCount)
     {
         _inventory = new CharacterInventory(slotCount);
         _selectedSlot = 0;
-
-        _inputHandler.OnSlot1 += SelectSlot0;
-        _inputHandler.OnSlot2 += SelectSlot1;
-        _inputHandler.OnSlot3 += SelectSlot2;
-        _inputHandler.OnSlot4 += SelectSlot3;
-
-        _inputHandler.OnUsePress += UseItemPress;
-        _inputHandler.OnUseRelease += UseItemRelease;
-        _inputHandler.OnDrop += DropItem;
     }
 
     public AddItemCallback AddItem(Item item, int count)
@@ -55,7 +45,7 @@ public class PlayerInventoryHandler : MonoBehaviour
         return callback;
     }
 
-    public void DropItem()
+    public void DropItem(InputAction.CallbackContext context)
     {
         if (_inventory.Inventory[_selectedSlot].Item == null)
             return;
@@ -69,7 +59,7 @@ public class PlayerInventoryHandler : MonoBehaviour
         OnInventoryChanged?.Invoke(_inventory);
     }
 
-    private void UseItemPress()
+    private void UseItemPress(InputAction.CallbackContext context)
     {
         if (_inventory.Inventory[_selectedSlot].Item == null)
             return;
@@ -85,7 +75,7 @@ public class PlayerInventoryHandler : MonoBehaviour
         }
     }
     
-    private void UseItemRelease()
+    private void UseItemRelease(InputAction.CallbackContext context)
     {
         if (_inventory.Inventory[_selectedSlot].Item == null)
             return;
@@ -101,24 +91,49 @@ public class PlayerInventoryHandler : MonoBehaviour
         }
     }
 
-    private void SelectSlot0()
+    private void SelectSlot1(InputAction.CallbackContext context)
     {
         _selectedSlot = 0;
         OnSlotSelected?.Invoke(_selectedSlot);
     }
-    private void SelectSlot1()
+    private void SelectSlot2(InputAction.CallbackContext context)
     {
         _selectedSlot = 1;
         OnSlotSelected?.Invoke(_selectedSlot);
     }
-    private void SelectSlot2()
+    private void SelectSlot3(InputAction.CallbackContext context)
     {
         _selectedSlot = 2;
         OnSlotSelected?.Invoke(_selectedSlot);
     }
-    private void SelectSlot3()
+    private void SelectSlot4(InputAction.CallbackContext context)
     {
         _selectedSlot = 3;
         OnSlotSelected?.Invoke(_selectedSlot);
+    }
+
+
+    private void OnEnable()
+    {
+        _character.InputController.CharacterActions.SelectSlot1.performed += SelectSlot1;
+        _character.InputController.CharacterActions.SelectSlot2.performed += SelectSlot2;
+        _character.InputController.CharacterActions.SelectSlot3.performed += SelectSlot3;
+        _character.InputController.CharacterActions.SelectSlot4.performed += SelectSlot4;
+
+        _character.InputController.CharacterActions.Useitem.performed += UseItemPress;
+        _character.InputController.CharacterActions.Useitem.canceled += UseItemRelease;
+        _character.InputController.CharacterActions.DropItem.performed += DropItem;
+    }
+
+    private void OnDisable()
+    {
+        _character.InputController.CharacterActions.SelectSlot1.performed -= SelectSlot1;
+        _character.InputController.CharacterActions.SelectSlot2.performed -= SelectSlot2;
+        _character.InputController.CharacterActions.SelectSlot3.performed -= SelectSlot3;
+        _character.InputController.CharacterActions.SelectSlot4.performed -= SelectSlot4;
+
+        _character.InputController.CharacterActions.Useitem.performed -= UseItemPress;
+        _character.InputController.CharacterActions.Useitem.canceled -= UseItemRelease;
+        _character.InputController.CharacterActions.DropItem.performed -= DropItem;
     }
 }

@@ -73,12 +73,36 @@ MonoBehaviour:
     m_Address: Assets/Resources_moved/Characters/Player/HUB Player.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 89fa65e6f5c6cb247b333f585f3c1c69
-    m_Address: Assets/Scenes/Hub level.unity
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 606d6fd598eeebb40baec76c0374a6e4
     m_Address: Assets/Audio/UI/Navedenie na knopku.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 786198f5df0983b43bc52c76b0fc8369
+    m_Address: Assets/Resources_moved/Usable Items/Arrow Down.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 49925648968aaff4abf8a2f0f74e069d
+    m_Address: Assets/Resources_moved/Usable Items/Arrow Left.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b90722a2d0aeca74788c915583cb25d9
+    m_Address: Assets/Resources_moved/Usable Items/Arrow Right.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7e571513877af3d4fb2bdd2549487f26
+    m_Address: Assets/Resources_moved/Usable Items/Arrow Up.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b12f350dc256ad146bc81e97130afbee
+    m_Address: Assets/Resources_moved/Usable Items/Default Flashlight.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1ee8ac740c0c65b47b7a4da840176de8
+    m_Address: Assets/Resources_moved/Usable Items/Flare.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 89fa65e6f5c6cb247b333f585f3c1c69
+    m_Address: Assets/Scenes/Hub_level.unity
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0
