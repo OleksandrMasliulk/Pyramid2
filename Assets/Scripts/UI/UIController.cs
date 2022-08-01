@@ -1,28 +1,24 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
 using UnityEngine.EventSystems;
 
-public class UIController : MonoBehaviour
-{
-    private static bool _activeSession = false;
+public class UIController : MonoBehaviour {
     public static Action OnUISessionStarted;
     public static Action OnUISessionEnded;
 
+    private static bool _isRunningSession = false;
     private Stack<UIPanel> _panelsOpened;
 
     [SerializeField] private EventSystem _eventSystem;
-
     private PlayerControls _controls;
-    private void Awake()
-    {
+
+    private void Awake() {
         _panelsOpened = new Stack<UIPanel>();
         _controls = new PlayerControls();
     }
 
-    private void AddOpenedPanel(UIPanel panel)
-    {
+    private void AddOpenedPanel(UIPanel panel) {
         if (_panelsOpened.Contains(panel))
             return;
 
@@ -34,8 +30,7 @@ public class UIController : MonoBehaviour
         StartUISession();
     }
 
-    private void CloseCurrentPanel(UnityEngine.InputSystem.InputAction.CallbackContext obj)
-    {
+    private void CloseCurrentPanel(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
         Debug.LogWarning("Cancel action");
 
         if (_panelsOpened.Count <= 0)
@@ -45,8 +40,7 @@ public class UIController : MonoBehaviour
         panel.DisablePanel();
     }
 
-    private void DisablePanel(UIPanel panel)
-    {
+    private void DisablePanel(UIPanel panel) {
         if (!_panelsOpened.Contains(panel))
             return;
 
@@ -58,41 +52,37 @@ public class UIController : MonoBehaviour
         if (_panelsOpened.Count == 0)
             EndUISession();
     }
-
-    private void StartUISession()
-    {
-        if (_activeSession)
+    
+    private void StartUISession() {
+        if (_isRunningSession)
             return;
 
         Debug.LogWarning("UI Session started");
 
-        _activeSession = true;
+        _isRunningSession = true;
         _controls.UI.Enable();
 
         OnUISessionStarted?.Invoke();
     }
 
-    private  void EndUISession()
-    {
-        if (!_activeSession)
+    private  void EndUISession() {
+        if (!_isRunningSession)
             return;
 
         Debug.LogWarning("UI Session ended");
 
-        _activeSession = false;
+        _isRunningSession = false;
         _controls.UI.Disable();
         _panelsOpened.Clear();
 
         OnUISessionEnded?.Invoke();
     }
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         Debug.LogWarning("UIController enabled");
 
         UIPanel.OnEnabled += AddOpenedPanel;
         UIPanel.OnDisabled += DisablePanel;
-        //PlayerInputController.OnCallUI += StartUISession;
         _controls.UI.Cancel.performed += CloseCurrentPanel;
     }
 
@@ -102,7 +92,8 @@ public class UIController : MonoBehaviour
 
         UIPanel.OnEnabled -= AddOpenedPanel;
         UIPanel.OnDisabled -= DisablePanel;
-        //PlayerInputController.OnCallUI -= StartUISession;
         _controls.UI.Cancel.performed -= CloseCurrentPanel;
     }
+
+    private void OnLevelWasLoaded(int index) => _panelsOpened.Clear();
 }

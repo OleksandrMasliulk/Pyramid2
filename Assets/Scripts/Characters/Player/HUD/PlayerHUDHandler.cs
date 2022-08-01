@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHUDHandler : MonoBehaviour
@@ -16,13 +14,11 @@ public class PlayerHUDHandler : MonoBehaviour
     [SerializeField] private HUDArrowDirection _arrowDirection;
     public HUDArrowDirection ArrowDirection => _arrowDirection;
 
-    public void InitHUD(PlayerDrivenCharacter player)
-    {
+    public void InitHUD(PlayerDrivenCharacter player) {
         if (player.GetComponent<PlayerInventoryHandler>())
             Inventory.Init(player);
 
-        if (player.GetComponent<PlayerSanityHandler>())
-        {
+        if (player.GetComponent<PlayerSanityHandler>()) {
             SanitySlider.InitSanityHUD(player);
             SanitySlider.gameObject.SetActive(true);
         }

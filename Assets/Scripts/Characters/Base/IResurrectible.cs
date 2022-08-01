@@ -1,8 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public interface IResurrectible
-{
+public interface IResurrectible {
     public void Resurrect();
 }

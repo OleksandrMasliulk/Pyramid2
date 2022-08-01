@@ -1,11 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 [System.Serializable]
-public class SoundBoard
-{
-    public virtual void Init()
-    {
+public class SoundBoard {
+    public virtual void Init() {
     }
 }

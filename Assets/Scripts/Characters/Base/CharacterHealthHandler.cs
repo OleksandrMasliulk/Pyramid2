@@ -1,29 +1,20 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterHealthHandler : MonoBehaviour, IDamageable
-{
-    protected CharacterBase _character;
-
-    public delegate void CharacterDieDelegate(CharacterBase character);
-    public event CharacterDieDelegate OnCharacterDie;
+public class CharacterHealthHandler : MonoBehaviour, IDamageable {
+    public event Action<CharacterBase> OnCharacterDie;
     public event Action OnTakeDamage;
 
-    private void Awake()
-    {
-        _character = GetComponent<CharacterBase>();
-    }
+    protected CharacterBase _character;
 
-    public virtual void TakeDamage(int damage)
-    {
+    private void Awake() => _character = GetComponent<CharacterBase>();
+
+    public virtual void TakeDamage(int damage) {
         Debug.Log($"{_character.Stats.Name} got hit for {damage} damage");
         OnTakeDamage?.Invoke();
     }
 
-    public virtual void Die()
-    {
+    public virtual void Die() {
         Debug.Log($"!!! {_character.Stats.Name} died !!!");
         OnCharacterDie?.Invoke(_character);
     }

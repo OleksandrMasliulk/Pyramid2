@@ -1,21 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerPhysicalStateMachine
-{
-    private PlayerDrivenCharacter _character;
-
+public class PlayerPhysicalStateMachine {
     public PlayerAliveState AliveState { get; private set; }
     public PlayerDeadState DeadState { get; private set; }
     public PlayerGhostState GhostState { get; private set; }
     public PlayerCoveredState CoveredState { get; private set; }
 
+    private PlayerDrivenCharacter _character;
     private PlayerPhysicalState _currentState;
 
-    public PlayerPhysicalStateMachine(PlayerDrivenCharacter character)
-    {
-        this._character = character;
+    public PlayerPhysicalStateMachine(PlayerDrivenCharacter character) {
+        _character = character;
 
         AliveState = new PlayerAliveState();
         DeadState = new PlayerDeadState();
@@ -28,8 +21,7 @@ public class PlayerPhysicalStateMachine
         IngameUIController.OnResurrectClick += () => SetState(GhostState);
     }
 
-    public void SetState(PlayerPhysicalState state)
-    {
+    public void SetState(PlayerPhysicalState state) {
         if (_currentState == state)
             return;
 
@@ -38,8 +30,7 @@ public class PlayerPhysicalStateMachine
         _currentState.OnStateEnter(_character);
     }
 
-    private void Resurrect()
-    {
+    private void Resurrect() {
         SetState(AliveState);
         GameController.Instance.AddPlayerToList(_character);
     }

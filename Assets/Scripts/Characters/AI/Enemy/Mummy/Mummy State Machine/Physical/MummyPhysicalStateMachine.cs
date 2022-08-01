@@ -1,16 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class MummyPhysicalStateMachine
-{
-    private Mummy _mummy;
+public class MummyPhysicalStateMachine {
     public MummyStunnedState StunnedState { get; private set; }
     public MummyNormalState NormalState { get; private set; }
-    private MummyPhysicalState _currentState;
 
-    public MummyPhysicalStateMachine(Mummy mummy)
-    {
+    private MummyPhysicalState _currentState;
+    private Mummy _mummy;
+
+    public MummyPhysicalStateMachine(Mummy mummy) {
         _mummy = mummy;
         StunnedState = new MummyStunnedState(mummy.Stats.StunDuration, this);
         NormalState = new MummyNormalState();
@@ -18,13 +13,9 @@ public class MummyPhysicalStateMachine
         _mummy.HealthHandler.OnTakeDamage += OnDamageTaken;
     }
 
-    private void OnDamageTaken()
-    {
-        SetState(StunnedState);
-    }
+    private void OnDamageTaken() => SetState(StunnedState);
 
-    public void SetState(MummyPhysicalState state)
-    {
+    public void SetState(MummyPhysicalState state) {
         if (state == _currentState)
             return;
 

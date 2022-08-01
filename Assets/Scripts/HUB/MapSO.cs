@@ -1,11 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 [CreateAssetMenu(fileName = "New Map", menuName = "Map")]
-public class MapSO :ScriptableObject
-{
+public class MapSO :ScriptableObject {
     [SerializeField] private string _name;
     public string Name => _name;
     [SerializeField] private string _location;

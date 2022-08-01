@@ -19,39 +19,39 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 9268383744
-    m_Localized: Press E to Interract
+    m_Localized: Press <style="Highlight">E</style> to Interract
     m_Metadata:
       m_Items: []
   - m_Id: 42403385344
-    m_Localized: Press E to Pick Up
+    m_Localized: Press <style="Highlight">E</style> to Pick Up
     m_Metadata:
       m_Items: []
   - m_Id: 232363413504
-    m_Localized: Press E to Open
+    m_Localized: Press <style="Highlight">E</style> to Open
     m_Metadata:
       m_Items: []
   - m_Id: 279314452480
-    m_Localized: Press E to Cover
+    m_Localized: Press <style="Highlight">E</style> to Cover
     m_Metadata:
       m_Items: []
   - m_Id: 308297093120
-    m_Localized: Press E to Uncover
+    m_Localized: Press <style="Highlight">E</style> to Uncover
     m_Metadata:
       m_Items: []
   - m_Id: 994313261056
-    m_Localized: Press E to Close
+    m_Localized: Press <style="Highlight">E</style> to Close
     m_Metadata:
       m_Items: []
   - m_Id: 1567821418496
-    m_Localized: Press E to Speak
+    m_Localized: Press <style="Highlight">E</style> to Speak
     m_Metadata:
       m_Items: []
   - m_Id: 1846584202514432
-    m_Localized: Press E to Resurrect
+    m_Localized: Press <style="Highlight">E</style> to Resurrect
     m_Metadata:
       m_Items: []
   - m_Id: 6940781641224192
-    m_Localized: Press E to Exit
+    m_Localized: Press <style="Highlight">E</style> to Exit
     m_Metadata:
       m_Items: []
   references:

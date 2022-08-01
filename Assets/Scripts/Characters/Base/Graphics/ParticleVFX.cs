@@ -2,15 +2,12 @@
 using UnityEngine.AddressableAssets;
 
 [System.Serializable]
-public class ParticleVFX
-{
+public class ParticleVFX {
     public AssetReference particlesReferece;
-    [SerializeField] private float _maxSpawnRate;
-    public float lastTimeSpawned;
-    public bool CanBeSpawned => Time.time + _maxSpawnRate >= lastTimeSpawned;
+    public float LastTimeSpawned {get; set;}
+    public bool CanBeSpawned => Time.time + _maxSpawnRate >= LastTimeSpawned;
 
-    public void Init()
-    {
-        lastTimeSpawned = Time.time;
-    }
+    [SerializeField] private float _maxSpawnRate;
+
+    public void Init() => LastTimeSpawned = Time.time;
 }

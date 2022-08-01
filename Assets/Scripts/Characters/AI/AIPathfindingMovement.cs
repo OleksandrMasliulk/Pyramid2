@@ -1,33 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using UnityEngine;
 using Pathfinding;
 
-public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
-{
+public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement {
+    public float MovementSpeed { get; private set; }
+    public bool ReachedTarget => _aiPath.reachedEndOfPath;
+
     private CharacterBase _character;
 
     [SerializeField] private AIPath _aiPath;
     [SerializeField] private Seeker _seeker;
     [SerializeField] private AIDestinationSetter _destSetter;
-    public float MovementSpeed { get; private set; }
-    public bool ReachedTarget => _aiPath.reachedEndOfPath;
 
-    public bool CanMove
-    {
-        get
-        {
-            return _aiPath.canMove;
-        }
-        set
-        {
-            _aiPath.canMove = value;
-        }
-    }
+    public bool CanMove { get; set; }
 
-    private void Awake()
-    {
+    private void Awake() {
         _character = GetComponent<CharacterBase>();
 
         _aiPath = GetComponent<AIPath>();
@@ -35,16 +21,13 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
         _destSetter = GetComponent<AIDestinationSetter>();
     }
 
-    private void Init(float moveSpeed)
-    {
+    private void Init(float moveSpeed) {
         MovementSpeed = moveSpeed;
         _aiPath.maxSpeed = MovementSpeed;
     }
 
-    private void Update()
-    {
-        if (_aiPath.desiredVelocity.magnitude > 0f)
-        {
+    private void Update() {
+        if (_aiPath.desiredVelocity.magnitude > 0f) {
             _character.AnimationHandler.SetMoving();
             _character.AnimationHandler.SetMovementDirection(_aiPath.desiredVelocity.normalized);
         }
@@ -52,8 +35,7 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
             _character.AnimationHandler.SetIdle();
     }
 
-    public void RemoveTarget()
-    {
+    public void RemoveTarget() {
         if (_destSetter.target == null)
             return;
 
@@ -63,15 +45,12 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
         _destSetter.target = null;
     }
 
-    public void SetTarget(Transform target)
-    {
+    public void SetTarget(Transform target) {
         RemoveTarget();
-
         _destSetter.target = target;
     }
 
-    public void SetTarget(Vector2 target)
-    {
+    public void SetTarget(Vector2 target) {
         RemoveTarget();
 
         GameObject go = new GameObject("AI Pathfinding Target");
@@ -79,13 +58,11 @@ public class AIPathfindingMovement : MonoBehaviour, IPathfindingMovement
         _destSetter.target = go.transform;
     }
 
-    public void SetSpeed(float value)
-    {
+    public void SetSpeed(float value) {
         MovementSpeed = value;
         _aiPath.maxSpeed = MovementSpeed;
     }
 
-    public void Move()
-    {
+    public void Move() {
     }
 }

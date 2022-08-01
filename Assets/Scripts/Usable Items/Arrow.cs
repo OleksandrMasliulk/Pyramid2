@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Arrow : MonoBehaviour
-{
-    [SerializeField]private SpriteRenderer sr;
-    [SerializeField]private Sprite[] sprites;
+public class Arrow : MonoBehaviour {
+    [SerializeField]private SpriteRenderer _renderer;
+    [SerializeField]private Sprite[] _sprites;
 
-    private void Awake()
-    {
-        int rand = Random.Range(0, sprites.Length);
-        sr.sprite = sprites[rand];
+    private void Awake() {
+        int rand = Random.Range(0, _sprites.Length);
+        _renderer.sprite = _sprites[rand];
     }
 }

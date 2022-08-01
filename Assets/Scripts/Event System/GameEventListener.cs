@@ -1,25 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class GameEventListener : MonoBehaviour
-{
+public class GameEventListener : MonoBehaviour {
     [SerializeField] protected GameEvent _gameEvent;
     [SerializeField] protected UnityEvent _event;
 
-    private void Awake()
-    {
-        _gameEvent.Register(this);
-    }
+    private void Awake() => _gameEvent.Register(this);
 
-    public virtual void RunEvent()
-    {
-        _event?.Invoke();
-    }
+    public virtual void RunEvent() => _event?.Invoke();
 
-    private void OnDestroy()
-    {
-        _gameEvent.Deregister(this);
-    }
+    private void OnDestroy() => _gameEvent.Deregister(this);
 }

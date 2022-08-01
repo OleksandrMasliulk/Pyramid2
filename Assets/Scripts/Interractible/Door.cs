@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour, /*IInterractible,*/ ISwitchable
-{
-    private bool isClosed;
+public class Door : MonoBehaviour, /*IInterractible,*/ ISwitchable {
+    public Transform ObjectReference => transform;
 
     [SerializeField] private Collider2D _door;
     [SerializeField] private Animator _anim;
@@ -16,30 +13,25 @@ public class Door : MonoBehaviour, /*IInterractible,*/ ISwitchable
 
     [SerializeField] private bool _isActive;
     public bool IsActive => _isActive;
+    private bool isClosed;
 
-    public Transform ObjectReference => transform;
-
-    private void Start()
-    {
+    private void Start() {
         isClosed = true;
         _door.enabled = true;
-
         _currentTooltip = _closedTooltip;
     }
 
-    public void Interract(CharacterBase user)
-    {
-        if (!IsActive)
-            return;
+    // public void Interract(CharacterBase user) {
+    //     if (!IsActive)
+    //         return;
 
-        if (isClosed)
-            Open();
-        else
-            Close();
-    }
+    //     if (isClosed)
+    //         Open();
+    //     else
+    //         Close();
+    // }
     
-    public void Open()
-    {
+    public void Open() {
         if (!isClosed)
             return;
 
@@ -51,8 +43,7 @@ public class Door : MonoBehaviour, /*IInterractible,*/ ISwitchable
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorOpen, transform.position, 1f);
     }
 
-    public void Close()
-    {
+    public void Close() {
         if (isClosed)
             return;
 
@@ -64,13 +55,7 @@ public class Door : MonoBehaviour, /*IInterractible,*/ ISwitchable
         AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorClose, transform.position, 1f);
     }
 
-    public void Activate()
-    {
-        _isActive = true;
-    }
+    public void Activate() => _isActive = true;
 
-    public void Disable()
-    {
-        _isActive = false;
-    }
+    public void Disable() => _isActive = false;
 }

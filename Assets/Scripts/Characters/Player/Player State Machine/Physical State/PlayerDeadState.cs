@@ -1,11 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PlayerDeadState : PlayerPhysicalState
-{
-    public override void OnStateEnter(PlayerDrivenCharacter player)
-    {
+public class PlayerDeadState : PlayerPhysicalState {
+    public override void OnStateEnter(PlayerDrivenCharacter player) {
         AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<PlayerSoundBoard>().die);
 
         player.SanityHandler.ModifySanity(100);
@@ -21,8 +15,7 @@ public class PlayerDeadState : PlayerPhysicalState
         player.HealthHandler.enabled = false;
     }
 
-    public override void OnStateExit(PlayerDrivenCharacter player)
-    {
+    public override void OnStateExit(PlayerDrivenCharacter player) {
         player.MovementHandler.enabled = true;
         player.SanityHandler.enabled = true;
         player.InventoryHandler.enabled = true;

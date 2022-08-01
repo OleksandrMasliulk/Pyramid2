@@ -1,12 +1,7 @@
- using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
-public abstract class Item
-{
-    public enum ItemType
-    {
+public abstract class Item {
+    public enum ItemType {
         Flashlight,
         Medkit,
         Flare,
@@ -34,13 +29,13 @@ public abstract class Item
 
     public Item(ItemSO so)
     {
-        this._type = so.type;
-        this._id = so.itemID;
-        //this._name = so
-        this._icon = so.inventoryIcon;
-        this._itemDropPrefab = so.dropPrefab;
-        this._isStackable = so.isStackable;
-        this._maxStack = so.maxStack;
-        this._isConsumable = so.isConsumable;
+        _type = so.type;
+        _id = so.itemID;
+        //_name = so
+        _icon = so.inventoryIcon;
+        _itemDropPrefab = so.dropPrefab;
+        _isStackable = so.isStackable;
+        _maxStack = so.maxStack;
+        _isConsumable = so.isConsumable;
     }
 }

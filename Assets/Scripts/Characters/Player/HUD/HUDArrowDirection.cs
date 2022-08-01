@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HUDArrowDirection : MonoBehaviour
-{
+public class HUDArrowDirection : MonoBehaviour {
     [SerializeField] private PlayerInputController _input;
 
     [SerializeField] private Image leftSegment;
@@ -19,8 +16,7 @@ public class HUDArrowDirection : MonoBehaviour
 
     private Vector3 mousePosTemp;
 
-    private void OnEnable()
-    {
+    private void OnEnable() {
         circleStartpos = circle.position;
         mousePosTemp = _input.CharacterActions.Pointer.ReadValue<Vector2>();
 
@@ -28,45 +24,37 @@ public class HUDArrowDirection : MonoBehaviour
         highlightedSegment = null;
     }
 
-    private void Update()
-    {
+    private void Update() {
         circle.position = circleStartpos + (MouseUtils.GetMouseDragDirection(mousePosTemp, _input.CharacterActions.Pointer.ReadValue<Vector2>()) * circleOffsetDistance);
 
         string mouseDragDirection = MouseUtils.GetMouseDragDirectionString(mousePosTemp, _input.CharacterActions.Pointer.ReadValue<Vector2>());
-        if (mouseDragDirection == "Left")
-        {
-            HighlightSegment(leftSegment);
-        } 
-        else if (mouseDragDirection == "Right")
-        {
-            HighlightSegment(rightSegment);
-        }
-        else if (mouseDragDirection == "Up")
-        {
-            HighlightSegment(upSegment);
-        }
-        else if (mouseDragDirection == "Down")
-        {
-            HighlightSegment(downSegment);
-        }
-        else
-        {
-            UnhighlightSegment();
+        switch (mouseDragDirection) {
+            case "Left":
+                HighlightSegment(leftSegment);
+                break;
+            case "Right":
+                HighlightSegment(rightSegment);
+                break;
+            case "Up":
+                HighlightSegment(upSegment);
+                break;
+            case "Down":
+                HighlightSegment(downSegment);
+                break;
+            default:
+                UnhighlightSegment();
+                break;
         }
     }
 
-    private void HighlightSegment(Image segment)
-    {
+    private void HighlightSegment(Image segment) {
         UnhighlightSegment();
         highlightedSegment = segment;
         segment.GetComponent<IHighlight>().Highlight();
     }
 
-    private void UnhighlightSegment()
-    {
+    private void UnhighlightSegment() {
         if (highlightedSegment != null)
-        {
             highlightedSegment.GetComponent<IHighlight>().UnHighlight();
-        }
     }
 }

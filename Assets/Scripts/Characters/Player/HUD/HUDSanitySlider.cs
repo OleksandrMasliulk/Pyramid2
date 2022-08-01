@@ -1,10 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HUDSanitySlider : MonoBehaviour
-{
+public class HUDSanitySlider : MonoBehaviour {
     [SerializeField] private Slider _slider;
     [SerializeField] private Image _fill;
 
@@ -15,8 +12,7 @@ public class HUDSanitySlider : MonoBehaviour
 
     private PlayerDrivenCharacter _player;
 
-    public void InitSanityHUD(PlayerDrivenCharacter player)
-    {
+    public void InitSanityHUD(PlayerDrivenCharacter player) {
         _player = player;
 
         ModifySlider(100);
@@ -24,8 +20,7 @@ public class HUDSanitySlider : MonoBehaviour
         player.SanityHandler.OnSanityChanged += ModifySlider;
     }
 
-    public void ModifySlider(int amount)
-    {
+    public void ModifySlider(int amount) {
         if (amount > _slider.maxValue)
             amount = (int)_slider.maxValue;
         else if (amount < _slider.minValue)
@@ -35,8 +30,7 @@ public class HUDSanitySlider : MonoBehaviour
         HandleColor(amount);
     }
 
-    private void HandleColor(int amount)
-    {
+    private void HandleColor(int amount) {
         int sliderRange = (int)(_slider.maxValue - _slider.minValue);
 
         if (amount > sliderRange * .75f)
@@ -49,8 +43,5 @@ public class HUDSanitySlider : MonoBehaviour
             _fill.color = _color25;
     }
 
-    private void OnDestroy()
-    {
-        _player.SanityHandler.OnSanityChanged -= ModifySlider;
-    }
+    private void OnDestroy() => _player.SanityHandler.OnSanityChanged -= ModifySlider;
 }

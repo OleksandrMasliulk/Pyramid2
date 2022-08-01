@@ -1,24 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class UpscaleHighlight : MonoBehaviour, IHighlight
-{
+public class UpscaleHighlight : MonoBehaviour, IHighlight {
     private Vector3 _baseScale;
     [SerializeField] private float _highlightScaleMod;
 
-    private void Awake()
-    {
-        _baseScale = transform.localScale;
-    }
+    private void Awake() => _baseScale = transform.localScale;
 
-    public void Highlight()
-    {
-        transform.localScale *= _highlightScaleMod;
-    }
+    public void Highlight() => transform.localScale *= _highlightScaleMod;
 
-    public void UnHighlight()
-    {
-        transform.localScale = _baseScale;
-    }
+    public void UnHighlight() => transform.localScale = _baseScale;
 }

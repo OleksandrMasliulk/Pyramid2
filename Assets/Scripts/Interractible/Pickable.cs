@@ -1,27 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using System.Threading.Tasks;
 using UnityEngine.AddressableAssets;
 
-public class Pickable : MonoBehaviour, IInterractible
-{
+public class Pickable : MonoBehaviour, IInterractible {
+    public Transform ObjectReference => transform;
+
     [SerializeField] private string _tooltip;
     public string Tooltip => _tooltip;
 
-    public Transform ObjectReference => transform;
-
     [SerializeField] private AssetReference _itemSORef;
     private Item _itemToPickUp;
-
     [SerializeField] private int _count;
 
-    public async void Init()
-    {
+    public async void Init() {
         ItemSO itemSO = await _itemSORef.LoadAssetAsyncSafe<ItemSO>();
 
-        switch (itemSO.type)
-        {
+        switch (itemSO.type) {
             case Item.ItemType.Flashlight:
                 _itemToPickUp = new Flashlight((FlashlightSO)itemSO);
                 break;
@@ -47,11 +40,9 @@ public class Pickable : MonoBehaviour, IInterractible
         _itemSORef.ReleaseAsset();
     }
 
-    public void Init(Item item, int count)
-    {
+    public void Init(Item item, int count) {
         _itemToPickUp = item;
         _count = count;
-
         if (!_itemToPickUp.IsStackable)
             _count = 1;
         else if (_count > _itemToPickUp.MaxStack)
@@ -60,14 +51,11 @@ public class Pickable : MonoBehaviour, IInterractible
         PickableManager.Instance.AddToList(this);
     }
 
-    public void Interract(CharacterBase user)
-    {
+    public void Interract(CharacterBase user) {
         PlayerDrivenCharacter player = (PlayerDrivenCharacter)user;
 
         AddItemCallback callback =  player.InventoryHandler.AddItem(_itemToPickUp, _count);
-
-        switch (callback.Result)
-        {
+        switch (callback.Result) {
             case AddItemCallback.ResultType.Success:
                 PickableManager.Instance.RemoveFromList(this);
                 Destroy(this.gameObject);
@@ -80,8 +68,7 @@ public class Pickable : MonoBehaviour, IInterractible
         }
     }
 
-    private void OnValidate()
-    {
+    private void OnValidate() {
         if (_count <= 0)
             _count = 1;
     }
