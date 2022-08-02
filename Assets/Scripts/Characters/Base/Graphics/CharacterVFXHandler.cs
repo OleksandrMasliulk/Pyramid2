@@ -3,7 +3,7 @@ using UnityEngine.AddressableAssets;
 using System.Threading.Tasks;
 
 public class CharacterVFXHandler : MonoBehaviour {
-    [SerializeField] private GameObject _stepParticles;
+    [SerializeField] private ParticleSystem _stepParticles;
     //public ParticleVFX StepParticles => _stepParticles;
     [SerializeField] private ParticleVFX _damageParticles;
     public ParticleVFX DamageParticles => _damageParticles;
@@ -23,7 +23,7 @@ public class CharacterVFXHandler : MonoBehaviour {
         Addressables.ReleaseInstance(go);
     }
 
-    public void EnableStepParticles() => _stepParticles.SetActive(true);
+    public void EnableStepParticles() => _stepParticles.Play();
 
-    public void DisableStepParticles() => _stepParticles.SetActive(false);
+    public void DisableStepParticles() => _stepParticles.Stop();
 }

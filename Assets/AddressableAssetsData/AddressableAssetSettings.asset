@@ -108,6 +108,7 @@ MonoBehaviour:
     - Locale-es
     - Locale-uk-UA
     - Locale-de
+    - Item
   m_SchemaTemplates: []
   m_GroupTemplateObjects:
   - {fileID: 11400000, guid: 474c60257a584ed45bc7fb7de63084ce, type: 2}

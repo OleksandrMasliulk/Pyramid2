@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 public class Mummy : EnemyBase {
     public new MummyStatsSO Stats => (MummyStatsSO)_stats;
@@ -11,15 +10,16 @@ public class Mummy : EnemyBase {
     private MummyBehavoiuStateMachine _behavoiurStateMachine;
     private MummyPhysicalStateMachine _physicalStateMachine;
 
-    public override async void InitCharacter(AssetReference stats) {
-        _stats = await stats.LoadAssetAsyncSafe<CharacterBaseStatsSO>() as MummyStatsSO;
-
+    private void Awake() {
         _movementHandler = GetComponent<IPathfindingMovement>();
         _animationHandler = GetComponent<CharacterAnimationHandler>();
         _vfxHandler = GetComponent<CharacterVFXHandler>();
         _healthHandler = GetComponent<CharacterHealthHandler>();
-
         _playerSeeker = GetComponentInChildren<ISeeker<PlayerDrivenCharacter>>();
+    }
+
+    public override void InitCharacter(CharacterBaseStatsSO stats) {
+        _stats = stats;
         _behavoiurStateMachine = new MummyBehavoiuStateMachine(this);
         _physicalStateMachine = new MummyPhysicalStateMachine(this);
     }

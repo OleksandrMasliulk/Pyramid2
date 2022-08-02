@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ArrowTrap : Trap, ISwitchable {
     public ParticleSystem arrows;
-
+    
     [SerializeField] private float _rearmTime;
     private float _lastTimeShooted;
     [SerializeField] private bool _isActive;

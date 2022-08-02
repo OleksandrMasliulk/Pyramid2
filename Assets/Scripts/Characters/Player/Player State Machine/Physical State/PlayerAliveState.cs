@@ -5,6 +5,9 @@ public class PlayerAliveState : PlayerPhysicalState {
         player.SanityHandler?.ModifySanity(100);
         player.CameraHandler.SetAlliveCamera();
         player.HUDHandler.HUD.SetActive(true);
+        player.VFXHandler.DisableGhostParticles();
+        player.VFXHandler.EnableStepParticles();
+        player.VFXHandler.EnableAliveMaterial();
     }
 
     public override void OnStateExit(PlayerDrivenCharacter player) {

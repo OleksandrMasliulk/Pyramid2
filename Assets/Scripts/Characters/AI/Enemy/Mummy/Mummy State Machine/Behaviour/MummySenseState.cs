@@ -27,7 +27,7 @@ public class MummySenseState : MummyBehaviourState, ICanSense {
     }
 
     private void CheckForAnother(Mummy mummy) {
-        foreach (PlayerDrivenCharacter p in GameController.Instance.AlivePlayersList)
+        foreach (PlayerDrivenCharacter p in UnitManager.Instance.AlivePlayers)
             if (p.SanityHandler.CurrentSanity <= 25) {
                 _stateMachine.SetState(new MummySenseState(mummy.Stats, p, _stateMachine));
                 return;

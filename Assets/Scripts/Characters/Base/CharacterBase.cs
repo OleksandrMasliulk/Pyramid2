@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 public abstract class CharacterBase : MonoBehaviour {
     protected CharacterBaseStatsSO _stats;
@@ -10,5 +9,5 @@ public abstract class CharacterBase : MonoBehaviour {
     public CharacterVFXHandler VFXHandler => _vfxHandler;
     protected CharacterAnimationHandler _animationHandler;
     public CharacterAnimationHandler AnimationHandler => _animationHandler;
-    public abstract void InitCharacter(AssetReference stats);
+    public abstract void InitCharacter(CharacterBaseStatsSO stats);
 }
