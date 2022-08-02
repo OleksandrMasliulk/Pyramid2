@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.AddressableAssets;
+using System.Linq;
 
 public abstract class ItemSO : ScriptableObject {
     [Header("General")]
@@ -19,12 +20,11 @@ public abstract class ItemSO : ScriptableObject {
     public GameObject dropPrefab;
 
     private List<int> GetItemsIDs() {
-        ItemSO[] SOs = Resources.LoadAll<ItemSO>("ItemsSO");
-        List<ItemSO> SOList = new List<ItemSO>(SOs);
-        SOList.Remove(this);
-
+        List<ItemSO> list = new List<ItemSO>();
+        var op = Addressables.LoadAssetsAsync<ItemSO>("Item", null);
+        op.Completed += (op) => list.AddRange(op.Result);
         List<int> IDs = new List<int>();
-        foreach(ItemSO so in SOList)
+        foreach(ItemSO so in list.Except(new List<ItemSO> {this}))
             IDs.Add(so.itemID);
 
         return IDs;

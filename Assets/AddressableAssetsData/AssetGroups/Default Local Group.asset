@@ -109,6 +109,38 @@ MonoBehaviour:
     m_Address: Assets/Fonts/Styles/Text StyleSheet.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: dcada8a3b51f13b48abf4bcb7c3d1f81
+    m_Address: Assets/Audio/Envirment/Kamennaja knopka.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2d546df3b3d7b6d4db8ba95a6cad4138
+    m_Address: Assets/Audio/Envirment/Shelter - ukrytie.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: de5a343a991b37842a4ab6d188ee86c3
+    m_Address: Assets/Audio/Mummy/Teleport.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 81548049b4ff36944bcd81995727f8f8
+    m_Address: Assets/Audio/Traps/active spikes.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7d02dd9034c111f478dd1490f12ea6ed
+    m_Address: Assets/Audio/Traps/Off spikes.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 43d5bf3e64a281f4996f3a1892e15c6f
+    m_Address: Assets/Audio/Traps/Show spikes.mp3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c5ed283abf8302f4a8619de4a7f1f2e0
+    m_Address: Assets/Graphics/Shaders/Ghost.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9940cd23cd0140b40bfe42920c1da53b
+    m_Address: Assets/Graphics/Shaders/PlayerSkin.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
   m_SchemaSet:

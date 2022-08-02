@@ -1,10 +1,11 @@
 using UnityEngine;
+using System;
 
 public class PlayerHealthHandler : CharacterHealthHandler, IResurrectible {
-    public delegate void PlayerResurrectDelegate();
-    public event PlayerResurrectDelegate OnResurrect;
+    public static event Action<PlayerDrivenCharacter> OnResurrect;
+    public static event Action<PlayerDrivenCharacter> OnPlayerDied;
 
-    [SerializeField] private GameEvent OnPlayerDied;
+    [SerializeField] private GameEvent PlayerDied;
 
     private PlayerPhysicalStateMachine _stateMachine;
 
@@ -14,8 +15,17 @@ public class PlayerHealthHandler : CharacterHealthHandler, IResurrectible {
         base.TakeDamage(damage);
 
         Die();
-        OnPlayerDied?.Invoke();
     }
 
-    public void Resurrect() => OnResurrect?.Invoke();
+    public override void Die() {
+        base.Die();
+        
+        PlayerDied?.Invoke();
+        OnPlayerDied?.Invoke((PlayerDrivenCharacter)_character);
+    }
+
+    public void Resurrect() { 
+        _stateMachine.SetState(_stateMachine.AliveState);
+        OnResurrect?.Invoke((PlayerDrivenCharacter)_character);
+    }
 }

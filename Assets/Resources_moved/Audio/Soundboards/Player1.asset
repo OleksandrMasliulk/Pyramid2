@@ -26,7 +26,7 @@ MonoBehaviour:
     die:
       type: 0
       clip:
-        m_AssetGUID: e199b34c7a3b5f94e9003279ed956886
+        m_AssetGUID: 7cb8d08b790048d45b86e8aee878b3e4
         m_SubObjectName: 
         m_SubObjectType: 
         m_EditorAssetChanged: 0

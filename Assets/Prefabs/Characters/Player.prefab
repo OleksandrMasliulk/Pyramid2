@@ -961,7 +961,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &464590926473513974
 Transform:
   m_ObjectHideFlags: 0
@@ -6538,7 +6538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e53258ce0b96c145bd4b53c271a57e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnPlayerDied: {fileID: 11400000, guid: 7a5b8002c4f94f3409bf3e1b1953b363, type: 2}
+  PlayerDied: {fileID: 0}
 --- !u!114 &5266739786438730416
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6581,7 +6581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bddcc93e8a5f1304ca8a8940139113f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stepParticles: {fileID: 5823922823780930705}
+  _stepParticles: {fileID: 3657363392230146}
   _damageParticles:
     particlesReferece:
       m_AssetGUID: 
@@ -6589,8 +6589,7 @@ MonoBehaviour:
       m_SubObjectType: 
       m_EditorAssetChanged: 0
     _maxSpawnRate: 0
-    lastTimeSpawned: 0.2
-  _ghostParticles: {fileID: 6478693316363402472}
+  _ghostParticles: {fileID: 7795068515394533906}
   _corpseSprite:
     m_AssetGUID: 8c7d8e0ba47473940965e2a8c20372a9
     m_SubObjectName: IndianaDeath6
@@ -6598,6 +6597,17 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
     m_EditorAssetChanged: 0
   _sanityFX: {fileID: 2211487673375293157}
+  _renderer: {fileID: 5339026552842488741}
+  _ghostMaterial:
+    m_AssetGUID: c5ed283abf8302f4a8619de4a7f1f2e0
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _aliveMaterial:
+    m_AssetGUID: 9940cd23cd0140b40bfe42920c1da53b
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!114 &1161089760724301306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7180,13 +7190,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 458aa0e194cd7ff4cbe1d686c975f5bc, type: 3}
+--- !u!198 &3657363392230146 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8213914340447800764, guid: 458aa0e194cd7ff4cbe1d686c975f5bc, type: 3}
+  m_PrefabInstance: {fileID: 8210433517393166014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &699592711402334646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8666089059824211720, guid: 458aa0e194cd7ff4cbe1d686c975f5bc, type: 3}
-  m_PrefabInstance: {fileID: 8210433517393166014}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5823922823780930705 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2388010866859485743, guid: 458aa0e194cd7ff4cbe1d686c975f5bc, type: 3}
   m_PrefabInstance: {fileID: 8210433517393166014}
   m_PrefabAsset: {fileID: 0}

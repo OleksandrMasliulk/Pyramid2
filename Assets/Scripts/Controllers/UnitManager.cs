@@ -23,6 +23,8 @@ public class UnitManager : MonoBehaviour {
     public List<EnemyBase> EnemyList => _enemyList;
     private List<PlayerDrivenCharacter> _playerList;
     public List<PlayerDrivenCharacter> PlayerList => _playerList;
+    private List<PlayerDrivenCharacter> _alivePlayers;
+    public List<PlayerDrivenCharacter> AlivePlayers => _alivePlayers;
     private List<NPCBase> _npcList;
     public List<NPCBase> NPCList => _npcList;
 
@@ -35,6 +37,12 @@ public class UnitManager : MonoBehaviour {
         _enemyList = new List<EnemyBase>();
         _playerList = new List<PlayerDrivenCharacter>();
         _npcList = new List<NPCBase>();
+        _alivePlayers = new List<PlayerDrivenCharacter>();
+    }
+
+    private void OnEnable() {
+        PlayerHealthHandler.OnPlayerDied += RemoveFromAlive;
+        PlayerHealthHandler.OnResurrect += AddToAlive;
     }
 
     public void InitialSpawn() {
@@ -45,23 +53,32 @@ public class UnitManager : MonoBehaviour {
 
     private async void SpawnPlayers() {
         foreach(Spawn s in initialPlayerSpawnList) {
-            CharacterBase player = await SpawnCharacter(s.character, s.position);
-            _playerList.Add((PlayerDrivenCharacter)player);
-            OnPlayerSpawned?.Invoke((PlayerDrivenCharacter)player);
+            PlayerDrivenCharacter player = await SpawnCharacter(s.character, s.position) as PlayerDrivenCharacter;
+            _playerList.Add(player);
+            AddToAlive(player);
         }
+    }
+
+    private void AddToAlive(PlayerDrivenCharacter player) {
+        _alivePlayers.Add(player);
+    }
+
+    private void RemoveFromAlive(PlayerDrivenCharacter player) {
+        _alivePlayers.Remove(player);
+        GameController.Instance.CheckPlayers();
     }
 
     private async void SpawnNPCs() {
         foreach (Spawn s in initialNPCSpawnList) {
-            CharacterBase npc = await SpawnCharacter(s.character, s.position);
-            _npcList.Add((NPCBase)npc);
+            NPCBase npc = await SpawnCharacter(s.character, s.position) as NPCBase;
+            _npcList.Add(npc);
         }
     }
 
     private async void SpawnEnemies() {
         foreach (Spawn s in initialEnemySpawnList) {
-            CharacterBase enemy = await SpawnCharacter(s.character, s.position);
-            _enemyList.Add((EnemyBase)enemy);
+            EnemyBase enemy = await SpawnCharacter(s.character, s.position) as EnemyBase;
+            _enemyList.Add(enemy);
         }
     }
 
@@ -73,13 +90,18 @@ public class UnitManager : MonoBehaviour {
         op.Completed += (op) => {
             character = op.Result.GetComponent<CharacterBase>();
             character.transform.SetParent(parent);
-            character.InitCharacter(reference);
+            character.InitCharacter(so);
         };
         await op.Task;
         
         reference.ReleaseAsset();
 
         return character;
+    }
+
+    private void OnDisable() {
+        PlayerHealthHandler.OnPlayerDied -= RemoveFromAlive;
+        PlayerHealthHandler.OnResurrect -= AddToAlive;
     }
 }
 

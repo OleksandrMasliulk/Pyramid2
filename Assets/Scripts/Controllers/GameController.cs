@@ -1,29 +1,23 @@
-using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class GameController : MonoBehaviour {
     public static GameController Instance { get; private set; }
     public enum GameState {
         Init,
-        SpawningCharacters,
         Win,
         Lose
     }
-    public event Action OnWinEvent;
-    public event Action OnLoseEvent;
+    public GameEvent OnWinEvent;
+    public GameEvent OnLoseEvent;
 
     private GameState _gameState;
-    private List<PlayerDrivenCharacter> _alivePlayersList;
-    public List<PlayerDrivenCharacter> AlivePlayersList => _alivePlayersList;
+    [SerializeField] private IngameUIController _ingameUI;
 
     private void Awake() {
         if (Instance == null)
             Instance = this;
         else
             Destroy(this.gameObject);
-
-        _alivePlayersList = new List<PlayerDrivenCharacter>();
     }
 
     private void Start() => SetGameState(GameState.Init);
@@ -33,9 +27,6 @@ public class GameController : MonoBehaviour {
 
         switch (_gameState) {
             case GameState.Init: 
-                SetGameState(GameState.SpawningCharacters);
-                break;
-            case GameState.SpawningCharacters:
                 UnitManager.Instance.InitialSpawn();
                 break;
             case GameState.Win:
@@ -67,24 +58,11 @@ public class GameController : MonoBehaviour {
         OnLoseEvent?.Invoke();
     }
 
-    public void AddPlayerToList(PlayerDrivenCharacter player) {
-        _alivePlayersList.Add(player);
-        player.HealthHandler.OnCharacterDie += (player) => RemovePlayerFromAlive((PlayerDrivenCharacter)player);
-    }
-
-    private void RemovePlayerFromAlive(PlayerDrivenCharacter player) {
-        _alivePlayersList.Remove(player);
-        CheckPlayers();
-    }
-
-    private void CheckPlayers() {
-        if (_alivePlayersList.Count <= 0)
+    public void CheckPlayers() {
+        Debug.LogError("Check");
+        if (UnitManager.Instance.AlivePlayers.Count <= 0)
             Lose();
     }
-
-    private void OnEnable() => UnitManager.OnPlayerSpawned += AddPlayerToList;
-
-    private void OnDisable() => UnitManager.OnPlayerSpawned -= AddPlayerToList;
 
     private void Save() {
         //PlayerData data = SaveLoad.Load<PlayerData>(SaveLoad.playerDataPath);

@@ -11,6 +11,6 @@ public class RoamNPC : NPCBase
 
     private void ReachTarget() => Destroy(this.gameObject);
 
-    public override void InitCharacter(AssetReference stats) {
+    public override void InitCharacter(CharacterBaseStatsSO stats) {
     }
 }

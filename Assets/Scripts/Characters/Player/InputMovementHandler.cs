@@ -26,14 +26,14 @@ public class InputMovementHandler : MonoBehaviour, ICanMove {
         Vector2 direction = _inputHandler.CharacterActions.Move.ReadValue<Vector2>();
         if (direction.magnitude <= 0f) {
             _character.AnimationHandler.SetIdle();
-            _character.VFXHandler.DisableStepParticles();
+            //_character.VFXHandler.DisableStepParticles();
             return;
         }
 
         _rigidbody.MovePosition(transform.position + (Vector3)direction.normalized * MovementSpeed * Time.fixedDeltaTime);
         _character.AnimationHandler.SetMoving();
         _character.AnimationHandler.SetMovementDirection(direction);
-        _character.VFXHandler.EnableStepParticles();
+        //_character.VFXHandler.EnableStepParticles();
 
     }
 

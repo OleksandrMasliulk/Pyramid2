@@ -5,6 +5,6 @@ public class AIDrivenCharacter : CharacterBase {
 
     protected IPathfindingMovement _movementHandler;
 
-    public override void InitCharacter(AssetReference stats) {
+    public override void InitCharacter(CharacterBaseStatsSO stats) {
     }
 }

@@ -8,11 +8,11 @@ public class SanityFX : MonoBehaviour {
     [SerializeField] private float blendTime;
     [SerializeField]private Volume _volume;
 
-    private Queue<IEnumerator> _blendQueue;
+    private Queue<IEnumerator> _blendQueue = new Queue<IEnumerator>();
     private bool _isBusy;
 
     private void Awake() {
-        _blendQueue = new Queue<IEnumerator>();
+        //_blendQueue = 
         _isBusy = false;
     }
 

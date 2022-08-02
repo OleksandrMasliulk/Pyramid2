@@ -5,6 +5,7 @@ public class PlayerGhostState : PlayerPhysicalState {
         player.gameObject.ChangeTreeLayer(9);
         player.VFXHandler.SpawnCorpse();
         player.VFXHandler.EnableGhostParticles();
+        player.VFXHandler.EnableGhostMaterial();
 
         player.InventoryHandler.enabled = false;
         player.SanityHandler.enabled = false;

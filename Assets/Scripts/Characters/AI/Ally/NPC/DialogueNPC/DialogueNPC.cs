@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 public class DialogueNPC : NPCBase, IInterractible {
     [SerializeField] private string _tooltip;
@@ -8,7 +7,7 @@ public class DialogueNPC : NPCBase, IInterractible {
 
     [SerializeField] private Dialogue _currentDialogue;
 
-    public override void InitCharacter(AssetReference stats) {
+    public override void InitCharacter(CharacterBaseStatsSO stats) {
     }
 
     public void Interract(CharacterBase user) => DialogueManager.Instance.StartDialogue(_currentDialogue);
