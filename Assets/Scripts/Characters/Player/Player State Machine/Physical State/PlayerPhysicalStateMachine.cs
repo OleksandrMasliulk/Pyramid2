@@ -17,8 +17,7 @@ public class PlayerPhysicalStateMachine {
 
         SetState(AliveState);
         _character.HealthHandler.OnCharacterDie += (character) => SetState(DeadState);
-        _character.HealthHandler.OnResurrect += Resurrect;
-        IngameUIController.OnResurrectClick += () => SetState(GhostState);
+        IngameUIController.OnGhostClick += () => SetState(GhostState);
     }
 
     public void SetState(PlayerPhysicalState state) {
@@ -29,10 +28,4 @@ public class PlayerPhysicalStateMachine {
         _currentState = state;
         _currentState.OnStateEnter(_character);
     }
-
-    private void Resurrect() {
-        SetState(AliveState);
-        GameController.Instance.AddPlayerToList(_character);
-    }
-
 }

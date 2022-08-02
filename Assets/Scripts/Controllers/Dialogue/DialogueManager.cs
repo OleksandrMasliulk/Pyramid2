@@ -11,7 +11,7 @@ public class DialogueManager : MonoBehaviour {
     public static event Action OnStartDialogue;
     public static event Action OnEndDialogue;
 
-    public GameObject dialogueWindow;
+    public UIPanel dialogueWindow;
     public TMP_Text speakerName;
     public Image speakerIcon;
     public TMP_Text line;
@@ -30,7 +30,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void StartDialogue(Dialogue dialogue) {
         Time.timeScale = 0;
-        dialogueWindow.SetActive(true);
+        dialogueWindow.EnablePanel();
         OnStartDialogue?.Invoke();
 
         currentDialogue = dialogue;
@@ -64,7 +64,7 @@ public class DialogueManager : MonoBehaviour {
 
     public void EndDialogue() {
         Time.timeScale = 1;
-        dialogueWindow.SetActive(false);
+        dialogueWindow.DisablePanel();
         OnEndDialogue?.Invoke();
         currentDialogue.dialogueSO.OnDialogueEndEvent?.Invoke();
     }

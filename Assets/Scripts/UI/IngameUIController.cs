@@ -2,16 +2,13 @@ using UnityEngine;
 using System;
 
 public class IngameUIController : MonoBehaviour {
-    public static event Action OnResurrectClick;
+    public static event Action OnGhostClick;
 
     [SerializeField] private UIPanel _loseScreen;
     [SerializeField] private UIPanel _winScreen;
     [SerializeField] private UIPanel _menu;
 
-    private void OnEnable() {
-        PlayerInputController.OnCallUI += ShowMenu;
-        GameController.Instance.OnWinEvent += ShowWinScreen;
-    }
+    public void OnEnable() => PlayerInputController.OnCallUI += ShowMenu;
 
     private void ShowMenu() => _menu.EnablePanel();
 
@@ -21,10 +18,7 @@ public class IngameUIController : MonoBehaviour {
 
     public void MainMenu() => LevelLoader.Instance.MainMenu();
 
-    public void ContinueAsGhost() => OnResurrectClick?.Invoke();
+    public void ContinueAsGhost() => OnGhostClick?.Invoke();
 
-    private void OnDisable() {
-        PlayerInputController.OnCallUI -= ShowMenu;
-        GameController.Instance.OnWinEvent -= ShowWinScreen;
-    }
+    private void OnDestroy() => PlayerInputController.OnCallUI -= ShowMenu;
 }

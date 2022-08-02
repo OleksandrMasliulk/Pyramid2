@@ -7,6 +7,7 @@ public class PlayerDeadState : PlayerPhysicalState {
         player.HUDHandler.HUD.SetActive(false);
         player.gameObject.ChangeTreeLayer(8);
         //player.InventoryController.DropWholeInventory();
+        player.VFXHandler.DisableStepParticles();
 
         player.MovementHandler.enabled = false;
         player.SanityHandler.enabled = false;

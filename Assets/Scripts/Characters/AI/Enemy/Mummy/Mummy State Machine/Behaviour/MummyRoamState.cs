@@ -45,12 +45,12 @@ public class MummyRoamState : MummyBehaviourState, ICanRoam {
     }
 
     private PlayerDrivenCharacter GetPlayer() {
-        if (GameController.Instance.AlivePlayersList.Count > 0) {
-            if (GameController.Instance.AlivePlayersList.Count == 1)
-                return GameController.Instance.AlivePlayersList[0];
+        if (UnitManager.Instance.AlivePlayers.Count > 0) {
+            if (UnitManager.Instance.AlivePlayers.Count == 1)
+                return UnitManager.Instance.AlivePlayers[0];
 
-            int rand = Random.Range(0, GameController.Instance.AlivePlayersList.Count);
-            PlayerDrivenCharacter pc = GameController.Instance.AlivePlayersList[rand];
+            int rand = Random.Range(0, UnitManager.Instance.AlivePlayers.Count);
+            PlayerDrivenCharacter pc = UnitManager.Instance.AlivePlayers[rand];
             return pc;
         }
 

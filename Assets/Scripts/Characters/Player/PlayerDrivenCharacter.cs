@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.AddressableAssets;
 
 public class PlayerDrivenCharacter : CharacterBase {
     public new PlayerCharacterStatsSO Stats => (PlayerCharacterStatsSO)_stats;
@@ -40,8 +39,8 @@ public class PlayerDrivenCharacter : CharacterBase {
         _coverHandler = GetComponent<PlayerCoverHandler>();
     }
 
-    public async override void InitCharacter(AssetReference stats) {
-        _stats = await stats.LoadAssetAsyncSafe<CharacterBaseStatsSO>() as PlayerCharacterStatsSO;
+    public override void InitCharacter(CharacterBaseStatsSO stats) {
+        _stats = stats;
 
         MovementHandler?.Init(Stats.MovementSpeed);
         InventoryHandler?.Init(Stats.SlotCount);
