@@ -2,8 +2,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 
 [System.Serializable]
-public class SoundAudioClip
-{
+public class SoundAudioClip : IDisposable {
     public enum SoundType  {
         Sound,
         Music
@@ -15,23 +14,27 @@ public class SoundAudioClip
     [Range(0f, 1f)]
     public float volume;
     public float repeatPlayeDelay;
-    private float lastTimePlayed;
+    private float _lastTimePlayed;
 
     [Header("3D Sound settings")]
     [Range(1f, 100f)]
     public float maxRange;
 
-    public void Init() => lastTimePlayed = Time.time;
+    public void Init() => _lastTimePlayed = Time.time;
 
     public bool CanPlay() {
         if (repeatPlayeDelay == 0)
             return true;
 
-        if (lastTimePlayed + repeatPlayeDelay < Time.time) {
-            lastTimePlayed = Time.time;
+        if (_lastTimePlayed + repeatPlayeDelay < Time.time) {
+            _lastTimePlayed = Time.time;
             return true;
         }
         else
             return false;
+    }
+
+    public void Dispose() {
+        clip.ReleaseAssetSafe();
     }
 }

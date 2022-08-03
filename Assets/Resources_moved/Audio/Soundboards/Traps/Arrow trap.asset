@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46170f3884cf96a4eb19c8cf042bcbb7, type: 3}
+  m_Name: Arrow trap
+  m_EditorClassIdentifier: 
+  _shoot:
+    type: 0
+    clip:
+      m_AssetGUID: 63aa30291606352498deb72626336ac9
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    volume: 0
+    repeatPlayeDelay: 0
+    maxRange: 0
+  _hitWall:
+    type: 0
+    clip:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    volume: 0
+    repeatPlayeDelay: 0
+    maxRange: 0
+  _hitCharacter:
+    type: 0
+    clip:
+      m_AssetGUID: 
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    volume: 0
+    repeatPlayeDelay: 0
+    maxRange: 0

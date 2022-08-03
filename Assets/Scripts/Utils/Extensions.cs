@@ -30,6 +30,15 @@ public static class Extensions
         return returnAsset;
     }
 
+    public static void ReleaseAssetSafe(this AssetReference reference) {
+        if (!reference.IsValid()) {
+            Debug.LogWarning("Tried to release not loaded reference");
+            return;
+        }
+        
+        reference.ReleaseAsset();
+    }
+
     public static void ChangeTreeLayer(this GameObject go, int layer) {
         go.layer = layer;
         foreach (Transform obj in go.GetComponentsInChildren<Transform>())

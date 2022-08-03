@@ -1,7 +1,6 @@
 using UnityEngine;
 
-public abstract class SoundBoardSO : ScriptableObject {
-    public SoundBoard SoundBoard => GetSoundBoard();
-
-    public abstract SoundBoard GetSoundBoard();
+public abstract class SoundBoardSO : ScriptableObject, IDisposable {
+    public abstract void Initialize();
+    public abstract void Dispose();
 }

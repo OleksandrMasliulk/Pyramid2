@@ -1,4 +1,6 @@
+using UnityEngine.AddressableAssets;
+
 [System.Serializable]
 public class Dialogue {
-    public DialogueSO dialogueSO;
+    public AssetReference dialogueReference;
 }

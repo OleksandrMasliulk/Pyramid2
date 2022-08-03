@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class Door : MonoBehaviour, /*IInterractible,*/ ISwitchable {
     public Transform ObjectReference => transform;
@@ -15,10 +16,14 @@ public class Door : MonoBehaviour, /*IInterractible,*/ ISwitchable {
     public bool IsActive => _isActive;
     private bool isClosed;
 
-    private void Start() {
+    [SerializeField] private AssetReference _soundboardReference;
+    private DoorSoundboardSO _loadedSoundboard;
+
+    private async void Awake() {
         isClosed = true;
         _door.enabled = true;
         _currentTooltip = _closedTooltip;
+        _loadedSoundboard = await _soundboardReference.LoadAssetAsyncSafe<DoorSoundboardSO>();
     }
 
     // public void Interract(CharacterBase user) {
@@ -40,7 +45,7 @@ public class Door : MonoBehaviour, /*IInterractible,*/ ISwitchable {
 
         _currentTooltip = _openedTooltip;
         _anim.SetBool("Opened", true);
-        AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorOpen, transform.position, 1f);
+        AudioManager.Instance.PlayerSound3D(_loadedSoundboard.DoorOpenSound, transform.position, 1f);
     }
 
     public void Close() {
@@ -52,10 +57,15 @@ public class Door : MonoBehaviour, /*IInterractible,*/ ISwitchable {
 
         _currentTooltip = _closedTooltip;
         _anim.SetBool("Opened", false);
-        AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().doorClose, transform.position, 1f);
+        AudioManager.Instance.PlayerSound3D(_loadedSoundboard.DoorCloseSound, transform.position, 1f);
     }
 
     public void Activate() => _isActive = true;
 
     public void Disable() => _isActive = false;
+
+    private void OnDestroy() {
+        _loadedSoundboard.Dispose();
+        _soundboardReference.ReleaseAssetSafe();
+    }
 }
