@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class FlamethrowerTrap : Trap, ISwitchable {
     [Header("Graphics")]
@@ -21,15 +22,19 @@ public class FlamethrowerTrap : Trap, ISwitchable {
     private Coroutine _rearmCoroutine;
     private Coroutine _flamethrowingCoroutine;
 
-    private void Awake() {
+    [SerializeField] private AssetReference _soundboardReference;
+    private FlamethrowerTrapSoundboardSO _loadedSoundboard;
+
+    private async void Awake() {
         _sanitySeeker = GetComponentInChildren<ISeeker<IHaveSanity>>();
         _damageSeeker = GetComponentInChildren<ISeeker<IDamageable>>();
+        _loadedSoundboard = await _soundboardReference.LoadAssetAsyncSafe<FlamethrowerTrapSoundboardSO>();
     }
 
     private void Start() => _flamethrowingCoroutine = StartCoroutine(ThrowFireCoroutine());
 
     IEnumerator ThrowFireCoroutine() {
-        AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<TrapsSoundBoard>().flamethrowerTrap, transform.position, _flameThrowingDuration);
+        AudioManager.Instance.PlayerSound3D(_loadedSoundboard.ThrowFlameSound, transform.position, _flameThrowingDuration);
 
         foreach (IHaveSanity s in _sanitySeeker.ObjectsSeeked)
             s.ModifySanity(-sanityLoss);
@@ -96,5 +101,10 @@ public class FlamethrowerTrap : Trap, ISwitchable {
             StopCoroutine(_flamethrowingCoroutine);
 
         DisableGraphics();
+    }
+
+    private void OnDestroy() {
+        _loadedSoundboard.Dispose();
+        _soundboardReference.ReleaseAssetSafe();
     }
 }

@@ -125,6 +125,12 @@ MonoBehaviour:
   arrows: {fileID: 1741391158043211792}
   _rearmTime: 2
   _isActive: 1
+  _soundboardReference:
+    m_AssetGUID: c61427c7f995f2a45967649dd7677634
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _loadedSoundboard: {fileID: 0}
 --- !u!199 &4587457723380486517
 ParticleSystemRenderer:
   serializedVersion: 6

@@ -6444,6 +6444,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec46112b6e28a3040a98c33ad803f1fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundboardReference:
+    m_AssetGUID: 87f438540b0e1934ebef4e6228e5bdad
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   _cameraHandler: {fileID: 1846171477307180953}
 --- !u!114 &5719769504575700958
 MonoBehaviour:
@@ -6513,8 +6518,16 @@ MonoBehaviour:
   _animator: {fileID: 8137129383538938291}
   _renderer: {fileID: 5339026552842488741}
   _itemSockets: {fileID: 8554533787030578490}
-  aliveController: {fileID: 9100000, guid: cd05d04332b5daf4581f391afb6442c0, type: 2}
-  ghostController: {fileID: 22100000, guid: 80ddb485576e9a64594df54bfb2b0763, type: 2}
+  _aliveController:
+    m_AssetGUID: cd05d04332b5daf4581f391afb6442c0
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _ghostController:
+    m_AssetGUID: 80ddb485576e9a64594df54bfb2b0763
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!114 &8768105069340167569
 MonoBehaviour:
   m_ObjectHideFlags: 0

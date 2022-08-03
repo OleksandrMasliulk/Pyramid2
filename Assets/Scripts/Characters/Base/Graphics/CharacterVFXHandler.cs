@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.AddressableAssets;
-using System.Threading.Tasks;
 
 public class CharacterVFXHandler : MonoBehaviour {
     [SerializeField] private ParticleSystem _stepParticles;
@@ -18,12 +16,17 @@ public class CharacterVFXHandler : MonoBehaviour {
         GameObject go = await particles.particlesReferece.LoadAssetAsyncSafe<GameObject>();
         ParticleSystem ps = Instantiate(go, transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
         particles.LastTimeSpawned = Time.time;
-
-        await Task.Delay((int)(ps.main.duration * 1000));
-        Addressables.ReleaseInstance(go);
     }
 
     public void EnableStepParticles() => _stepParticles.Play();
 
     public void DisableStepParticles() => _stepParticles.Stop();
+
+    protected virtual void ReleaseAssets() {
+        DamageParticles.particlesReferece.ReleaseAssetSafe();
+    }
+
+    private void OnDestroy() {
+        ReleaseAssets();
+    }
 }

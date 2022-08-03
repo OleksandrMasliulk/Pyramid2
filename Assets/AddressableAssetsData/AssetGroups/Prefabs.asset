@@ -1,0 +1,105 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Prefabs
+  m_EditorClassIdentifier: 
+  m_GroupName: Prefabs
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 30b1a9c007af1b545a91b23e9de31c6f
+  m_SerializeEntries:
+  - m_GUID: 1ee8ac740c0c65b47b7a4da840176de8
+    m_Address: Assets/Resources_moved/Usable Items/Flare.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b12f350dc256ad146bc81e97130afbee
+    m_Address: Assets/Resources_moved/Usable Items/Default Flashlight.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7e571513877af3d4fb2bdd2549487f26
+    m_Address: Assets/Resources_moved/Usable Items/Arrow Up.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b90722a2d0aeca74788c915583cb25d9
+    m_Address: Assets/Resources_moved/Usable Items/Arrow Right.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 49925648968aaff4abf8a2f0f74e069d
+    m_Address: Assets/Resources_moved/Usable Items/Arrow Left.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 786198f5df0983b43bc52c76b0fc8369
+    m_Address: Assets/Resources_moved/Usable Items/Arrow Down.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3b029492cf35e1c46b56b5a451844235
+    m_Address: Assets/Prefabs/Characters/HUB_Player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 677efa4aa171609458eaa0933f23f5e4
+    m_Address: Assets/Prefabs/Characters/Bot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d0e3a87b5f4c92642b85a3669397b2a2
+    m_Address: Assets/Prefabs/Characters/Mummy.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fbce028d41cec6b449a05726ffda213e
+    m_Address: Assets/Prefabs/Characters/Player.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8a6819265fb84254e89d9c2dc53901eb
+    m_Address: Assets/Prefabs/Characters/TestNPC.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 54db57d9eaa70a64fa08fb54accfd89d
+    m_Address: Assets/Prefabs/UI/PlayerHUD/Paint Direction.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ded333d86f3f5454992886c73ac2aa2d
+    m_Address: Assets/Prefabs/UI/PlayerHUD/Tooltip.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5281d8d789c507b4e82e2fba0ddeca0c
+    m_Address: Assets/Prefabs/UI/PlayerHUD/Slot.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6db539314a9059a49a3dcb37714df093
+    m_Address: Assets/Prefabs/UI/PlayerHUD/Sanity Slider.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3873a822a4d7fd04295287b05d470a7e
+    m_Address: Assets/Prefabs/UI/PlayerHUD/Player HUD.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 82b1f61f67d690d44b86db8e6ac341ea
+    m_Address: Assets/Prefabs/UI/PlayerHUD/Inventory.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 03f42d4b4aeaaff47993042ec98c91b0
+    m_Address: Assets/Prefabs/UI/Ingame/Dialogue Window.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a875b62a59e71be4b9704b6e857c1e74
+    m_Address: Assets/Prefabs/UI/Ingame/Menu.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 6556ed6b587853e42a3e61c0c313438d
+    m_Address: Assets/Prefabs/UI/Ingame/UI.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 472743c011694d542b8db29019775f25, type: 2}
+    - {fileID: 11400000, guid: 2c365cf05cfbadb47b64e2930245dcc2, type: 2}

@@ -28,12 +28,18 @@ public class PlayerVFXHandler : CharacterVFXHandler  {
     public async void EnableGhostMaterial() {
         Material material = await _ghostMaterial.LoadAssetAsyncSafe<Material>();
         _renderer.materials[0] = material;
-        _aliveMaterial.ReleaseAsset();
     }
 
     public async void EnableAliveMaterial() {
         Material material = await _aliveMaterial.LoadAssetAsyncSafe<Material>();
         _renderer.materials[0] = material;
-        _ghostMaterial.ReleaseAsset();
+    }
+
+    protected override void ReleaseAssets()
+    {
+        base.ReleaseAssets();
+        _corpseSprite.ReleaseAssetSafe();
+        _aliveMaterial.ReleaseAssetSafe();
+        _ghostMaterial.ReleaseAssetSafe();
     }
 }

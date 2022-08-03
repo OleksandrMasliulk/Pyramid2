@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.AddressableAssets;
 
 [System.Serializable]
 public class Lever : MonoBehaviour, IInterractible {
@@ -13,9 +14,13 @@ public class Lever : MonoBehaviour, IInterractible {
     [SerializeField] private string _tooltip;
     public string Tooltip => _tooltip;
 
-    private void Start() {
+    [SerializeField] private AssetReference _soundboardReference;
+    private LeverSoundboardSO _loadedSoundboard;
+
+    private async void Awake() {
         isOn = false;
         _anim.SetBool("On", isOn);
+        _loadedSoundboard = await _soundboardReference.LoadAssetAsyncSafe<LeverSoundboardSO>();
     }
 
     private void On() {
@@ -34,6 +39,11 @@ public class Lever : MonoBehaviour, IInterractible {
         else
             On();
         _anim.SetBool("On", isOn);
-        AudioManager.Instance.PlayerSound3D(AudioManager.Instance.GetSoundBoard<InterractibleSoundBoard>().lever, transform.position, 1f);
+        AudioManager.Instance.PlayerSound3D(_loadedSoundboard.LeverSwitchSound, transform.position, 1f);
+    }
+
+    private void OnDestroy() {
+        _loadedSoundboard.Dispose();
+        _soundboardReference.ReleaseAssetSafe();
     }
 }

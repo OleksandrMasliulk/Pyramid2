@@ -44,15 +44,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e57591e7e415e45b283fad2215f46f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _soundBoards:
-  - {fileID: 11400000, guid: e0dd82ca8e242d04bb2f23e37a6760c0, type: 2}
-  - {fileID: 11400000, guid: 22341318154536c42a7424a8fbbc242c, type: 2}
-  - {fileID: 11400000, guid: 50eca973b29a48345a6436d0d904495c, type: 2}
-  - {fileID: 11400000, guid: 55a7c233620508645b574e45dac58f0b, type: 2}
-  - {fileID: 11400000, guid: 573828bce5ab930449160fd73991c03c, type: 2}
-  - {fileID: 11400000, guid: a3a33aefeb903cb4fb54457c85e083b9, type: 2}
-  - {fileID: 11400000, guid: 87f438540b0e1934ebef4e6228e5bdad, type: 2}
-  - {fileID: 11400000, guid: b1e09a5f6bb8f7f4a84f21be14609e16, type: 2}
+  _soundBoardReferences:
+  - m_AssetGUID: e0dd82ca8e242d04bb2f23e37a6760c0
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 22341318154536c42a7424a8fbbc242c
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 50eca973b29a48345a6436d0d904495c
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 55a7c233620508645b574e45dac58f0b
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: b1e09a5f6bb8f7f4a84f21be14609e16
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 87f438540b0e1934ebef4e6228e5bdad
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: 573828bce5ab930449160fd73991c03c
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  - m_AssetGUID: a3a33aefeb903cb4fb54457c85e083b9
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   _fadeTime: 1
   _musicOutput: {fileID: -8371512501099232330, guid: e31671f7584c1854987b5fec05ae551a, type: 2}
   _soundOutput: {fileID: 5915213946197180362, guid: e31671f7584c1854987b5fec05ae551a, type: 2}
@@ -688,9 +712,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30c07bfd8bd87e14c85d294053340bd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadingScreen: {fileID: 4299711997267536093}
   _menuSceneReference:
     m_AssetGUID: 88f325a4e24cdc4478c4d7061ac88e3b
     m_SubObjectName: 
     m_SubObjectType: 
     m_EditorAssetChanged: 0
+  _loadingScreen: {fileID: 4299711997267536093}

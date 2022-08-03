@@ -15,8 +15,28 @@ MonoBehaviour:
   m_GroupName: Duplicate Asset Isolation
   m_Data:
     m_SerializedData: []
-  m_GUID: d74e9d0df778fe442a1d5d1ab964f0a7
+  m_GUID: 6c83d2f419eefa14fb73d9012cb8bb68
   m_SerializeEntries:
+  - m_GUID: 125b5d3d90bc5f448ba6108a19ad14bb
+    m_Address: Assets/Graphics/Shaders/GhostShaer.shadergraph
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 02f7b617efaa0ce468915b18b6e1b1f2
+    m_Address: Assets/Graphics/Materials/Lights.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 658d8bdd4f501b24faa02c07f7752b08
+    m_Address: Assets/Graphics/Sprites/Light&FX/LightAssets.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a97c105638bdf8b4a8650670310a4cd3
+    m_Address: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: e260cfa7296ee7642b167f1eb5be5023
+    m_Address: Packages/com.unity.render-pipelines.universal/Shaders/2D/Sprite-Lit-Default.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   - m_GUID: 01b9bc1d1c67fb24f8ec0edd14446896
     m_Address: Assets/Fonts/NowItsMyFont/Materials/Pixelart Font SDF.asset
     m_ReadOnly: 0
@@ -27,22 +47,6 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: 571ad5e7af978b344bf5bc882aa6558b
     m_Address: Assets/Animations/Loading Screen/Mummy.controller
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 41b24ac2400681c48912d74fb369deb9
-    m_Address: Assets/Animations/Loading Screen/Archeologist.anim
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 68e6db2ebdc24f95958faec2be5558d6
-    m_Address: Assets/Imported Pacakges/TextMesh Pro/Shaders/TMP_SDF.shader
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 86b6d5cfd2f478e488e1fdbd8d1b6404
-    m_Address: Assets/Animations/Loading Screen/Mummy.anim
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 8c7d8e0ba47473940965e2a8c20372a9
-    m_Address: Assets/Graphics/Sprites/Player/Indiana.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: aae4a91eb19c0be44a85959ebab41819
@@ -57,24 +61,28 @@ MonoBehaviour:
     m_Address: Assets/Scripts/Controllers/Audio/AudioMixer.mixer
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 3ae9e4f32742e9a4e957eb95552ed68c
+    m_Address: Assets/Input System/Player Controls.inputactions
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 41b24ac2400681c48912d74fb369deb9
+    m_Address: Assets/Animations/Loading Screen/Archeologist.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 68e6db2ebdc24f95958faec2be5558d6
+    m_Address: Assets/Imported Pacakges/TextMesh Pro/Shaders/TMP_SDF.shader
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 86b6d5cfd2f478e488e1fdbd8d1b6404
+    m_Address: Assets/Animations/Loading Screen/Mummy.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   - m_GUID: fe393ace9b354375a9cb14cdbbc28be4
     m_Address: Assets/Imported Pacakges/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 80ed2ef49a06a47459e20f3c4a82b94e
-    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/TreasureStuff.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: a97c105638bdf8b4a8650670310a4cd3
-    m_Address: Packages/com.unity.render-pipelines.universal/Runtime/Materials/Sprite-Lit-Default.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: e2ba41f6f2ab23c4ca92c67144f262d7
     m_Address: Assets/Graphics/Shaders/Flame.mat
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 02f7b617efaa0ce468915b18b6e1b1f2
-    m_Address: Assets/Graphics/Materials/Lights.mat
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 4083a62c9c2440a408f13ba504161dc9
@@ -130,7 +138,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 5df3de94f49e50b43b7e55eca4f60378
-    m_Address: Assets/Graphics/Sprites/Tileset/Egyptian/PiramidTails.png
+    m_Address: Assets/Graphics/Sprites/Tileset/Egyptian/PiramidTiles.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 80ed2ef49a06a47459e20f3c4a82b94e
+    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/TreasureStuff.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 4c1c73b52194a4746be68d53b6930b4b
@@ -153,16 +165,8 @@ MonoBehaviour:
     m_Address: Assets/Graphics/Sprites/Light&FX/FlameAnim.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 658d8bdd4f501b24faa02c07f7752b08
-    m_Address: Assets/Graphics/Sprites/Light&FX/LightAssets.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 14299cdda61b85e4bbe27b7758b51cc8
     m_Address: Assets/Graphics/Sprites/Light&FX/Scarabaeus.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 7ae2d849ea41d824ca973bbdae620b7b
-    m_Address: Assets/Prefabs/Particles/Cover Dust.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: b82070ba07908f449ba081b5672e6045
@@ -393,12 +397,116 @@ MonoBehaviour:
     m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_103.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
+  - m_GUID: 37801461ae491e04ba4a5291a3f3f574
+    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/InteractableN.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9c7dedb19e03eed4cbcdb4142d2c8d4e
+    m_Address: Assets/Animations/Lights/CandleStick.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 10ba2552a84e7d04aa7b6ec74ad79817
+    m_Address: Assets/Animations/Lights/TorchOnFire.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 959d296259f58b84b89c20c8cd3001ab
+    m_Address: Assets/Graphics/Sprites/Light&FX/FlameAnimL.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 84fdc382284727b43b43bb43942b1d3b
+    m_Address: Assets/Animations/Interractible/Cover/Cover_Closed.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   - m_GUID: 8155bf13792b1ad41be22ba0fd3adf76
     m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/TreasureStuffN.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 70e33c3485c65da42b957971612386e7
-    m_Address: Assets/Graphics/Sprites/Player/Archeologist2.png
+  - m_GUID: da9f26735f801714abfe19002f45680e
+    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/IconsN.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 990e04c3acbf1e642853ddbc5938ebe3
+    m_Address: Assets/Animations/Traps/Flamethrower/FlameStart.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: b9d96824a83bc9b4d96dba808a8b673c
+    m_Address: Assets/Graphics/Sprites/Traps/TrapsN.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c3673e6455091724fad1ff6b25a9cc7f
+    m_Address: Assets/Animations/Interractible/Cover/Cover_Opened.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 309065d4ff0aa644999dbb6cd9902250
+    m_Address: Assets/Graphics/Sprites/Light&FX/LightAssetsLMap.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: be397fd5ef380414eafd512d11208fef
+    m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/HideSpotN.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a5d5c896efaf2f84b9c7ce9c90cffe9e
+    m_Address: Assets/Animations/Interractible/Door/Door_Close.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8b195d47725bb8043be61d27079c97bd
+    m_Address: Assets/Animations/Traps/Spike/Unactive.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 768e94c886a63d24887e6706f64ce4fd
+    m_Address: Assets/Animations/Traps/Flamethrower/FlameIdle.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 56d4da191848c2f459dab2018f3c1e9f
+    m_Address: Assets/Animations/Lights/Torch.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cda43fba4d3be074e933e342c5503b39
+    m_Address: Assets/Animations/Traps/Spike/Active.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1b1149bbb405cab4987fb8b042e4833a
+    m_Address: Assets/Animations/Interractible/Lever/LeverOn.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: fe2a3f1cd0916d142a63409af14e6eae
+    m_Address: Assets/Animations/Interractible/Door/Door_Idle.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 8699a4acc56bf6b44ab0f3896e4266c6
+    m_Address: Assets/Animations/Interractible/Lever/LeverOff.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d521c09de166c674db08e6f84be560c1
+    m_Address: Assets/Animations/Traps/Flamethrower/FlameFinish.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 1e4b607e1886b1143bc2ba8fd5b883b7
+    m_Address: Assets/Animations/Lights/CandleStickOnFire.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cd4f767e5f6513849a485bd844be6590
+    m_Address: Assets/Animations/Lights/TorchSideOnFire.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 5c7767fe61e21af428f17b349d560ced
+    m_Address: Assets/Animations/Lights/TorchSide.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: d5a6826fe5d518c4aa9556386541d4ef
+    m_Address: Assets/Animations/Interractible/Door/Door_Open.anim
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 581303df7426ba149b8c185fec590edf
+    m_Address: Assets/Graphics/Sprites/Tileset/Egyptian/EgyptTiles.spriteatlas
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: acba89b3cf7eadd498772b33494def3f
+    m_Address: Assets/Graphics/Sprites/Tileset/Egyptian/PillarsEgyptian.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 062cf6895c23bdc4b85f0108a4e1ac1e
+    m_Address: Assets/Graphics/Sprites/Tileset/Egyptian/PiramidTilesN.png
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

@@ -17,20 +17,20 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 7e6448e67a090cc40a587bc226413be5
   m_SerializeEntries:
-  - m_GUID: 999e0232b018b324291a0d0caf0a3ee7
-    m_Address: Assets/Audio/New sound/Bezymstwo.ogg
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: ca409dba6d0cf1e459d838d4193075d9
-    m_Address: Assets/Audio/mummy_chase_trance (online-audio-converter.com).ogg
+    m_Address: Assets/Audio/Music/mummy_chase_trance (online-audio-converter.com).ogg
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: ac315cbbf25d501488744e7b409a12aa
-    m_Address: Assets/Audio/egypt_try_2 (online-audio-converter.com).ogg
+    m_Address: Assets/Audio/Music/egypt_try_2 (online-audio-converter.com).ogg
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: eb485786d043a3e4c85a0e132680cf0d
-    m_Address: Assets/Audio/egypt_loop_93bpm (online-audio-converter.com).ogg
+    m_Address: Assets/Audio/Music/egypt_loop_93bpm (online-audio-converter.com).ogg
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 999e0232b018b324291a0d0caf0a3ee7
+    m_Address: Assets/Audio/Music/Bezymstwo.ogg
     m_ReadOnly: 0
     m_SerializedLabels: []
   m_ReadOnly: 0

@@ -17,6 +17,23 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: da0ae7327b8e17b4ba781d53a29ccbf8
   m_SerializeEntries:
+  - m_GUID: ef7189c223d76d74596bbb9edcf062b7
+    m_Address: Assets/Resources_moved/Maps/Main menu.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9c40abb3e9d74424a9f7907e0e722e07
+    m_Address: Assets/Resources_moved/Maps/HUB.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 430449561bad766418d735141fa97ac3
+    m_Address: Assets/Resources_moved/Maps/Egypt.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f22fc26dc9a088145865c0a3024a1e9f
+    m_Address: Assets/Resources_moved/ItemsSO/Treasure10_2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - Item
   - m_GUID: a3c0d49ae815d44478c66a53737dda0f
     m_Address: Assets/Resources_moved/ItemsSO/Treasure10_1.asset
     m_ReadOnly: 0
@@ -52,55 +69,94 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels:
     - Item
-  - m_GUID: f2c1b314ecdb70d4ca9449301e837465
-    m_Address: Assets/Resources_moved/Dialogues/Dialog Tutorial.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: e0dd82ca8e242d04bb2f23e37a6760c0
-    m_Address: Assets/Resources_moved/Audio/Soundboards/GameActions Soundboard.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 22341318154536c42a7424a8fbbc242c
-    m_Address: Assets/Resources_moved/Audio/Soundboards/Interractible Soundboard.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 50eca973b29a48345a6436d0d904495c
-    m_Address: Assets/Resources_moved/Audio/Soundboards/Items Soundboard.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 55a7c233620508645b574e45dac58f0b
-    m_Address: Assets/Resources_moved/Audio/Soundboards/Mummy Soundboard.asset
+  - m_GUID: 87f438540b0e1934ebef4e6228e5bdad
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Player1.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: b1e09a5f6bb8f7f4a84f21be14609e16
     m_Address: Assets/Resources_moved/Audio/Soundboards/Music Soundboard.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 87f438540b0e1934ebef4e6228e5bdad
-    m_Address: Assets/Resources_moved/Audio/Soundboards/Player1.asset
+  - m_GUID: 55a7c233620508645b574e45dac58f0b
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Mummy Soundboard.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 573828bce5ab930449160fd73991c03c
-    m_Address: Assets/Resources_moved/Audio/Soundboards/Traps Soundboard.asset
+  - m_GUID: e0dd82ca8e242d04bb2f23e37a6760c0
+    m_Address: Assets/Resources_moved/Audio/Soundboards/GameActions Soundboard.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: a3a33aefeb903cb4fb54457c85e083b9
-    m_Address: Assets/Resources_moved/Audio/Soundboards/UI Soundboard.asset
+  - m_GUID: e363fb719648f474e91799efe7e73029
+    m_Address: Assets/Resources_moved/Maps/Maya.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 179db9ce1d019f740af8d220ee029c97
-    m_Address: Assets/Resources_moved/Characters/Enemies/New Mummy.asset
+  - m_GUID: 563a1d254abe0a345a0fa7a900c1b4a3
+    m_Address: Assets/Resources_moved/Skins/New Skin.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 78f9d329b52d20e4898bb8c9669c97c1
     m_Address: Assets/Resources_moved/Characters/Player/R_New Player Character.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: f22fc26dc9a088145865c0a3024a1e9f
-    m_Address: Assets/Resources_moved/ItemsSO/Treasure10_2.asset
+  - m_GUID: 799beed8194e042408054cc50d6b49ec
+    m_Address: Assets/Resources_moved/Characters/Player/HUB Player.asset
     m_ReadOnly: 0
-    m_SerializedLabels:
-    - Item
+    m_SerializedLabels: []
+  - m_GUID: 179db9ce1d019f740af8d220ee029c97
+    m_Address: Assets/Resources_moved/Characters/Enemies/New Mummy.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4b4ade3531fb54e41ab259984e9a702c
+    m_Address: Assets/Resources_moved/Characters/AllyNPC/Dialogue NPC.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: f2c1b314ecdb70d4ca9449301e837465
+    m_Address: Assets/Resources_moved/Dialogues/Dialog Tutorial.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c3f90c263ff61b146bd8fa84374d78b1
+    m_Address: Assets/Resources_moved/Dialogues/Test dialogue.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 7c1ee747239d9fa4fab551549fafdde1
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Items/Treasure.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 2a7a52516b19947438ff633ad6c72df2
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Items/Paint.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 801359f431b5c644496d9dbeb722febb
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Items/Medkit.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: ef8b57eee9011884d8e3248d7865a905
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Items/Flare.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 4f3907f11d0f46447b11bc9ad5dd5aef
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Items/Flashlight.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c61427c7f995f2a45967649dd7677634
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Traps/Arrow trap.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 3cd5366f17ca63d4d836e96df000b09a
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Traps/Flamethrower.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 71d43647edd950241b37fc5bf1c1d1ba
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Traps/Spike trap.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 73b4ebc4274bf204298aed34e1420f5c
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Props/Door.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: a7b8f372197cf48428de076ef0e156cc
+    m_Address: Assets/Resources_moved/Audio/Soundboards/Props/Lever.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
   m_SchemaSet:

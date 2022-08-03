@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59147b24e1a3d340a39c97f87286d04, type: 3}
+  m_Name: Door
+  m_EditorClassIdentifier: 
+  _doorOpen:
+    type: 0
+    clip:
+      m_AssetGUID: e5014e7322f9adb438618b168be4a7c0
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    volume: 0
+    repeatPlayeDelay: 0
+    maxRange: 0
+  _doorClose:
+    type: 0
+    clip:
+      m_AssetGUID: 3aae7ac7d33d7da4fba950bec0b7c59b
+      m_SubObjectName: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    volume: 0
+    repeatPlayeDelay: 0
+    maxRange: 0
