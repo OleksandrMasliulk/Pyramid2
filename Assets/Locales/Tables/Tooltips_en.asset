@@ -19,7 +19,7 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 9268383744
-    m_Localized: Press <style="Highlight">E</style> to Interract
+    m_Localized: Press E<sprite=9> to Interract
     m_Metadata:
       m_Items: []
   - m_Id: 42403385344

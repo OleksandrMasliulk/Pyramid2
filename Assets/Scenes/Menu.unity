@@ -6415,6 +6415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 296d5a5d467410c428501bc586b83f4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _applyButton: {fileID: 976585930}
+  _revertButton: {fileID: 875669344}
   _resolutionDropdown: {fileID: 75150823}
   _qualityDropdown: {fileID: 101939446}
   _windowDropdown: {fileID: 662103029}
@@ -6425,8 +6427,6 @@ MonoBehaviour:
   _musicVolumeSlider: {fileID: 1254413449}
   _musicVolumeText: {fileID: 1534389158}
   _languageDropdown: {fileID: 1839626827}
-  _applyButton: {fileID: 976585930}
-  _revertButton: {fileID: 875669344}
   _resolutions:
   - width: 640
     height: 480
@@ -11747,7 +11747,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4280361249
   m_fontColor: {r: 0.12941177, g: 0.12941177, b: 0.12941177, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

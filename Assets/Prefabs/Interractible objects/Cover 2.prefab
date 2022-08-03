@@ -125,7 +125,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   respawnPos: {fileID: 6002796483879193953}
   graphics: {fileID: 705695634669293294}
-  dustPS: {fileID: 6691001445476703100, guid: 7ae2d849ea41d824ca973bbdae620b7b, type: 3}
+  dustPS:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
   _coverTooltip: COVER
   _uncoverTooltip: UNCOVER
 --- !u!114 &2631428065379049829
@@ -212,9 +216,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -643445393
-  m_SortingLayer: 3
-  m_SortingOrder: 0
+  m_SortingLayerID: 1680369023
+  m_SortingLayer: 4
+  m_SortingOrder: 1
   m_Sprite: {fileID: 218633770, guid: d61235c04c40a0c418485b2d4d3e5062, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
