@@ -45,11 +45,14 @@ SpriteAtlas:
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 4ba90676541efd04eb05197b15af5835, type: 3}
+    - {fileID: 2800000, guid: 310422e0d2b65b1498c8033672fa8a17, type: 3}
+    - {fileID: 2800000, guid: e617aa57af7475a4d88411f64afc14a3, type: 3}
     bindAsDefault: 1
     isAtlasV2: 0
     cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
+  - {fileID: 21300000, guid: 310422e0d2b65b1498c8033672fa8a17, type: 3}
   - {fileID: 85246944, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
   - {fileID: 1977875377, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
   - {fileID: -1256446196, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
@@ -62,6 +65,8 @@ SpriteAtlas:
   - {fileID: 1906778397, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
   - {fileID: -1853749418, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
   - {fileID: 21300000, guid: 3c93bea33485f4347aa2c12724bd7fe1, type: 3}
+  - {fileID: 841648930, guid: e617aa57af7475a4d88411f64afc14a3, type: 3}
+  - {fileID: 408629458, guid: e617aa57af7475a4d88411f64afc14a3, type: 3}
   - {fileID: 21300000, guid: 357b06b763f37364c9f8b2b1836aa843, type: 3}
   - {fileID: -258393920, guid: c7399fe878ddc714aaed0606a93d3010, type: 3}
   - {fileID: -1100484947, guid: c7399fe878ddc714aaed0606a93d3010, type: 3}
@@ -129,6 +134,7 @@ SpriteAtlas:
   - {fileID: 1382082633, guid: dc4d336e170462e4d898100acfba22ee, type: 3}
   - {fileID: 21300000, guid: 4b577f0f21e20744f9abb41811df13df, type: 3}
   m_PackedSpriteNamesToIndex:
+  - EgyptOutline
   - SettingsGUI_Handle
   - SettingsGUI_ArrowLeft
   - SettingsGUI_ScrollBar
@@ -141,6 +147,8 @@ SpriteAtlas:
   - SettingsGUI_ScrollList
   - SettingsGUI_CheckBox
   - Map
+  - Mark_1
+  - Mark_0
   - MainBackground
   - ChooseWheel_0
   - ChooseWheel_1
