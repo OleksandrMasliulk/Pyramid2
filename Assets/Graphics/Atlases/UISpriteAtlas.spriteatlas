@@ -1,0 +1,212 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UISpriteAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 4ba90676541efd04eb05197b15af5835, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 85246944, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
+  - {fileID: 1977875377, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
+  - {fileID: -1256446196, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
+  - {fileID: -1450049640, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
+  - {fileID: 872106425, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
+  - {fileID: 383328086, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
+  - {fileID: -1745992816, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
+  - {fileID: -1415438617, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
+  - {fileID: -1121323412, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
+  - {fileID: 1906778397, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
+  - {fileID: -1853749418, guid: 21864e42dcbd6494980c588c82ec0807, type: 3}
+  - {fileID: 21300000, guid: 3c93bea33485f4347aa2c12724bd7fe1, type: 3}
+  - {fileID: 21300000, guid: 357b06b763f37364c9f8b2b1836aa843, type: 3}
+  - {fileID: -258393920, guid: c7399fe878ddc714aaed0606a93d3010, type: 3}
+  - {fileID: -1100484947, guid: c7399fe878ddc714aaed0606a93d3010, type: 3}
+  - {fileID: 1780918500, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -1543145945, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 42133967, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -971724175, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -912300195, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 294860733, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 275844930, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1736966063, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -598920149, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -1335297037, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -1004575289, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 46032488, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1588094307, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 155643954, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1970651142, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1319441108, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 20781788, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -650107048, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 441556660, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 949833607, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 907685254, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1504163451, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -2041460937, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -930346975, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -2056322022, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -2134276850, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -1938259224, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1360851147, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 276883444, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 458415404, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -321959601, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 438286266, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -941062048, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1284258232, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 580727704, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1549626272, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -1430632502, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1557177178, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1952567013, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1742058069, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 34284813, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -239805238, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1876957009, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1994832176, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -1698204728, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 637725855, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -148988484, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -511514804, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 123642432, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -76190361, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -523702716, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -1129177941, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1157667871, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -2102642807, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 885022518, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -47868017, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: 1666538896, guid: 1b5a22ba58dbaec429c923063c9470fb, type: 3}
+  - {fileID: -1042812251, guid: dc4d336e170462e4d898100acfba22ee, type: 3}
+  - {fileID: -2072369902, guid: dc4d336e170462e4d898100acfba22ee, type: 3}
+  - {fileID: 1532432067, guid: dc4d336e170462e4d898100acfba22ee, type: 3}
+  - {fileID: 1736774309, guid: dc4d336e170462e4d898100acfba22ee, type: 3}
+  - {fileID: 1382082633, guid: dc4d336e170462e4d898100acfba22ee, type: 3}
+  - {fileID: 21300000, guid: 4b577f0f21e20744f9abb41811df13df, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - SettingsGUI_Handle
+  - SettingsGUI_ArrowLeft
+  - SettingsGUI_ScrollBar
+  - SettingsGUI_6
+  - SettingsGUI_0
+  - SettingsGUI_ArrowRight
+  - SettingsGUI_Check
+  - SettingsGUI_List
+  - SettingsGUI_ArrowDown
+  - SettingsGUI_ScrollList
+  - SettingsGUI_CheckBox
+  - Map
+  - MainBackground
+  - ChooseWheel_0
+  - ChooseWheel_1
+  - KeeyButtons_Enter
+  - KeeyButtons_CapsLock
+  - KeeyButtons_Empty
+  - KeeyButtons_Down
+  - KeeyButtons_50
+  - KeeyButtons_51
+  - KeeyButtons_52
+  - KeeyButtons_53
+  - KeeyButtons_43
+  - KeeyButtons_54
+  - KeeyButtons_42
+  - KeeyButtons_55
+  - KeeyButtons_41
+  - KeeyButtons_25
+  - KeeyButtons_56
+  - KeeyButtons_40
+  - KeeyButtons_24
+  - KeeyButtons_47
+  - KeeyButtons_27
+  - KeeyButtons_46
+  - KeeyButtons_26
+  - KeeyButtons_45
+  - KeeyButtons_21
+  - KeeyButtons_44
+  - KeeyButtons_20
+  - KeeyButtons_23
+  - KeeyButtons_22
+  - KeeyButtons_49
+  - KeeyButtons_48
+  - KeeyButtons_29
+  - KeeyButtons_28
+  - KeeyButtons_Alt
+  - KeeyButtons_Shift
+  - KeeyButtons_Left
+  - KeeyButtons_Up
+  - KeeyButtons_Right
+  - KeeyButtons_32
+  - KeeyButtons_33
+  - KeeyButtons_30
+  - KeeyButtons_31
+  - KeeyButtons_36
+  - KeeyButtons_37
+  - KeeyButtons_34
+  - KeeyButtons_35
+  - KeeyButtons_38
+  - KeeyButtons_39
+  - KeeyButtons_18
+  - KeeyButtons_19
+  - KeeyButtons_Esc
+  - KeeyButtons_14
+  - KeeyButtons_15
+  - KeeyButtons_16
+  - KeeyButtons_Control
+  - KeeyButtons_17
+  - KeeyButtons_12
+  - KeeyButtons_13
+  - KeeyButtons_Space
+  - GUI_2
+  - GUI_4
+  - GUI_1
+  - GUI_0
+  - GUI_3
+  - EgyptMap
+  m_RenderDataMap: {}
+  m_Tag: UISpriteAtlas
+  m_IsVariant: 0
