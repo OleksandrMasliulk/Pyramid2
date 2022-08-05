@@ -129,10 +129,6 @@ MonoBehaviour:
     m_Address: Assets/Graphics/Sprites/Traps/Traps.png
     m_ReadOnly: 0
     m_SerializedLabels: []
-  - m_GUID: 5df3de94f49e50b43b7e55eca4f60378
-    m_Address: Assets/Graphics/Sprites/Tileset/Egyptian/PiramidTails.png
-    m_ReadOnly: 0
-    m_SerializedLabels: []
   - m_GUID: 4c1c73b52194a4746be68d53b6930b4b
     m_Address: Assets/Graphics/Sprites/Interractible/Egyptian/Interactable.png
     m_ReadOnly: 0
@@ -195,10 +191,6 @@ MonoBehaviour:
     m_SerializedLabels: []
   - m_GUID: ae6804e3518cce244bb02d53f610da8e
     m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_15.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-  - m_GUID: 95ad00f3a27770f4d8716eb3215e9873
-    m_Address: Assets/Graphics/Tile Paletts/Base Tile's/PiramidTails_0.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
   - m_GUID: 8b42751488a057c4ca0587fd8214b478

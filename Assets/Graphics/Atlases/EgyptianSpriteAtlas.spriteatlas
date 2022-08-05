@@ -98,6 +98,7 @@ SpriteAtlas:
   - {fileID: 373539134, guid: c292a5cb850f6f94ab9d68c2bd320e0d, type: 3}
   - {fileID: -608034270, guid: c292a5cb850f6f94ab9d68c2bd320e0d, type: 3}
   - {fileID: -95152765, guid: c292a5cb850f6f94ab9d68c2bd320e0d, type: 3}
+  - {fileID: 21300000, guid: 5743906d113e23c45a4d469cd150f9b8, type: 3}
   - {fileID: 959858531, guid: 14299cdda61b85e4bbe27b7758b51cc8, type: 3}
   - {fileID: 432877969, guid: 14299cdda61b85e4bbe27b7758b51cc8, type: 3}
   - {fileID: -1777709862, guid: 14299cdda61b85e4bbe27b7758b51cc8, type: 3}
@@ -299,6 +300,7 @@ SpriteAtlas:
   - IconsOutline_0
   - IconsOutline_1
   - IconsOutline_4
+  - PiramidTile
   - Scarabaeus_2
   - Scarabaeus_3
   - Scarabaeus_0
