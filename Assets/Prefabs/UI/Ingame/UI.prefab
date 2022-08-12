@@ -832,6 +832,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e3a4f822405594bb44c4be0920970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundboard:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!1 &3169439425975169946
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1500,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e3a4f822405594bb44c4be0920970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundboard:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!1 &5321903361629716790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,6 +1652,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90e3a4f822405594bb44c4be0920970f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _soundboard:
+    m_AssetGUID: 
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!1 &5321903361690225825
 GameObject:
   m_ObjectHideFlags: 0
@@ -3056,6 +3071,10 @@ PrefabInstance:
     - target: {fileID: 7044679322997841192, guid: a875b62a59e71be4b9704b6e857c1e74, type: 3}
       propertyPath: m_Name
       value: Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 7044679322997841192, guid: a875b62a59e71be4b9704b6e857c1e74, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7813281344370296073, guid: a875b62a59e71be4b9704b6e857c1e74, type: 3}
       propertyPath: m_Pivot.x
