@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Graphics
+  m_EditorClassIdentifier: 
+  m_GroupName: Graphics
+  m_Data:
+    m_SerializedData: []
+  m_GUID: f3109f2cf7d555d44b982ecb9d2442cb
+  m_SerializeEntries:
+  - m_GUID: 8c7d8e0ba47473940965e2a8c20372a9
+    m_Address: Assets/Graphics/Sprites/Player/Indiana.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 80ddb485576e9a64594df54bfb2b0763
+    m_Address: Assets/Animations/Characters/Player/Ghost/PlayerGhost.overrideController
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: cd05d04332b5daf4581f391afb6442c0
+    m_Address: Assets/Animations/Characters/Player/Player.controller
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 9940cd23cd0140b40bfe42920c1da53b
+    m_Address: Assets/Graphics/Shaders/PlayerSkin.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: c5ed283abf8302f4a8619de4a7f1f2e0
+    m_Address: Assets/Graphics/Shaders/Ghost.mat
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: a91c9d6986c86d541b66b6813bece8b7, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2e23d7276b57d5a4b9607aa7ff2ee642, type: 2}
+    - {fileID: 11400000, guid: 64a579ca786b72a44b024a3fb6b6baa6, type: 2}

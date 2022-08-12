@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class GameController : MonoBehaviour {
     public static GameController Instance { get; private set; }
@@ -12,12 +13,16 @@ public class GameController : MonoBehaviour {
 
     private GameState _gameState;
     [SerializeField] private IngameUIController _ingameUI;
+    [SerializeField] private AssetReference _soundboardReference;
+    private GameActionsSoundBoardsSO _loadedSoundboard;
 
-    private void Awake() {
+    private async void Awake() {
         if (Instance == null)
             Instance = this;
         else
             Destroy(this.gameObject);
+
+        _loadedSoundboard = await _soundboardReference.LoadAssetAsyncSafe<GameActionsSoundBoardsSO>();
     }
 
     private void Start() => SetGameState(GameState.Init);
@@ -54,7 +59,7 @@ public class GameController : MonoBehaviour {
     }
 
     protected virtual void OnLose() {
-        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<GameActionsSoundBoard>().playerLost);
+        AudioManager.Instance.PlaySound(_loadedSoundboard.PlayerLostSound);
         OnLoseEvent?.Invoke();
     }
 
@@ -75,5 +80,10 @@ public class GameController : MonoBehaviour {
         //    data = new PlayerData(_alivePlayersList[0].InventoryController.CalculateInventoryValue());
         //}
         //SaveLoad.Save(data, SaveLoad.playerDataPath);
+    }
+
+    private void OnDestroy() {
+        _loadedSoundboard.Dispose();
+        _soundboardReference.ReleaseAssetSafe();
     }
 }

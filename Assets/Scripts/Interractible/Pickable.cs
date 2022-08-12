@@ -37,7 +37,7 @@ public class Pickable : MonoBehaviour, IInterractible {
         else if (_count > _itemToPickUp.MaxStack)
             _count = _itemToPickUp.MaxStack;
 
-        _itemSORef.ReleaseAsset();
+        _itemSORef.ReleaseAssetSafe();
     }
 
     public void Init(Item item, int count) {

@@ -4,6 +4,7 @@ using System;
 using static DialogueSO;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.AddressableAssets;
 
 public class DialogueManager : MonoBehaviour {
     public static DialogueManager Instance { get; private set; }
@@ -11,13 +12,14 @@ public class DialogueManager : MonoBehaviour {
     public static event Action OnStartDialogue;
     public static event Action OnEndDialogue;
 
-    public UIPanel dialogueWindow;
-    public TMP_Text speakerName;
-    public Image speakerIcon;
-    public TMP_Text line;
+    [SerializeField] private UIPanel _dialogueWindow;
+    [SerializeField] private TMP_Text _speakerName;
+    [SerializeField] private Image _speakerIcon;
+    [SerializeField] private TMP_Text _line;
 
-    private Queue<DialogueLine> currentLines;
-    private Dialogue currentDialogue;
+    private Queue<DialogueLine> _currentLines;
+    private DialogueSO _currentDialogue;
+    private AssetReference _currentDialogueReference;
 
     private void Awake() {
         if (Instance == null)
@@ -25,47 +27,49 @@ public class DialogueManager : MonoBehaviour {
         else
             Destroy(this.gameObject);
 
-        currentLines = new Queue<DialogueLine>();
+        _currentLines = new Queue<DialogueLine>();
     }
 
-    public void StartDialogue(Dialogue dialogue) {
+    public async void StartDialogue(Dialogue dialogue) {
         Time.timeScale = 0;
-        dialogueWindow.EnablePanel();
+        _dialogueWindow.EnablePanel();
         OnStartDialogue?.Invoke();
 
-        currentDialogue = dialogue;
-        currentLines.Clear();
-
-        foreach (DialogueLine line in dialogue.dialogueSO.Dialogue)
-            currentLines.Enqueue(line);
+        _currentLines.Clear();
+        _currentDialogueReference = dialogue.dialogueReference;
+        DialogueSO so = await dialogue.dialogueReference.LoadAssetAsyncSafe<DialogueSO>();
+        _currentDialogue = so;
+        foreach (DialogueLine line in _currentDialogue.Dialogue)
+            _currentLines.Enqueue(line);
 
         DisplayNextLine();
     }
 
     public void DisplayNextLine(){
-        if (currentLines.Count == 0) {
+        if (_currentLines.Count == 0) {
             EndDialogue();
             return;
         }
 
-        DialogueLine dLine = currentLines.Dequeue();
-        speakerIcon.sprite = dLine.speaker.image;
-        speakerName.enabled = false;
+        DialogueLine dLine = _currentLines.Dequeue();
+        _speakerIcon.sprite = dLine.speaker.image;
+        _speakerName.enabled = false;
         LocalizationHandler.Instance.GetLocalizedTextAsync(dLine.speaker.localizedName).Completed += (op) => { 
-            speakerName.text = op.Result;
-            speakerName.enabled = true;
+            _speakerName.text = op.Result;
+            _speakerName.enabled = true;
         };
-        line.enabled = false;
+        _line.enabled = false;
         LocalizationHandler.Instance.GetLocalizedTextAsync(dLine.localizedLine).Completed += (op) => { 
-            line.text = op.Result;
-            line.enabled = true;
+            _line.text = op.Result;
+            _line.enabled = true;
         };
     }
 
     public void EndDialogue() {
         Time.timeScale = 1;
-        dialogueWindow.DisablePanel();
+        _dialogueWindow.DisablePanel();
         OnEndDialogue?.Invoke();
-        currentDialogue.dialogueSO.OnDialogueEndEvent?.Invoke();
+        _currentDialogue.OnDialogueEndEvent?.Invoke();
+        _currentDialogueReference.ReleaseAssetSafe();
     }
 }

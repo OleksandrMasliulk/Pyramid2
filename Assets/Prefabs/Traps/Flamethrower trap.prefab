@@ -376,6 +376,11 @@ MonoBehaviour:
   _rearmTime: 3
   _flameThrowingDuration: 1.5
   _isActive: 1
+  _soundboardReference:
+    m_AssetGUID: 3cd5366f17ca63d4d836e96df000b09a
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
 --- !u!1 &2072975315939791431
 GameObject:
   m_ObjectHideFlags: 0

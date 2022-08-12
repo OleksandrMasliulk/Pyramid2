@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class PlayerDrivenCharacter : CharacterBase {
     public new PlayerCharacterStatsSO Stats => (PlayerCharacterStatsSO)_stats;
@@ -19,13 +20,15 @@ public class PlayerDrivenCharacter : CharacterBase {
     public new PlayerVFXHandler VFXHandler => (PlayerVFXHandler)_vfxHandler;
     private PlayerCoverHandler _coverHandler;
     public PlayerCoverHandler CoverHandler => _coverHandler;
+    [SerializeField] private AssetReference _soundboardReference;
+    public PlayerSoundBoardSO LoadedSoundboard {get; private set;}
 
     [SerializeField] private PlayerCameraHandler _cameraHandler;
     public PlayerCameraHandler CameraHandler => _cameraHandler;
     private PlayerSelector _selector;
     public PlayerSelector Selector => _selector;
 
-    private void Awake() {
+    private async void Awake() {
         _movementHandler = GetComponent<ICanMove>();
         _healthHandler = GetComponent<CharacterHealthHandler>();
         _inputController = GetComponent<PlayerInputController>();
@@ -37,6 +40,7 @@ public class PlayerDrivenCharacter : CharacterBase {
         _hudHandler = GetComponent<PlayerHUDHandler>();
         _selector = GetComponent<PlayerSelector>();
         _coverHandler = GetComponent<PlayerCoverHandler>();
+        LoadedSoundboard = await _soundboardReference.LoadAssetAsyncSafe<PlayerSoundBoardSO>();
     }
 
     public override void InitCharacter(CharacterBaseStatsSO stats) {
@@ -46,5 +50,10 @@ public class PlayerDrivenCharacter : CharacterBase {
         InventoryHandler?.Init(Stats.SlotCount);
         SanityHandler?.Init(Stats);
         HUDHandler.InitHUD(this);
+    }
+
+    private void OnDestroy() {
+        LoadedSoundboard.Dispose();
+        _soundboardReference.ReleaseAssetSafe();
     }
 }

@@ -1,6 +1,6 @@
 public class PlayerDeadState : PlayerPhysicalState {
     public override void OnStateEnter(PlayerDrivenCharacter player) {
-        AudioManager.Instance.PlaySound(AudioManager.Instance.GetSoundBoard<PlayerSoundBoard>().die);
+        AudioManager.Instance.PlaySound(player.LoadedSoundboard.DieSound);
 
         player.SanityHandler.ModifySanity(100);
         player.AnimationHandler.SetDie();

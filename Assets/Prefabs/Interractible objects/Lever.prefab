@@ -103,6 +103,12 @@ MonoBehaviour:
       m_Calls: []
   _anim: {fileID: 1850027928842862484}
   _tooltip: INTERRACT
+  _soundboardReference:
+    m_AssetGUID: a7b8f372197cf48428de076ef0e156cc
+    m_SubObjectName: 
+    m_SubObjectType: 
+    m_EditorAssetChanged: 0
+  _loadedSoundboard: {fileID: 0}
 --- !u!114 &7939328364585909102
 MonoBehaviour:
   m_ObjectHideFlags: 0

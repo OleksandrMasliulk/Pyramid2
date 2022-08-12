@@ -38,7 +38,7 @@ public class LevelLoader : MonoBehaviour {
     private async Task UnloadScene(AssetReference reference) {
         var op = reference.UnLoadScene();
         op.Completed += (scene) => {
-            reference.ReleaseAsset();
+            reference.ReleaseAssetSafe();
         };
         await op.Task;
     }
